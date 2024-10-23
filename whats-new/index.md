@@ -8,6 +8,10 @@ nav_order: 5
 
 ## 23.10.2024
 
+- Automated daily testing of new user registration, verification, welcome email
+
+## 22.10.2024
+
 - New engine for docs.signalsapi.com
 
 ## 20.10.2024
@@ -47,24 +51,24 @@ Bugfixes
 
 - Exporting to a specific list in Hubspot
 
-![](/whats-new/SCR-20240619-hsxj-min.png)
+![](/whats-new/2024-06-19-exporting-to-a-specific.png)
 
 - Popular choices are shown separately
 - Ability to choose all popular choices with one click
 
-![](/whats-new/SCR-20240619-neqg-min.png)
+![](/whats-new/2024-06-19-ability-to-choose-all.png)
 
 ## 18.06.2024
 
 - Search has a "Job posting age" setting, which controls how recent the job posting should be to get matched.
 
-![](/whats-new/SCR-20240618-fsns-min.png)
+![](/whats-new/2024-06-18-job-posting-age.png)
 
 ## 17.06.2024
 
 - Filtering jobs based on where the match was found. Solving two most popular problems -- "too few matches" and "too many junk matches".
 
-![](/whats-new/SCR-20240617-gvvk-min.png)
+![](/whats-new/2024-06-17-filtering-jobs.png)
 
 ## 16.06.2024
 
@@ -75,7 +79,7 @@ Bugfixes
 
 - Sourcing from Indeed
 
-![](/whats-new/SCR-20240615-hvhl-min.png)
+![](/whats-new/2024-06-14-sourcing-from-indeed.png)
 
 ## 07.06.2024
 
@@ -86,11 +90,11 @@ Bugfixes
 
 - Worldwide search on LinkedIn (searches -> add -> hiring location)
 
-![](/whats-new/SCR-20240530-ssur-min.png)
+![](/whats-new/2024-05-30-worldwide-search-on-linkedin.png)
 
 - Auto-validating emails in Snov.io (exports -> add -> snovio -> validate emails)
 
-![](/whats-new/SCR-20240530-ssjb-min.png)
+![](/whats-new/2024-05-30-auto-validating-emails.png)
 
 ## 29.05.2024
 
@@ -100,17 +104,17 @@ Bugfixes
 
 - Limit the number of decision-makers per company. If more decision-makers are identified, they are prioritized in the order specified in the 'titles' field, and those with valid email addresses come first.
 
-![](/whats-new/SCR-20240520-hlre-min.png)
+![](/whats-new/2024-05-20-limit-the-number-of-dec.png)
 
 - Do-Not-Contact list allows to make sure you do not contact companies or people you do not want to. Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/).
 
-![](/whats-new/SCR-20240520-oeuf-min.png)
+![](/whats-new/2024-05-20-do-not-contact-list.png)
 
 ## 18.05.2024
 
 - List views of searches, filters, personas, lead lists and exports show where they are taking data from and where they are sending it to.
 
-![](/whats-new/supasnap-2024-05-18-14.33.29-min (1).png)
+![](/whats-new/2024-05-18-list-views-of-searches.png)
 
 Bugfixes:
 
@@ -120,13 +124,13 @@ Bugfixes:
 
 ## 14.05.2024
 
-- Leadlist has an AI field which applied to each person, available templates are {first\_name}, {last\_name}, {title}, {email}, {linkedin\_url}
+- Leadlist has an AI field which applied to each person, available templates are {first_name}, {last_name}, {title}, {email}, {linkedin_url}
 
 ## 13.05.2024
 
 - Leads within a leadlist, matches within personas and filters can be filtered by date
 
-![](/whats-new/supasnap-2024-05-13-10.06.55-min-min.png)
+![](/whats-new/2024-05-13-leads-within-a-leadlist.png)
 
 - Leads are downloaded based on the applied filters
 
@@ -144,17 +148,13 @@ Bugfixes:
 
 - Searches, filters, personas and leadlists can be cloned
 
-![](/whats-new/supasnap-2024-05-10-16.23.09-min.png)
+![](/whats-new/2024-05-10-searches-filters-personas.png)
 
 - AI powered rejection of leads
 
-<div align="left">
+![](/whats-new/2024-05-10-ai-powered-rejection-1.png)
 
-![](/whats-new/supasnap-2024-05-10-15.37.08-min.png)
-
-</div>
-
-![](/whats-new/supasnap-2024-05-10-15.36.12-min.png)
+![](/whats-new/2024-05-10-ai-powered-rejection-2.png)
 
 - Search shows status as "running" while its runs are fetching
 
@@ -191,7 +191,7 @@ Bugfixes
 
 - Showing job description
 
-![](/whats-new/supasnap-2024-05-06-07.15.17-min.png)
+![](/whats-new/2024-05-06-showing-job-description.png)
 
 - Company description is shown with line breaks instead of smashing all lines together
 - Lead view has clickable hyperlinks for job posting, company website and LinkedIn, person LinkedIn
@@ -215,7 +215,7 @@ Bugfixes:
 
 - Filtering by job stop words and required words
 
-![](/whats-new/supasnap-2024-05-03-09.01.06-min.png)
+![](/whats-new/2024-05-03-filtering-by-job-stop.png)
 
 Bugfixes:
 
@@ -236,15 +236,15 @@ Bugfix:
 
 - People in lead list have addresses
 
-![](/whats-new/supasnap-2024-05-01-09.04.52-min.png)
+![](/whats-new/2024-05-01-people-in-lead-list.png)
 
 - People can be filtered by location
 
-![](/whats-new/supasnap-2024-05-01-14.12.04-min.png)
+![](/whats-new/2024-05-01-people-can-be-filtered.png)
 
 - Save / save and re-run buttons in filters and personas
 
-![](/whats-new/supasnap-2024-05-01-14.13.34-min.png)
+![](/whats-new/2024-05-01-save-save-and-re-run.png)
 
 - All yearly credits are debited on the payment date
 
@@ -269,25 +269,25 @@ Bugfixes:
 
 - New leads are marked as "New", and then change to "Seen" when you open them for the first time.
 
-![](/whats-new/supasnap-2024-04-29-07.15.51-min.png)
+![](/whats-new/2024-04-29-new-leads-are-marked.png)
 
 - Leads will get exported after you approve them by clicking "Approve" or "Reject" buttons, or enabling auto-approval in lead list settings.
 
-![](/whats-new/supasnap-2024-04-29-08.37.06-min (1).png)
+![](/whats-new/2024-04-29-leads-will-get-exported.png)
 
 ## 28.04.2024
 
 - New tab "Leads" for working with leads in a mailbox-style with folders, downloading, unlocking emails, etc
 
-![](/whats-new/supasnap-2024-04-29-06.28.09-min.png)
+![](/whats-new/2024-04-28-new-tab-leads-for-working.png)
 
 - Automatic approval and rejection rules can be set in lead list settings.
 
-![](/whats-new/supasnap-2024-04-29-06.59.22-min.png)
+![](/whats-new/2024-04-28-automatic-approval-and-rej.png)
 
 - Lead settings can be applied to new leads only, or the whole lead list can be emptied and re-run with the new settings.
 
-![](/whats-new/supasnap-2024-04-29-07.11.13-min.png)
+![](/whats-new/2024-04-28-lead-settings.png)
 
 ## 26.04.2024
 
@@ -297,7 +297,7 @@ Bugfixes:
   * or use modifiers in one search, for example, **keyword1 OR keyword2** for LinkedIn ([details](https://www.linkedin.com/help/linkedin/answer/a507571/using-boolean-modifiers-when-searching-for-jobs-on-linkedin))
 - "Data sources" renamed to "Searches", "Filters" and "Personas" to avoid confusion
 
-![](/whats-new/supasnap-2024-04-27-06.27.47-min.png)
+![](/whats-new/2024-04-26-one-job-title-per-search.png)
 
 - Uniqueness / deduplication policy is now a part of the Searches form
 - Tables got condensed to fit more data on the screen
@@ -312,13 +312,13 @@ Bugfixes:
 
 - Each page (searches, filters, personas, export) showing running status automatically updates when running is finished
 
-![](/whats-new/supasnap-2024-04-23-14.08.17-min.png)
+![](/whats-new/2024-04-23-showing-running-status.png)
 
 ## 22.04.2024
 
 - Searches, Filters, and Personas are separated into different tabs and steps, so instead of having to wait until the whole search & processing will end, you can see intermediate results much faster.
 
-![](/whats-new/supasnap-2024-04-27-06.28.03-min.png)
+![](/whats-new/2024-04-22-search-filters-personas.png)
 
 - Different countries were separated to different searches for the same purpose -- you can see first country results faster, before all countries searches have finished.
 - Credits are charged per run, not per match, so, hopefully, you'll get much more matches per credit.
@@ -330,19 +330,19 @@ Bugfixes:
 - "Max credits daily" setting is removed since match count do not influence cost.
 - You can now control how often runs are scheduled (and if they are scheduled at all) in each individual search settings.
 
-![](/whats-new/supasnap-2024-04-16-07.43.20-min.png)
+![](/whats-new/2024-04-16-control-runs-schedule.png)
 
 - Any query can be run manually.
 
-![](/whats-new/supasnap-2024-04-16-07.43.33-min.png)
+![](/whats-new/2024-04-16-any-query-can-be-run.png)
 
 - You can now choose if you still want to filter out companies without identified decision-makers, using "Minimum number of identified decision-makers" and "Minimum number of valid emails per match" fields.
 
-![](/whats-new/supasnap-2024-04-16-07.43.28-min.png)
+![](/whats-new/2024-04-16-filter-out-companies-without.png)
 
 - If "Minimum number of valid emails per match" is left empty, emails will not be automatically unlocked, you can unlock them manually
 
-![](/whats-new/supasnap-2024-04-16-07.44.31-min.png)
+![](/whats-new/2024-04-16-if-minimum-valid-emails.png)
 
 ## 11.04.2024
 
@@ -354,7 +354,7 @@ Improvements
 
 - Search can be opened to see queries. Showing last run date/time, today/yesterday signal/match count, next run date/time.
 
-![](/whats-new/supasnap-2024-04-10-12.26.24-min.png)
+![](/whats-new/2024-04-10-search-can-be-opened-to-see.png)
 
 ## 07.04.2024
 
@@ -368,7 +368,7 @@ Improvements
 
 - Daily match limit
 
-![](/whats-new/supasnap-2024-04-04-08.28.56.png)
+![](/whats-new/2024-04-04-daily-match-limit.png)
 
 - Trial is either 150 leads or 7 days now, starting counting from user getting first match
 
@@ -380,7 +380,7 @@ Bugfixes:
 
 - Filtering companies by keywords
 
-![](/whats-new/supasnap-2024-03-31-09.45.33-min.png)
+![](/whats-new/2024-03-31-filtering-companies-by.png)
 
 ## 28.03.2024
 
@@ -390,31 +390,29 @@ Bugfixes:
 
 - People without a verified email (only having a LinkedIn URL) can also be matched now. Use "require email" option in search to control this.
 
-![](/whats-new/supasnap-2024-03-27-07.59.11-min.png)
+![](/whats-new/2024-03-27-people-without-a-verified.png)
 
 - Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
 
-![](/whats-new/supasnap-2024-03-27-06.26.57-min.png)
-
-![](/whats-new/supasnap-2024-03-27-06.27.03-min.png)
+![](/whats-new/2024-03-27-showing-uploaded-matches.png)
+![](/whats-new/2024-03-27-showing-uploaded-matches-2.png)
 
 ## 26.03.2024
 
 - Settings have their own menuitem now
 
-![](/whats-new/supasnap-2024-03-26-12.43.08-min.png)
+![](/whats-new/2024-03-26-settings-have-their-own.png)
 
 ## 24.03.2024
 
 - Search has a new parameter to require manual pre-approval of each lead before uploading
 
-![](/whats-new/supasnap-2024-03-24-09.02.32-min.png)
+![](/whats-new/2024-03-24-search-has-a-new-parameter.png)
 
 - Matches can be manually approved
 
-![](/whats-new/supasnap-2024-03-24-09.02.43-min (3).png)
-
-![](/whats-new/supasnap-2024-03-24-09.02.56-min (2).png)
+![](/whats-new/2024-03-24-matches-can-be-manually.png)
+![](/whats-new/2024-03-24-matches-can-be-manually-2.png)
 
 ## 23.03.2024
 
@@ -422,7 +420,7 @@ Bugfixes:
 - Run view (Runs -> click any run) is showing disqualified signals
 - Stop words for job title and company name / headline / description
 
-![](/whats-new/supasnap-2024-03-23-18.24.44-min.png)
+![](/whats-new/2024-03-23-stop-words.png)
 
 ## 22.03.2024
 
@@ -430,7 +428,7 @@ Bugfixes:
 - Run displays count of disqualified matches, duplicates, and matches without people
 - Runs display their statuses
 
-![](/whats-new/supasnap-2024-03-22-08.44.02-min.png)
+![](/whats-new/2024-03-22-run-displays-statuses.png)
 
 Bugfixes
 
@@ -447,16 +445,16 @@ Bugfixes
 - Matches are shown per day
 - De-duplication policy in search
 
-![](/whats-new/supasnap-2024-03-20-06.19.56-min.png)
+![](/whats-new/2024-03-20-de-duplication.png)
 
 - Matches are downloadable as CSV, go to Matches -> Download
 
-![](/whats-new/supasnap-2024-03-20-07.16.50-min.png)
+![](/whats-new/2024-03-20-matches-downloadable-as-csv.png)
 
 Bugfixes:
 
-- All matches are now visible, not only first 50
-- Matches randomly appearing and disappearing
+- Fixed: all matches are now visible, not only first 50
+- Fixed: matches randomly appearing and disappearing
 
 ## 11.03.2024
 
@@ -476,20 +474,20 @@ Bugfixes:
 
 - Matches page shows stats instead of a progress bar
 
-![](/whats-new/supasnap-2024-03-04-09.52.33-min.png)
+![](/whats-new/2024-03-04-matches-page-shows-stats.png)
 
 ## 02.03.2024
 
 - Showing a message if no matches are found
 - "Exact match in title" checkbox for stricter matching
 
-![](/whats-new/supasnap-2024-03-02-09.08.01-min.png)
+![](/whats-new/2024-03-02-exact-match-in-title.png)
 
 ## 01.03.2024
 
 - Job researcher can be set to match only remote or only on-site positions
 
-![](/whats-new/supasnap-2024-03-01-09.07.09-min.png)
+![](/whats-new/2024-03-01-job-researcher-can-be-set.png)
 
 ## 25.02.2024
 
@@ -523,7 +521,7 @@ Bugfixes:
 
 ## 11.02.2024
 
-- [Snov.io](https://snov.io/?\_get=nick94) integration
+- [Snov.io](https://snov.io/?_get=nick94) integration
 
 ## 09.02.2024
 
@@ -540,7 +538,7 @@ Bugfixes:
 - "Personas" form is accepting comma-delimited values, not only newline-delimited (foolproofing)
 - Company filter by country has 'exclude' mode&#x20;
 
-![](/whats-new/image (3).png)
+![](/whats-new/2024-02-04-company-filter-by-country.png)
 
 - Backend performance and stability improved
 
@@ -549,7 +547,7 @@ Bugfixes:
 - "What's new" page in docs
 - Statistics per processor to "Processors" page
 
-![](/whats-new/image (4).png)
+![](/whats-new/2024-01-29-statistics-per-processor.png)
 
 - Status page [https://status.signalsapi.com/](https://status.signalsapi.com/)
 
