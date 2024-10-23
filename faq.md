@@ -16,6 +16,10 @@ Depending on the complexity of the request and current load, it can take from a 
 
 SignalsAPI only matches the most recent job postings from the last 24 hours. This ensures you see the freshest and newest job listings. However, new results are continuously being added, so checking again tomorrow will likely surface additional matches.
 
+## How many emails will I have to send to win new clients?
+
+It varies by type of prospect and by what you’re offering. Sending only one email to each lead will likely achieve low results. A sequence of emails makes the biggest impact on conversion rates. Average click through rates (CTR) on a 4 email sequence are 3%, 2.5%, 2% and 1.5% respectively for each email.
+
 ## Is it working?
 
 Please check the status page to find out: [https://status.signalsapi.com/](https://status.signalsapi.com/)
