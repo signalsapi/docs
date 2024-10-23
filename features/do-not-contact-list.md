@@ -15,7 +15,7 @@ Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/)
 
 <div align="left">
 
-<figure><img src="/images/do-not-contact-list.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/features/do-not-contact-list.png" alt="" width="375"><figcaption></figcaption></figure>
 
 </div>
 

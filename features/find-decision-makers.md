@@ -13,7 +13,7 @@ Find people working in target companies along with their contact information
 
 <div align="left">
 
-<figure><img src="/images/find-decision-makers-1.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/features/find-decision-makers-1.png" alt="" width="375"><figcaption></figcaption></figure>
 
 </div>
 
@@ -21,7 +21,7 @@ Limit the number of decision-makers per company
 
 <div align="left">
 
-<figure><img src="/images/find-decision-makers-2.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="/features/find-decision-makers-2.png" alt="" width="375"><figcaption></figcaption></figure>
 
 </div>
 
