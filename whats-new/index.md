@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 26.10.2024
+
+- When search is scheduled for the first time, it will not require a manual "Run now" anymore but will start running after a defined interval
+
 ## 23.10.2024
 
 - Automated daily testing of new user registration, verification, welcome email
