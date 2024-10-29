@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 29.10.2024
+
+- Bugfix: The new search engine introduced September 29th was not properly fed the "remote" parameter so it was ignored in LinkedIn searches.
+
 ## 26.10.2024
 
 - When search is scheduled for the first time, it will not require a manual "Run now" anymore but will start running after a defined interval
