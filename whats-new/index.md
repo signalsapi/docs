@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 30.10.2024
+
+- Bugfix: Daily searches sometimes did not plan the next run.
+
 ## 29.10.2024
 
 - Bugfix: The new search engine introduced September 29th was not properly fed the "remote" parameter so it was ignored in LinkedIn searches.
