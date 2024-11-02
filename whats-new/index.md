@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 02.11.2024
+
+- Bugfix: checking ai field value to contain correct variables
+
 ## 30.10.2024
 
 - Bugfix: Daily searches sometimes did not plan the next run.
