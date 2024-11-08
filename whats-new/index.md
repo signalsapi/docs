@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 08.11.2024
+
+- Improvement: Scheduling the next run after a search with a running schedule has been created or edited and if you press a "Save" button (not "Save and run") is behaving more predictably
+
 ## 02.11.2024
 
 - Bugfix: checking ai field value to contain correct variables
