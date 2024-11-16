@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 16.11.2024
+
+- Normalizing job title on save -- trimmed, lowercase, no special chars, quotes, "and", "or" etc
+
 ## 13.11.2024
 
 - Improvement: showing some warning messages that search will take long to run after a search is created
