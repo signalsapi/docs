@@ -6,6 +6,12 @@ nav_order: 5
 
 # What's new
 
+## 25.11.2024
+
+- Manual runs have higher priority than automated
+- Jobs with match in title have higher fetching priority than without
+- Jobs with match in title show first in run view
+
 ## 16.11.2024
 
 - Normalizing job title on save -- trimmed, lowercase, no special chars, quotes, "and", "or" etc
