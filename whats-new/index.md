@@ -8,6 +8,10 @@ nav_order: 5
 
 ## 25.11.2024
 
+- Bugfix: personator produced no results if both Person location and Max decision-makers per company are specified
+
+## 25.11.2024
+
 - Manual runs have higher priority than automated
 - Jobs with match in title have higher fetching priority than without
 - Jobs with match in title show first in run view
