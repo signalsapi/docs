@@ -11,6 +11,7 @@ nav_order: 5
 - Manual runs have higher priority than automated
 - Jobs with match in title have higher fetching priority than without
 - Jobs with match in title show first in run view
+- Search can be limited by a US state or UK country
 
 ## 16.11.2024
 
