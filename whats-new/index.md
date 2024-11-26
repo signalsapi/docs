@@ -19,7 +19,7 @@ nav_order: 5
 - Jobs with match in title show first in run view
 - Search can be limited by a US state or UK country
 
-# 24.11.2024
+## 24.11.2024
 
 - New searching core working faster, but not allowing more that 4 words as search term, quotes and special characters, words "or" and "and"
 
