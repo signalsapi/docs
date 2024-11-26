@@ -8,7 +8,7 @@ nav_order: 5
 
 ## 26.11.2024
 
-_ Showing pagination instead of a date filter in matches lists in Filters, Personas, and Lead lists
+- Showing pagination instead of a date filter in matches lists in Filters, Personas, and Lead lists
 - Default view mode of filter matches is "All" instead of "Qualified"
 - Bugfix: personator produced no results if both Person location and Max decision-makers per company are specified
 
@@ -18,6 +18,10 @@ _ Showing pagination instead of a date filter in matches lists in Filters, Perso
 - Jobs with match in title have higher fetching priority than without
 - Jobs with match in title show first in run view
 - Search can be limited by a US state or UK country
+
+# 24.11.2024
+
+- New searching core working faster, but not allowing more that 4 words as search term, quotes and special characters, words "or" and "and"
 
 ## 16.11.2024
 
