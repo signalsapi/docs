@@ -9,6 +9,7 @@ nav_order: 5
 ## 26.11.2024
 
 _ Showing pagination instead of a date filter in matches lists in Filters, Personas, and Lead lists
+- Default view mode of filter matches is "All" instead of "Qualified"
 - Bugfix: personator produced no results if both Person location and Max decision-makers per company are specified
 
 ## 25.11.2024
