@@ -9,6 +9,7 @@ nav_order: 5
 ## 27.11.2024
 
 - Matches are called "results" now
+- Bugfix: some searches returned 1 day old results
 
 ## 26.11.2024
 
