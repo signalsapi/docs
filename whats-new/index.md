@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 27.11.2024
+
+- Matches are called "results" now
+
 ## 26.11.2024
 
 - Showing pagination instead of a date filter in matches lists in Filters, Personas, and Lead lists
