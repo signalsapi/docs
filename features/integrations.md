@@ -67,3 +67,22 @@ Destination is a combination of a Sequence and Mailbox used to send emails. Afte
 Snov.io integration requires a Snov.io API User ID and API Secret.
 
 They can be found here: [https://app.snov.io/account/api](https://app.snov.io/account/api)
+
+## Integrating with Bullhorn
+
+Bullhorn integration requires a API Username and API Password, Client ID and Client Key.
+
+Contact Bullhorn support to obtain them with a message like this: "Hey, I am setting up an integration with SignalsAPI.com, and they ask to provide an API key. Could I get one?".
+
+They will ask you about:
+
+1. "Terms of service URL" -- answer "Not needed"
+2. "Redirect url" -- provide this one https://app.signalsapi.com/integrations/bullhorn/callback
+
+They will provide 4 values:
+- Client ID
+- Client Secret
+- API Username
+- API Password
+
+Add Bullhorn export to your SignalsAPI account and provide these values when prompted.
