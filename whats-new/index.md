@@ -9,6 +9,7 @@ nav_order: 5
 ## 28.11.2024
 
 - Bullhorn integration
+- Showing date filter instead of pagination in Lead lists
 
 ## 27.11.2024
 
