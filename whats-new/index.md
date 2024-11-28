@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 28.11.2024
+
+- Bullhorn integration
+
 ## 27.11.2024
 
 - Matches are called "results" now

@@ -77,7 +77,7 @@ Contact Bullhorn support to obtain them with a message like this: "Hey, I am set
 They will ask you about:
 
 1. "Terms of service URL" -- answer "Not needed"
-2. "Redirect url" -- provide this one https://app.signalsapi.com/integrations/bullhorn/callback
+2. "Redirect URL" -- provide this one https://app.signalsapi.com/integrations/bullhorn/callback
 
 They will provide 4 values:
 - Client ID
