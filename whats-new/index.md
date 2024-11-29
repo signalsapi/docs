@@ -6,6 +6,11 @@ nav_order: 5
 
 # What's new
 
+## 29.11.2024
+
+- Showing integration type in export list
+- Field mapping for Bullhorn integration
+
 ## 28.11.2024
 
 - Bullhorn integration
