@@ -6,6 +6,11 @@ nav_order: 5
 
 # What's new
 
+## 30.11.2024
+
+- Exporting date fields to Bullhorn
+- Bullhorn export has a field mapping setting
+
 ## 29.11.2024
 
 - Showing integration type in export list
