@@ -8,6 +8,7 @@ nav_order: 5
 
 ## 01.12.2024
 
+- Bullhorn export field mapping must include all fields to be exported, nothing is exported by default anymore
 - Bugfix: AI prompts with job_location field did not work
 
 ## 30.11.2024
