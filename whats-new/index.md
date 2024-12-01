@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 01.12.2024
+
+- Bugfix: AI prompts with job_location field did not work
+
 ## 30.11.2024
 
 - Exporting date fields to Bullhorn
