@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 03.12.2024
+
+- Bugfix: not exporting leads that are in process of unlocking email
+
 ## 01.12.2024
 
 - Bullhorn export field mapping must include all fields to be exported, nothing is exported by default anymore
