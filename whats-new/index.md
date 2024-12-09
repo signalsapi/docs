@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 09.12.2024
+
+- Indeed searches are temporarily limited to US and UK
+
 ## 03.12.2024
 
 - Bugfix: not exporting leads that are in process of unlocking email
