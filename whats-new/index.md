@@ -6,6 +6,11 @@ nav_order: 5
 
 # What's new
 
+## 14.01.2025
+
+- Bugfix: Bullhorn integration silently continued sending leads to nowhere after integration has expired
+- Bugfix: Low search result count
+
 ## 09.12.2024
 
 - Indeed searches are temporarily limited to US and UK
