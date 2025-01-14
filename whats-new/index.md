@@ -11,6 +11,10 @@ nav_order: 5
 - Bugfix: Bullhorn integration silently continued sending leads to nowhere after integration has expired
 - Bugfix: Low search result count
 
+## 13.01.2025
+
+- Bugfix: Trial credits were added twice
+
 ## 09.12.2024
 
 - Indeed searches are temporarily limited to US and UK
