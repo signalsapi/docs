@@ -8,6 +8,7 @@ nav_order: 5
 
 ## 14.01.2025
 
+- Fewer fields in CSV export
 - Bugfix: Bullhorn integration silently continued sending leads to nowhere after integration has expired
 - Bugfix: Low search result count
 
