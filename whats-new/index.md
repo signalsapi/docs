@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 17.01.2025
+
+- Demo registration fixed
+
 ## 14.01.2025
 
 - Fewer fields in CSV export
