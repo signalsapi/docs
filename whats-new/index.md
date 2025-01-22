@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 22.01.2025
+
+- ToS
+
 ## 17.01.2025
 
 - Demo registration fixed
