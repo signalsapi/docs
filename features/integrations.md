@@ -86,3 +86,7 @@ They will provide 4 values:
 - API Password
 
 Add Bullhorn export to your SignalsAPI account and provide these values when prompted.
+
+## Integrating with Firefish
+
+[https://youtu.be/CTC4VHMeYqw](https://youtu.be/CTC4VHMeYqw)
