@@ -87,6 +87,10 @@ They will provide 4 values:
 
 Add Bullhorn export to your SignalsAPI account and provide these values when prompted.
 
+## Integrating with Zoho
+
+[https://youtu.be/xRhsO_mXxFM](https://youtu.be/xRhsO_mXxFM)
+
 ## Integrating with Firefish
 
 [https://youtu.be/CTC4VHMeYqw](https://youtu.be/CTC4VHMeYqw)
