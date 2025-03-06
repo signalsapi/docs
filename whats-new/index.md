@@ -6,6 +6,13 @@ nav_order: 5
 
 # What's new
 
+## 06.03.2025
+
+- Option to not filter out companies with unknown number of employees
+
+![](/whats-new/2025-03-06-unknown_headcount.png)
+
+
 ## 22.01.2025
 
 - ToS
