@@ -68,6 +68,8 @@ Snov.io integration requires a Snov.io API User ID and API Secret.
 
 They can be found here: [https://app.snov.io/account/api](https://app.snov.io/account/api)
 
+To use AI fields in Snov.io please [add custom fields manually](https://docs.signalsapi.com/features/personalize-emails-with-ai.html#setting-up-an-email-campaign-with-snovio-using-ai-generated-values) 
+
 ## Integrating with Bullhorn
 
 Bullhorn integration requires a API Username and API Password, Client ID and Client Key.
