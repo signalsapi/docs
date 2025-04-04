@@ -6,6 +6,15 @@ nav_order: 5
 
 # What's new
 
+## 04.04.2025
+
+- Option "Auto-reject people without emails" was removed from Lead lists, 
+option "Emails required" was added to personas instead.
+If turned on, all people will have emails already on the "Personas" stage.
+"Unlock email" link removed from lead lists, as all emails are already unlocked.
+
+![](/whats-new/2025-04-04-emails_required.png)
+
 ## 06.03.2025
 
 - Option to not filter out companies with unknown number of employees
