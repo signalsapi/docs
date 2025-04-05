@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 05.04.2025
+
+- Phone numbers
+
 ## 04.04.2025
 
 - Option "Auto-reject people without emails" was removed from Lead lists, 
