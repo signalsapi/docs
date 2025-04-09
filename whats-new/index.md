@@ -6,6 +6,12 @@ nav_order: 5
 
 # What's new
 
+## 09.04.2025
+
+- HiringCafe as a job source
+
+![](/whats-new/2025-04-09-hiring_cafe-min.png)
+
 ## 05.04.2025
 
 - Phone numbers
