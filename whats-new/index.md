@@ -6,6 +6,10 @@ nav_order: 5
 
 # What's new
 
+## 11.04.2025
+
+- Unspent credits expire in 60 days
+
 ## 09.04.2025
 
 - HiringCafe as a job source
