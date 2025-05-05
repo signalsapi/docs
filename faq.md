@@ -12,9 +12,11 @@ SignalsAPI is not a database, but a real-time search engine. As soon as you crea
 
 Depending on the complexity of the request and current load, it can take from a few seconds to a few hours for you to see the first results.
 
-## Why are there so few results?
+## Why do I see more results in LinkedIn (E.g. 3000+) compared to SignalsAPI?
 
-SignalsAPI only matches the most recent job postings from the last 24 hours. This ensures you see the freshest and newest job listings. However, new results are continuously being added, so checking again tomorrow will likely surface additional matches.
+Although LinkedIn may display a message like “3000+ results,” the actual number of unique jobs you can view is far lower. Here’s why:
+1) Pagination Limit: LinkedIn shows 25 jobs per page and allows up to 40 pages—capping visible jobs at around 1000.
+2) Duplicates & Errors: Many listings are repeats or lead to “Job does not exist” errors. In practice, you’ll usually find only 400–600 unique job postings crawling manually through the results.
 
 ## How many emails will I have to send to win new clients?
 
