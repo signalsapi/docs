@@ -15,7 +15,9 @@ Depending on the complexity of the request and current load, it can take from a 
 ## Why do I see more results in LinkedIn (E.g. 3000+) compared to SignalsAPI?
 
 Although LinkedIn may display a message like “3000+ results,” the actual number of unique jobs you can view is far lower. Here’s why:
+
 1) Pagination Limit: LinkedIn shows 25 jobs per page and allows up to 40 pages—capping visible jobs at around 1000.
+
 2) Duplicates & Errors: Many listings are repeats or lead to “Job does not exist” errors. In practice, you’ll usually find only 400–600 unique job postings crawling manually through the results.
 
 ## How many emails will I have to send to win new clients?
