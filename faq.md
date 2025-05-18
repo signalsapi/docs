@@ -24,6 +24,10 @@ Although LinkedIn may display a message like “3000+ results,” the actual num
 
 It varies by timing, type of prospect and by what you’re offering. Sending only one email to each lead will likely achieve low results. A sequence of emails makes the biggest impact on conversion rates. Average click through rates (CTR) on a 4 email sequence are 3%, 2.5%, 2% and 1.5% respectively for each email. For best results, we recommend running your searches daily in order to reach your qualified prospects within 24 hours of them posting and before someone else does.
 
+## How reliable are the email addresses of the decision-makers?
+
+The emails we provide have a >97% confidence guarantee. If they have a question mark beside them, they have a >70% confidence. If confidence is lower than 70%, we do not provide them.
+
 ## Is it working?
 
 Please check the status page to find out: [https://status.signalsapi.com/](https://status.signalsapi.com/)
