@@ -26,7 +26,9 @@ It varies by timing, type of prospect and by what you’re offering. Sending onl
 
 ## How reliable are the email addresses of the decision-makers?
 
-The emails we provide have a >97% confidence guarantee. If they have a question mark beside them, they have a >70% confidence. If confidence is lower than 70%, we do not provide them.
+Sending emails to unverified email addresses risks burning your email sending domain, high bounce rates and zero reply rates. The result? An unpleasant situation where your sending efforts are futile.
+
+We help our customers keep their deliverability high with email addresses that have a >97% confidence guarantee. If they have a question mark beside them in the platform, they have a >70% confidence. If confidence is lower than 70%, we do not provide them.
 
 ## Is it working?
 
