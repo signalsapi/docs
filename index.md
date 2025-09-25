@@ -8,16 +8,18 @@ nav_order: 1
 
 ## What is SignalsAPI
 
-In four words, Lead Generation, Reimagined. SignalsAPI is a tool that finds companies that need your services and does the heavy lifting so you don't have to.
-
-SignalsAPI identifies companies with active demand for specific agency services and automatically delivers highly qualified, high-intent leads with decision-makers directly into your CRM at the right moment—when they're ready to buy.
+SignalsAPI provides AI Sales Agents (with no technical skills required) which works around the clock, finding and qualifying prospects that match your ICP, grabbing the decision-makers, making the connection in LinkedIn on your behalf and interacting with them to set up the meeting. Think of it as having a BDR team that finds companies actively hiring in your niche and books qualified meetings while you and your competitors are sleeping.
 
 ### How
 
-We continuously scan the internet for intent signals like job postings and specific company websites. We then leverage advanced filters and AI to match these signals with your ideal customer profile using deep data insights from sources like website content. Through integrations, these leads are automatically funnelled into your sales pipeline or can hear from you directly via LinkedIn with our upcoming LinkedIn Integrator.
+We continuously scan the internet for intent signals like job postings and specific company websites. We then leverage advanced filters and AI to match these signals with your ideal customer profile using deep data insights from sources like website content. Through integrations, these leads are automatically funnelled into your sales pipeline or can hear from you directly via LinkedIn with our LinkedIn Integrator.
 
 ### Why
 
-Imagine this: When your target client posts a relevant job, they hear from you immediately or if you prefer, SignalsAPI sends that lead directly to your outreach tool, seamlessly integrating into your existing campaign. This way, your client receives a tailored email from you at exactly the right moment. With these evergreen campaigns, we continuously add qualified, high-intent customers to your outreach efforts, ensuring your message reaches the right people when they're ready to engage.
+With your own Sales Agent powered by SignalsAPI, say goodbye to hiring and training BDRs, increasing headcount and Business Development stopping at 5pm. Your Agent will work from day 1, getting smarter with every interaction. 
 
-Try SignalsAPI here: [https://app.signalsapi.com/register](https://app.signalsapi.com/register) or book a demo [https://signalsapi.com/demo](https://signalsapi.com/demo)
+The recruitment industry is splitting into two groups, agencies using AI agents to scale effortlessly and agencies still burning through junior BDR hires. Which side do you want to be on in 12 months?
+
+Most agencies are still figuring out AI. You can be the first in your market with a working AI Agent. Be an early adopter and get the best prospects before the market gets saturated!
+
+We perfect your results before billing begins so don’t delay, book a free consultation with us to get started: [https://signalsapi.com/demo]
