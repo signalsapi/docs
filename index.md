@@ -12,7 +12,9 @@ SignalsAPI provides AI Sales Agents which works around the clock, finding and qu
 
 ### How
 
-We continuously scan the internet for intent signals like job postings and specific company websites. We then leverage advanced filters and AI to match these signals with your ideal customer profile using deep data insights from sources like website content. Through integrations, these leads are automatically funnelled into your sales pipeline or can hear from you directly via LinkedIn with our LinkedIn Integrator. No technicl skills are required, we set things up for you.
+We continuously scan the internet for intent signals like job postings and specific company websites. We then leverage advanced filters and AI to match these signals with your ideal customer profile using deep data insights from sources like website content. Through integrations, these leads are automatically funnelled into your sales pipeline or can hear from you directly via LinkedIn with our LinkedIn Integrator. 
+
+No technical skills are required, we set things up for you.
 
 ### Why
 
