@@ -26,10 +26,15 @@ The Integrator never blasts or spams. It helps your profile build real relations
 
 # What Results to Expect
 
-Profile Type                  |  Connections Sent (Weekly)  |  Connections Accepted  |  “Yes” to Offer
-------------------------------+-----------------------------+------------------------+----------------
-Established, trusted profile  |  150                        |  90 (60%)              |  9 (10%)       
-Newer, less active profile    |  100                        |  40 (40%)              |  2 (5%)        
+Profile Type: Established, trusted profile
+Cnnections Sent (Weekly): 150
+Connetions Accepted: 90 (60%)
+Response to outreach: 9 (10%)
+
+Profile Type: New, less active profile
+Connections Sent (Weekly): 100
+Connetions Accepted: 40 (40%)
+Resposne to outerach: 2 (5%)
 
 - Better targeting and credible profiles drive higher results
 - Conversion is directly linked to offer and audience relevance
