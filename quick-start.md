@@ -24,20 +24,19 @@ nav_order: 3
 
 The Integrator never blasts or spams. It helps your profile build real relationships.
 
-# What Results to Expect
+# Results to Expect
 
-Profile Type: Established, trusted profile
-Cnnections Sent (Weekly): 150
-Connetions Accepted: 90 (60%)
-Response to outreach: 9 (10%)
+ * **LinkedIN Profile Type: Established, trusted profile**\
+  Connections Sent (Weekly): 150
+  Connections Accepted: 90 (60%)
+  Response to outreach: 9 (10%)
 
-Profile Type: New, less active profile
-Connections Sent (Weekly): 100
-Connetions Accepted: 40 (40%)
-Resposne to outerach: 2 (5%)
+ * **LinkedIN Profile Type: New, less active profile**\
+  Connections Sent (Weekly): 100
+  Connections Accepted: 40 (40%)
+  Response to outreach: 2 (5%)
 
-- Better targeting and credible profiles drive higher results
-- Conversion is directly linked to offer and audience relevance
+Better targeting and credible profiles drive higher results and conversion is directly linked to offer and audience relevance
 
 Tip: Highest success comes from relevant, value-driven outreach—not generic pitching.
 
