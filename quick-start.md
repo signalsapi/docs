@@ -1,5 +1,5 @@
 ---
-title: Sales AI Agent: How It Works
+title: "Sales AI Agent: How It Works"
 layout: home
 nav_order: 3
 ---
