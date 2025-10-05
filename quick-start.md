@@ -1,52 +1,13 @@
 ---
-title: "Sales AI Agent: How It Works"
+title: Quick start
 layout: home
 nav_order: 3
 ---
 
-# How it works
+# Quick start
 
-* **Spots Ideal Prospects**\
-  Your agent identifies decision-makers and opportunity-rich leads using smart targeting filters.
-* **Connects & Follows-Up Automatically**\
-  Sends highly-personalized connection requests, then delivers a custom follow-up message as soon as they reply.
-* **Always Profile Safe**\
-  Respects LinkedIn’s limits, adapting daily to keep your account healthy and your outreach compliant.
+6-minute intro to basic functions of SignalsAPI
 
-# Safe Guards Built-In
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HDEr2kSVkpA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
- * **Max 30 connections per day**\
-  Value: Outreach without risking account restrictions.
-* **Skips <200-connection users**\
-  Value: Prioritizes likely acceptors, boosts efficiency.
-* **Adaptive auto-pausing**\
-  Stops on warning, resumes at safe intervals.
-
-The Integrator never blasts or spams. It helps your profile build real relationships.
-
-# Results to Expect
-
- * **LinkedIN Profile Type: Established, trusted profile**\
-  Connections Sent (Weekly): 150
-  Connections Accepted: 90 (60%)
-  Response to outreach: 9 (10%)
-
- * **LinkedIN Profile Type: New, less active profile**\
-  Connections Sent (Weekly): 100
-  Connections Accepted: 40 (40%)
-  Response to outreach: 2 (5%)
-
-Better targeting and credible profiles drive higher results and conversion is directly linked to offer and audience relevance
-
-Tip: Highest success comes from relevant, value-driven outreach—not generic pitching.
-
-# Best Practices
-
-* Use a professional, warm LinkedIn presence\
-* Craft concise, personalized messages\
-* Offer clear value in your outreach\
-
-
-# Sales AI Agent in Action
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9FtJfYMQBlE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+Try SignalsAPI here: [https://app.signalsapi.com/register](https://app.signalsapi.com/register)
