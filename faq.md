@@ -10,7 +10,7 @@ nav_order: 5
 
 Hardly anything. Just your LinkedIN Profile URL, Company's LinkedIn URL & a templated pitch you use in your outreach.
 
-Want in? Share it with us and see ther results: https://rb.gy/98a1ay
+Want in? Share it with us here and see ther results: [https://rb.gy/98a1ay](https://rb.gy/98a1ay) 
 
 ## How many LinkedIn connections will my Sales Agent make per week?
 
