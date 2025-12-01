@@ -7,7 +7,7 @@ nav_order: 2
 # How does SignalsAPI work
 
 * **Monitor the Market**\
-  The system continuously scans for intent signals (e.g., job postings) across the market.
+  The system continuously scans for intent signals (e.g., job postings) across the market including LinkedIn, Indeed, Monster, Reed and many more.
 * **Identify a Signal**\
   When a relevant company shows activity or demand that matches your industry or services, the system flags it as a potential lead.
 * **Enrich Company Data**\
@@ -22,10 +22,10 @@ nav_order: 2
   Decision-makers (e.g., CEOs, CMOs, heads of departments) within the remaining companies are identified as key contacts.
 * **Enrich Contact Data**\
   Contact details for the decision-makers (e.g., email addresses, phone numbers, LinkedIn profiles) are enriched and verified.
-* **Add to Outreach Tool**\
-  Once a decision-maker is identified and their contact information is verified, the lead is added to your outreach tool (e.g., Snovio, Apollo.io) for automated engagement.
+* **Makes The Connection & Pitches Your Offering**\
+  Once a decision-maker is identified and their contact information is verified, your AI agent makes the connection and pitches your services. Alternatively, you can use your own outreach tool (e.g., Snovio, Apollo.io) for automated engagement.
 
-To achieve fully automated lead generation process, do the following (do it yourself, or ask us about our managed service so we will be doing it for you):
+To achieve a fully automated lead generation process using your own outreach tool, do the following (do it yourself, or ask us about our managed service so we will be doing it for you):
 
 * **Send Email Sequence**\
   A pre-configured cold email sequence is triggered, personalized to the lead and their specific needs.
