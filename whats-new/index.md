@@ -1,10 +1,15 @@
 ---
 title: What's new
 layout: home
-nav_order: 5
+nav_order: 3
 ---
 
 # What's new
+
+## 18.01.2026
+
+- We now support more jobs including TechInAsia, Reed, Justjoin, Jooble, Finn.no, Jobindex, Monster, RocketJobs + more
+- Telephone numbers for qualified decision-makers are now provided as an add-on
 
 ## 11.04.2025
 
