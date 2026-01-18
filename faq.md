@@ -1,7 +1,7 @@
 ---
-title: FAQ
+title: Getting Started FAQs
 layout: home
-nav_order: 5
+nav_order: 2
 ---
 
 # Frequently asked questions
