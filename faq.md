@@ -10,9 +10,9 @@ nav_order: 2
 
 You have two flexible ways to run SignalsAPI, depending on how hands-on you want to be.
 
-**Option 1 - You run the outreach:** You use the signals to power your own outbound, and we deliver prospects in the format you prefer (pull from the platform, sent to your CRM/outreach tools, sent to you via email). You can test SignalsAPI with a 2‑week trial, followed by simple monthly billing.
+**Option 1 - You run the outreach:** You use the signals to power your own outbound, and we deliver prospects in the format you prefer (pull from the platform, sent to your CRM/outreach tools, sent to you via email). You can test SignalsAPI with a 2‑week trial, followed by simple monthly billing of £700/month.
 
-**Option 2 - Done‑for‑you outbound:** We run the outreach for you and book qualified meetings directly into your calendar. You only start paying once meetings are booked, so your spend is tied to real outcomes.
+**Option 2 - Done‑for‑you outbound:** We run the outreach for you and book qualified meetings directly into your calendar. You only start paying £700/month once meetings are getting booked.
 
 ## Do you provide contact telephone numbers?
 
