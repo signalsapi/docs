@@ -8,7 +8,11 @@ nav_order: 2
 
 ## What are my options for running SignalsAPI to grow my business?
 
-Our AI Sales Agent can handel outreach and books qualified meetings for you. Billing starts when meetings are booked. Alternatively, you handle the outreach and simply confirm how you want prospects delivered (daily email lists or direct integration with your CRM/outreach tool). 2‑week trial, then monthly billing
+You have two flexible ways to run SignalsAPI, depending on how hands-on you want to be.
+
+**Option 1 - You run the outreach:**: You use the signals to power your own outbound, and we deliver prospects in the format you prefer (pull from the platform, sent to your CRM/outreach tools, sent to you via email). You can test SignalsAPI with a 2‑week trial, followed by simple monthly billing.
+
+**Option 2 - Done‑for‑you outbound:**: We run the outreach for you and book qualified meetings directly into your calendar. You only start paying once meetings are booked, so your spend is tied to real outcomes.
 
 ## Do you provide contact telephone numbers?
 
@@ -18,21 +22,17 @@ We do! Qualified telephone numbers are provided as follows: £49/month for 100 t
 
 Hardly anything. Just your LinkedIN Profile URL, Company's LinkedIn URL & a templated pitch you use in your outreach.
 
-## How many LinkedIn connections will my Sales Agent make per week if handling the outreach?
+## What does SignalsAPI need to pitch my offering when handling the outreach?
 
-Your Agent will make acround 100 LinkedIn connections a week with a warmed-up profile before it hits a LinkedIn enforced limit. For newer LinkedIn accounts the limit will be lower. The number of connections made can be lower if there are less qualified prospects due to lower demand or a very niche ICP.
+Once we know your ICP, we only need a templated pitch to start do the heavy lifting for you.
 
-## When does my Sales Agent pitch my offering when handling the outreach?
+## How does SignalsAPI know how to pitch my offering?
 
-Your Agent will pitch a tailored offering either when you want it to. For example, when making the connection or once the request has been accepted. Your agent can also send a follow-up which in many cases includes a meeting link.
-
-## How does my Sales Agent know how to pitch my offering?
-
-You tell us how you typically pitch your services and your Sales Agent will do this automatically, tailored based on the stakeholder and position, respecting your brand and tone.
+You tell us how you typically pitch your services and we'll do this automatically, tailored based on the stakeholder and position, respecting your brand and tone.
 
 ## Can we handle the outreach ourselves?
 
-Absolutely. This puts you in the driver seat. Simply confirm how you want prospects delivered (daily email lists or direct integration with your CRM/outreach tool). 2‑week trial, then monthly billing. 
+Absolutely. This puts you in the driver seat. Simply confirm how you want prospects delivered (keys to the platform, sent to your CRM or delivered via email.
 
 ## How many emails will I have to send to win new clients?
 
