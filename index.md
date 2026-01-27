@@ -8,13 +8,13 @@ nav_order: 1
 
 ## What is SignalsAPI
 
-SignalsAPI provides AI Sales Agents which works around the clock, finding and qualifying prospects that match your ICP, grabbing the decision-makers, making the connection in LinkedIn on your behalf and interacting with them to set up the meeting. Think of it as having a BDR team that finds companies actively hiring in your niche and books qualified meetings while you and your competitors are sleeping.
+SignalsAPI is an AI-powered sales platform that continuously scans the market for real-time hiring intent, then turns those insights into warm, ready-to-work leads for agencies and B2B service providers. It automatically identifies companies that match your ideal customer profile, are actively growing their teams, and need your services right now
 
 ### How
 
-We continuously scan the internet for intent signals like job postings and specific company websites. We then leverage advanced filters and AI to match these signals with your ideal customer profile using deep data insights from sources like website content. Through integrations, these leads are automatically funnelled into your sales pipeline or can hear from you directly via LinkedIn with our LinkedIn Integrator. 
+We continuously scan the internet for intent signals like job postings and specific company websites. We then leverage advanced filters and AI to match these signals with your ideal customer profile using deep data insights from sources like website content. Through integrations, these leads are automatically funnelled into your sales pipeline or you can have us handle the outreach for you.
 
-No technical skills are required, we set things up for you.
+No technical skills are required, we set everything up for you.
 
 ### Why
 
