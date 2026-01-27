@@ -24,4 +24,4 @@ The recruitment industry is splitting into two groups, agencies using AI agents 
 
 Most agencies are still figuring out AI. You can be the first in your market with a working AI Agent. Be an early adopter and get the best prospects before the market gets saturated!
 
-We perfect your results before billing begins so don’t delay, book a free consultation with us to get started: [https://signalsapi.com/demo](https://signalsapi.com/demo)
+We perfect your results before billing begins so don’t delay, book a free consultation with us to get started: [https://signals.fillout.com/meet](https://signals.fillout.com/meet)
