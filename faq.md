@@ -24,7 +24,7 @@ Hardly anything. Just your LinkedIN Profile URL, Company's LinkedIn URL & a temp
 
 ## What does SignalsAPI need to pitch my offering when handling the outreach?
 
-Once we know your ICP, we only need a templated pitch to start do the heavy lifting for you.
+Once we know your ICP, we only need a templated pitch to start doing the heavy lifting for you.
 
 ## How does SignalsAPI know how to pitch my offering?
 
