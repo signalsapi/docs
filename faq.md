@@ -14,6 +14,8 @@ You have two flexible ways to run SignalsAPI, depending on how hands-on you want
 
 **Option 2 - Done‑for‑you outbound:** We run the outreach for you and book qualified meetings directly into your calendar. You only start paying £700/month once meetings are getting booked.
 
+N.b. We don't charge per meeting booked, the fee is flat. We stand up a trial, validate these are the opportunities you would have had to spend time researching and then your pipeline starts filling with high-intent, highly qualified prospects in real-time.
+
 ## Do you provide contact telephone numbers?
 
 We do! Qualified telephone numbers are provided as follows: £49/month for 100 telephone numbers, £149 for 300 & £199 for 500. We offer larger packages if you are receiving a higher number of propsects matching your ICP.
@@ -33,6 +35,9 @@ You tell us how you typically pitch your services and we'll do this automaticall
 ## Can we handle the outreach ourselves?
 
 Absolutely. This puts you in the driver seat. Simply confirm how you want prospects delivered (keys to the platform, sent to your CRM or delivered via email.
+
+## How many qualified buyer meetings do you guarantee in the first month?
+We don't know how many qualified opportunities you'd receive per month and how you position your USP until we begin, hence a zero-commitment trial. We suggest using your own meeting conversion numbers as the basis to compare with as we automate the time spend finding and contacting the opportunities. We deliver the SQLs, closing them is on you.
 
 ## How many emails will I have to send to win new clients?
 
