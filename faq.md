@@ -1,10 +1,18 @@
 ---
-title: Getting Started FAQs
+title: Concepts & FAQs
 layout: home
 nav_order: 2
 ---
 
 # Frequently asked questions
+
+## What is SignalsAPI?
+
+SignalsAPI is an AI-powered platform that finds your next clients before anyone else does by monitoring 20+ job boards 24/7. Every day, new companies post fresh job openings. With SignalsAPI, your team gets those insights the moment they go live. No more endless searching, we track, filter, and qualify new opportunities for you in real time.
+
+## What is a signal?
+
+A signal is an observed activity or change at a company that indicates potential buying interest.Typical examples include new relevant job postings, technology changes, website changes, or public announcements aligned with your ideal customer profile.
 
 ## What are my options for running SignalsAPI to grow my business?
 
@@ -37,6 +45,7 @@ You tell us how you typically pitch your services and we'll do this automaticall
 Absolutely. This puts you in the driver seat. Simply confirm how you want prospects delivered (keys to the platform, sent to your CRM or delivered via email.
 
 ## How many qualified buyer meetings do you guarantee in the first month?
+
 We don't know how many qualified opportunities you'd receive per month and how you position your USP until we begin, hence a zero-commitment trial. We suggest using your own meeting conversion numbers as the basis to compare with as we automate the time spend finding and contacting the opportunities. We deliver the SQLs, closing them is on you.
 
 ## How many emails will I have to send to win new clients?
@@ -48,6 +57,22 @@ It varies by timing, type of prospect and by what you’re offering. Sending onl
 Sending emails to unverified email addresses risks burning your email sending domain, high bounce rates and zero reply rates. The result? An unpleasant situation where your sending efforts are futile.
 
 We help our customers keep their deliverability high with email addresses that have a >97% confidence guarantee. If they have a question mark beside them in the platform, they have a >70% confidence. If confidence is lower than 70%, we do not provide them.
+
+## What is ICP (Ideal Customer Profile) filtering?
+
+ICP filtering is the process of narrowing down accounts to those that match your target customer characteristics. Common criteria include company size, industry, geography, and specific technologies or tools a company uses.
+
+## How does ICP filtering work with SignalsAPI?
+
+You define your ICP criteria (for example: SaaS companies, 50–500 employees, in North America, using a specific tech stack). SignalsAPI applies these rules to its account universe so you only see signals from companies that match your ICP.
+
+## How fresh is the data?
+
+Signals are updated in real-time.
+
+## Can I integrate SignalsAPI with my CRM or sales tools?
+
+Yes, SignalsAPI is designed to feed data into CRMs and sales tools such as HubSpot, Salesforce, or outbound platforms.
 
 ## Is it working?
 
