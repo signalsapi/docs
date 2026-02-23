@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 layout: home
+nav_order: 6
 ---
 
 Privacy Policy
