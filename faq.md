@@ -36,6 +36,14 @@ Hardly anything. Just your LinkedIN Profile URL, Company's LinkedIn URL & a temp
 
 Once we know your ICP, we only need a templated pitch to start doing the heavy lifting for you.
 
+## What is ICP (Ideal Customer Profile) filtering?
+
+ICP filtering is the process of narrowing down accounts to those that match your target customer characteristics. Common criteria include company size, industry, geography, and specific technologies or tools a company uses.
+
+## How does ICP filtering work with SignalsAPI?
+
+You define your ICP criteria (for example: SaaS companies, 50–500 employees, in North America, using a specific tech stack). SignalsAPI applies these rules to its account universe so you only see signals from companies that match your ICP.
+
 ## How does SignalsAPI know how to pitch my offering?
 
 You tell us how you typically pitch your services and we'll do this automatically, tailored based on the stakeholder and position, respecting your brand and tone.
@@ -57,14 +65,6 @@ It varies by timing, type of prospect and by what you’re offering. Sending onl
 Sending emails to unverified email addresses risks burning your email sending domain, high bounce rates and zero reply rates. The result? An unpleasant situation where your sending efforts are futile.
 
 We help our customers keep their deliverability high with email addresses that have a >97% confidence guarantee. If they have a question mark beside them in the platform, they have a >70% confidence. If confidence is lower than 70%, we do not provide them.
-
-## What is ICP (Ideal Customer Profile) filtering?
-
-ICP filtering is the process of narrowing down accounts to those that match your target customer characteristics. Common criteria include company size, industry, geography, and specific technologies or tools a company uses.
-
-## How does ICP filtering work with SignalsAPI?
-
-You define your ICP criteria (for example: SaaS companies, 50–500 employees, in North America, using a specific tech stack). SignalsAPI applies these rules to its account universe so you only see signals from companies that match your ICP.
 
 ## How fresh is the data?
 
