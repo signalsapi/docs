@@ -1,6 +1,7 @@
 ---
 title: Release Notes / Changelog
 layout: home
+nav_order: 8
 ---
 
 # What's new
