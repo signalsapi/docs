@@ -1,7 +1,7 @@
 ---
-title: What's new
+title: Release Notes / Changelog
 layout: home
-nav_order: 3
+nav_order: 6
 ---
 
 # What's new
