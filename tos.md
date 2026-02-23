@@ -1,6 +1,7 @@
 ---
 title: Terms of Service
 layout: home
+nav_order: 7
 ---
 
 Terms of Service
