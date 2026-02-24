@@ -10,6 +10,8 @@ nav_order: 2
 
 SignalsAPI is an AI-powered platform that finds your next clients before anyone else does by monitoring 20+ job boards 24/7. Every day, new companies post fresh job openings. With SignalsAPI, your team gets those insights the moment they go live. No more endless searching, we track, filter, and qualify new opportunities for you in real time.
 
+Check out a 2-min demo here: [https://www.youtube.com/watch?v=jB4DIDnfnTQ](https://www.youtube.com/watch?v=jB4DIDnfnTQ)
+
 ## What is a signal?
 
 A signal is an observed activity or change at a company that indicates potential buying interest.Typical examples include new relevant job postings, technology changes, website changes, or public announcements aligned with your ideal customer profile.
