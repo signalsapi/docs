@@ -10,6 +10,8 @@ nav_order: 1
 
 SignalsAPI is an AI-powered sales platform that continuously scans the market for real-time hiring intent, then turns those insights into warm, ready-to-work leads for agencies and B2B service providers. It automatically identifies companies that match your ideal customer profile, are actively growing their teams, and need your services right now
 
+Check out a 2-min demo here: [https://www.youtube.com/watch?v=jB4DIDnfnTQ](https://www.youtube.com/watch?v=jB4DIDnfnTQ)
+
 ### How
 
 We continuously scan the internet for intent signals like job postings and specific company websites. We then leverage advanced filters and AI to match these signals with your ideal customer profile using deep data insights from sources like website content. Through integrations, these leads are automatically funnelled into your sales pipeline or you can have us handle the outreach for you.
