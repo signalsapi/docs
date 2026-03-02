@@ -14,7 +14,7 @@ Manual prospecting is broken. Your competitors waste hours on outbound that does
 
 ## How does it work?
 
-SignalsAPI monitors 290+ data sources to detect hiring signals before your competitors do including job boards, LinkedIn, funding databases, company news & government filings. It detects hiring signals hours before competitors relying on a handful of sources. SignalsAPI then turns those insights into warm, ready-to-work leads for agencies and B2B service providers by automatically qualifying companies that match your ideal customer profile, are actively growing their teams, and need your services right now. 
+SignalsAPI is an intelligence tool which monitors 290+ data sources to detect hiring signals on job boards, LinkedIn, funding databases, company news & government filings. It detects hiring signals hours before your competitors that are relying on a handful of sources. SignalsAPI then turns those insights into warm, ready-to-work leads for agencies and B2B service providers by automatically qualifying companies that match your ideal customer profile, are actively growing their teams, and need your services right now. 
 
 ## What value will it bring to my business?
 
