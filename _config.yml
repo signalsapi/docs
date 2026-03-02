@@ -1,6 +1,8 @@
 title: SignalsAPI docs
-description: A starter template for a Jeykll site using the Just the Docs theme!
+description: SignalsAPI documentation
 theme: just-the-docs
+
+color_scheme: signalsapi
 
 url: https://docs.signalsapi.com/
 

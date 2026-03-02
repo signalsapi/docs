@@ -1,0 +1,40 @@
+// SignalsAPI dark color scheme
+// Matches the branding from signalsapi.com
+
+// Core palette
+$bg:        #06070a;
+$bg-el:     #0c0d11;
+$bg-card:   #101218;
+$bg-card-h: #151720;
+$bdr:       #1c1e28;
+$bdr-l:     #272a36;
+$tx:        #e8e8f0;
+$tx2:       #9192a6;
+$tx3:       #7c7d92;
+$accent:    #00e87b;
+$violet:    #7c6cf0;
+
+// Fonts — must be set here (before theme compiles)
+$body-font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+$mono-font-family: 'JetBrains Mono', monospace;
+$content-line-height: 1.6;
+$body-line-height: 1.6;
+
+// Just the Docs color overrides
+$body-background-color: $bg;
+$sidebar-color: $bg-el;
+$body-text-color: $tx;
+$body-heading-color: $tx;
+$nav-child-link-color: $tx2;
+$link-color: $accent;
+$btn-primary-color: $accent;
+$base-button-color: $bg;
+$code-background-color: $bg-card;
+$feedback-color: darken($accent, 5%);
+$table-background-color: $bg-el;
+$search-background-color: $bg-card;
+$search-result-preview-color: $tx2;
+$border-color: $bdr;
+$search-text-color: $tx;
+$search-result-color: $tx;
+$search-result-highlight-color: $accent;
