@@ -6,6 +6,7 @@ $bg:        #06070a;
 $bg-el:     #0c0d11;
 $bg-card:   #101218;
 $bg-card-h: #151720;
+$bg-sf:     #0a0b0e;
 $bdr:       #1c1e28;
 $bdr-l:     #272a36;
 $tx:        #e8e8f0;
@@ -13,8 +14,10 @@ $tx2:       #9192a6;
 $tx3:       #7c7d92;
 $accent:    #00e87b;
 $violet:    #7c6cf0;
+$amber:     #f0a030;
+$rose:      #e84090;
 
-// Fonts — must be set here (before theme compiles)
+// Fonts — must be here (before theme compiles)
 $body-font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
 $mono-font-family: 'JetBrains Mono', monospace;
 $content-line-height: 1.6;
@@ -30,7 +33,6 @@ $link-color: $accent;
 $btn-primary-color: $accent;
 $base-button-color: $bg;
 $code-background-color: $bg-card;
-$feedback-color: darken($accent, 5%);
 $table-background-color: $bg-el;
 $search-background-color: $bg-card;
 $search-result-preview-color: $tx2;
@@ -38,3 +40,17 @@ $border-color: $bdr;
 $search-text-color: $tx;
 $search-result-color: $tx;
 $search-result-highlight-color: $accent;
+
+// Fix the feedback color — used for hover gradients, focus rings, etc.
+// Setting this to a transparent-ish value helps but we kill gradients in custom.scss
+$feedback-color: $accent;
+
+// Fix the greys that Just the Docs uses for muted text (list markers, footer, etc.)
+$grey-dk-000: $tx3;
+$grey-dk-100: $tx2;
+$grey-dk-200: $tx;
+$grey-dk-300: $tx;
+$grey-lt-000: $bdr;
+$grey-lt-100: $bdr-l;
+$grey-lt-200: $bg-card-h;
+$grey-lt-300: $bg-card;

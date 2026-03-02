@@ -1,12 +1,198 @@
-// SignalsAPI custom styles — matches signalsapi.com branding
+// SignalsAPI docs — custom styles
+// Matches the design language of signalsapi.com
 
-// ── Smooth rendering ──
+// ── Global ──
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-// ── Dark syntax highlighting (replaces default light theme) ──
+// ── Kill the default Just the Docs gradient hover system ──
+// These green gradient strips look terrible on a dark theme.
+
+.site-title:hover,
+.site-button:hover,
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item .nav-list-link.active,
+.nav-list .nav-list-item .nav-list-expander:hover {
+  background-image: none !important;
+}
+
+// ── Sidebar ──
+
+.side-bar {
+  background-color: #0c0d11;
+  border-right: 1px solid #1c1e28;
+}
+
+.site-title {
+  color: #e8e8f0;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+
+.site-button {
+  color: #7c7d92;
+
+  &:hover {
+    color: #e8e8f0;
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+.site-nav {
+  border-top: 1px solid #1c1e28;
+}
+
+// Nav links
+.nav-list .nav-list-item .nav-list-link {
+  color: #9192a6;
+  transition: color 0.15s, background-color 0.15s;
+
+  &:hover {
+    color: #e8e8f0;
+    background-color: #101218;
+  }
+
+  &.active {
+    color: #00e87b;
+    font-weight: 600;
+    background-color: rgba(0, 232, 123, 0.06);
+  }
+}
+
+// Child nav links
+.nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-link {
+  color: #7c7d92;
+
+  &:hover {
+    color: #e8e8f0;
+    background-color: #101218;
+  }
+
+  &.active {
+    color: #00e87b;
+    background-color: rgba(0, 232, 123, 0.06);
+  }
+}
+
+// Nav expander (chevron)
+.nav-list .nav-list-item .nav-list-expander {
+  color: #7c7d92;
+
+  &:hover {
+    color: #e8e8f0;
+    background-color: #101218;
+  }
+}
+
+.nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-expander {
+  color: #7c7d92;
+}
+
+// Nav category headers
+.nav-category {
+  color: #7c7d92;
+  border-bottom-color: #1c1e28;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+}
+
+// ── Footer ──
+
+.site-footer {
+  border-top: 1px solid #1c1e28;
+  color: #7c7d92;
+
+  a {
+    color: #9192a6;
+
+    &:hover {
+      color: #00e87b;
+    }
+  }
+}
+
+// ── Search ──
+
+.search-label .search-icon {
+  color: #7c7d92 !important;
+}
+
+.search-input:focus + .search-label .search-icon {
+  color: #00e87b !important;
+}
+
+.search-input {
+  color: #e8e8f0;
+
+  &::placeholder {
+    color: #7c7d92;
+  }
+
+  &:focus {
+    border-color: #00e87b;
+    box-shadow: 0 0 0 2px rgba(0, 232, 123, 0.15);
+  }
+}
+
+.search-input-wrap {
+  box-shadow: none;
+  border: 1px solid #1c1e28;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (min-width: 50rem) {
+  .search-input-wrap {
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.search-results {
+  background-color: #0c0d11;
+  border: 1px solid #1c1e28;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 50rem) {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+// Fix search result hover — kill the bright green bg
+.search-result:hover,
+.search-result.active {
+  background-color: #101218 !important;
+}
+
+.search-result-doc .search-result-icon {
+  color: #7c7d92;
+}
+
+.search-result-doc .search-result-doc-title {
+  color: #e8e8f0;
+}
+
+.search-result-preview {
+  color: #9192a6;
+}
+
+.search-result-rel-url {
+  color: #7c7d92;
+}
+
+.search-overlay {
+  background-color: rgba(6, 7, 10, 0.7);
+}
+
+// ── Dark syntax highlighting ──
+
 .highlight,
 pre.highlight {
   background: #101218 !important;
@@ -23,19 +209,19 @@ pre.highlight {
 .highlight .cp,
 .highlight .c1,
 .highlight .cs,
-.highlight .cd { color: #6272a4; font-style: italic; }  // comments
+.highlight .cd { color: #6272a4; font-style: italic; }
 .highlight .k,
 .highlight .kc,
 .highlight .kd,
 .highlight .kn,
 .highlight .kp,
 .highlight .kr,
-.highlight .kt { color: #7c6cf0; }                       // keywords (violet)
+.highlight .kt { color: #7c6cf0; }
 .highlight .l,
-.highlight .ld { color: #f0a030; }                        // literals (amber)
-.highlight .n { color: #e8e8f0; }                         // names
-.highlight .o { color: #e8e8f0; }                         // operators
-.highlight .p { color: #e8e8f0; }                         // punctuation
+.highlight .ld { color: #f0a030; }
+.highlight .n { color: #e8e8f0; }
+.highlight .o { color: #e8e8f0; }
+.highlight .p { color: #e8e8f0; }
 .highlight .s,
 .highlight .sb,
 .highlight .sc,
@@ -47,7 +233,7 @@ pre.highlight {
 .highlight .sx,
 .highlight .sr,
 .highlight .s1,
-.highlight .ss { color: #00e87b; }                        // strings (green)
+.highlight .ss { color: #00e87b; }
 .highlight .m,
 .highlight .mb,
 .highlight .mf,
@@ -55,186 +241,101 @@ pre.highlight {
 .highlight .mi,
 .highlight .mo,
 .highlight .mx,
-.highlight .il { color: #f0a030; }                        // numbers (amber)
-.highlight .na { color: #00e87b; }                        // name.attribute
-.highlight .nb { color: #e8e8f0; }                        // name.builtin
-.highlight .nc { color: #00e87b; font-weight: 600; }      // name.class
-.highlight .nd { color: #00e87b; }                        // name.decorator
+.highlight .il { color: #f0a030; }
+.highlight .na { color: #00e87b; }
+.highlight .nb { color: #e8e8f0; }
+.highlight .nc { color: #00e87b; font-weight: 600; }
+.highlight .nd { color: #00e87b; }
 .highlight .ni { color: #e8e8f0; }
-.highlight .ne { color: #e84090; }                        // name.exception (rose)
-.highlight .nf { color: #00e87b; }                        // name.function
+.highlight .ne { color: #e84090; }
+.highlight .nf { color: #00e87b; }
 .highlight .nl { color: #e8e8f0; }
 .highlight .nn { color: #e8e8f0; }
-.highlight .no { color: #f0a030; }                        // name.constant
-.highlight .nt { color: #e84090; }                        // name.tag (rose)
+.highlight .no { color: #f0a030; }
+.highlight .nt { color: #e84090; }
 .highlight .nv,
 .highlight .vc,
 .highlight .vg,
-.highlight .vi { color: #e8e8f0; }                       // variables
-.highlight .ow { color: #7c6cf0; font-weight: 600; }      // operator.word
+.highlight .vi { color: #e8e8f0; }
+.highlight .ow { color: #7c6cf0; font-weight: 600; }
 .highlight .w { color: #e8e8f0; }
-.highlight .err { color: #e84090; background: none; }     // errors (rose, no bg)
+.highlight .err { color: #e84090; background: none; }
 .highlight .ge { font-style: italic; }
 .highlight .gs { font-weight: 700; }
-.highlight .gd { color: #e84090; }                        // diff deleted
-.highlight .gi { color: #00e87b; }                        // diff inserted
-
-// ── Sidebar ──
-.side-bar {
-  background-color: #0c0d11;
-  border-right: 1px solid #1c1e28;
-
-  .site-title {
-    color: #e8e8f0;
-    font-weight: 700;
-  }
-
-  .nav-list-item {
-    .nav-list-link {
-      color: #9192a6;
-
-      &:hover,
-      &.active {
-        color: #e8e8f0;
-        background-color: #101218;
-      }
-    }
-  }
-
-  .nav-list .nav-list-item .nav-list-link.active {
-    color: #00e87b;
-    font-weight: 600;
-    background-color: rgba(0, 232, 123, 0.08);
-    border-left: 2px solid #00e87b;
-  }
-
-  .site-nav {
-    border-top: 1px solid #1c1e28;
-  }
-
-  // Nav expand/collapse arrow buttons
-  .nav-list-expander {
-    color: #7c7d92;
-
-    &:hover {
-      color: #e8e8f0;
-    }
-  }
-
-  // Site button (hamburger menu)
-  .site-button {
-    color: #9192a6;
-    border-color: #1c1e28;
-
-    &:hover {
-      color: #e8e8f0;
-    }
-  }
-}
-
-// ── Search ──
-.search-label {
-  color: #7c7d92;
-}
-
-.search-input {
-  background-color: #101218;
-  color: #e8e8f0;
-  border: 1px solid #1c1e28;
-  border-radius: 8px;
-
-  &::placeholder {
-    color: #7c7d92;
-  }
-
-  &:focus {
-    border-color: #00e87b;
-    box-shadow: 0 0 0 2px rgba(0, 232, 123, 0.18);
-  }
-}
-
-.search-results {
-  background-color: #0c0d11;
-  border: 1px solid #1c1e28;
-  border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-}
-
-.search-result {
-  border-bottom: 1px solid #1c1e28;
-
-  &:hover {
-    background-color: #101218;
-  }
-
-  .search-result-title {
-    color: #e8e8f0;
-  }
-
-  .search-result-doc-title {
-    color: #00e87b;
-  }
-
-  .search-result-preview {
-    color: #9192a6;
-  }
-
-  .search-result-rel-url {
-    color: #7c7d92;
-  }
-}
-
-// Search overlay
-.search-overlay {
-  background-color: rgba(6, 7, 10, 0.7);
-}
+.highlight .gd { color: #e84090; }
+.highlight .gi { color: #00e87b; }
 
 // ── Main content ──
+
 .main-content {
+
+  // Headings — tight tracking like signalsapi.com
   h1, h2, h3, h4, h5, h6 {
     color: #e8e8f0;
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
   }
 
   h1 {
     font-weight: 800;
-    border-bottom: 1px solid #1c1e28;
+    letter-spacing: -0.035em;
+    border-bottom-color: #1c1e28;
   }
 
   h2 {
-    border-bottom: 1px solid #1c1e28;
+    border-bottom-color: #1c1e28;
   }
 
-  // Anchor heading links
+  // Anchor links
   .anchor-heading {
-    color: #7c7d92;
+    color: transparent;
+    transition: color 0.15s;
+  }
+
+  h1:hover .anchor-heading,
+  h2:hover .anchor-heading,
+  h3:hover .anchor-heading,
+  h4:hover .anchor-heading {
+    color: #272a36;
 
     &:hover {
       color: #00e87b;
     }
   }
 
-  p, li {
+  // Body text
+  p, li, dd {
     color: #c8c8d4;
-  }
-
-  a:not(.anchor-heading) {
-    color: #00e87b;
-    text-decoration: none;
-
-    &:hover {
-      color: lighten(#00e87b, 10%);
-      text-decoration: underline;
-    }
+    line-height: 1.7;
   }
 
   strong {
     color: #e8e8f0;
+    font-weight: 600;
   }
 
   em {
     color: #c8c8d4;
+  }
+
+  // List markers
+  ul > li::before {
+    color: #272a36 !important;
+  }
+
+  ol > li::before {
+    color: #7c7d92 !important;
+  }
+
+  // Links
+  a:not(.anchor-heading) {
+    color: #00e87b;
+    text-decoration: none;
+    transition: color 0.15s;
+
+    &:hover {
+      color: #4dff9e;
+    }
   }
 
   // Inline code
@@ -242,46 +343,47 @@ pre.highlight {
     background-color: #101218;
     color: #00e87b;
     border: 1px solid #1c1e28;
-    border-radius: 6px;
+    border-radius: 5px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85em;
+    font-size: 0.82em;
+    padding: 0.15em 0.35em;
   }
 
   // Code blocks
   pre {
     background-color: #101218;
     border: 1px solid #1c1e28;
-    border-radius: 8px;
+    border-radius: 10px;
+    padding: 1em 1.2em;
 
     code {
       border: none;
       background: transparent;
       color: #e8e8f0;
+      padding: 0;
+      font-size: 0.85em;
     }
   }
 
-  // Copy code button
-  .code-example-output-copy,
-  .copy-code-button {
-    color: #7c7d92;
-    background-color: #101218;
+  // Tables — match the SignalsAPI comparison table style
+  .table-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
     border: 1px solid #1c1e28;
-
-    &:hover {
-      color: #e8e8f0;
-      background-color: #151720;
-    }
   }
 
-  // Tables
   table {
-    border: 1px solid #1c1e28;
+    border: none;
 
     th {
-      background-color: #101218;
-      color: #e8e8f0;
+      background-color: #0a0b0e;
+      color: #7c7d92;
       border-color: #1c1e28;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75em;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     td {
@@ -290,36 +392,47 @@ pre.highlight {
     }
 
     tr {
-      background-color: #06070a;
+      background-color: #101218;
       border-color: #1c1e28;
 
       &:nth-child(even) {
         background-color: #0c0d11;
       }
     }
+
+    // First column emphasis
+    td:first-child {
+      color: #e8e8f0;
+      font-weight: 600;
+    }
   }
 
-  // Blockquotes
+  // Blockquotes — green left border with subtle bg
   blockquote {
     border-left: 3px solid #00e87b;
-    background-color: rgba(0, 232, 123, 0.05);
+    background-color: rgba(0, 232, 123, 0.04);
     color: #c8c8d4;
     border-radius: 0 8px 8px 0;
-    padding: 12px 16px;
+    padding: 14px 18px;
+    margin-left: 0;
   }
 
   hr {
     border-color: #1c1e28;
+    background-color: #1c1e28;
   }
 
+  // Images — rounded with border, like SignalsAPI cards
   img {
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid #1c1e28;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
 
   // Definition lists
   dt {
     color: #e8e8f0;
+    font-weight: 600;
   }
 
   dd {
@@ -328,29 +441,16 @@ pre.highlight {
 }
 
 // ── Breadcrumbs ──
-.breadcrumb-nav {
+
+.breadcrumb-nav-list-item {
   color: #7c7d92;
 
-  .breadcrumb-nav-list-item {
-    color: #7c7d92;
-
-    a {
-      color: #9192a6;
-
-      &:hover {
-        color: #00e87b;
-      }
-    }
+  &::before {
+    color: #272a36 !important;
   }
-}
-
-// ── Footer ──
-.site-footer {
-  border-top: 1px solid #1c1e28;
-  color: #7c7d92;
 
   a {
-    color: #9192a6;
+    color: #7c7d92;
 
     &:hover {
       color: #00e87b;
@@ -358,75 +458,56 @@ pre.highlight {
   }
 }
 
-// ── Page header ──
-.page-header {
-  background-color: #0c0d11;
+// ── Main header bar ──
+
+.main-header {
   border-bottom: 1px solid #1c1e28;
 }
 
-// ── Buttons ──
-.btn {
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.25s;
-
-  &.btn-primary {
-    background-color: #00e87b;
-    color: #06070a;
-
-    &:hover {
-      box-shadow: 0 8px 28px rgba(0, 232, 123, 0.35);
-      transform: translateY(-1px);
-    }
-  }
-
-  &.btn-outline {
-    color: #9192a6;
-    border-color: #272a36;
-
-    &:hover {
-      color: #e8e8f0;
-      border-color: #7c7d92;
-    }
-  }
-}
-
-// ── Aux nav ──
-.aux-nav {
-  .aux-nav-list-item {
-    a {
-      color: #9192a6;
-
-      &:hover {
-        color: #e8e8f0;
-      }
-    }
-  }
-}
-
-// ── Labels/badges ──
-.label {
-  border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-// ── Mobile menu ──
 @media (max-width: 49.99rem) {
   .main-header {
     background-color: #0c0d11;
-    border-bottom: 1px solid #1c1e28;
-  }
-
-  .search-input-wrap {
-    background-color: #101218;
   }
 }
 
-// ── Back to top / Edit this page ──
-#back-to-top {
+// ── Icons ──
+
+.icon {
+  color: #7c7d92;
+}
+
+// ── Buttons ──
+
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-primary,
+.btn.btn-primary {
+  background-color: #00e87b !important;
+  background-image: none !important;
+  color: #06070a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+
+  &:hover {
+    background-color: #00e87b !important;
+    background-image: none !important;
+    box-shadow: 0 6px 20px rgba(0, 232, 123, 0.3) !important;
+    transform: translateY(-1px);
+  }
+
+  &:active,
+  &.selected {
+    background-color: #00d470 !important;
+    background-image: none !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+    transform: none;
+  }
+}
+
+.btn-outline {
   color: #9192a6;
   border-color: #272a36;
 
@@ -436,35 +517,95 @@ pre.highlight {
   }
 }
 
-#edit-this-page {
+// ── Focus states ──
+
+*:focus {
+  outline-color: rgba(0, 232, 123, 0.4);
+}
+
+// ── Aux nav ──
+
+.aux-nav .aux-nav-list-item a {
   color: #9192a6;
+
+  &:hover {
+    color: #e8e8f0;
+  }
+}
+
+// ── Labels / badges ──
+
+.label {
+  border-radius: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+// ── Back to top / Edit page ──
+
+#back-to-top {
+  color: #7c7d92;
+  background-color: #101218;
+  border: 1px solid #1c1e28;
+  border-radius: 8px;
+
+  &:hover {
+    color: #e8e8f0;
+    border-color: #272a36;
+    background-color: #151720;
+  }
+}
+
+#edit-this-page {
+  color: #7c7d92;
 
   &:hover {
     color: #00e87b;
   }
 }
 
-// ── Selection color ──
+// ── Page header (used on some layouts) ──
+
+.page-header {
+  background-color: #0c0d11;
+  border-bottom: 1px solid #1c1e28;
+}
+
+// ── Selection ──
+
 ::selection {
-  background-color: rgba(0, 232, 123, 0.25);
+  background-color: rgba(0, 232, 123, 0.2);
   color: #e8e8f0;
 }
 
 // ── Scrollbar ──
+
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #06070a;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #272a36;
-  border-radius: 4px;
+  background: #1c1e28;
+  border-radius: 3px;
 
   &:hover {
-    background: #3a3d4e;
+    background: #272a36;
   }
+}
+
+// ── Disabled / muted utility overrides ──
+// Just the Docs uses #959396 for various muted elements. Override at the source.
+.text-grey-dk-000 {
+  color: #7c7d92 !important;
+}
+
+.bg-grey-dk-000 {
+  background-color: #7c7d92 !important;
 }
