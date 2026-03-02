@@ -14,17 +14,19 @@ SignalsAPI is an AI-powered platform that finds your next clients before anyone 
 
 ## What is a signal?
 
-A signal is an observed activity or change at a company that indicates potential buying interest.Typical examples include new relevant job postings, technology changes, website changes, or public announcements aligned with your ideal customer profile.
+A signal is an observed activity or change at a company that indicates potential buying interest. Typical examples include new relevant job postings, technology changes, website changes, or public announcements aligned with your ideal customer profile.
 
 ## What are my options for running SignalsAPI to grow my business?
 
-You have two flexible ways to run SignalsAPI, depending on how hands-on you want to be.
+You can use **SignalsAPI** in two flexible ways—depending on how hands‑on you want to be with your outbound strategy.
 
-**Option 1 - You run the outreach:** You use the signals to power your own outbound, and we deliver prospects in the format you prefer (pull from the platform, sent to your CRM/outreach tools, sent to you via email). You can test SignalsAPI with a 2‑week trial, followed by simple monthly billing of £700/month.
+### Option 1 – You run the outreach  
+Harness the power of buying signals to fuel your own outbound campaigns. We’ll deliver qualified prospects in the format that works best for you, whether that’s direct integration with your CRM or outreach tools, platform access, or email delivery.  
 
-**Option 2 - Done‑for‑you outbound:** We run the outreach for you and book qualified meetings directly into your calendar. You only start paying £700/month once meetings are getting booked.
+You start with a **2‑week test drive**, then continue on a simple monthly subscription of **£700**.
 
-N.b. We don't charge per meeting booked, the fee is flat. We stand up a trial, validate these are the opportunities you would have had to spend time researching and then your pipeline starts filling with high-intent, highly qualified prospects in real-time.
+### Option 2 – Done‑for‑you outbound (SignalsAPI + Virtual Networker)  
+Let our full business suite handle the outreach for you. By combining **SignalsAPI** with **[Virtual Networker](https://virtualnetworker.com/)**, we build familiarity and trust with your ideal prospects *before* they’re ready to buy. This way, when they show active interest, your brand is already top of mind meaning warmer introductions, stronger conversations, and higher conversion rates.
 
 ## Do you provide contact telephone numbers?
 
@@ -32,11 +34,7 @@ We do! Qualified telephone numbers are provided as follows: £49/month for 100 t
 
 ## What information do you need from me to get started?
 
-Hardly anything. Just your LinkedIN Profile URL, Company's LinkedIn URL & a templated pitch you use in your outreach.
-
-## What does SignalsAPI need to pitch my offering when handling the outreach?
-
-Once we know your ICP, we only need a templated pitch to start doing the heavy lifting for you.
+Hardly anything, just your Ideal Customer Profile (ICP) and the services you provide.
 
 ## What is ICP (Ideal Customer Profile) filtering?
 
@@ -46,27 +44,25 @@ ICP filtering is the process of narrowing down accounts to those that match your
 
 You define your ICP criteria (for example: SaaS companies, 50–500 employees, in North America, using a specific tech stack). SignalsAPI applies these rules to its account universe so you only see signals from companies that match your ICP.
 
-## How does SignalsAPI know how to pitch my offering?
-
-You tell us how you typically pitch your services and we'll do this automatically, tailored based on the stakeholder and position, respecting your brand and tone.
-
 ## Can we handle the outreach ourselves?
 
-Absolutely. This puts you in the driver seat. Simply confirm how you want prospects delivered (keys to the platform, sent to your CRM or delivered via email.
+Absolutely! You can fully manage your own outreach efforts if you prefer. However, keep in mind that traditional cold outreach is often ignored as your prospects have built an *immunity* to generic messages. Successful recruitment outreach works only when you know **who** to contact and **when** the timing is right.  
+
+**SignalsAPI** takes care of both the *who* and *when* by identifying high‑intent prospects already showing relevant buying signals. Meanwhile, **[Virtual Networker](https://virtualnetworker.com/)** builds ongoing familiarity and trust with your target audience so when it reaches out, you're not a stranger but a known and credible brand.
 
 ## How many qualified buyer meetings do you guarantee in the first month?
 
 We don't know how many qualified opportunities you'd receive per month and how you position your USP until we begin, hence a zero-commitment trial. We suggest using your own meeting conversion numbers as the basis to compare with as we automate the time spend finding and contacting the opportunities. We deliver the SQLs, closing them is on you.
-
-## How many emails will I have to send to win new clients?
-
-It varies by timing, type of prospect and by what you’re offering. Sending only one email to each lead will likely achieve low results. A sequence of emails makes the biggest impact on conversion rates. Average click through rates (CTR) on a 4 email sequence are 3%, 2.5%, 2% and 1.5% respectively for each email. For best results, we recommend running your searches daily in order to reach your qualified prospects within 24 hours of them posting and before someone else does.
 
 ## How reliable are the email addresses of the decision-makers?
 
 Sending emails to unverified email addresses risks burning your email sending domain, high bounce rates and zero reply rates. The result? An unpleasant situation where your sending efforts are futile.
 
 We help our customers keep their deliverability high with email addresses that have a >97% confidence guarantee. If they have a question mark beside them in the platform, they have a >70% confidence. If confidence is lower than 70%, we do not provide them.
+
+## How reliable are the LinkedIn URLs of the decision-makers?
+
+100% reliable.
 
 ## How fresh is the data?
 
