@@ -23,7 +23,7 @@ You can use **SignalsAPI** in two flexible ways depending on how hands‑on you 
 ### Option 1 – You run the outreach  
 Harness the power of buying signals to fuel your own outbound campaigns. We’ll deliver qualified prospects in the format that works best for you, whether that’s direct integration with your CRM or outreach tools, platform access, or email delivery.  
 
-You start with a **2‑week test drive**, then continue on a simple monthly subscription of **£700/$900**.
+You start with a **2‑week test drive**, then continue on a simple monthly subscription of **£400/€490/$550**.
 
 ### Option 2 – Done‑for‑you outbound (SignalsAPI + Virtual Networker)  
 Let our full business suite handle the outreach for you. By combining **SignalsAPI** with **[Virtual Networker](https://virtualnetworker.com/)**, we build familiarity and trust with your ideal prospects *before* they’re ready to buy. This way, when they show active interest, your brand is already top of mind meaning warmer introductions, stronger conversations, and higher conversion rates.
