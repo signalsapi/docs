@@ -13,10 +13,13 @@ Integrations allow new leads to be automatically added to your outreach tool or 
 
 We have the following native integrations:
 
-1. HubSpot
-2. Apollo
-3. Snov
-4. Webhook
+1. Clay
+2. HubSpot
+3. Apollo
+4. Snov
+5. Instantly
+6. Bullhorn
+7. Webhook
 
 Any other system (that has an open API) can be integrated with SignalsAPI via webhook and receive leads in real time. Contact mykola@signalsapi.com if you need help with integration or would like to&#x20;
 
@@ -33,6 +36,47 @@ If your search does not have "Manual Approval" enabled, your leads will be uploa
 If your search has "Manual Approval" enabled, your leads will be uploaded to the integrated system only after you open each of them and click "Approve".
 
 Lead status changes to "Approved" when you click "Approve". After lead was uploaded, status changes to "Uploaded".
+
+## Integrating with Clay
+
+Clay is a data enrichment and outreach platform. SignalsAPI automatically pushes new verified leads to your Clay table in real time.
+
+### Setup
+
+1. Open your Clay account and create a new table (or open an existing one).
+2. Click **Actions** -> **Import** -> search for **"Webhook"** and select it.
+3. Copy the webhook URL that Clay generates.
+4. In SignalsAPI, go to **Settings** -> **Integrations** -> **Add Integration** -> **Clay**.
+5. Paste the webhook URL and click **Save**.
+
+### What gets sent
+
+Each lead is sent as a flat JSON object with the following fields:
+
+| Field | Description |
+|---|---|
+| `email` | Verified email address |
+| `first_name` | First name |
+| `last_name` | Last name |
+| `title` | Job title |
+| `headline` | LinkedIn headline |
+| `linkedin_url` | LinkedIn profile URL |
+| `company_name` | Company name |
+| `company_domain` | Company domain |
+| `company_website` | Company website |
+| `company_industry` | Industry |
+| `company_headcount` | Number of employees |
+| `company_headquarters` | HQ location |
+| `company_description` | Company description |
+| `company_linkedin` | Company LinkedIn URL |
+| `signal_title` | Hiring signal job title |
+| `signal_url` | Hiring signal URL |
+| `signal_location` | Signal location |
+| `signal_country` | Signal country |
+| `signal_description` | Full job description |
+| `ai_field_1` - `ai_field_5` | AI-generated custom fields |
+
+Clay automatically creates columns in your table based on these fields. From there, you can use Clay's enrichment tools to add more data or push leads to your outreach sequences.
 
 ## Integrating with HubSpot
 
