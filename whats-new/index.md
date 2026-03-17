@@ -6,6 +6,23 @@ nav_order: 8
 
 # What's new
 
+## 17.03.2026
+
+Advanced search capabilities for finding more relevant signals:
+
+- **Semantic search** -- AI-powered search that finds similar job titles beyond exact keyword matching. "Project manager" now also finds "delivery manager", "program director", "PMO lead" and other semantically related roles.
+- **Description search** -- search within job descriptions separately from titles. Catches signals where relevant terms appear in the description but not the title.
+- **Skills filter** -- require or exclude specific skills mentioned in the job posting (e.g., PMP, PRINCE2, Agile).
+- **Job families** -- filter by structured job classification regardless of title wording.
+- **Location patterns** -- match specific cities or regions (e.g., "London", "Manchester") instead of filtering by country only.
+- **Exclude staffing agencies** -- built-in filter that's more reliable than manual stop words.
+- **Hard to fill** -- only show roles open 30+ days or reposted 3+ times.
+- **Hiring surge** -- only show companies with 5+ new roles in 30 days at 1.5x rate.
+- **Job posting age** now works correctly -- the "Maximum age of job posting" setting is now properly applied.
+- **Company stop words** are now applied during search (previously only applied after fetching, wasting credits).
+
+Read more: [Advanced search](/features/advanced-search)
+
 ## 18.01.2026
 
 - We now support more jobs including TechInAsia, Reed, Justjoin, Jooble, Finn.no, Jobindex, Monster, RocketJobs + more
