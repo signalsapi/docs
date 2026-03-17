@@ -23,6 +23,8 @@ Advanced search capabilities for finding more relevant signals:
 
 Read more: [Advanced search](/features/advanced-search)
 
+- **Automatic retry for failed personations** -- companies that initially returned "no leads found" (e.g., because their LinkedIn profile wasn't resolved yet) are now automatically re-checked. When enrichment data improves, tasks are reset and decision-maker search runs again — no manual intervention needed.
+
 ## 18.01.2026
 
 - We now support more jobs including TechInAsia, Reed, Justjoin, Jooble, Finn.no, Jobindex, Monster, RocketJobs + more
