@@ -6,6 +6,10 @@ nav_order: 8
 
 # What's new
 
+## 14.04.2026
+
+- **Recruit CRM** integration — push qualified leads into your Recruit CRM as **contacts** (sales-side prospects, not candidates), linked to the hiring company. Duplicate contacts are detected by email, so re-exports do not create duplicates. Add it in Settings → Integrations → Recruit CRM (requires a Business-tier Recruit CRM plan or higher, as the Recruit CRM Open API is not available on lower plans).
+
 ## 17.03.2026
 
 Advanced search capabilities for finding more relevant signals:
