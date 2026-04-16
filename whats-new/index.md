@@ -8,6 +8,8 @@ nav_order: 8
 
 ## 16.04.2026
 
+- **"Available on paid plans" on sample pages** -- sample lead pages and CSV downloads now show "available on paid plans" instead of blank fields for decision-maker data (name, title, LinkedIn, email). This encourages trial users to upgrade for full lead details.
+- **Company name in CSV exports** -- the company name column was missing from CSV downloads; now included.
 - **Accurate signal status badges** -- the Signals page now correctly distinguishes between companies where decision-makers were actually found vs. companies that only passed qualification filters. Previously, all qualified companies showed "Leads found" even when no decision-makers existed. Now:
   - **Leads found** (green) -- decision-makers were found
   - **Qualified** (gray) -- company matched your filters, but no decision-makers were found
