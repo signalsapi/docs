@@ -6,6 +6,13 @@ nav_order: 8
 
 # What's new
 
+## 16.04.2026
+
+- **Accurate signal status badges** -- the Signals page now correctly distinguishes between companies where decision-makers were actually found vs. companies that only passed qualification filters. Previously, all qualified companies showed "Leads found" even when no decision-makers existed. Now:
+  - **Leads found** (green) -- decision-makers were found
+  - **Qualified** (gray) -- company matched your filters, but no decision-makers were found
+  - **Searching...** (blue) -- decision-maker search is still in progress
+
 ## 14.04.2026
 
 - **Recruit CRM** integration — push qualified leads into your Recruit CRM as **contacts** (sales-side prospects, not candidates), linked to the hiring company. Duplicate contacts are detected by email, so re-exports do not create duplicates. Add it in Settings → Integrations → Recruit CRM (requires a Business-tier Recruit CRM plan or higher, as the Recruit CRM Open API is not available on lower plans).
