@@ -8,7 +8,7 @@ nav_order: 8
 
 ## 16.04.2026
 
-- **Company website always in exports** -- CSV exports now always include the company website and domain, even when no decision-makers were found. Companies from sources that don't provide website data are automatically enriched in the background via LinkedIn lookup. Use case: you see an interesting signal and want to dig into the company before finding the right people.
+- **Company website always in exports** -- CSV exports now always include the company website and domain, even when no decision-makers were found. Companies from sources that don't provide website data are automatically enriched in the background via LinkedIn lookup. While enrichment is in progress, the signal detail page shows an "Enriching..." badge on the Website and LinkedIn URL fields. Use case: you see an interesting signal and want to dig into the company before finding the right people.
 - **"Available on paid plans" on sample pages** -- sample lead pages and CSV downloads now show "available on paid plans" instead of blank fields for decision-maker data (name, title, LinkedIn, email). This encourages trial users to upgrade for full lead details.
 - **Company name in CSV exports** -- the company name column was missing from CSV downloads; now included.
 - **Accurate signal status badges** -- the Signals page now correctly distinguishes between companies where decision-makers were actually found vs. companies that only passed qualification filters. Previously, all qualified companies showed "Leads found" even when no decision-makers existed. Now:
