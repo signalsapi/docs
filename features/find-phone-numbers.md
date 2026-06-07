@@ -45,11 +45,11 @@ An empty `decision_maker_phone` cell means no number was found for that lead.
 
 ## Use phone in AI templates
 
-The `{phone}` variable is available in any AI-generated field or email template once a lead has a phone number:
+The `{phone}` variable is available in any AI-generated field once a lead has a phone number. It's most useful for generating an SMS-ready opener or a CRM routing note:
 
 ```
-Hi {first_name}, I noticed {company_name} is hiring for {job_title}.
-Would you be open to a quick call? My number is X — feel free to reach me at {phone}.
+Draft a one-line SMS to {first_name} at {company_name} (hiring for {job_title}).
+Their number is {phone}.
 ```
 
 See [AI variables](ai-variables) for the full list.
