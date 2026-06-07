@@ -29,7 +29,7 @@ option says what it returns — *people search + email*, and for some *+ mobile*
 |---|---|---|---|
 | Hunter | people + email | API key | [hunter.io](https://hunter.io) |
 | Icypeas | people + email | API key | [icypeas.com](https://icypeas.com) |
-| LeadMagic | people + email **+ mobile** | API key | [leadmagic.io](https://leadmagic.io) |
+| LeadMagic | people + email **+ mobile** | API key | [leadmagic.io](https://leadmagic.io) — see [Find phone numbers](find-phone-numbers) |
 | People Data Labs | people + email | API key | [peopledatalabs.com](https://peopledatalabs.com) |
 | Prospeo | people + email | API key | [prospeo.io](https://prospeo.io) |
 | Snov.io | people + email | Client ID **+** Client Secret | [app.snov.io/account/api](https://app.snov.io/account/api) |
@@ -81,6 +81,8 @@ for people you'll never contact:
 1. **People search** at the hiring company.
 2. **AI qualification** ranks and cuts the list.
 3. **Email lookup** runs only for the survivors — and only verified emails are kept.
+4. **Phone lookup** runs last, only for surviving leads, when [Find phone numbers](find-phone-numbers)
+   is enabled and your provider supports it (currently LeadMagic only).
 
 ## Your key is safe
 

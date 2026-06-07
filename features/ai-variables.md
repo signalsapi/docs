@@ -32,3 +32,5 @@ Include variable in curly braces like this {company\_name}
 * title
 * email
 * linkedin\_url
+* phone
+* phone\_status
