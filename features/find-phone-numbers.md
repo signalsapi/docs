@@ -29,9 +29,7 @@ A dash (—) means the provider searched but found no number for that person. Th
 
 ## Lead detail page
 
-The full phone number and its status are also shown on the individual lead page.
-
-<figure><img src="/features/find-phone-numbers-3.png" alt="Lead detail page showing Phone: +15551234567 and Phone status: verified" width="720"><figcaption></figcaption></figure>
+The full phone number and its status are also shown on the individual lead page, alongside the rest of the person's contact information.
 
 ## CSV export
 
