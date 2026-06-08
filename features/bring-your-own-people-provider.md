@@ -23,7 +23,8 @@ You manage everything on one screen: **Settings → Provider**.
 
 Open the **Provider** dropdown and pick the provider you already have an account with. Each
 option says what it returns — *people search + email*, and for some *+ mobile*. You connect
-**one provider at a time**.
+**one provider at a time**. To see how the providers differ on data and filtering, see
+[Compare people-data providers](compare-people-data-providers).
 
 | Provider | What you get | Paste | Get your key |
 |---|---|---|---|
