@@ -6,6 +6,10 @@ nav_order: 8
 
 # What's new
 
+## 18.06.2026
+
+- **Job description required words** -- the "Job description search terms" field is now a hard requirement and has been renamed accordingly. A signal is kept only if its description contains at least one of the words you list (OR within the list), on top of any job-title requirement. This is the description counterpart of "Job title required words". Use case: keep only **remote-friendly** roles by requiring `remote`, `home`, or `hybrid` in the description. Previously these words only widened the search, so jobs that didn't actually mention them could still slip through. Read more: [Advanced search](/features/advanced-search)
+
 ## 16.04.2026
 
 - **Company website always in exports** -- CSV exports now always include the company website and domain, even when no decision-makers were found. Companies from sources that don't provide website data are automatically enriched in the background via LinkedIn lookup. While enrichment is in progress, the signal detail page shows an "Enriching..." badge on the Website and LinkedIn URL fields. Use case: you see an interesting signal and want to dig into the company before finding the right people.

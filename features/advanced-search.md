@@ -35,22 +35,15 @@ This will also find signals with titles like "Program Director", "PMO Lead", "De
 
 Use semantic search when keyword search returns too few results, or when the same role goes by many different names.
 
-### Description search terms
-
-Search specifically within job descriptions, separate from title search. Useful when the job title is generic but the description mentions the skills or responsibilities you care about.
-
-```
-project management
-PMP certification
-PRINCE2
-```
-
 ## Filtering signals
 
-### Job title filters
+### Job title and description requirements
 
-* **Required words** -- signal title must contain at least one of these words
-* **Stop words** -- signals with any of these words in the title are excluded
+* **Job title required words** -- the signal title must contain at least one of these words. Narrows results to the titles you actually want (e.g. `qa`, `quality assurance`).
+* **Job description required words** -- the signal description must contain at least one of these words. A signal is kept only if its description matches. Great for **remote-friendly** filtering -- list `remote`, `home`, `hybrid` to keep only roles whose description mentions remote work.
+* **Stop words** -- signals whose title **or** description contains any of these words are excluded (e.g. `our client`, `on behalf`, `intern`).
+
+Required words use OR logic *within* a field (match any one of them) and AND logic *across* fields (title requirement and description requirement must both hold), so you can stack them -- e.g. require `qa` in the title **and** `remote`/`home`/`hybrid` in the description.
 
 ### Skills filter
 
@@ -98,8 +91,8 @@ Only shows signals from companies with 5+ new roles in the last 30 days at 1.5x 
 ## Tips for getting more results
 
 1. **Start with semantic search** -- it finds signals that keyword search misses
-2. **Use description search** -- catches signals where the relevant terms are in the description but not the title
-3. **Combine keyword + semantic** -- use keywords for precision and semantic for breadth
+2. **Combine keyword + semantic** -- use keywords for precision and semantic for breadth
+3. **Add description required words** -- when titles are noisy, require a keyword in the description (e.g. `remote`/`home`/`hybrid` for remote-friendly roles) to cut out signals that don't actually match
 4. **Use "Exclude staffing agencies"** instead of manually listing staffing stop words
 5. **Try "Hard to fill"** to focus on companies most likely to respond
 6. **Widen your location** -- add location patterns for specific cities instead of limiting to a single country
