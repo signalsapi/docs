@@ -19,10 +19,13 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Allow only one concurrent deployment, skipping runs queued between the
+# in-progress run and the latest queued. Do NOT cancel in-progress runs —
+# a cancelled Pages deploy leaves GitHub's backend in a "Deployment failed,
+# try again later." state, which forced manual empty-commit retries.
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   # Build job
@@ -50,13 +53,39 @@ jobs:
         uses: actions/upload-pages-artifact@v3
 
   # Deployment job
+  #
+  # actions/deploy-pages intermittently returns "Deployment failed, try again
+  # later." from GitHub's Pages backend on identical artifacts — a server-side
+  # transient, not a build/content error. Retry the deploy up to 3 times within
+  # the run so it self-heals instead of needing a manual re-run or empty commit.
+  # Attempts 1–2 tolerate failure; the final attempt fails the job for real.
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deploy_1.outputs.page_url || steps.deploy_2.outputs.page_url || steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages (attempt 1)
+        id: deploy_1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Wait before retry
+        if: steps.deploy_1.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to GitHub Pages (attempt 2)
+        id: deploy_2
+        if: steps.deploy_1.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+
+      - name: Wait before final retry
+        if: steps.deploy_1.outcome == 'failure' && steps.deploy_2.outcome == 'failure'
+        run: sleep 30
+
+      - name: Deploy to GitHub Pages (attempt 3)
         id: deployment
+        if: steps.deploy_1.outcome == 'failure' && steps.deploy_2.outcome == 'failure'
         uses: actions/deploy-pages@v4
