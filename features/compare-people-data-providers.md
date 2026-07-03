@@ -10,7 +10,7 @@ nav_order: 3.7
 You [connect one people-data provider](bring-your-own-people-provider) with your own API key.
 Every supported provider returns people and emails, but they differ in **what extra data comes
 back** (mobile numbers, LinkedIn headlines) and **which filters they apply at the source** versus
-after the fetch. This page compares all seven so you can pick the one that fits your targeting and
+after the fetch. This page compares all eight so you can pick the one that fits your targeting and
 your budget.
 
 SignalsAPI charges **no credits** for people lookups — you only ever pay your own provider.
@@ -19,6 +19,7 @@ SignalsAPI charges **no credits** for people lookups — you only ever pay your 
 
 | Provider | Email | Mobile phone | LinkedIn profile | Headline | Credentials to paste |
 |---|---|---|---|---|---|
+| **Anymail Finder** | ✅ verified | — | ✅ | — | API key |
 | **Icypeas** | ✅ verified | — | ✅ | ✅ | API key |
 | **People Data Labs** | ✅ verified | — | ✅ | ✅ | API key |
 | **Prospeo** | ✅ verified | — | ✅ | ✅ | API key |
@@ -49,6 +50,7 @@ honor.
 
 | Provider | Title | Country | City | Skills | Department | Seniority |
 |---|---|---|---|---|---|---|
+| **Anymail Finder** | after fetch | — | — | — | — | — |
 | **Icypeas** | at source | after fetch | after fetch | at source | — | — |
 | **People Data Labs** | at source | **at source** | **at source** | at source | — | — |
 | **Prospeo** | at source | after fetch | after fetch | — | — | — |
@@ -64,6 +66,13 @@ chosen **department** and then match titles afterwards, so a broad title list co
 
 ## Provider details
 
+### Anymail Finder
+Domain-based decision-maker lookup: it maps your job-title list to a decision-maker category and
+returns the matching person per company. **Job title** is matched after fetch; no country, city,
+skills, or headline. Email comes inline and verified. Resolves people from the company **domain
+alone** — no LinkedIn profile needed — so it also works on companies with no LinkedIn page. Get an
+API key at [anymailfinder.com](https://anymailfinder.com/?via=signalsapi). **One API key.**
+
 ### Icypeas
 People search with title and skills filtered at source; country and city matched after fetch.
 Returns LinkedIn profile **and headline**. Email verification is asynchronous (a short poll), then
@@ -75,11 +84,12 @@ searches stay cheap. Returns LinkedIn profile and headline. **One API key.**
 
 ### Prospeo
 Title filtered at source; country and city after fetch. Returns LinkedIn profile and headline.
-**One API key.**
+Get an API key at [prospeo.io](https://prospeo.io/?via=signalsapi). **One API key.**
 
 ### Snov.io
 Title filtered at source. No country/city/skills filtering and no headline. Uses **two secrets** —
-a **Client ID** and **Client Secret** from your Snov.io API settings.
+a **Client ID** and **Client Secret** from your Snov.io API settings. Sign up at
+[snov.io](https://snov.io/?fp_ref=signalsapi).
 
 ### Hunter
 Builds the people list from a company-domain search, so **department** and **seniority** are
@@ -110,7 +120,9 @@ after fetch. Email comes inline. Uses **two secrets** — a **Key** and a **Secr
   (department) — filtered at source, so precise and credit-efficient.
 - **You want LinkedIn headlines for AI-written outreach** → **Icypeas**, **People Data Labs**, or
   **Prospeo**.
-- **You already have an account somewhere** → just connect it; all seven cover the core
+- **You have domain-only companies (no LinkedIn page)** → **Anymail Finder** — it resolves the
+  decision maker from the company domain alone.
+- **You already have an account somewhere** → just connect it; all eight cover the core
   people + verified-email job.
 
 Not sure which fits? Start a trial with one provider, run a search, and check the

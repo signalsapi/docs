@@ -28,19 +28,20 @@ option says what it returns — *people search + email*, and for some *+ mobile*
 
 | Provider | What you get | Paste | Get your key |
 |---|---|---|---|
+| Anymail Finder | people + email | API key | [anymailfinder.com](https://anymailfinder.com/?via=signalsapi) |
 | Hunter | people + email | API key | [hunter.io](https://hunter.io) |
 | Icypeas | people + email | API key | [icypeas.com](https://icypeas.com) |
 | LeadMagic | people + email **+ mobile** | API key | [leadmagic.io](https://leadmagic.io) — see [Find phone numbers](find-phone-numbers) |
 | People Data Labs | people + email | API key | [peopledatalabs.com](https://peopledatalabs.com) |
-| Prospeo | people + email | API key | [prospeo.io](https://prospeo.io) |
-| Snov.io | people + email | Client ID **+** Client Secret | [app.snov.io/account/api](https://app.snov.io/account/api) |
+| Prospeo | people + email | API key | [prospeo.io](https://prospeo.io/?via=signalsapi) |
+| Snov.io | people + email | Client ID **+** Client Secret | [snov.io](https://snov.io/?fp_ref=signalsapi) |
 | Tomba | people + email | Key **+** Secret | [tomba.io](https://tomba.io) |
 
 ## Enter your key
 
 The form shows exactly the fields your provider needs. Most use a single **API key**; a few use
-two secrets — for example **Snov.io** asks for a **Client ID** and a **Client Secret**, which
-appear as soon as you select it.
+two secrets — for example **Snov.io** asks for a **Client ID** and a **Client Secret** (found at
+[app.snov.io/account/api](https://app.snov.io/account/api)), which appear as soon as you select it.
 
 <figure><img src="/features/byo-people-provider-2.png" alt="Snov.io selected, showing Client ID and Client Secret fields" width="720"><figcaption></figcaption></figure>
 

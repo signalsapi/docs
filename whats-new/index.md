@@ -690,7 +690,7 @@ Bugfixes:
 
 ## 11.02.2024
 
-- [Snov.io](https://snov.io/?_get=nick94) integration
+- [Snov.io](https://snov.io/?fp_ref=signalsapi) integration
 
 ## 09.02.2024
 
