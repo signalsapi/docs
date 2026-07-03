@@ -19,11 +19,11 @@ SignalsAPI charges **no credits** for people lookups — you only ever pay your 
 
 | Provider | Email | Mobile phone | LinkedIn profile | Headline | Credentials to paste |
 |---|---|---|---|---|---|
-| **Anymail Finder** | ✅ verified | — | ✅ | — | API key |
+| **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** | ✅ verified | — | ✅ | — | API key |
 | **Icypeas** | ✅ verified | — | ✅ | ✅ | API key |
 | **People Data Labs** | ✅ verified | — | ✅ | ✅ | API key |
-| **Prospeo** | ✅ verified | — | ✅ | ✅ | API key |
-| **Snov.io** | ✅ verified | — | partial | — | Client ID + Client Secret |
+| **[Prospeo](https://prospeo.io/?via=signalsapi)** | ✅ verified | — | ✅ | ✅ | API key |
+| **[Snov.io](https://snov.io/?fp_ref=signalsapi)** | ✅ verified | — | partial | — | Client ID + Client Secret |
 | **Hunter** | ✅ verified | — | ✅ | — | API key |
 | **LeadMagic** | ✅ verified | ✅ | ✅ | — | API key |
 | **Tomba** | ✅ verified | — | ✅ | — | Key + Secret |
@@ -31,8 +31,8 @@ SignalsAPI charges **no credits** for people lookups — you only ever pay your 
 - **Mobile phone** is only returned by **LeadMagic** today, and only when
   [Find phone numbers](find-phone-numbers) is enabled.
 - **Headline** is the person's LinkedIn one-liner (e.g. *"VP Engineering at Acme"*). Providers that
-  return it — **Icypeas, People Data Labs, Prospeo** — give you more context for AI personalization.
-- Every provider returns a LinkedIn profile URL for matched people (Snov.io returns it for some).
+  return it — **Icypeas, People Data Labs, [Prospeo](https://prospeo.io/?via=signalsapi)** — give you more context for AI personalization.
+- Every provider returns a LinkedIn profile URL for matched people ([Snov.io](https://snov.io/?fp_ref=signalsapi) returns it for some).
 
 ## Where each filter runs
 
@@ -50,11 +50,11 @@ honor.
 
 | Provider | Title | Country | City | Skills | Department | Seniority |
 |---|---|---|---|---|---|---|
-| **Anymail Finder** | after fetch | — | — | — | — | — |
+| **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** | after fetch | — | — | — | — | — |
 | **Icypeas** | at source | after fetch | after fetch | at source | — | — |
 | **People Data Labs** | at source | **at source** | **at source** | at source | — | — |
-| **Prospeo** | at source | after fetch | after fetch | — | — | — |
-| **Snov.io** | at source | — | — | — | — | — |
+| **[Prospeo](https://prospeo.io/?via=signalsapi)** | at source | after fetch | after fetch | — | — | — |
+| **[Snov.io](https://snov.io/?fp_ref=signalsapi)** | at source | — | — | — | — | — |
 | **Hunter** | after fetch | — | — | — | **at source** | **at source** |
 | **LeadMagic** | after fetch | — | after fetch | — | — | — |
 | **Tomba** | after fetch | — | — | — | **at source** | — |
@@ -115,12 +115,12 @@ after fetch. Email comes inline. Uses **two secrets** — a **Key** and a **Secr
 
 - **You want mobile numbers** → **LeadMagic**.
 - **You filter by country or city** → **People Data Labs** (the only one that does both at source).
-  Icypeas, Prospeo and LeadMagic can still filter location, but after fetch (extra spend).
+  Icypeas, [Prospeo](https://prospeo.io/?via=signalsapi) and LeadMagic can still filter location, but after fetch (extra spend).
 - **You target by department / seniority** → **Hunter** (department + seniority) or **Tomba**
   (department) — filtered at source, so precise and credit-efficient.
 - **You want LinkedIn headlines for AI-written outreach** → **Icypeas**, **People Data Labs**, or
-  **Prospeo**.
-- **You have domain-only companies (no LinkedIn page)** → **Anymail Finder** — it resolves the
+  **[Prospeo](https://prospeo.io/?via=signalsapi)**.
+- **You have domain-only companies (no LinkedIn page)** → **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** — it resolves the
   decision maker from the company domain alone.
 - **You already have an account somewhere** → just connect it; all eight cover the core
   people + verified-email job.

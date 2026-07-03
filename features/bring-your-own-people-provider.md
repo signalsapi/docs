@@ -40,7 +40,7 @@ option says what it returns — *people search + email*, and for some *+ mobile*
 ## Enter your key
 
 The form shows exactly the fields your provider needs. Most use a single **API key**; a few use
-two secrets — for example **Snov.io** asks for a **Client ID** and a **Client Secret** (found at
+two secrets — for example **[Snov.io](https://snov.io/?fp_ref=signalsapi)** asks for a **Client ID** and a **Client Secret** (found at
 [app.snov.io/account/api](https://app.snov.io/account/api)), which appear as soon as you select it.
 
 <figure><img src="/features/byo-people-provider-2.png" alt="Snov.io selected, showing Client ID and Client Secret fields" width="720"><figcaption></figcaption></figure>
@@ -64,7 +64,7 @@ If you see **invalid**, check that you:
 
 1. Copied the full key with no extra spaces.
 2. Selected the right provider.
-3. Filled both fields for two-secret providers (Snov.io, Tomba).
+3. Filled both fields for two-secret providers ([Snov.io](https://snov.io/?fp_ref=signalsapi), Tomba).
 4. Haven't revoked or rotated the key — regenerate it if unsure.
 
 A key that was active can later turn **invalid** if the provider revokes it. If people data
