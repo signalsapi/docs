@@ -330,6 +330,47 @@ each with its full [hiring pulse](#hiring-pulse) and the specific reqs that matc
 
 Paginate by passing `next_cursor` back as `cursor` until it comes back `null`.
 
+### Search open jobs
+
+```
+GET /v1/jobs/search
+```
+
+The flat, role-granular counterpart to [who is hiring for a role](#who-is-hiring-for-a-role): the
+individual open roles across companies matching a role and geography, **one row per logical req**
+(each with its own `company_id` and `req_key`) rather than grouped by company. ATS-only and
+freshness-floored, like every Tier 0 read.
+
+| Query parameter | Default | Notes |
+|---|---|---|
+| `role` | — | Matches the req's function |
+| `geo` | — | Matches the req's country |
+| `since` | — | Only reqs first seen at or after this timestamp |
+| `cursor` | — | Keyset cursor; pass the previous page's `next_cursor` |
+| `limit` | `20` | Page size |
+
+```json
+{
+  "jobs": [
+    {
+      "req_key": "…",
+      "company_id": 4412,
+      "title": "Senior Backend Engineer",
+      "function": "engineering",
+      "country": "DE",
+      "first_seen": "2026-06-02T10:00:00Z",
+      "board": "greenhouse"
+    }
+  ],
+  "next_cursor": "4412:…",
+  "as_of": "2026-07-08T04:11:07Z"
+}
+```
+
+Paginate by passing `next_cursor` back as `cursor` until it comes back `null`. Unlike
+[`/v1/reqs/search`](#who-is-hiring-for-a-role), whose cursor is a numeric company id, this cursor is
+an opaque string — treat it as a token and don't parse it.
+
 ### Market role demand
 
 ```
