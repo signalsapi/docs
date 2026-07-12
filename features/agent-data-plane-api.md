@@ -38,6 +38,28 @@ X-API-Key: YOUR_API_KEY
 Unknown and revoked keys are deliberately indistinguishable. Every request is scoped to your own
 `customer_id`: you can never read, meter against, or revoke another customer's anything.
 
+## Idempotency
+
+Every **metered** route accepts an optional `Idempotency-Key` request header. Send the same key on a
+retry of the same logical call and it bills **exactly once** rather than once per attempt (NFR-D4):
+
+```
+Idempotency-Key: <your-token>
+```
+
+- **Optional, off by default.** Omit it and every call bills independently — the original behavior.
+  You opt in only where a retry would otherwise double-bill.
+- **Bounded to 24 hours.** A key dedups from its first use until 24h later, then bills again. The
+  window is *fixed*, not sliding: a retry that straddles the 24h boundary derives a fresh bill, so it
+  bills twice. That gap is the accepted cost of a stateless key — retry well inside the window if you
+  need the guarantee to hold.
+- **Scoped to `(key, endpoint)`.** The token is namespaced per API key and per endpoint, so two
+  customers may reuse the same token safely, and one token reused across two endpoints bills each
+  endpoint once.
+
+`/v1/clay/enrich` accepts the header too, but a Clay column can't attach a per-row key from its UI, so
+Clay enrichment bills per call — see [the Clay billing note](agent-data-plane-clay#billing).
+
 ## Response conventions
 
 **`as_of`.** Every company and market read carries an `as_of` timestamp — the instant the answer

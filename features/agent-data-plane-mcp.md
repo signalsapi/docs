@@ -51,6 +51,12 @@ never inline it into a prompt.
 
 Every tool also takes `plane_api_key`. Arguments marked `?` are optional and share the REST defaults.
 
+Every **metered** tool additionally accepts an optional `idempotency_key` argument — the header-less
+transport's equivalent of the REST [`Idempotency-Key`](agent-data-plane-api#idempotency) header, with
+identical semantics: reuse the same value on a retry and the call bills exactly once within a fixed
+24h window, namespaced per key and per tool. `write_outcome` is a write-back rather than a metered
+read, so it does not take one.
+
 Each tool returns the same JSON shape its REST counterpart serializes — provenance envelopes and all.
 No business logic is reimplemented behind the MCP surface; both entry points call the same code, so
 the two can never drift.
