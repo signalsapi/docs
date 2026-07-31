@@ -18,15 +18,37 @@ A signal is an observed activity or change at a company that indicates potential
 
 ## What are my options for running SignalsAPI to grow my business?
 
-You can use **SignalsAPI** in two flexible ways depending on how hands‑on you want to be with your outbound strategy.
+We sell two different things, and they are priced differently. The **self‑serve SignalsAPI subscription** gives you the signals and you do the rest; our **managed service** adds our team on top of them, done‑with‑you or done‑for‑you.
 
-### Option 1 – You run the outreach  
+### Self‑serve – the SignalsAPI subscription  
+You get the qualifying signals through the platform, the API or your CRM, and you run everything downstream yourself. You pay per qualifying signal, on the ladder in [How much does SignalsAPI cost?](#how-much-does-signalsapi-cost) below. Sign up at **[signalsapi.com](https://signalsapi.com)**.
+
+### Managed, Option 1 – Done‑with‑you: we deliver the prospects, you run the outreach  
 Harness the power of buying signals to fuel your own outbound campaigns. We’ll deliver qualified prospects in the format that works best for you, whether that’s direct integration with your CRM or outreach tools, platform access, or email delivery.  
 
-You start with a **2‑week test drive**, then continue on a simple monthly subscription of **£400/€490/$550**.
+You start with a **2‑week test drive**, then continue on a simple monthly subscription of **£400/€490/$550**. That figure prices the **managed service**, not the self‑serve SignalsAPI subscription — the two are separate offers, see below.
 
-### Option 2 – Done‑for‑you outbound (SignalsAPI + Virtual Networker)  
+### Managed, Option 2 – Done‑for‑you outbound (SignalsAPI + Virtual Networker)  
 Let our full business suite handle the outreach for you. By combining **SignalsAPI** with **[Virtual Networker](https://virtualnetworker.com/)**, we build familiarity and trust with your ideal prospects *before* they’re ready to buy. This way, when they show active interest, your brand is already top of mind meaning warmer introductions, stronger conversations, and higher conversion rates.
+
+## How much does SignalsAPI cost?
+
+**SignalsAPI itself — the self‑serve subscription — is priced per qualifying signal:**
+
+> You pay for qualifying signals, not for companies monitored: €79/month for 50 signals, €199 for 250, €399 for 1,000, custom above 5,000.
+
+| Plan | Per month | Qualifying signals included | Per additional signal |
+|---|---|---|---|
+| Starter | €79 | 50 | €1.58 |
+| Growth | €199 | 250 | €0.80 |
+| Pro | €399 | 1,000 | €0.40 |
+| Enterprise | custom | above 5,000 | custom |
+
+There is a free evaluation tier, and enrichment runs on your own provider key at that provider's cost. Current plans and sign‑up are at **[signalsapi.com](https://signalsapi.com)**.
+
+A **qualifying signal** is one verified hiring event at one company that passes your filters. Several roles posted by the same company in the same window count once; agency reposts, duplicates and unverified postings never count, and false positives are credited back.
+
+**The managed service is a different offer and is priced separately.** Done‑with‑you / done‑for‑you outbound is **£400/€490/$550 per month** after the 2‑week test drive (above), and qualified telephone numbers are their own packages (below). Those figures are not the price of the SignalsAPI subscription and do not appear on the ladder above.
 
 ## What information do you need from me to get started?
 
@@ -48,7 +70,7 @@ Absolutely however keep in mind that traditional cold outreach is often ignored 
 
 ## Do you provide contact telephone numbers?
 
-We do! Qualified telephone numbers are provided as follows: £49/month for 100 telephone numbers, £149 for 300 & £199 for 500. We offer larger packages if you are receiving a higher number of propsects matching your ICP.
+We do, as part of the **managed service** — these packages are separate from the self‑serve SignalsAPI subscription priced above. Qualified telephone numbers are provided as follows: £49/month for 100 telephone numbers, £149 for 300 & £199 for 500. We offer larger packages if you are receiving a higher number of propsects matching your ICP.
 
 ## How many qualified prospects do you guarantee in the first month?
 
