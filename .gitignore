@@ -15,3 +15,11 @@ _site/
 vendor/
 
 .idea/
+.ralph/logs/
+_bmad-output/
+
+# Agent tooling runtimes — not part of the site
+.claude/
+_bmad/
+bmalph/
+.ralph/
