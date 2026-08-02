@@ -6,6 +6,8 @@ meta:
 items:
   - name: Anymail Finder
     mobile_support: false
+    linkedin_profile: full
+    headline: false
     filters:
       title: after_fetch
       country: unsupported
@@ -20,6 +22,8 @@ items:
 
   - name: Icypeas
     mobile_support: false
+    linkedin_profile: full
+    headline: true
     filters:
       title: at_source
       country: after_fetch
@@ -34,6 +38,8 @@ items:
 
   - name: People Data Labs
     mobile_support: false
+    linkedin_profile: full
+    headline: true
     filters:
       title: at_source
       country: at_source
@@ -48,6 +54,8 @@ items:
 
   - name: Prospeo
     mobile_support: false
+    linkedin_profile: full
+    headline: true
     filters:
       title: at_source
       country: after_fetch
@@ -62,6 +70,8 @@ items:
 
   - name: Snov.io
     mobile_support: false
+    linkedin_profile: partial
+    headline: false
     filters:
       title: at_source
       country: unsupported
@@ -76,6 +86,8 @@ items:
 
   - name: Hunter
     mobile_support: false
+    linkedin_profile: full
+    headline: false
     filters:
       title: after_fetch
       country: unsupported
@@ -90,6 +102,8 @@ items:
 
   - name: LeadMagic
     mobile_support: true
+    linkedin_profile: full
+    headline: false
     filters:
       title: after_fetch
       country: unsupported
@@ -104,6 +118,8 @@ items:
 
   - name: Tomba
     mobile_support: false
+    linkedin_profile: full
+    headline: false
     filters:
       title: after_fetch
       country: unsupported

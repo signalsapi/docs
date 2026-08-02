@@ -21,20 +21,15 @@ SignalsAPI charges **no credits** for people lookups — you only ever pay your 
 
 | Provider | Email | Mobile phone | LinkedIn profile | Headline | Credentials to paste |
 |---|---|---|---|---|---|
-| **{% include provider-link.html name="Anymail Finder" cost=false %}** | ✅ verified | — | ✅ | — | API key |
-| **Icypeas** | ✅ verified | — | ✅ | ✅ | API key |
-| **People Data Labs** | ✅ verified | — | ✅ | ✅ | API key |
-| **{% include provider-link.html name="Prospeo" cost=false %}** | ✅ verified | — | ✅ | ✅ | API key |
-| **{% include provider-link.html name="Snov.io" cost=false %}** | ✅ verified | — | partial | — | Client ID + Client Secret |
-| **Hunter** | ✅ verified | — | ✅ | — | API key |
-| **LeadMagic** | ✅ verified | ✅ | ✅ | — | API key |
-| **Tomba** | ✅ verified | — | ✅ | — | Key + Secret |
+{% for p in site.data.providers.items %}| **{% include provider-link.html name=p.name cost=false %}** | ✅ verified | {% if p.mobile_support %}✅{% else %}—{% endif %} | {% if p.linkedin_profile == "full" %}✅{% else %}partial{% endif %} | {% if p.headline %}✅{% else %}—{% endif %} | {% case p.credential_shape %}{% when "api_key" %}API key{% when "client_id_and_secret" %}Client ID + Client Secret{% when "key_and_secret" %}Key + Secret{% endcase %} |
+{% endfor %}
 
-- **Mobile phone** is only returned by **LeadMagic** today, and only when
+- **Mobile phone** is only returned by the provider(s) marked ✅ above, and only when
   [Find phone numbers](../find-phone-numbers/) is enabled.
 - **Headline** is the person's LinkedIn one-liner (e.g. *"VP Engineering at Acme"*). Providers that
-  return it — **Icypeas, People Data Labs, {% include provider-link.html name="Prospeo" cost=false %}** — give you more context for AI personalization.
-- Every provider returns a LinkedIn profile URL for matched people ({% include provider-link.html name="Snov.io" cost=false %} returns it for some).
+  return it give you more context for AI personalization.
+- Every provider returns a LinkedIn profile URL for matched people (providers marked **partial**
+  above return it for some, not all).
 
 ## Where each filter runs
 
@@ -50,16 +45,12 @@ A dash (**—**) means the provider doesn't support that filter at all. SignalsA
 offer it for that provider — it never silently drops your leads on a filter the provider can't
 honor.
 
+{% assign filter_keys = "title,country,city,skills,department,seniority" | split: "," %}
+
 | Provider | Title | Country | City | Skills | Department | Seniority |
 |---|---|---|---|---|---|---|
-| **{% include provider-link.html name="Anymail Finder" cost=false %}** | after fetch | — | — | — | — | — |
-| **Icypeas** | at source | after fetch | after fetch | at source | — | — |
-| **People Data Labs** | at source | **at source** | **at source** | at source | — | — |
-| **{% include provider-link.html name="Prospeo" cost=false %}** | at source | after fetch | after fetch | — | — | — |
-| **{% include provider-link.html name="Snov.io" cost=false %}** | at source | — | — | — | — | — |
-| **Hunter** | after fetch | — | — | — | **at source** | **at source** |
-| **LeadMagic** | after fetch | — | after fetch | — | — | — |
-| **Tomba** | after fetch | — | — | — | **at source** | — |
+{% for p in site.data.providers.items %}| **{% include provider-link.html name=p.name cost=false %}** |{% for key in filter_keys %} {% assign v = p.filters[key] %}{% if v == "at_source" %}at source{% elsif v == "after_fetch" %}after fetch{% else %}—{% endif %} |{% endfor %}
+{% endfor %}
 
 **Rule of thumb:** the more filters a provider applies *at source*, the fewer credits you waste on
 people who get filtered out. **People Data Labs** filters the most at source (title, country, city,

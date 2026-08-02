@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-REQUIRED_PROVIDER_KEYS = %w[name mobile_support filters credential_shape signup_url affiliate cost].freeze
+REQUIRED_PROVIDER_KEYS = %w[name mobile_support linkedin_profile headline filters credential_shape signup_url affiliate cost].freeze
 ALLOWED_FILTER_KEYS = %w[title country city skills department seniority].freeze
 ALLOWED_FILTER_VALUES = %w[at_source after_fetch unsupported].freeze
 ALLOWED_CREDENTIAL_SHAPES = %w[api_key client_id_and_secret key_and_secret].freeze
+ALLOWED_LINKEDIN_PROFILE_VALUES = %w[full partial].freeze
 
 Check.register(
   id: "providers-schema",
@@ -28,6 +29,14 @@ Check.register(
 
     unless ALLOWED_CREDENTIAL_SHAPES.include?(item["credential_shape"])
       offenders << "#{label} has an invalid credential_shape: #{item['credential_shape'].inspect}"
+    end
+
+    unless ALLOWED_LINKEDIN_PROFILE_VALUES.include?(item["linkedin_profile"])
+      offenders << "#{label} has an invalid linkedin_profile: #{item['linkedin_profile'].inspect}"
+    end
+
+    unless [true, false].include?(item["headline"])
+      offenders << "#{label} has a non-boolean headline: #{item['headline'].inspect}"
     end
 
     filters = item["filters"]
