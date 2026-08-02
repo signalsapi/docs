@@ -48,7 +48,7 @@ I saw you are looking for a Python developer and decided to reach out.
 
 ## Setting up an email campaign with Snov.io using AI-generated values
 
-Open [Lead Lists](https://app.signalsapi.com/leadlists/), add new or edit an existing one. In the "Enrichment" part of the form, add the prompt.
+Open a [project](https://app.signalsapi.com/leadlists/), add new or edit an existing one. In the "Enrichment" part of the form, add the prompt.
 
 Add the custom fields to your CRM or outreach tool, e.g. for [Snovio](https://snov.io/?fp_ref=signalsapi):
 

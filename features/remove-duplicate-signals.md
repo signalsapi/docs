@@ -15,7 +15,7 @@ Some companies post the same job multiple times in different regions:
 
 </div>
 
-When setting up a [lead list](https://app.signalsapi.com/leadlists/), choose how the duplicates should be handled:
+When setting up a [project](https://app.signalsapi.com/leadlists/), choose how the duplicates should be handled:
 
 <div align="left">
 
