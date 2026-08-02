@@ -4,6 +4,11 @@
     six internal destinations
   covers:
   - '2.6'
+- id: ai-variable-names-valid
+  desc: Every {variable} referenced in troubleshooting/ai-filter-too-strict.md is
+    documented on AI variables
+  covers:
+  - '6.6'
 - id: aux-links-not-template
   desc: _config.yml declares real aux_links, not the commented just-the-docs template
     block
