@@ -1,7 +1,8 @@
 ---
 title: Docs health
+parent: Trust
 layout: default
-nav_order: 9
+nav_order: 2
 page_type: reference
 verified_on: 2026-08-02
 owner: mykola

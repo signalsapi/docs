@@ -422,6 +422,10 @@ items:
     link list
   covers:
   - '6.1'
+- id: trust-router-complete
+  desc: 'Every page with parent: Trust is linked from the trust router''s link list'
+  covers:
+  - '9.9'
 - id: vale-aliases-match-glossary
   desc: The alias set in styles/SignalsAPI/DeprecatedAliases.yml matches the alias
     set in _data/glossary.yml

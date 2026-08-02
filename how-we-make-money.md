@@ -1,7 +1,8 @@
 ---
 title: How we make money
+parent: Trust
 layout: default
-nav_order: 10
+nav_order: 3
 page_type: reference
 verified_on: 2026-08-02
 owner: mykola

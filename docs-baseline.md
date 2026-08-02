@@ -1,7 +1,8 @@
 ---
 title: Docs baseline
+parent: Trust
 layout: default
-nav_order: 6
+nav_order: 1
 page_type: reference
 verified_on: 2026-07-31
 owner: mykola

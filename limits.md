@@ -1,10 +1,10 @@
 ---
 title: Limits
-parent: Features
+parent: Trust
 layout: default
 verified_on: 2026-08-02
 owner: mykola
-nav_order: 22
+nav_order: 4
 page_type: reference
 description: Every documented pagination default, size cap, and rate limit in one place.
 ---
