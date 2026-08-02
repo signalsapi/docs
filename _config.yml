@@ -8,6 +8,8 @@ color_scheme: signalsapi
 
 url: https://docs.signalsapi.com
 
+permalink: pretty
+
 # Repository scaffolding that must never reach the built site. The first six
 # are the story's own list; Rakefile, script/, styles/ and bmalph/ are the
 # verification harness and planning-tool state discovered leaking into

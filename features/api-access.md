@@ -17,7 +17,7 @@ identical to the project's **Download CSV** button.
 
 Building an AI agent, or want the underlying hiring panel rather than your own leads?
 That is a separate machine-facing surface — see the
-**[Agent data plane](agent-data-plane)**.
+**[Agent data plane](../agent-data-plane/)**.
 
 ## Base URL
 

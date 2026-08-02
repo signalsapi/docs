@@ -13,10 +13,10 @@ Most hiring data tells you what is posted **right now**. The agent data plane te
 It is a machine-facing surface built for AI agents and automated workflows rather than for people
 clicking around the app. Two ways in, over the same data and the same key:
 
-- a **[REST API](agent-data-plane-api)** at `/v1`
-- an **[MCP server](agent-data-plane-mcp)** exposing the same primitives as agent tools
+- a **[REST API](../agent-data-plane-api/)** at `/v1`
+- an **[MCP server](../agent-data-plane-mcp/)** exposing the same primitives as agent tools
 
-Plus a **[Clay HTTP provider](agent-data-plane-clay)**, so Clay can call SignalsAPI as an
+Plus a **[Clay HTTP provider](../agent-data-plane-clay/)**, so Clay can call SignalsAPI as an
 enrichment column in your table.
 
 ---
@@ -98,7 +98,7 @@ A `202` never blocks. It queues a priority crawl and hands you a `job_id`; poll 
 shortly after.
 
 Four meter units are recorded: `call`, `change`, `watch` and `forced_fresh`.
-[`GET /v1/usage`](agent-data-plane-api#usage) reports your rolling totals. Notably, the **change feed
+[`GET /v1/usage`](../agent-data-plane-api/#usage) reports your rolling totals. Notably, the **change feed
 bills per event returned, not per poll**: an empty page costs nothing, so you can poll it as tightly
 as you like.
 
@@ -116,7 +116,7 @@ client at today. Access is arranged directly:
 1. Email [mykola@signalsapi.com](mailto:mykola@signalsapi.com) describing what you want to build.
 2. We issue your first API key and the base URL to use it against.
 3. From then on you can mint and revoke additional keys yourself via
-   [`POST /v1/keys`](agent-data-plane-api#issue-a-key), scoped to your own account.
+   [`POST /v1/keys`](../agent-data-plane-api/#issue-a-key), scoped to your own account.
 
 Keys are shown **once**, at issuance, and stored only as a hash — we cannot recover one for you, so
 put it straight into your secret manager. Every request is scoped to your own account: you can never
@@ -126,9 +126,9 @@ see, meter against, or revoke another customer's anything.
 
 ## Where to go next
 
-- **[REST API reference](agent-data-plane-api)** — every endpoint, request and response shape
-- **[MCP server](agent-data-plane-mcp)** — the same primitives as agent tools
-- **[Clay integration](agent-data-plane-clay)** — SignalsAPI as an enrichment column in Clay
+- **[REST API reference](../agent-data-plane-api/)** — every endpoint, request and response shape
+- **[MCP server](../agent-data-plane-mcp/)** — the same primitives as agent tools
+- **[Clay integration](../agent-data-plane-clay/)** — SignalsAPI as an enrichment column in Clay
 
 Looking for the API that reads **your projects and leads** out of the SignalsAPI app? That is a
-different, self-serve API — see **[API access](api-access)**.
+different, self-serve API — see **[API access](../api-access/)**.

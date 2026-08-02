@@ -8,7 +8,7 @@ nav_order: 11.1
 # Agent data plane — REST API
 
 The full `/v1` reference. For what the plane *is* and how it is billed, start with the
-[Agent data plane overview](agent-data-plane).
+[Agent data plane overview](../agent-data-plane/).
 
 ## Base URL
 
@@ -150,7 +150,7 @@ Your metered usage over a rolling window, aggregated across **every key** your a
 ## Tier 0 — cached reads
 
 Each bills one `call` unit at class `cached`, and is floored on data freshness (see
-[Tiers and metering](agent-data-plane#tiers-and-metering)).
+[Tiers and metering](../agent-data-plane/#tiers-and-metering)).
 
 ### Is this company hiring?
 
@@ -335,7 +335,7 @@ Market-wide (not company-scoped) active-requisition demand over time, for a role
 
 Both routes below accept `max_age` (seconds) and are dual-metered against it. Omit `max_age` and you
 get the best available data, billed `cached`. See the
-[Tier 1 table](agent-data-plane#tiers-and-metering) for exactly how each case bills, including the
+[Tier 1 table](../agent-data-plane/#tiers-and-metering) for exactly how each case bills, including the
 `202` cold-tail response.
 
 ### Hiring pulse
@@ -516,7 +516,7 @@ POST /v1/clay/enrich
 ```
 
 Documented separately, with setup steps, on the
-**[Clay integration](agent-data-plane-clay)** page.
+**[Clay integration](../agent-data-plane-clay/)** page.
 
 ---
 

@@ -9,7 +9,7 @@ nav_order: 3.6
 
 Get a mobile phone number for each decision-maker alongside their email, so you can call or text directly without leaving your leads list.
 
-Phone lookup is powered by your connected [people-data provider](bring-your-own-people-provider). Currently **LeadMagic** is the only provider that supports mobile lookup — when you have a LeadMagic key saved, the option becomes available.
+Phone lookup is powered by your connected [people-data provider](../bring-your-own-people-provider/). Currently **LeadMagic** is the only provider that supports mobile lookup — when you have a LeadMagic key saved, the option becomes available.
 
 ## Enable phone lookup on a project
 
@@ -52,7 +52,7 @@ Draft a one-line SMS to {first_name} at {company_name} (hiring for {job_title}).
 Their number is {phone}.
 ```
 
-See [AI variables](ai-variables) for the full list.
+See [AI variables](../ai-variables/) for the full list.
 
 ## How it fits into the cost-staged pipeline
 

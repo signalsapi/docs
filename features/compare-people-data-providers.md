@@ -7,7 +7,7 @@ nav_order: 3.7
 
 # Compare people-data providers
 
-You [connect one people-data provider](bring-your-own-people-provider) with your own API key.
+You [connect one people-data provider](../bring-your-own-people-provider/) with your own API key.
 Every supported provider returns people and emails, but they differ in **what extra data comes
 back** (mobile numbers, LinkedIn headlines) and **which filters they apply at the source** versus
 after the fetch. This page compares all eight so you can pick the one that fits your targeting and
@@ -29,7 +29,7 @@ SignalsAPI charges **no credits** for people lookups — you only ever pay your 
 | **Tomba** | ✅ verified | — | ✅ | — | Key + Secret |
 
 - **Mobile phone** is only returned by **LeadMagic** today, and only when
-  [Find phone numbers](find-phone-numbers) is enabled.
+  [Find phone numbers](../find-phone-numbers/) is enabled.
 - **Headline** is the person's LinkedIn one-liner (e.g. *"VP Engineering at Acme"*). Providers that
   return it — **Icypeas, People Data Labs, [Prospeo](https://prospeo.io/?via=signalsapi)** — give you more context for AI personalization.
 - Every provider returns a LinkedIn profile URL for matched people ([Snov.io](https://snov.io/?fp_ref=signalsapi) returns it for some).
@@ -101,7 +101,7 @@ inline with each person. No country/city. **One API key.**
 - **Seniority** (pick any): junior, senior, executive
 
 ### LeadMagic
-The only provider that returns **mobile phone numbers** (see [Find phone numbers](find-phone-numbers)).
+The only provider that returns **mobile phone numbers** (see [Find phone numbers](../find-phone-numbers/)).
 Email comes inline; title and city are matched after fetch. **One API key.**
 
 ### Tomba
@@ -129,5 +129,5 @@ Not sure which fits? Start a trial with one provider, run a search, and check th
 **fetched-vs-disqualified** breakdown on your leads — it shows exactly how many people were fetched
 and why any were dropped, so you can see result quality and credit use before committing.
 
-See also: [Bring your own people-data provider](bring-your-own-people-provider) ·
-[Find decision makers](find-decision-makers) · [Find phone numbers](find-phone-numbers)
+See also: [Bring your own people-data provider](../bring-your-own-people-provider/) ·
+[Find decision makers](../find-decision-makers/) · [Find phone numbers](../find-phone-numbers/)

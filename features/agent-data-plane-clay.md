@@ -19,7 +19,7 @@ For each company, a single flat object:
 
 | Column | Type | Meaning |
 |---|---|---|
-| `company_id` | number | The plane's id for the company — use it against the [REST API](agent-data-plane-api) |
+| `company_id` | number | The plane's id for the company — use it against the [REST API](../agent-data-plane-api/) |
 | `name` | string | Company name |
 | `domain` | string | Company domain |
 | `hq_country` | string | Headquarters country |
@@ -110,10 +110,10 @@ which is itself a useful filter.
 ## Billing
 
 One `call` unit per row, billed at class `cached` — the same as any
-[Tier 0 read](agent-data-plane#tiers-and-metering). Re-running a column re-bills it.
-[`GET /v1/usage`](agent-data-plane-api#usage) shows your rolling totals.
+[Tier 0 read](../agent-data-plane/#tiers-and-metering). Re-running a column re-bills it.
+[`GET /v1/usage`](../agent-data-plane-api/#usage) shows your rolling totals.
 
 ## Where to go next
 
-- **[Agent data plane overview](agent-data-plane)** — the ledger, the tiers, getting access
-- **[REST API reference](agent-data-plane-api)** — go deeper than one flat row per company
+- **[Agent data plane overview](../agent-data-plane/)** — the ledger, the tiers, getting access
+- **[REST API reference](../agent-data-plane-api/)** — go deeper than one flat row per company

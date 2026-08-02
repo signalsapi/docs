@@ -10,7 +10,7 @@ nav_order: 11.2
 The [Model Context Protocol](https://modelcontextprotocol.io) is how an AI agent discovers and calls
 tools. The plane ships an MCP server, `signalsapi-plane`, that exposes the hiring-panel primitives as
 agent tools — the same data, the same metering, and the same key as the
-[REST API](agent-data-plane-api).
+[REST API](../agent-data-plane-api/).
 
 Where a REST client has to know which URL to build, an MCP agent sees eight tools with typed
 arguments and picks one at reasoning time.
@@ -40,14 +40,14 @@ never inline it into a prompt.
 
 | Tool | Arguments | REST equivalent |
 |---|---|---|
-| `is_hiring` | `company_id` | [`GET /v1/companies/{id}/is-hiring`](agent-data-plane-api#is-this-company-hiring) |
-| `get_open_reqs` | `company_id`, `function?`, `country?`, `limit?` | [`GET /v1/companies/{id}/open-reqs`](agent-data-plane-api#open-requisitions) |
-| `hiring_pulse` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/hiring-pulse`](agent-data-plane-api#hiring-pulse) |
-| `who_is_hiring_for` | `role?`, `geo?`, `since?`, `cursor?`, `limit?` | [`GET /v1/reqs/search`](agent-data-plane-api#who-is-hiring-for-a-role) |
-| `pre_action_brief` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/pre-action-brief`](agent-data-plane-api#pre-action-brief) |
-| `get_changes` | `since`, `company_id?`, `event_type?`, `limit?` | [`GET /v1/events`](agent-data-plane-api#poll-for-changes) |
-| `watch_company` | `company_id`, `event_types`, `webhook_endpoint_id` | [`POST /v1/watches`](agent-data-plane-api#watch-a-company) |
-| `write_outcome` | `company_id`, `outcome`, `observed_at`, `req_key?` | [`POST /v1/companies/{id}/outcomes`](agent-data-plane-api#record-an-outcome) |
+| `is_hiring` | `company_id` | [`GET /v1/companies/{id}/is-hiring`](../agent-data-plane-api/#is-this-company-hiring) |
+| `get_open_reqs` | `company_id`, `function?`, `country?`, `limit?` | [`GET /v1/companies/{id}/open-reqs`](../agent-data-plane-api/#open-requisitions) |
+| `hiring_pulse` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/hiring-pulse`](../agent-data-plane-api/#hiring-pulse) |
+| `who_is_hiring_for` | `role?`, `geo?`, `since?`, `cursor?`, `limit?` | [`GET /v1/reqs/search`](../agent-data-plane-api/#who-is-hiring-for-a-role) |
+| `pre_action_brief` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/pre-action-brief`](../agent-data-plane-api/#pre-action-brief) |
+| `get_changes` | `since`, `company_id?`, `event_type?`, `limit?` | [`GET /v1/events`](../agent-data-plane-api/#poll-for-changes) |
+| `watch_company` | `company_id`, `event_types`, `webhook_endpoint_id` | [`POST /v1/watches`](../agent-data-plane-api/#watch-a-company) |
+| `write_outcome` | `company_id`, `outcome`, `observed_at`, `req_key?` | [`POST /v1/companies/{id}/outcomes`](../agent-data-plane-api/#record-an-outcome) |
 
 Every tool also takes `plane_api_key`. Arguments marked `?` are optional and share the REST defaults.
 
@@ -74,11 +74,11 @@ The tools are designed to be composed cheaply-first, expensively-last:
 company is cold and you declared a `max_age`, they return `{"job_id": …, "status": "crawling"}`
 rather than blocking — queue it, do something else, ask again shortly.
 
-See [Tiers and metering](agent-data-plane#tiers-and-metering) for exactly how each call bills.
+See [Tiers and metering](../agent-data-plane/#tiers-and-metering) for exactly how each call bills.
 
 ---
 
 ## Where to go next
 
-- **[REST API reference](agent-data-plane-api)** — every tool above, callable over HTTP today
-- **[Agent data plane overview](agent-data-plane)** — the ledger, the tiers, getting access
+- **[REST API reference](../agent-data-plane-api/)** — every tool above, callable over HTTP today
+- **[Agent data plane overview](../agent-data-plane/)** — the ledger, the tiers, getting access

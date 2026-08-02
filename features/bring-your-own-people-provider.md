@@ -24,14 +24,14 @@ You manage everything on one screen: **Settings → Provider**.
 Open the **Provider** dropdown and pick the provider you already have an account with. Each
 option says what it returns — *people search + email*, and for some *+ mobile*. You connect
 **one provider at a time**. To see how the providers differ on data and filtering, see
-[Compare people-data providers](compare-people-data-providers).
+[Compare people-data providers](../compare-people-data-providers/).
 
 | Provider | What you get | Paste | Get your key |
 |---|---|---|---|
 | Anymail Finder | people + email | API key | [anymailfinder.com](https://anymailfinder.com/?via=signalsapi) |
 | Hunter | people + email | API key | [hunter.io](https://hunter.io) |
 | Icypeas | people + email | API key | [icypeas.com](https://icypeas.com) |
-| LeadMagic | people + email **+ mobile** | API key | [leadmagic.io](https://leadmagic.io) — see [Find phone numbers](find-phone-numbers) |
+| LeadMagic | people + email **+ mobile** | API key | [leadmagic.io](https://leadmagic.io) — see [Find phone numbers](../find-phone-numbers/) |
 | People Data Labs | people + email | API key | [peopledatalabs.com](https://peopledatalabs.com) |
 | Prospeo | people + email | API key | [prospeo.io](https://prospeo.io/?via=signalsapi) |
 | Snov.io | people + email | Client ID **+** Client Secret | [snov.io](https://snov.io/?fp_ref=signalsapi) |
@@ -83,7 +83,7 @@ for people you'll never contact:
 1. **People search** at the hiring company.
 2. **AI qualification** ranks and cuts the list.
 3. **Email lookup** runs only for the survivors — and only verified emails are kept.
-4. **Phone lookup** runs last, only for surviving leads, when [Find phone numbers](find-phone-numbers)
+4. **Phone lookup** runs last, only for surviving leads, when [Find phone numbers](../find-phone-numbers/)
    is enabled and your provider supports it (currently LeadMagic only).
 
 ## Your key is safe

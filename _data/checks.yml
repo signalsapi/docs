@@ -34,6 +34,10 @@
   desc: Gemfile declares html-proofer with a ~> 5 constraint
   covers:
   - '1.3'
+- id: permalink-pretty-set
+  desc: '_config.yml declares permalink: pretty'
+  covers:
+  - '2.3'
 - id: ruby-version-single-source
   desc: 'Ruby is pinned by .ruby-version only — no inline ruby-version: in CI, no
     `ruby` directive in the Gemfile'
