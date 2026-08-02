@@ -5,7 +5,7 @@ Check.register(
   desc: "Every _data/glossary.yml entry has term, definition and owning_page, and no term appears twice",
   covers: ["4.1"]
 ) do |site|
-  entries = site.data["glossary"]
+  entries = site.data["glossary"]["items"]
   site.fail!("_data/glossary.yml is missing or empty") if entries.nil? || entries.empty?
 
   entries.each_with_index do |entry, i|

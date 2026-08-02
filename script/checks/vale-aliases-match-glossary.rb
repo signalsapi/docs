@@ -7,7 +7,7 @@ Check.register(
 ) do |site|
   normalize = ->(s) { s.downcase.strip.sub(/s\z/, "") }
 
-  glossary_aliases = site.data["glossary"].flat_map do |entry|
+  glossary_aliases = site.data["glossary"]["items"].flat_map do |entry|
     (entry["aliases"] || []).map { |a| a.is_a?(Hash) ? a["name"] : a }
   end
   glossary_set = glossary_aliases.map { |a| normalize.call(a) }.uniq.sort

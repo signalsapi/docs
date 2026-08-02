@@ -5,7 +5,7 @@ Check.register(
   desc: "Every include term.html key=\"...\" invocation names a term that exists in _data/glossary.yml",
   covers: ["4.3"]
 ) do |site|
-  terms = site.data["glossary"].map { |e| e["term"] }
+  terms = site.data["glossary"]["items"].map { |e| e["term"] }
 
   offenders = []
   site.pages.each do |page|

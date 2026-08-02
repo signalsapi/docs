@@ -5,7 +5,7 @@ Check.register(
   desc: "Every page's stage: front-matter value names a stage declared in _data/pipeline.yml",
   covers: ["4.8"]
 ) do |site|
-  valid_keys = site.data["pipeline"].map { |s| s["key"] }
+  valid_keys = site.data["pipeline"]["items"].map { |s| s["key"] }
 
   offenders = site.pages
                   .select { |p| p.front_matter.key?("stage") }

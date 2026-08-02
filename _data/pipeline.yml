@@ -1,30 +1,30 @@
-# The ordered stages every lead moves through, end to end (Story 4.8). Each
-# stage's owning page is the feature page that already documents doing that
-# step; nothing here is invented, only sequenced. AD-7's meta/items envelope
-# is deferred to Epic 7's DRY refactor (see data-envelope-shape.rb), so this
-# stays a plain list like _data/glossary.yml.
+meta:
+  owner: mykola
+  verified_on: 2026-08-02
+  source: sequenced from how-it-works.md and the feature page that already documents doing each step (Story 4.8) — nothing here is invented, only sequenced.
 
-- key: signal_discovery
-  name: Signal discovery
-  owning_page: /features/advanced-search/
-  prerequisite: null
+items:
+  - key: signal_discovery
+    name: Signal discovery
+    owning_page: /features/advanced-search/
+    prerequisite: null
 
-- key: filtering
-  name: Filtering
-  owning_page: /features/filter-leads-with-ai/
-  prerequisite: signal_discovery
+  - key: filtering
+    name: Filtering
+    owning_page: /features/filter-leads-with-ai/
+    prerequisite: signal_discovery
 
-- key: decision_maker_identification
-  name: Decision-maker identification
-  owning_page: /features/find-decision-makers/
-  prerequisite: filtering
+  - key: decision_maker_identification
+    name: Decision-maker identification
+    owning_page: /features/find-decision-makers/
+    prerequisite: filtering
 
-- key: contact_enrichment
-  name: Contact enrichment
-  owning_page: /features/find-phone-numbers/
-  prerequisite: decision_maker_identification
+  - key: contact_enrichment
+    name: Contact enrichment
+    owning_page: /features/find-phone-numbers/
+    prerequisite: decision_maker_identification
 
-- key: export_and_integration
-  name: Export & integration
-  owning_page: /features/api-access/
-  prerequisite: contact_enrichment
+  - key: export_and_integration
+    name: Export & integration
+    owning_page: /features/api-access/
+    prerequisite: contact_enrichment

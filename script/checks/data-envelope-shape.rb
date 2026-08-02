@@ -1,20 +1,27 @@
 # frozen_string_literal: true
 
-# AD-7's envelope convention, seeded here against _data/baseline.yml.
-# Story 7.1 extends this same assertion id to every _data/*.yml file once
-# the DRY refactor gives them all a fact-file shape to match.
+# AD-7's envelope convention (Story 3.3 seeded it against _data/baseline.yml;
+# Story 7.1 extends it to every _data/*.yml file now that the DRY refactor
+# gives them all a fact-file shape to match).
 Check.register(
   id: "data-envelope-shape",
-  desc: "_data/baseline.yml carries exactly a meta: mapping and an items: mapping at the top level",
-  covers: ["3.3"]
+  desc: "Every _data/*.yml file carries exactly a meta: mapping (with owner, verified_on, source) and an items: collection",
+  covers: %w[3.3 7.1]
 ) do |site|
-  data = YAML.safe_load(site.raw("_data/baseline.yml"), permitted_classes: [Date])
+  offenders = []
 
-  unless data.is_a?(Hash) && data.keys.sort == %w[items meta]
-    got = data.is_a?(Hash) ? data.keys.sort.join(", ") : data.class
-    site.fail!("_data/baseline.yml must carry exactly `meta:` and `items:` at the top level, got: #{got}")
+  site.data.each do |name, data|
+    path = "_data/#{name}.yml"
+
+    unless data.is_a?(Hash) && data.keys.sort == %w[items meta]
+      got = data.is_a?(Hash) ? data.keys.sort.join(", ") : data.class
+      offenders << "#{path} must carry exactly `meta:` and `items:` at the top level, got: #{got}"
+      next
+    end
+
+    missing_meta = %w[owner verified_on source] - data["meta"].keys
+    offenders << "#{path}'s meta: is missing key(s): #{missing_meta.join(', ')}" unless missing_meta.empty?
   end
 
-  missing_meta = %w[owner verified_on source] - data["meta"].keys
-  site.fail!("_data/baseline.yml's meta: is missing key(s): #{missing_meta.join(', ')}") unless missing_meta.empty?
+  site.fail!("data envelope violation(s) — #{offenders.join('; ')}") unless offenders.empty?
 end

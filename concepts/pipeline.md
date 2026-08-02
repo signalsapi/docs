@@ -17,11 +17,11 @@ stage before and after it.
 
 ```mermaid
 graph LR
-{% for stage in site.data.pipeline %}  {{ stage.key }}["{{ stage.name }}"]
-{% endfor %}{% for stage in site.data.pipeline %}{% if stage.prerequisite %}  {{ stage.prerequisite }} --> {{ stage.key }}
+{% for stage in site.data.pipeline.items %}  {{ stage.key }}["{{ stage.name }}"]
+{% endfor %}{% for stage in site.data.pipeline.items %}{% if stage.prerequisite %}  {{ stage.prerequisite }} --> {{ stage.key }}
 {% endif %}{% endfor %}```
 
 | Stage | Owning page |
 |---|---|
-{% for stage in site.data.pipeline %}| {{ stage.name }} | [{{ stage.owning_page }}]({{ stage.owning_page }}) |
+{% for stage in site.data.pipeline.items %}| {{ stage.name }} | [{{ stage.owning_page }}]({{ stage.owning_page }}) |
 {% endfor %}

@@ -5,7 +5,7 @@ Check.register(
   desc: "Some page in the built site declares the pipeline's first stage as its stage: value",
   covers: ["5.7"]
 ) do |site|
-  first_stage = site.data["pipeline"].first["key"]
+  first_stage = site.data["pipeline"]["items"].first["key"]
 
   documented = site.pages.any? { |p| p.front_matter["stage"] == first_stage }
 

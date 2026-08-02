@@ -8,7 +8,7 @@ Check.register(
   desc: "No .md file outside the glossary page names the lead-list object with anything but Project or its declared alias",
   covers: ["4.2"]
 ) do |site|
-  entry = site.data["glossary"].find { |e| e["term"] == "Project" }
+  entry = site.data["glossary"]["items"].find { |e| e["term"] == "Project" }
   site.fail!("_data/glossary.yml has no entry for Project") unless entry
 
   normalize = ->(s) { s.downcase.gsub(/\s+/, "").sub(/s\z/, "") }

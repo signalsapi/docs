@@ -14,7 +14,7 @@ description: Every SignalsAPI product term defined once, in one place, in alphab
 One definition per term. If a page uses a name you don't recognize, it's here — in alphabetical
 order, each linking back to the page where it's actually used.
 
-{% assign sorted_glossary = site.data.glossary | sort_natural: "term" %}
+{% assign sorted_glossary = site.data.glossary.items | sort_natural: "term" %}
 {% for entry in sorted_glossary %}
 ## {{ entry.term }} {#{{ entry.term | slugify }}}
 

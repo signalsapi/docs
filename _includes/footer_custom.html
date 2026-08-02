@@ -1,12 +1,12 @@
 {%- if page.stage -%}
   {%- assign current = nil -%}
-  {%- for s in site.data.pipeline -%}
+  {%- for s in site.data.pipeline.items -%}
     {%- if s.key == page.stage -%}{%- assign current = s -%}{%- endif -%}
   {%- endfor -%}
   {%- if current -%}
     {%- assign previous = nil -%}
     {%- assign next = nil -%}
-    {%- for s in site.data.pipeline -%}
+    {%- for s in site.data.pipeline.items -%}
       {%- if s.key == current.prerequisite -%}{%- assign previous = s -%}{%- endif -%}
       {%- if s.prerequisite == current.key -%}{%- assign next = s -%}{%- endif -%}
     {%- endfor -%}

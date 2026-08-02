@@ -1,5 +1,5 @@
 {%- assign entry = nil -%}
-{%- for candidate in site.data.glossary -%}
+{%- for candidate in site.data.glossary.items -%}
   {%- if candidate.term == include.key -%}
     {%- assign entry = candidate -%}
   {%- endif -%}
