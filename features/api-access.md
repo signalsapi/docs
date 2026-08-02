@@ -196,3 +196,6 @@ on both ends. It is read‑only and never consumes credits.
   project id returns `404`.
 - **Rate limiting** on the export endpoint is not yet enforced — be reasonable
   with very frequent full pulls.
+
+See [Limits](/limits/) for every pagination default and rate limit stated across the API in one
+place.

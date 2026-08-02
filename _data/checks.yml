@@ -183,6 +183,11 @@ items:
   desc: 'index.md is the only page declaring layout: home; every page declares a layout'
   covers:
   - '2.11'
+- id: limits-no-invented-figures
+  desc: Every numeric quantity on limits.md is traceable to _data/limits.yml or an
+    owner marker
+  covers:
+  - '9.6'
 - id: llms-full-covers-pages
   desc: _site/llms-full.txt concatenates every published page's title into one document
   covers:

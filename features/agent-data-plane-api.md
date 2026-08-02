@@ -537,3 +537,6 @@ Documented separately, with setup steps, on the
   the request thread is never held open on a live crawl.
 - **The change feed is the cheap path.** Polling `/v1/events` costs nothing when nothing changed —
   prefer it over re-reading company endpoints on a timer.
+
+See [Limits](/limits/) for every pagination default and rate limit stated across the API in one
+place.

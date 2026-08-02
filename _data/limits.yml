@@ -1,0 +1,30 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-02
+  source: "transcribed from the pagination defaults and rate-limiting notes already stated on features/api-access.md and features/agent-data-plane-api.md"
+
+items:
+  - limit: Leads export page size
+    value: "50 default, 1-500 range"
+    enforced_today: true
+    owning_page: features/api-access.md
+
+  - limit: Leads export rate limiting
+    value: not enforced today — no fixed threshold exists yet
+    enforced_today: false
+    owning_page: features/api-access.md
+
+  - limit: Open requisitions page size
+    value: "50 default"
+    enforced_today: true
+    owning_page: features/agent-data-plane-api.md
+
+  - limit: Who is hiring for a role page size
+    value: "20 default"
+    enforced_today: true
+    owning_page: features/agent-data-plane-api.md
+
+  - limit: Poll for changes page size
+    value: "100 default"
+    enforced_today: true
+    owning_page: features/agent-data-plane-api.md
