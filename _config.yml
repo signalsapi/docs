@@ -14,6 +14,7 @@ permalink: pretty
 # jekyll-seo-tag). Adding one requires two edits: the gem in Gemfile and an entry here.
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Repository scaffolding that must never reach the built site. The first six
 # are the story's own list; Rakefile, script/, styles/ and bmalph/ are the

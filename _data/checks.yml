@@ -196,9 +196,11 @@ items:
   covers:
   - '4.2'
 - id: one-canonical-per-page
-  desc: Every built HTML file contains exactly one rel="canonical" element
+  desc: Every built page carries exactly one canonical link, one og:title and one
+    og:url, with no double slash after the host
   covers:
   - '2.14'
+  - '8.2'
 - id: palette-constants
   desc: The hex values in _sass/color_schemes/signalsapi.scss match the fourteen declared
     in DESIGN.md
