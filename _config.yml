@@ -2,6 +2,8 @@ title: SignalsAPI docs
 description: SignalsAPI documentation
 theme: just-the-docs
 
+strict_front_matter: true
+
 color_scheme: signalsapi
 
 url: https://docs.signalsapi.com/
