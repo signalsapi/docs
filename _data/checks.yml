@@ -111,6 +111,11 @@ items:
     workflow never triggers on pull_request
   covers:
   - '1.13'
+- id: faq-jsonld-matches-headings
+  desc: 'The built FAQ page carries one valid FAQPage JSON-LD block whose question
+    count equals its ## heading count'
+  covers:
+  - '8.5'
 - id: filters-have-click-path
   desc: Every _data/filters.yml item declares a click_path and a default
   covers:
