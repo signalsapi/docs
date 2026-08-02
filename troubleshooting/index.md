@@ -18,6 +18,7 @@ Find the page that matches what you're seeing, not the feature you think is at f
 - [I'm getting the wrong companies](/troubleshooting/wrong-companies/) — matches outside your intended profile.
 - [The same company shows up twice](/troubleshooting/duplicates/) — how the Duplicates setting decides this.
 - [My AI filter rejected everything](/troubleshooting/ai-filter-too-strict/) — often an empty variable, not a bad prompt.
+- [My API request returns an authorization error](/troubleshooting/api-auth/) — mapping every status code to its cause.
 - [Is it working?](/is-it-working/) — rule out a platform-wide issue first.
 - [Create a search](/create-a-search/) — zero or unexpected results usually trace back to how filters combine.
 - [FAQ](/faq/) — answers to the questions people ask most.
