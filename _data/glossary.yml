@@ -1,0 +1,45 @@
+# One definition per product term, so two pages can't define the same word
+# differently (AD-7). Every definition is transcribed from the page that
+# already explains the concept in prose — nothing here is invented.
+
+- term: Signal
+  definition: An observed activity or change at a company — most often a new job posting — that indicates potential buying interest and gets evaluated against your ICP.
+  owning_page: /faq/
+
+- term: Search
+  definition: A saved set of keyword, semantic and filter criteria that SignalsAPI runs continuously to find new matching signals.
+  owning_page: /features/advanced-search/
+
+- term: Filter
+  definition: A rule that narrows which signals or companies a search returns, applied either at the source or after signals are fetched.
+  owning_page: /features/advanced-search/
+
+- term: Persona
+  definition: A saved set of job titles and location criteria used to find and prioritize decision-makers at a matched company.
+  owning_page: /features/find-decision-makers/
+
+- term: Project
+  definition: The object the REST API and this documentation call a Project is the same saved set of qualified leads the app interface calls a Lead List.
+  owning_page: /features/api-access/
+  aliases:
+    - Lead List
+
+- term: Credit
+  definition: The spend unit charged for enrichment actions such as fetching people, emails and phone numbers; read-only actions like CSV exports never spend credits.
+  owning_page: /features/compare-people-data-providers/
+
+- term: Provenance envelope
+  definition: The wrapper around each headline value on the agent data plane's four history-backed reads, naming the source board, observation time and a confidence score.
+  owning_page: /features/agent-data-plane/
+
+- term: as_of
+  definition: A timestamp on every agent data plane read stating when the underlying data was actually observed, so a response never silently claims fresher data than it has.
+  owning_page: /features/agent-data-plane/
+
+- term: Tier 0
+  definition: The agent data plane's cached-read tier, billed one call unit each and floored on data freshness rather than rate-limited by call volume.
+  owning_page: /features/agent-data-plane/
+
+- term: Tier 1
+  definition: The agent data plane's freshness-aware read tier, where a declared max_age is honestly met or reported unmet rather than silently ignored.
+  owning_page: /features/agent-data-plane/

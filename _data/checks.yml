@@ -73,6 +73,11 @@
   desc: Gemfile declares html-proofer with a ~> 5 constraint
   covers:
   - '1.3'
+- id: glossary-entry-shape
+  desc: Every _data/glossary.yml entry has term, definition and owning_page, and no
+    term appears twice
+  covers:
+  - '4.1'
 - id: layout-home-is-index-only
   desc: 'index.md is the only page declaring layout: home; every page declares a layout'
   covers:
