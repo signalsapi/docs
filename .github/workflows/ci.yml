@@ -22,5 +22,5 @@ jobs:
           VALE_VERSION="$(cat .vale-version)"
           curl -sfL "https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz" | sudo tar -xz -C /usr/local/bin vale
           vale --version
-      - name: Build with Jekyll
-        run: bundle exec jekyll build
+      - name: Run the verification gate
+        run: bundle exec rake check

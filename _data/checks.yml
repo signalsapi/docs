@@ -7,6 +7,11 @@
   desc: Each script/checks/*.rb file calls Check.register exactly once (AD-3)
   covers:
   - '1.6'
+- id: ci-runs-rake-check
+  desc: ".github/workflows/ci.yml contains a step whose run command is exactly `bundle
+    exec rake check`"
+  covers:
+  - '1.10'
 - id: config-strict-front-matter
   desc: '_config.yml declares strict_front_matter: true'
   covers:
