@@ -253,8 +253,8 @@ items:
   covers:
   - '9.3'
 - id: page-staleness
-  desc: Every page's verified_on more than 90 days old is reported; a page with no
-    verified_on fails outright
+  desc: Every page's verified_on more than 90 days old is reported and marked red
+    on docs-health.md; a page with no verified_on fails outright
   covers:
   - '9.3'
   - '9.4'

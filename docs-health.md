@@ -52,16 +52,19 @@ None. Every internal link resolves to a live page.
 
 ## Pages past their verification horizon
 
-Pages whose `verified_on` is more than 90 days old.
+Pages whose `verified_on` is more than 90 days old, marked red.
 
 {% assign rows = site.data.docs_health.stale_pages %}
 {% if rows.size == 0 %}
 None. Every page was verified within the last 90 days.
 {% else %}
-| Page | Verified on | Days ago |
-|---|---|---|
-{% for r in rows %}| `{{ r.path }}` | {{ r.verified_on }} | {{ r.days }} |
+<table>
+<thead><tr><th>Page</th><th>Verified on</th><th>Days ago</th></tr></thead>
+<tbody>
+{% for r in rows %}<tr class="text-stale"><td><code>{{ r.path }}</code></td><td>{{ r.verified_on }}</td><td>{{ r.days }}</td></tr>
 {% endfor %}
+</tbody>
+</table>
 {% endif %}
 
 ## Orphan pages with zero inbound links

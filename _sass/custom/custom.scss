@@ -619,3 +619,10 @@ pre.highlight {
 .bg-grey-dk-000 {
   background-color: #7c7d92 !important;
 }
+
+// ── Docs health ──
+// $rose from signalsapi.scss — already used above for syntax-highlighting
+// error tokens, reused here rather than adding a new colour.
+.text-stale {
+  color: #e84090 !important;
+}
