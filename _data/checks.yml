@@ -264,6 +264,11 @@
     and a non-empty search_aliases'
   covers:
   - '6.2'
+- id: task-links-troubleshooting
+  desc: Every task page's If it did not work section links to /troubleshooting/, and
+    every symptom page is reachable from at least one task page
+  covers:
+  - '6.11'
 - id: task-page-shape
   desc: 'Every page_type: task page carries the four required task headings: Before
     you start, Steps, Check it worked, and If it did not work'

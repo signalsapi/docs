@@ -49,5 +49,8 @@ New signals matching your criteria start appearing as the search runs. If you al
 Zero results usually means the filters combined are stricter than intended — remember that
 required words across different fields are ANDed together, so adding a second field's requirement
 narrows results rather than widening them. Loosen or remove a filter one at a time, starting with
-the most specific one you added last. If that doesn't explain it, check
-[Is it working?](/is-it-working/) or the [FAQ](/faq/).
+the most specific one you added last. If you're getting results but they're not the companies you
+expected, see [I'm getting the wrong companies](/troubleshooting/wrong-companies/). If you added an
+AI filter on top and it started rejecting everything, see
+[My AI filter rejected everything](/troubleshooting/ai-filter-too-strict/). If none of that
+explains it, check [Is it working?](/is-it-working/) or the [FAQ](/faq/).

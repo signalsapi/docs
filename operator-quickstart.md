@@ -38,6 +38,11 @@ to use.
 
 ## If it did not work
 
-If the project stays empty or leads look wrong, start with [Is it working?](/is-it-working/) to
-rule out a platform-wide issue, then check the [FAQ](/faq/). If neither explains it, contact
-[Support](/support/) with your search and persona settings.
+If the project stays empty, start with [My project shows no leads](/troubleshooting/empty-results/).
+If the Phone column is empty, see [My Phone column is blank](/troubleshooting/no-phone-numbers/).
+If the same company shows up twice, see [The same company shows up twice](/troubleshooting/duplicates/).
+If leads later stop reaching your CRM or outreach tool, see
+[My integration stopped receiving leads](/troubleshooting/integration-stopped/). Otherwise start
+with [Is it working?](/is-it-working/) to rule out a platform-wide issue, then check the
+[FAQ](/faq/). If neither explains it, contact [Support](/support/) with your search and persona
+settings.
