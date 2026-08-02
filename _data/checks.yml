@@ -237,6 +237,11 @@
   desc: 'Every marker matches the grammar TODO(owner: <handle>): <what is needed>'
   covers:
   - '1.12'
+- id: troubleshooting-router-complete
+  desc: Every page under troubleshooting/ is linked from the troubleshooting router's
+    link list
+  covers:
+  - '6.1'
 - id: vale-aliases-match-glossary
   desc: The alias set in styles/SignalsAPI/DeprecatedAliases.yml matches the alias
     set in _data/glossary.yml

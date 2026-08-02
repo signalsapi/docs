@@ -4,7 +4,7 @@
 # value. A top-level section is a page with an integer nav_order and no
 # parent:. Adding or retiring one must update this constant in the same
 # commit — the tree can grow, but it cannot grow silently.
-ROOT_SECTION_COUNT = 7
+ROOT_SECTION_COUNT = 8
 
 Check.register(
   id: "root-section-count",
