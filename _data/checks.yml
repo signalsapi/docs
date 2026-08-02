@@ -38,6 +38,11 @@
   desc: '_config.yml declares permalink: pretty'
   covers:
   - '2.3'
+- id: robots-sitemap-absolute
+  desc: '_site/robots.txt exists with an absolute Sitemap: line and no double slash
+    after the host'
+  covers:
+  - '2.5'
 - id: ruby-version-single-source
   desc: 'Ruby is pinned by .ruby-version only — no inline ruby-version: in CI, no
     `ruby` directive in the Gemfile'
