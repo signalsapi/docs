@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /fixtures/v1/get-open-reqs.json
+operation_id: getOpenReqs
+---
+{
+  "recorded_on": "2026-07-08",
+  "reqs": [
+    {
+      "title": "Senior Backend Engineer",
+      "function": "engineering",
+      "country": "DE",
+      "first_seen": "2026-06-02T10:00:00Z",
+      "boards": ["greenhouse", "linkedin"]
+    }
+  ],
+  "as_of": "2026-07-08T04:11:07Z"
+}

@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /fixtures/v1/clay-enrich.json
+operation_id: clayEnrich
+---
+{
+  "recorded_on": "2026-07-08",
+  "company_id": 4412,
+  "name": "zollsoft GmbH",
+  "domain": "zollsoft.de",
+  "hq_country": "DE",
+  "boards": ["greenhouse"],
+  "is_hiring": true,
+  "open_req_count": 7,
+  "new_roles_30d": 3,
+  "velocity": 0.1,
+  "direction": "up",
+  "is_surge": false,
+  "as_of": "2026-07-08T04:11:07Z"
+}

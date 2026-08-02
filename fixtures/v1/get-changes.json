@@ -1,0 +1,24 @@
+---
+layout: null
+permalink: /fixtures/v1/get-changes.json
+operation_id: getChanges
+---
+{
+  "recorded_on": "2026-07-08",
+  "events": [
+    {
+      "event_seq": 1001,
+      "company_id": 4412,
+      "req_key": "greenhouse:zollsoft:senior-backend-engineer",
+      "board": "greenhouse",
+      "event_type": "opened",
+      "observed_at": "2026-07-08T04:11:07Z",
+      "function": "engineering",
+      "country": "DE",
+      "title": "Senior Backend Engineer",
+      "source_board": "greenhouse",
+      "confidence": 0.94
+    }
+  ],
+  "next_cursor": 1001
+}

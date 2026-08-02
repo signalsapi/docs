@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /fixtures/v1/get-repost-pain.json
+operation_id: getRepostPain
+---
+{
+  "recorded_on": "2026-07-08",
+  "reqs": [
+    {
+      "title": "Staff SRE",
+      "function": "engineering",
+      "country": "US",
+      "first_seen": "2026-01-08T12:00:00Z",
+      "repost_count": { "value": 4, "source_board": "greenhouse", "observed_at": "2026-07-01T06:00:00Z", "confidence": 0.9 }
+    }
+  ],
+  "as_of": "2026-07-08T04:11:07Z"
+}

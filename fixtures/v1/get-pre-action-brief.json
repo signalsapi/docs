@@ -1,0 +1,32 @@
+---
+layout: null
+permalink: /fixtures/v1/get-pre-action-brief.json
+operation_id: getPreActionBrief
+---
+{
+  "recorded_on": "2026-07-08",
+  "pulse": {
+    "is_hiring": true,
+    "open_req_count": 7,
+    "new_roles_30d": 3,
+    "velocity": 0.1,
+    "direction": "up",
+    "is_surge": false
+  },
+  "first_hires": {
+    "sales": "2026-03-14T09:00:00Z"
+  },
+  "repost_pain": [
+    { "title": "Staff SRE", "function": "engineering", "country": "US", "first_seen": "2026-01-08T12:00:00Z", "repost_count": 4 }
+  ],
+  "top_reqs": [
+    { "title": "Senior Backend Engineer", "function": "engineering", "country": "DE", "first_seen": "2026-06-02T10:00:00Z", "boards": ["greenhouse", "linkedin"] }
+  ],
+  "ats_migrations": [
+    { "from_vendor": "lever", "to_vendor": "greenhouse", "occurred_at": "2026-02-11T00:00:00Z" }
+  ],
+  "_provenance_summary": {
+    "as_of": "2026-07-08T04:11:07Z",
+    "source_boards": ["greenhouse", "linkedin"]
+  }
+}

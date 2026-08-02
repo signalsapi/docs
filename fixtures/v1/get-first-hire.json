@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /fixtures/v1/get-first-hire.json
+operation_id: getFirstHire
+---
+{
+  "recorded_on": "2026-07-08",
+  "by_function": {
+    "sales": { "value": "2026-03-14T09:00:00Z", "source_board": "role-slot", "observed_at": "2026-03-14T09:00:00Z", "confidence": 1.0 }
+  },
+  "as_of": "2026-07-08T04:11:07Z"
+}

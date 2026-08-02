@@ -138,6 +138,11 @@ items:
   desc: Every _data/filters.yml item declares a click_path and a default
   covers:
   - '7.6'
+- id: fixtures-match-spec
+  desc: each built fixtures/v1/*.json file is valid JSON, carries a recorded_on date,
+    and its top-level keys match its operation's 2xx response schema
+  covers:
+  - '10.3'
 - id: focus-visible-ring-present
   desc: 'custom.scss never sets outline: none on a :focus rule without a paired :focus-visible
     rule'
@@ -251,6 +256,10 @@ items:
   desc: Every page from the pre-overhaul baseline still resolves, live or via redirect_from
   covers:
   - '8.8'
+- id: no-service-worker
+  desc: no committed JavaScript file registers a service worker
+  covers:
+  - '10.3'
 - id: object-model-single-name
   desc: No .md file outside the glossary page names the lead-list object with anything
     but Project or its declared alias

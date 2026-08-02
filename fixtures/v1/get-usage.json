@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /fixtures/v1/get-usage.json
+operation_id: getUsage
+---
+{
+  "recorded_on": "2026-07-08",
+  "calls": 1840,
+  "changes": 22791,
+  "watches": 12,
+  "forced_fresh": 3,
+  "by_meter_class": { "cached": 1801, "fresh": 42 }
+}

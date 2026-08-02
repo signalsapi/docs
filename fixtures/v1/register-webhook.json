@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: /fixtures/v1/register-webhook.json
+operation_id: registerWebhook
+---
+{
+  "recorded_on": "2026-07-08",
+  "id": 7,
+  "url": "https://example.com/hooks/signalsapi"
+}

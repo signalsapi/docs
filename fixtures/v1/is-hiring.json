@@ -1,0 +1,11 @@
+---
+layout: null
+permalink: /fixtures/v1/is-hiring.json
+operation_id: isHiring
+---
+{
+  "recorded_on": "2026-07-08",
+  "is_hiring": true,
+  "open_req_count": 7,
+  "as_of": "2026-07-08T04:11:07Z"
+}

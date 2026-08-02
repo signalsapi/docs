@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /fixtures/v1/search-reqs.json
+operation_id: searchReqs
+---
+{
+  "recorded_on": "2026-07-08",
+  "companies": [
+    { "company_id": 4412, "pulse": {}, "matched_reqs": [] }
+  ],
+  "next_cursor": 4412,
+  "as_of": "2026-07-08T04:11:07Z"
+}
