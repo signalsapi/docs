@@ -191,6 +191,10 @@
     jekyll-seo-tag}'
   covers:
   - '2.14'
+- id: reference-page-metadata
+  desc: 'Every page_type: reference page declares a verified_on date and an owner'
+  covers:
+  - '6.9'
 - id: robots-sitemap-absolute
   desc: '_site/robots.txt exists with an absolute Sitemap: line and no double slash
     after the host'
@@ -237,9 +241,10 @@
   - '4.8'
 - id: status-codes-cross-referenced
   desc: Every 4xx status code documented in the REST reference pages is covered by
-    troubleshooting/api-auth.md
+    the statuses reference
   covers:
   - '6.7'
+  - '6.9'
 - id: symptom-aliases-indexed
   desc: 'Every page_type: symptom page''s search_aliases values appear in the built
     lunr search index'

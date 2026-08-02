@@ -20,6 +20,7 @@ Find the page that matches what you're seeing, not the feature you think is at f
 - [My AI filter rejected everything](/troubleshooting/ai-filter-too-strict/) — often an empty variable, not a bad prompt.
 - [My API request returns an authorization error](/troubleshooting/api-auth/) — mapping every status code to its cause.
 - [My integration stopped receiving leads](/troubleshooting/integration-stopped/) — check approval status and credentials.
+- [I saw a status string or error code and want to know what it means](/troubleshooting/statuses/) — every one, in one place.
 - [Is it working?](/is-it-working/) — rule out a platform-wide issue first.
 - [Create a search](/create-a-search/) — zero or unexpected results usually trace back to how filters combine.
 - [FAQ](/faq/) — answers to the questions people ask most.

@@ -3,6 +3,8 @@ title: Docs baseline
 layout: default
 nav_order: 6
 page_type: reference
+verified_on: 2026-07-31
+owner: mykola
 description: The measured as-is state of this site on 2026-07-31, before this documentation overhaul began.
 ---
 

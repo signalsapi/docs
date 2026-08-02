@@ -4,6 +4,8 @@ parent: Concepts
 layout: default
 nav_order: 3
 page_type: reference
+verified_on: 2026-08-02
+owner: mykola
 description: The ordered stages every lead moves through, from signal to export, each owned by the page that documents it.
 ---
 

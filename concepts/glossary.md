@@ -4,6 +4,8 @@ parent: Concepts
 layout: default
 nav_order: 1
 page_type: reference
+verified_on: 2026-08-02
+owner: mykola
 description: Every SignalsAPI product term defined once, in one place, in alphabetical order.
 ---
 

@@ -83,7 +83,8 @@ class Site
     return nil unless content.start_with?("---")
 
     _, front_matter_text, body = content.split(/^---\s*$/, 3)
-    Page.new(path: relative(file), front_matter: YAML.safe_load(front_matter_text) || {}, body: body.to_s.strip)
+    front_matter = YAML.safe_load(front_matter_text, permitted_classes: [Date]) || {}
+    Page.new(path: relative(file), front_matter: front_matter, body: body.to_s.strip)
   end
 end
 
