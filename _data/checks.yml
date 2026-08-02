@@ -92,6 +92,11 @@
     string "mention"
   covers:
   - '2.7'
+- id: object-model-single-name
+  desc: No .md file outside the glossary page names the lead-list object with anything
+    but Project or its declared alias
+  covers:
+  - '4.2'
 - id: one-canonical-per-page
   desc: Every built HTML file contains exactly one rel="canonical" element
   covers:

@@ -22,7 +22,8 @@
   definition: The object the REST API and this documentation call a Project is the same saved set of qualified leads the app interface calls a Lead List.
   owning_page: /features/api-access/
   aliases:
-    - Lead List
+    - name: Lead List
+      cited_on: /features/filter-leads-with-ai/
 
 - term: Credit
   definition: The spend unit charged for enrichment actions such as fetching people, emails and phone numbers; read-only actions like CSV exports never spend credits.
