@@ -15,7 +15,8 @@ description: How mobile phone numbers are looked up for decision-makers, and whi
 
 Get a mobile phone number for each decision-maker alongside their email, so you can call or text directly without leaving your leads list.
 
-Phone lookup is powered by your connected [people-data provider](../bring-your-own-people-provider/). Currently **LeadMagic** is the only provider that supports mobile lookup — when you have a LeadMagic key saved, the option becomes available.
+{% assign mobile_providers = site.data.providers.items | where: "mobile_support", true %}
+Phone lookup is powered by your connected [people-data provider](../bring-your-own-people-provider/). Mobile lookup is currently supported by: {% for p in mobile_providers %}**{% include provider-link.html name=p.name cost=false %}**{% unless forloop.last %}, {% endunless %}{% endfor %} — when you have a matching key saved, the option becomes available.
 
 ## Enable phone lookup on a project
 
@@ -73,6 +74,6 @@ This keeps phone costs proportional to the leads you actually surface.
 
 ## Getting started
 
-1. Go to **Settings → Provider** and save a **LeadMagic** API key ([leadmagic.io](https://leadmagic.io)).
+1. Go to **Settings → Provider** and save {% for p in mobile_providers %}a **{% include provider-link.html name=p.name cost=false %}** API key{% unless forloop.last %} or {% endunless %}{% endfor %}.
 2. Open a project, go to **Persona**, and tick **Find phone numbers**.
 3. Run personation — phone numbers appear in the leads list as results come in.

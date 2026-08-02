@@ -30,14 +30,8 @@ option says what it returns — *people search + email*, and for some *+ mobile*
 
 | Provider | What you get | Paste | Get your key |
 |---|---|---|---|
-| Anymail Finder | people + email | API key | {% include provider-link.html name="Anymail Finder" text="anymailfinder.com" %} |
-| Hunter | people + email | API key | {% include provider-link.html name="Hunter" text="hunter.io" %} |
-| Icypeas | people + email | API key | {% include provider-link.html name="Icypeas" text="icypeas.com" %} |
-| LeadMagic | people + email **+ mobile** | API key | {% include provider-link.html name="LeadMagic" text="leadmagic.io" %} — see [Find phone numbers](../find-phone-numbers/) |
-| People Data Labs | people + email | API key | {% include provider-link.html name="People Data Labs" text="peopledatalabs.com" %} |
-| Prospeo | people + email | API key | {% include provider-link.html name="Prospeo" text="prospeo.io" %} |
-| Snov.io | people + email | Client ID **+** Client Secret | {% include provider-link.html name="Snov.io" text="snov.io" %} |
-| Tomba | people + email | Key **+** Secret | {% include provider-link.html name="Tomba" text="tomba.io" %} |
+{% for p in site.data.providers.items %}| **{{ p.name }}** | people + email{% if p.mobile_support %} **+ mobile**{% endif %} | {% case p.credential_shape %}{% when "api_key" %}API key{% when "client_id_and_secret" %}Client ID **+** Client Secret{% when "key_and_secret" %}Key **+** Secret{% endcase %} | {% include provider-link.html name=p.name cost=false %}{% if p.mobile_support %} — see [Find phone numbers](../find-phone-numbers/){% endif %} |
+{% endfor %}
 
 ## Enter your key
 
@@ -86,7 +80,7 @@ for people you'll never contact:
 2. **AI qualification** ranks and cuts the list.
 3. **Email lookup** runs only for the survivors — and only verified emails are kept.
 4. **Phone lookup** runs last, only for surviving leads, when [Find phone numbers](../find-phone-numbers/)
-   is enabled and your provider supports it (currently LeadMagic only).
+   is enabled and your provider supports it (currently {% assign mobile_providers = site.data.providers.items | where: "mobile_support", true %}{% for p in mobile_providers %}{{ p.name }}{% unless forloop.last %}, {% endunless %}{% endfor %} only).
 
 ## Your key is safe
 

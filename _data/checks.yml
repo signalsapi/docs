@@ -151,6 +151,11 @@ items:
   desc: 'index.md is the only page declaring layout: home; every page declares a layout'
   covers:
   - '2.11'
+- id: mobile-claim-generated
+  desc: The phone page names mobile-support providers via Liquid, not hand-written
+    prose
+  covers:
+  - '7.10'
 - id: nav-order-integrity
   desc: Every sibling group of pages (by parent) has unique, integer, contiguous nav_order
     values
@@ -223,10 +228,11 @@ items:
   covers:
   - '7.7'
 - id: providers-not-duplicated-in-prose
-  desc: The provider comparison page's tables render every provider name from _data/providers.yml,
+  desc: Every page's provider table renders provider names from _data/providers.yml,
     not hand-written
   covers:
   - '7.9'
+  - '7.10'
 - id: providers-schema
   desc: Every _data/providers.yml item declares exactly the required keys, with valid
     filter and credential values
