@@ -123,6 +123,11 @@
     string "mention"
   covers:
   - '2.7'
+- id: no-live-sandbox-claim
+  desc: No page asserts that a public base URL, a hosted sandbox, or an issued key
+    exists for the agent data plane
+  covers:
+  - '5.6'
 - id: object-model-single-name
   desc: No .md file outside the glossary page names the lead-list object with anything
     but Project or its declared alias
