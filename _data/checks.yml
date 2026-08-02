@@ -118,6 +118,11 @@
     values
   covers:
   - '2.10'
+- id: no-childless-has-children
+  desc: 'Every page declaring has_children: true is named as a parent: by at least
+    one other page'
+  covers:
+  - '5.8'
 - id: no-gitbook-mention-artifacts
   desc: No .md file contains a Markdown link whose title attribute is the literal
     string "mention"
