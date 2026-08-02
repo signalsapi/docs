@@ -214,6 +214,11 @@ items:
     but Project or its declared alias
   covers:
   - '4.2'
+- id: og-image-per-page
+  desc: Every built page's og:image resolves to a card file that exists in the built
+    site
+  covers:
+  - '8.7'
 - id: one-canonical-per-page
   desc: Every built page carries exactly one canonical link, one og:title and one
     og:url, with no double slash after the host
