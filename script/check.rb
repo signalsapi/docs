@@ -18,7 +18,7 @@ class Site
 end
 
 module Check
-  Assertion = Struct.new(:id, :desc, :covers, :block, keyword_init: true)
+  Assertion = Struct.new(:id, :desc, :covers, :block, :source, keyword_init: true)
 
   class << self
     def registry
@@ -26,7 +26,14 @@ module Check
     end
 
     def register(id:, desc:, covers: [], &block)
-      registry << Assertion.new(id: id, desc: desc, covers: covers, block: block)
+      source = caller_locations(1, 1).first.path.sub("#{ROOT}/", "")
+
+      if (existing = registry.find { |a| a.id == id })
+        abort("script/check.rb: duplicate assertion id #{id.inspect} registered in both " \
+              "#{existing.source} and #{source}")
+      end
+
+      registry << Assertion.new(id: id, desc: desc, covers: covers, block: block, source: source)
     end
 
     def run(site)
