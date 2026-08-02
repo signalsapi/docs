@@ -30,6 +30,11 @@
   desc: '_config.yml declares strict_front_matter: true'
   covers:
   - '1.2'
+- id: currency-outside-data
+  desc: No .md file outside _data/pricing.yml and the pricing page template states
+    a bare currency figure
+  covers:
+  - '2.9'
 - id: external-links-off-pr-path
   desc: html-proofer runs --disable-external in the Rakefile, and the nightly lychee
     workflow never triggers on pull_request
