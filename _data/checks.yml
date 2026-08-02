@@ -20,6 +20,11 @@
   desc: '_config.yml declares strict_front_matter: true'
   covers:
   - '1.2'
+- id: external-links-off-pr-path
+  desc: html-proofer runs --disable-external in the Rakefile, and the nightly lychee
+    workflow never triggers on pull_request
+  covers:
+  - '1.13'
 - id: gemfile-html-proofer-pinned
   desc: Gemfile declares html-proofer with a ~> 5 constraint
   covers:
