@@ -41,7 +41,8 @@ other provider, phone lookup will never populate no matter what else you change 
   lookup with no result — this is expected best-effort coverage, not a bug. See
   [Find phone numbers](/features/find-phone-numbers/).
 - **Personation hasn't finished running yet.** The Phone column populates as personation
-  completes, the same as email — give it time before assuming it failed.
+  completes, the same as email — give it time before assuming it failed. See
+  [How it works](/how-it-works/).
 
 ## Still stuck
 

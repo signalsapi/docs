@@ -15,6 +15,7 @@ Find the page that matches what you're seeing, not the feature you think is at f
 
 - [My project shows no leads](/troubleshooting/empty-results/) — no leads, or leads with no usable data.
 - [My Phone column is blank](/troubleshooting/no-phone-numbers/) — decision-makers found, but no phone number.
+- [I'm getting the wrong companies](/troubleshooting/wrong-companies/) — matches outside your intended profile.
 - [Is it working?](/is-it-working/) — rule out a platform-wide issue first.
 - [Create a search](/create-a-search/) — zero or unexpected results usually trace back to how filters combine.
 - [FAQ](/faq/) — answers to the questions people ask most.

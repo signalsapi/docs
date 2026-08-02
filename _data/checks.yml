@@ -225,6 +225,11 @@
     lunr search index'
   covers:
   - '6.3'
+- id: symptom-causes-linked
+  desc: Every symptom page's Most likely cause section and each Other causes bullet
+    link to an owning page
+  covers:
+  - '6.4'
 - id: symptom-page-shape
   desc: 'Every page_type: symptom page carries the five required symptom headings
     and a non-empty search_aliases'
