@@ -6,6 +6,7 @@
 # against a single Site instance and aggregates the failures.
 
 require "yaml"
+require "date"
 
 ROOT = File.expand_path("..", __dir__)
 
@@ -41,7 +42,7 @@ class Site
       data_dir = File.join(ROOT, "_data")
       if Dir.exist?(data_dir)
         Dir.glob(File.join(data_dir, "*.{yml,yaml}")).each_with_object({}) do |f, h|
-          h[File.basename(f, ".*")] = YAML.safe_load(File.read(f))
+          h[File.basename(f, ".*")] = YAML.safe_load(File.read(f), permitted_classes: [Date])
         end
       else
         {}

@@ -9,6 +9,11 @@
     block
   covers:
   - '2.12'
+- id: baseline-values-sourced
+  desc: 'Every value in _data/baseline.yml is an integer, a date, a boolean, or a
+    well-formed TODO(owner: handle): marker'
+  covers:
+  - '3.1'
 - id: canonical-no-double-slash
   desc: No file under _site/ contains docs.signalsapi.com//
   covers:
