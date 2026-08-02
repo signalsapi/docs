@@ -2,6 +2,7 @@
 title: Integrations
 parent: Features
 layout: default
+redirect_from: "/features/integrations.html"
 nav_order: 13
 page_type: feature
 description: "Push new leads automatically into your CRM or outreach tool: Clay, HubSpot, Apollo, and more."

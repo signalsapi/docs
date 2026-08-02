@@ -16,3 +16,4 @@ gem "just-the-docs", "0.10.0" # pinned to the current release
 
 gem "jekyll-sitemap"
 gem "jekyll-seo-tag"
+gem "jekyll-redirect-from"

@@ -2,6 +2,7 @@
 title: Location-based filtering
 parent: Features
 layout: default
+redirect_from: "/features/location-based-filtering.html"
 nav_order: 4
 page_type: feature
 description: Filter a signal by its own location, the hiring company's location, or the decision-maker's location.

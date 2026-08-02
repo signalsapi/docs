@@ -2,6 +2,7 @@
 title: Website Monitoring
 parent: Features
 layout: default
+redirect_from: "/features/website-monitoring.html"
 nav_order: 15
 page_type: feature
 description: Watch a specific company website for newly posted vacancies instead of searching job boards.

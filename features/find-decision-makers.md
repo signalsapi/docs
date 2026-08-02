@@ -2,6 +2,7 @@
 title: Find decision-makers
 parent: Features
 layout: default
+redirect_from: "/features/find-decision-makers.html"
 nav_order: 6
 stage: decision_maker_identification
 page_type: feature

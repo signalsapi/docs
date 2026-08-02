@@ -1,6 +1,7 @@
 ---
 title: Concepts & FAQs
 layout: default
+redirect_from: "/faq.html"
 nav_order: 3
 page_type: faq
 description: Answers to the questions people ask most about SignalsAPI before and after signing up.

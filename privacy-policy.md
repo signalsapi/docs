@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 layout: default
+redirect_from: "/privacy-policy.html"
 nav_exclude: true
 page_type: legal
 description: How Deal Baker Ltd, operator of SignalsAPI, collects, uses, and protects your personal data.

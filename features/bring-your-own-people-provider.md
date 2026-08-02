@@ -2,6 +2,7 @@
 title: Bring your own people-data provider
 parent: Features
 layout: default
+redirect_from: "/features/bring-your-own-people-provider.html"
 nav_order: 7
 page_type: feature
 description: Connect your own people-data provider API key so decision-maker search returns people and emails.

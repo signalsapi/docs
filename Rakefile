@@ -25,7 +25,14 @@ namespace :check do
 
   desc "Run html-proofer against the built site (external checking disabled)"
   task :links do
-    sh "bundle exec htmlproofer _site --disable-external"
+    # Story 8.8: jekyll-redirect-from writes each old GitBook-era path as a
+    # flat "name.html" stub next to the pretty-permalink "name/" directory
+    # it now redirects to. html-proofer's default --assume-extension tries
+    # "name.html" before falling back to "name/index.html", so it silently
+    # checks anchors against the redirect stub instead of the real page.
+    # Every internal link here already uses an explicit trailing slash, so
+    # the extension-guessing fallback buys nothing and only misresolves.
+    sh 'bundle exec htmlproofer _site --disable-external --assume-extension ""'
   end
 
   desc "Run Vale against every .md file outside _site/ and _drafts/"

@@ -2,6 +2,7 @@
 title: Filter leads with AI
 parent: Features
 layout: default
+redirect_from: "/features/filter-leads-with-ai.html"
 nav_order: 10
 stage: filtering
 page_type: feature

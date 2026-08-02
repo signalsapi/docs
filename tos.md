@@ -1,6 +1,7 @@
 ---
 title: Terms of Service
 layout: default
+redirect_from: "/tos.html"
 nav_exclude: true
 page_type: legal
 description: The terms you agree to by using SignalsAPI's services, subscriptions, and integrations.

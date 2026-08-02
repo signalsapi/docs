@@ -2,6 +2,7 @@
 title: API access
 parent: Features
 layout: default
+redirect_from: "/features/api-access.html"
 nav_order: 16
 stage: export_and_integration
 page_type: feature

@@ -2,6 +2,7 @@
 title: How it works
 parent: Concepts
 layout: default
+redirect_from: "/how-it-works.html"
 nav_order: 4
 page_type: overview
 description: The step-by-step pipeline SignalsAPI runs, from monitoring the market to notifying your sales team.

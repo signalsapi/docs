@@ -2,6 +2,7 @@
 title: AI variables
 parent: Features
 layout: default
+redirect_from: "/features/ai-variables.html"
 nav_order: 12
 page_type: feature
 description: The company, signal, and person variables you can insert into AI prompts and email templates.

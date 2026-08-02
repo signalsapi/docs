@@ -2,6 +2,7 @@
 title: Agent data plane
 parent: Features
 layout: default
+redirect_from: "/features/agent-data-plane.html"
 nav_order: 17
 page_type: feature
 prereq: plane_access

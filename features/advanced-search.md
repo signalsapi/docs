@@ -2,6 +2,7 @@
 title: Advanced search
 parent: Features
 layout: default
+redirect_from: "/features/advanced-search.html"
 nav_order: 3
 stage: signal_discovery
 page_type: feature

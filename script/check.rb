@@ -31,8 +31,15 @@ class Site
                    .sort_by(&:path)
   end
 
+  # jekyll-redirect-from's stub pages (Story 8.8) are real built HTML, but
+  # they're a bare "Redirecting..." shell, not a rendered content page —
+  # every assertion that checks a page's own structure (footer, og:image,
+  # canonical) means the real page, not the redirect standing in for its
+  # old URL.
   def html_files
-    @html_files ||= Dir.glob(File.join(ROOT, "_site", "**", "*.html")).sort.map do |f|
+    @html_files ||= Dir.glob(File.join(ROOT, "_site", "**", "*.html"))
+                        .reject { |f| redirect_stub?(f) }
+                        .sort.map do |f|
       HtmlFile.new(path: relative(f), body: File.read(f))
     end
   end
@@ -65,6 +72,10 @@ class Site
     return true if rel.start_with?(*CONTENT_EXCLUDED_DIRS.map { |d| "#{d}/" })
 
     config_excludes.include?(rel)
+  end
+
+  def redirect_stub?(file)
+    File.read(file).include?('<meta http-equiv="refresh"')
   end
 
   # _config.yml's own exclude: list also names individual root files (e.g.

@@ -2,6 +2,7 @@
 title: Agent data plane — REST API
 parent: Features
 layout: default
+redirect_from: "/features/agent-data-plane-api.html"
 nav_order: 18
 page_type: feature
 description: "The full /v1 REST reference for the agent data plane: every endpoint, request, and response shape."

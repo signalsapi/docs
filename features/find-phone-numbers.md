@@ -2,6 +2,7 @@
 title: Find phone numbers
 parent: Features
 layout: default
+redirect_from: "/features/find-phone-numbers.html"
 nav_order: 8
 stage: contact_enrichment
 page_type: feature

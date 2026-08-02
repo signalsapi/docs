@@ -2,6 +2,7 @@
 title: Compare people-data providers
 parent: Features
 layout: default
+redirect_from: "/features/compare-people-data-providers.html"
 nav_order: 9
 page_type: feature
 description: How the eight supported people-data providers differ on data returned and where filters run.

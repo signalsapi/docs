@@ -2,6 +2,7 @@
 title: Work arrangement filter
 parent: Features
 layout: default
+redirect_from: "/features/work-arrangement-filter.html"
 nav_order: 5
 page_type: feature
 description: Filter signals to remote, hybrid, on-site, or unspecified roles, with a one-click remote-friendly toggle.

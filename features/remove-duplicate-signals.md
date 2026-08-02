@@ -2,6 +2,7 @@
 title: Remove duplicate signals
 parent: Features
 layout: default
+redirect_from: "/features/remove-duplicate-signals.html"
 nav_order: 2
 page_type: feature
 description: Choose how SignalsAPI handles the same job posted multiple times across different regions.

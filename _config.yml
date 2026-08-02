@@ -15,6 +15,7 @@ permalink: pretty
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 # Repository scaffolding that must never reach the built site. The first six
 # are the story's own list; Rakefile, script/, styles/ and bmalph/ are the
