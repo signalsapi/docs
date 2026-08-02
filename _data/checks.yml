@@ -220,6 +220,11 @@
   desc: 'Every page''s stage: front-matter value names a stage declared in _data/pipeline.yml'
   covers:
   - '4.8'
+- id: symptom-aliases-indexed
+  desc: 'Every page_type: symptom page''s search_aliases values appear in the built
+    lunr search index'
+  covers:
+  - '6.3'
 - id: symptom-page-shape
   desc: 'Every page_type: symptom page carries the five required symptom headings
     and a non-empty search_aliases'

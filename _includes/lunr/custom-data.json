@@ -1,0 +1,3 @@
+{%- if include.page.search_aliases -%}
+"search_aliases": {{ include.page.search_aliases | jsonify }},
+{%- endif -%}
