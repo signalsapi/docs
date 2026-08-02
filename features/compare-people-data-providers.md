@@ -21,11 +21,11 @@ SignalsAPI charges **no credits** for people lookups — you only ever pay your 
 
 | Provider | Email | Mobile phone | LinkedIn profile | Headline | Credentials to paste |
 |---|---|---|---|---|---|
-| **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** | ✅ verified | — | ✅ | — | API key |
+| **{% include provider-link.html name="Anymail Finder" cost=false %}** | ✅ verified | — | ✅ | — | API key |
 | **Icypeas** | ✅ verified | — | ✅ | ✅ | API key |
 | **People Data Labs** | ✅ verified | — | ✅ | ✅ | API key |
-| **[Prospeo](https://prospeo.io/?via=signalsapi)** | ✅ verified | — | ✅ | ✅ | API key |
-| **[Snov.io](https://snov.io/?fp_ref=signalsapi)** | ✅ verified | — | partial | — | Client ID + Client Secret |
+| **{% include provider-link.html name="Prospeo" cost=false %}** | ✅ verified | — | ✅ | ✅ | API key |
+| **{% include provider-link.html name="Snov.io" cost=false %}** | ✅ verified | — | partial | — | Client ID + Client Secret |
 | **Hunter** | ✅ verified | — | ✅ | — | API key |
 | **LeadMagic** | ✅ verified | ✅ | ✅ | — | API key |
 | **Tomba** | ✅ verified | — | ✅ | — | Key + Secret |
@@ -33,8 +33,8 @@ SignalsAPI charges **no credits** for people lookups — you only ever pay your 
 - **Mobile phone** is only returned by **LeadMagic** today, and only when
   [Find phone numbers](../find-phone-numbers/) is enabled.
 - **Headline** is the person's LinkedIn one-liner (e.g. *"VP Engineering at Acme"*). Providers that
-  return it — **Icypeas, People Data Labs, [Prospeo](https://prospeo.io/?via=signalsapi)** — give you more context for AI personalization.
-- Every provider returns a LinkedIn profile URL for matched people ([Snov.io](https://snov.io/?fp_ref=signalsapi) returns it for some).
+  return it — **Icypeas, People Data Labs, {% include provider-link.html name="Prospeo" cost=false %}** — give you more context for AI personalization.
+- Every provider returns a LinkedIn profile URL for matched people ({% include provider-link.html name="Snov.io" cost=false %} returns it for some).
 
 ## Where each filter runs
 
@@ -52,11 +52,11 @@ honor.
 
 | Provider | Title | Country | City | Skills | Department | Seniority |
 |---|---|---|---|---|---|---|
-| **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** | after fetch | — | — | — | — | — |
+| **{% include provider-link.html name="Anymail Finder" cost=false %}** | after fetch | — | — | — | — | — |
 | **Icypeas** | at source | after fetch | after fetch | at source | — | — |
 | **People Data Labs** | at source | **at source** | **at source** | at source | — | — |
-| **[Prospeo](https://prospeo.io/?via=signalsapi)** | at source | after fetch | after fetch | — | — | — |
-| **[Snov.io](https://snov.io/?fp_ref=signalsapi)** | at source | — | — | — | — | — |
+| **{% include provider-link.html name="Prospeo" cost=false %}** | at source | after fetch | after fetch | — | — | — |
+| **{% include provider-link.html name="Snov.io" cost=false %}** | at source | — | — | — | — | — |
 | **Hunter** | after fetch | — | — | — | **at source** | **at source** |
 | **LeadMagic** | after fetch | — | after fetch | — | — | — |
 | **Tomba** | after fetch | — | — | — | **at source** | — |
@@ -73,7 +73,7 @@ Domain-based decision-maker lookup: it maps your job-title list to a decision-ma
 returns the matching person per company. **Job title** is matched after fetch; no country, city,
 skills, or headline. Email comes inline and verified. Resolves people from the company **domain
 alone** — no LinkedIn profile needed — so it also works on companies with no LinkedIn page. Get an
-API key at [anymailfinder.com](https://anymailfinder.com/?via=signalsapi). **One API key.**
+API key at {% include provider-link.html name="Anymail Finder" text="anymailfinder.com" %}. **One API key.**
 
 ### Icypeas
 People search with title and skills filtered at source; country and city matched after fetch.
@@ -86,12 +86,12 @@ searches stay cheap. Returns LinkedIn profile and headline. **One API key.**
 
 ### Prospeo
 Title filtered at source; country and city after fetch. Returns LinkedIn profile and headline.
-Get an API key at [prospeo.io](https://prospeo.io/?via=signalsapi). **One API key.**
+Get an API key at {% include provider-link.html name="Prospeo" text="prospeo.io" %}. **One API key.**
 
 ### Snov.io
 Title filtered at source. No country/city/skills filtering and no headline. Uses **two secrets** —
 a **Client ID** and **Client Secret** from your Snov.io API settings. Sign up at
-[snov.io](https://snov.io/?fp_ref=signalsapi).
+{% include provider-link.html name="Snov.io" text="snov.io" %}.
 
 ### Hunter
 Builds the people list from a company-domain search, so **department** and **seniority** are
@@ -117,12 +117,12 @@ after fetch. Email comes inline. Uses **two secrets** — a **Key** and a **Secr
 
 - **You want mobile numbers** → **LeadMagic**.
 - **You filter by country or city** → **People Data Labs** (the only one that does both at source).
-  Icypeas, [Prospeo](https://prospeo.io/?via=signalsapi) and LeadMagic can still filter location, but after fetch (extra spend).
+  Icypeas, {% include provider-link.html name="Prospeo" cost=false %} and LeadMagic can still filter location, but after fetch (extra spend).
 - **You target by department / seniority** → **Hunter** (department + seniority) or **Tomba**
   (department) — filtered at source, so precise and credit-efficient.
 - **You want LinkedIn headlines for AI-written outreach** → **Icypeas**, **People Data Labs**, or
-  **[Prospeo](https://prospeo.io/?via=signalsapi)**.
-- **You have domain-only companies (no LinkedIn page)** → **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** — it resolves the
+  **{% include provider-link.html name="Prospeo" cost=false %}**.
+- **You have domain-only companies (no LinkedIn page)** → **{% include provider-link.html name="Anymail Finder" cost=false %}** — it resolves the
   decision maker from the company domain alone.
 - **You already have an account somewhere** → just connect it; all eight cover the core
   people + verified-email job.

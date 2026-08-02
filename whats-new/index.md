@@ -263,7 +263,7 @@ Bugfixes
 
 ![](/whats-new/2024-05-30-worldwide-search-on-linkedin.png)
 
-- Auto-validating emails in [Snov.io](https://snov.io/?fp_ref=signalsapi) (exports -> add -> snovio -> validate emails)
+- Auto-validating emails in [Snov.io](https://snov.io/) (exports -> add -> snovio -> validate emails)
 
 ![](/whats-new/2024-05-30-auto-validating-emails.png)
 
@@ -692,7 +692,7 @@ Bugfixes:
 
 ## 11.02.2024
 
-- [Snov.io](https://snov.io/?fp_ref=signalsapi) integration
+- [Snov.io](https://snov.io/) integration
 
 ## 09.02.2024
 

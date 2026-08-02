@@ -18,7 +18,7 @@ We have the following native integrations:
 1. Clay
 2. HubSpot
 3. Apollo
-4. [Snov](https://snov.io/?fp_ref=signalsapi)
+4. [Snov](https://snov.io/)
 5. Instantly
 6. Bullhorn
 7. Webhook
@@ -110,7 +110,7 @@ Destination is a combination of a Sequence and Mailbox used to send emails. Afte
 
 ## Integrating with Snov.io
 
-[Snov.io](https://snov.io/?fp_ref=signalsapi) integration requires a Snov.io API User ID and API Secret.
+[Snov.io](https://snov.io/) integration requires a Snov.io API User ID and API Secret.
 
 They can be found here: [https://app.snov.io/account/api](https://app.snov.io/account/api)
 

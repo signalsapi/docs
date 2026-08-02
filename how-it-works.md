@@ -26,7 +26,7 @@ description: The step-by-step pipeline SignalsAPI runs, from monitoring the mark
 * **Enrich Contact Data**\
   Contact details for the decision-makers (e.g., email addresses, phone numbers, LinkedIn profiles) are enriched and verified.
 * **Makes The Connection & Pitches Your Offering**\
-  Once a decision-maker is identified and their contact information is verified, your AI agent makes the connection and pitches your services. Alternatively, you can use your own outreach tool (e.g., [Snovio](https://snov.io/?fp_ref=signalsapi), Apollo.io) for automated engagement.
+  Once a decision-maker is identified and their contact information is verified, your AI agent makes the connection and pitches your services. Alternatively, you can use your own outreach tool (e.g., [Snovio](https://snov.io/), Apollo.io) for automated engagement.
 
 To achieve a fully automated lead generation process using your own outreach tool, do the following (do it yourself, or ask us about our managed service so we will be doing it for you):
 

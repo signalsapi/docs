@@ -52,7 +52,7 @@ I saw you are looking for a Python developer and decided to reach out.
 
 Open a [project](https://app.signalsapi.com/leadlists/), add new or edit an existing one. In the "Enrichment" part of the form, add the prompt.
 
-Add the custom fields to your CRM or outreach tool, e.g. for [Snovio](https://snov.io/?fp_ref=signalsapi):
+Add the custom fields to your CRM or outreach tool, e.g. for [Snovio](https://snov.io/):
 
 1.  Open the prospect list [https://app.snov.io/prospects/](https://app.snov.io/prospects/), click ... -> Manage custom fields and data tabs
 

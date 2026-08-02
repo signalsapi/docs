@@ -30,19 +30,19 @@ option says what it returns — *people search + email*, and for some *+ mobile*
 
 | Provider | What you get | Paste | Get your key |
 |---|---|---|---|
-| Anymail Finder | people + email | API key | [anymailfinder.com](https://anymailfinder.com/?via=signalsapi) |
-| Hunter | people + email | API key | [hunter.io](https://hunter.io) |
-| Icypeas | people + email | API key | [icypeas.com](https://icypeas.com) |
-| LeadMagic | people + email **+ mobile** | API key | [leadmagic.io](https://leadmagic.io) — see [Find phone numbers](../find-phone-numbers/) |
-| People Data Labs | people + email | API key | [peopledatalabs.com](https://peopledatalabs.com) |
-| Prospeo | people + email | API key | [prospeo.io](https://prospeo.io/?via=signalsapi) |
-| Snov.io | people + email | Client ID **+** Client Secret | [snov.io](https://snov.io/?fp_ref=signalsapi) |
-| Tomba | people + email | Key **+** Secret | [tomba.io](https://tomba.io) |
+| Anymail Finder | people + email | API key | {% include provider-link.html name="Anymail Finder" text="anymailfinder.com" %} |
+| Hunter | people + email | API key | {% include provider-link.html name="Hunter" text="hunter.io" %} |
+| Icypeas | people + email | API key | {% include provider-link.html name="Icypeas" text="icypeas.com" %} |
+| LeadMagic | people + email **+ mobile** | API key | {% include provider-link.html name="LeadMagic" text="leadmagic.io" %} — see [Find phone numbers](../find-phone-numbers/) |
+| People Data Labs | people + email | API key | {% include provider-link.html name="People Data Labs" text="peopledatalabs.com" %} |
+| Prospeo | people + email | API key | {% include provider-link.html name="Prospeo" text="prospeo.io" %} |
+| Snov.io | people + email | Client ID **+** Client Secret | {% include provider-link.html name="Snov.io" text="snov.io" %} |
+| Tomba | people + email | Key **+** Secret | {% include provider-link.html name="Tomba" text="tomba.io" %} |
 
 ## Enter your key
 
 The form shows exactly the fields your provider needs. Most use a single **API key**; a few use
-two secrets — for example **[Snov.io](https://snov.io/?fp_ref=signalsapi)** asks for a **Client ID** and a **Client Secret** (found at
+two secrets — for example **{% include provider-link.html name="Snov.io" cost=false %}** asks for a **Client ID** and a **Client Secret** (found at
 [app.snov.io/account/api](https://app.snov.io/account/api)), which appear as soon as you select it.
 
 <figure><img src="/features/byo-people-provider-2.png" alt="Snov.io selected, showing Client ID and Client Secret fields" width="720"><figcaption></figcaption></figure>
@@ -66,7 +66,7 @@ If you see **invalid**, check that you:
 
 1. Copied the full key with no extra spaces.
 2. Selected the right provider.
-3. Filled both fields for two-secret providers ([Snov.io](https://snov.io/?fp_ref=signalsapi), Tomba).
+3. Filled both fields for two-secret providers ({% include provider-link.html name="Snov.io" cost=false %}, Tomba).
 4. Haven't revoked or rotated the key — regenerate it if unsure.
 
 A key that was active can later turn **invalid** if the provider revokes it. If people data

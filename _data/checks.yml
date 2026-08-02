@@ -9,6 +9,11 @@ items:
     six internal destinations
   covers:
   - '2.6'
+- id: affiliate-links-disclosed
+  desc: Every built anchor with an affiliate tracking parameter was emitted by provider-link.html
+    and discloses the relationship
+  covers:
+  - '7.3'
 - id: ai-variable-names-valid
   desc: Every {variable} referenced in troubleshooting/ai-filter-too-strict.md is
     documented on AI variables

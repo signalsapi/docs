@@ -1,0 +1,16 @@
+{%- assign provider = nil -%}
+{%- for p in site.data.providers.items -%}
+  {%- if p.name == include.name -%}{%- assign provider = p -%}{%- endif -%}
+{%- endfor -%}
+{%- if provider -%}
+  {%- assign link_text = include.text | default: provider.name -%}
+  {%- if provider.affiliate -%}
+    {%- assign show_cost = true -%}
+    {%- if include.cost == false -%}{%- assign show_cost = false -%}{%- endif -%}
+<a class="provider-link" href="{{ provider.signup_url }}" rel="sponsored nofollow">{{ link_text }}</a>{% if show_cost %}<span class="provider-link-cost"> ({{ provider.cost }})</span>{% endif %}
+  {%- else -%}
+<a class="provider-link" href="{{ provider.signup_url }}">{{ link_text }}</a>
+  {%- endif -%}
+{%- else -%}
+**[unknown provider: {{ include.name }}]**
+{%- endif -%}
