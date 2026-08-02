@@ -39,6 +39,11 @@
     `ruby` directive in the Gemfile'
   covers:
   - '1.9'
+- id: site-excludes-scaffolding
+  desc: '_config.yml declares exclude: for repo scaffolding, and none of those entries
+    appears under _site/'
+  covers:
+  - '2.2'
 - id: site-model-contract
   desc: site.pages, site.html_files, site.data and site.raw(path) are all present
     and non-nil

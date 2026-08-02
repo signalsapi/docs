@@ -8,5 +8,22 @@ color_scheme: signalsapi
 
 url: https://docs.signalsapi.com
 
+# Repository scaffolding that must never reach the built site. The first six
+# are the story's own list; Rakefile, script/, styles/ and bmalph/ are the
+# verification harness and planning-tool state discovered leaking into
+# _site/ once Epic 1 created them — Jekyll only skips dotfiles and
+# underscore-prefixed directories by default, not these.
+exclude:
+  - README.md
+  - LICENSE
+  - push.sh
+  - run.sh
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - script
+  - styles
+  - bmalph
+
 #aux_links:
 #  Template Repository: https://github.com/just-the-docs/just-the-docs-template
