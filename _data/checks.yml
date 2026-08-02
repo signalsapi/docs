@@ -34,6 +34,10 @@
     and non-nil
   covers:
   - '1.7'
+- id: todo-owner-grammar
+  desc: 'Every marker matches the grammar TODO(owner: <handle>): <what is needed>'
+  covers:
+  - '1.12'
 - id: vale-config-present
   desc: ".vale.ini exists and its StylesPath resolves to an existing directory"
   covers:
