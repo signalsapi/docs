@@ -38,7 +38,7 @@ The full phone number and its status are also shown on the individual lead page,
 
 Phone numbers are included in the **Download CSV** export as the `decision_maker_phone` column, placed between email and job title.
 
-```
+```text
 website,decision_maker_linkedin_url,decision_maker_email,decision_maker_phone,signal_job_title
 https://acme.com,https://linkedin.com/in/jane,jane@acme.com,+15551234567,Head of Sales
 https://widget.co,https://linkedin.com/in/bob,bob@widget.co,,VP Engineering
@@ -50,7 +50,7 @@ An empty `decision_maker_phone` cell means no number was found for that lead.
 
 The `{phone}` variable is available in any AI-generated field once a lead has a phone number. It's most useful for generating an SMS-ready opener or a CRM routing note:
 
-```
+```text
 Draft a one-line SMS to {first_name} at {company_name} (hiring for {job_title}).
 Their number is {phone}.
 ```

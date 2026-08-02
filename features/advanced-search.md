@@ -18,7 +18,7 @@ SignalsAPI offers multiple ways to find relevant hiring signals. Combine them to
 
 The default search method. Enter job titles or keywords and the system will match them against job posting titles and descriptions using full-text search.
 
-```
+```text
 project manager
 construction site manager
 senior project lead
@@ -30,7 +30,7 @@ Each line is a separate search term. A signal matches if any of the terms appear
 
 AI-powered search that finds signals with similar meaning, not just exact keywords. Enter a natural language description of the role you're looking for.
 
-```
+```text
 project manager, delivery lead
 ```
 

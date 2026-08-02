@@ -27,7 +27,7 @@ export PLANE_API_KEY="…"
 
 Every request carries your key in the `X-API-Key` header:
 
-```
+```text
 X-API-Key: YOUR_API_KEY
 ```
 
@@ -77,7 +77,7 @@ or the key/webhook/watch management routes.
 
 ### Who am I
 
-```
+```text
 GET /v1/whoami
 ```
 
@@ -93,7 +93,7 @@ curl -H "X-API-Key: $PLANE_API_KEY" "$PLANE_BASE_URL/v1/whoami"
 
 ### Issue a key
 
-```
+```text
 POST /v1/keys
 ```
 
@@ -118,7 +118,7 @@ Returns `201`.
 
 ### Revoke a key
 
-```
+```text
 DELETE /v1/keys/{key_id}
 ```
 
@@ -127,7 +127,7 @@ one that never existed.
 
 ### Usage
 
-```
+```text
 GET /v1/usage?window=24
 ```
 
@@ -156,7 +156,7 @@ Each bills one `call` unit at class `cached`, and is floored on data freshness (
 
 ### Is this company hiring?
 
-```
+```text
 GET /v1/companies/{company_id}/is-hiring
 ```
 
@@ -173,7 +173,7 @@ curl -H "X-API-Key: $PLANE_API_KEY" \
 
 ### Open requisitions
 
-```
+```text
 GET /v1/companies/{company_id}/open-reqs
 ```
 
@@ -203,7 +203,7 @@ boards appears once, with both boards listed.
 
 ### Company enrichment
 
-```
+```text
 GET /v1/companies/{company_id}/enrichment
 ```
 
@@ -221,7 +221,7 @@ Basic firmographics derived from ATS and board sources. `404` when the company i
 
 ### First hire in a function
 
-```
+```text
 GET /v1/companies/{company_id}/first-hire
 ```
 
@@ -239,7 +239,7 @@ narrows it to one. Values are provenance-wrapped.
 
 ### Repost pain
 
-```
+```text
 GET /v1/companies/{company_id}/repost-pain
 ```
 
@@ -262,7 +262,7 @@ Reqs the company keeps failing to fill, hardest first. `repost_count` is provena
 
 ### ATS migrations
 
-```
+```text
 GET /v1/companies/{company_id}/ats-migrations
 ```
 
@@ -283,7 +283,7 @@ Applicant-tracking vendor switches, with a provenance-wrapped `occurred_at`.
 
 ### Who is hiring for a role?
 
-```
+```text
 GET /v1/reqs/search
 ```
 
@@ -312,7 +312,7 @@ Paginate by passing `next_cursor` back as `cursor` until it comes back `null`.
 
 ### Market role demand
 
-```
+```text
 GET /v1/markets/role-demand
 ```
 
@@ -342,7 +342,7 @@ get the best available data, billed `cached`. See the
 
 ### Hiring pulse
 
-```
+```text
 GET /v1/companies/{company_id}/hiring-pulse?max_age=3600
 ```
 
@@ -372,7 +372,7 @@ When the company is cold and you declared a `max_age`, you get `202` instead:
 
 ### Pre-action brief
 
-```
+```text
 GET /v1/companies/{company_id}/pre-action-brief?max_age=3600
 ```
 
@@ -407,7 +407,7 @@ Cold behaves exactly as `hiring-pulse`: `202 {"job_id": …, "status": "crawling
 
 ### Poll for changes
 
-```
+```text
 GET /v1/events?since={cursor}
 ```
 
@@ -452,7 +452,7 @@ returned, independent of poll count** — an empty page costs nothing, so poll a
 
 ### Register a webhook
 
-```
+```text
 POST /v1/webhooks
 ```
 
@@ -469,7 +469,7 @@ Returns `201`.
 
 ### Watch a company
 
-```
+```text
 POST /v1/watches
 ```
 
@@ -485,7 +485,7 @@ Returns `201 {"id": 15}`, or `404` when the webhook endpoint isn't yours.
 
 ### Cancel a watch
 
-```
+```text
 DELETE /v1/watches/{watch_id}
 ```
 
@@ -497,7 +497,7 @@ Returns `204`, or `404` when the watch isn't yours.
 
 ### Record an outcome
 
-```
+```text
 POST /v1/companies/{company_id}/outcomes
 ```
 
@@ -513,7 +513,7 @@ Returns `202 {"id": 88}`.
 
 ### Clay enrichment
 
-```
+```text
 POST /v1/clay/enrich
 ```
 

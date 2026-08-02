@@ -24,7 +24,7 @@ That is a separate machine-facing surface — see the
 
 ## Base URL
 
-```
+```text
 https://api.signalsapi.com
 ```
 
@@ -32,7 +32,7 @@ https://api.signalsapi.com
 
 Every request uses your personal API key as a Bearer token:
 
-```
+```text
 Authorization: Bearer YOUR_API_KEY
 ```
 
@@ -51,7 +51,7 @@ your own account: you can only ever see your own projects and leads.
 
 ## List your projects
 
-```
+```text
 GET /projects/
 ```
 
@@ -83,7 +83,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 
 ## Browse a project's leads
 
-```
+```text
 GET /projects/{project_id}/leads
 ```
 
@@ -146,7 +146,7 @@ endpoint below instead of paging.
 
 ## Export a whole project
 
-```
+```text
 GET /projects/{project_id}/leads/export?format=json|csv
 ```
 
@@ -171,7 +171,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 
 The CSV columns are:
 
-```
+```text
 website,decision_maker_linkedin_url,decision_maker_email,decision_maker_phone,signal_job_title
 ```
 

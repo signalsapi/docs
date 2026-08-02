@@ -17,12 +17,12 @@ Use AI to analyse and answer questions about the signal, the company, and decisi
 Regular filter is usually not enough to filter out staffing and recruiting agencies, as not all of them identify themselves as belonging to "staffing & recruiting" industry.
 
 AI Prompt
-```
+```text
 Review the job description to determine if the company '{company_name}' hiring for itself or for a client. If the job description uses phrases like 'our client', 'we are partnering with a company', 'we are working with a company', or describes a company with an industry that is clearly not staffing, recruiting, or outsourcing, answer 'CLIENT'. If the job description is hiring for the company itself, answer 'SELF'. Answer with one word only and nothing else. Job Description Input: {job_description}
 ```
 
 Stop-words
-```
+```text
 client
 ```
 

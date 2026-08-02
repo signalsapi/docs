@@ -45,6 +45,10 @@
     exec rake check`"
   covers:
   - '1.10'
+- id: code-fence-language
+  desc: Every fenced code block declares a language
+  covers:
+  - '5.5'
 - id: concept-page-shape
   desc: 'Every page_type: concept page carries the four required concept headings:
     What it is, Why it matters, How it fits the pipeline, and Related'
