@@ -220,6 +220,11 @@
   desc: 'Every page''s stage: front-matter value names a stage declared in _data/pipeline.yml'
   covers:
   - '4.8'
+- id: symptom-page-shape
+  desc: 'Every page_type: symptom page carries the five required symptom headings
+    and a non-empty search_aliases'
+  covers:
+  - '6.2'
 - id: task-page-shape
   desc: 'Every page_type: task page carries the four required task headings: Before
     you start, Steps, Check it worked, and If it did not work'
