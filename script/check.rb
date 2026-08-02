@@ -95,9 +95,9 @@ module Check
       registry << Assertion.new(id: id, desc: desc, covers: covers, block: block, source: source)
     end
 
-    def run(site)
+    def run(site, assertions: registry)
       failures = []
-      registry.each do |assertion|
+      assertions.each do |assertion|
         begin
           assertion.block.call(site)
         rescue CheckFailure => e
@@ -167,10 +167,18 @@ when "manifest"
 when "coverage"
   ChecksManifest.report_uncovered
 else
-  site = Site.new
-  failures = Check.run(site)
+  target_id = ARGV[0]
+  assertions = Check.registry
 
-  count = Check.registry.size
+  if target_id
+    assertions = Check.registry.select { |a| a.id == target_id }
+    abort("script/check.rb: no assertion registered with id #{target_id.inspect}") if assertions.empty?
+  end
+
+  site = Site.new
+  failures = Check.run(site, assertions: assertions)
+
+  count = assertions.size
   puts "script/check.rb: #{count} assertion#{count == 1 ? '' : 's'} registered"
 
   if failures.empty?

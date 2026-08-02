@@ -1,4 +1,8 @@
 ---
+- id: checks-id-matches-filename
+  desc: Every script/checks/*.rb file registers an id equal to its own basename
+  covers:
+  - '1.11'
 - id: checks-manifest-current
   desc: _data/checks.yml matches the live Check registry
   covers:

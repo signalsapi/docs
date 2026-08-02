@@ -44,9 +44,32 @@ namespace :check do
     sh "vale --glob='!{#{VALE_EXCLUDED_DIRS.join(',')}}/**' ."
   end
 
-  desc "Run script/check.rb assertions against the site"
-  task :assert do
-    sh "ruby script/check.rb"
+  desc "Run script/check.rb assertions against the site (all, or just [id] against the already-built _site/)"
+  task :assert, [:id] do |_t, args|
+    sh args[:id] ? "ruby script/check.rb #{args[:id]}" : "ruby script/check.rb"
+  end
+
+  desc "Scaffold script/checks/[id].rb from a template with a failing body"
+  task :new, [:id] do |_t, args|
+    id = args[:id]
+    abort("usage: rake check:new[my-assertion-id]") unless id
+
+    path = File.join(File.dirname(__FILE__), "script", "checks", "#{id}.rb")
+    abort("script/checks/#{id}.rb already exists") if File.exist?(path)
+
+    File.write(path, <<~RUBY)
+      # frozen_string_literal: true
+
+      Check.register(
+        id: "#{id}",
+        desc: "TODO: describe what this assertion enforces",
+        covers: ["TODO"]
+      ) do |site|
+        site.fail!("TODO: implement this assertion")
+      end
+    RUBY
+
+    puts "script/checks/#{id}.rb created — edit it, then run `rake check:assert[#{id}]` to iterate"
   end
 
   desc "Regenerate _data/checks.yml from the live assertion registry"
