@@ -48,6 +48,11 @@
   desc: '_config.yml declares permalink: pretty'
   covers:
   - '2.3'
+- id: phone-pricing-not-in-faq
+  desc: faq.md has no currency symbol adjacent to the word 'phone', and 'propsects'
+    appears nowhere
+  covers:
+  - '2.8'
 - id: robots-sitemap-absolute
   desc: '_site/robots.txt exists with an absolute Sitemap: line and no double slash
     after the host'

@@ -48,7 +48,9 @@ Absolutely however keep in mind that traditional cold outreach is often ignored 
 
 ## Do you provide contact telephone numbers?
 
-We do! Qualified telephone numbers are provided as follows: £49/month for 100 telephone numbers, £149 for 300 & £199 for 500. We offer larger packages if you are receiving a higher number of propsects matching your ICP.
+Mobile phone lookup is bring-your-own-provider: connect your own people-data provider key and enable
+**Find phone numbers** on a project. See [Find phone numbers](/features/find-phone-numbers/) for how
+it works and which provider currently supports it.
 
 ## How many qualified prospects do you guarantee in the first month?
 
