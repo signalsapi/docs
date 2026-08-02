@@ -72,6 +72,16 @@
   desc: Every built HTML file contains exactly one rel="canonical" element
   covers:
   - '2.14'
+- id: palette-constants
+  desc: The hex values in _sass/color_schemes/signalsapi.scss match the fourteen declared
+    in DESIGN.md
+  covers:
+  - '2.15'
+- id: palette-contrast-floor
+  desc: DESIGN.md's declared text-on-background pairing meets the WCAG 4.5:1 contrast
+    floor
+  covers:
+  - '2.15'
 - id: permalink-pretty-set
   desc: '_config.yml declares permalink: pretty'
   covers:

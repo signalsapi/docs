@@ -31,6 +31,7 @@ exclude:
   - script
   - styles
   - bmalph
+  - DESIGN.md
 
 aux_links:
   "Open the app": "https://app.signalsapi.com/"

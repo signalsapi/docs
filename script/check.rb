@@ -60,7 +60,17 @@ class Site
   private
 
   def excluded?(file)
-    relative(file).start_with?(*CONTENT_EXCLUDED_DIRS.map { |d| "#{d}/" })
+    rel = relative(file)
+    return true if rel.start_with?(*CONTENT_EXCLUDED_DIRS.map { |d| "#{d}/" })
+
+    config_excludes.include?(rel)
+  end
+
+  # _config.yml's own exclude: list also names individual root files (e.g.
+  # DESIGN.md) that Jekyll won't publish, so they shouldn't be "pages" here
+  # either — a page with no corresponding html_file isn't a page.
+  def config_excludes
+    @config_excludes ||= YAML.safe_load(File.read(File.join(ROOT, "_config.yml")))["exclude"] || []
   end
 
   def relative(file)
