@@ -3,6 +3,8 @@ title: AI variables
 parent: Features
 layout: default
 nav_order: 12
+page_type: task
+description: The company, signal, and person variables you can insert into AI prompts and email templates.
 ---
 
 # AI variables

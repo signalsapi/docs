@@ -2,6 +2,8 @@
 title: Introduction
 layout: home
 nav_order: 1
+page_type: router
+description: SignalsAPI finds companies that are hiring and the decision-maker to contact there first.
 ---
 
 # Introduction

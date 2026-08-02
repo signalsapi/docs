@@ -4,6 +4,8 @@ parent: Features
 layout: default
 nav_order: 8
 stage: contact_enrichment
+page_type: task
+description: How mobile phone numbers are looked up for decision-makers, and which provider supports it.
 ---
 
 # Find phone numbers

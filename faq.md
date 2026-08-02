@@ -1,7 +1,9 @@
 ---
 title: Concepts & FAQs
 layout: default
-nav_order: 2
+nav_order: 3
+page_type: faq
+description: Answers to the questions people ask most about SignalsAPI before and after signing up.
 ---
 
 # Frequently asked questions

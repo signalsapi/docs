@@ -4,6 +4,8 @@ parent: Features
 layout: default
 nav_order: 3
 stage: signal_discovery
+page_type: task
+description: Semantic search, description search, skills filters, and other ways to narrow which signals match.
 ---
 
 # Advanced search

@@ -3,6 +3,7 @@ title: Pipeline
 parent: Concepts
 layout: default
 nav_order: 3
+page_type: reference
 description: The ordered stages every lead moves through, from signal to export, each owned by the page that documents it.
 ---
 

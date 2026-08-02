@@ -3,6 +3,8 @@ title: Bring your own people-data provider
 parent: Features
 layout: default
 nav_order: 7
+page_type: task
+description: Connect your own people-data provider API key so decision-maker search returns people and emails.
 ---
 
 # Bring your own people-data provider

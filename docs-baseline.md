@@ -1,7 +1,8 @@
 ---
 title: Docs baseline
 layout: default
-nav_order: 8
+nav_order: 9
+page_type: reference
 description: The measured as-is state of this site on 2026-07-31, before this documentation overhaul began.
 ---
 

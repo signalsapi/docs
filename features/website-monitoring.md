@@ -3,6 +3,8 @@ title: Website Monitoring
 parent: Features
 layout: default
 nav_order: 15
+page_type: task
+description: Watch a specific company website for newly posted vacancies instead of searching job boards.
 ---
 
 # Website Monitoring

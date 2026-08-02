@@ -3,6 +3,8 @@ title: Agent data plane — REST API
 parent: Features
 layout: default
 nav_order: 18
+page_type: task
+description: "The full /v1 REST reference for the agent data plane: every endpoint, request, and response shape."
 ---
 
 # Agent data plane — REST API

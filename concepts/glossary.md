@@ -3,6 +3,7 @@ title: Glossary
 parent: Concepts
 layout: default
 nav_order: 1
+page_type: reference
 description: Every SignalsAPI product term defined once, in one place, in alphabetical order.
 ---
 

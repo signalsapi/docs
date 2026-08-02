@@ -3,6 +3,8 @@ title: Work arrangement filter
 parent: Features
 layout: default
 nav_order: 5
+page_type: task
+description: Filter signals to remote, hybrid, on-site, or unspecified roles, with a one-click remote-friendly toggle.
 ---
 
 # Work arrangement filter

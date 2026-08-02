@@ -3,6 +3,8 @@ title: Agent data plane
 parent: Features
 layout: default
 nav_order: 17
+page_type: task
+description: A machine-facing surface reporting what changed in a company's hiring activity, not just what's posted now.
 ---
 
 # Agent data plane
