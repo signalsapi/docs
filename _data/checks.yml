@@ -133,6 +133,11 @@
     string "mention"
   covers:
   - '2.7'
+- id: no-instruction-only-in-image
+  desc: Every documented control name appears in real page text, not only inside an
+    image's alt attribute or filename
+  covers:
+  - '6.5'
 - id: no-live-sandbox-claim
   desc: No page asserts that a public base URL, a hosted sandbox, or an issued key
     exists for the agent data plane
