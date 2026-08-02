@@ -87,6 +87,11 @@
   desc: The built /concepts/glossary/ page contains every entry present in _data/glossary.yml
   covers:
   - '4.4'
+- id: home-is-router
+  desc: index.md links to no booking host, carries at least six internal links, and
+    stays under the router word budget
+  covers:
+  - '5.1'
 - id: layout-home-is-index-only
   desc: 'index.md is the only page declaring layout: home; every page declares a layout'
   covers:
