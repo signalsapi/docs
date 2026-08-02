@@ -17,6 +17,15 @@ def vale_on_path?
   ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).any? { |dir| File.executable?(File.join(dir, "vale")) }
 end
 
+# Story 10.2: Spectral is provisioned the same way — a pinned version this
+# file and .github/workflows/ci.yml both read — so a spec regression
+# reproduces on a contributor's machine instead of only in CI.
+SPECTRAL_VERSION = File.read(File.join(File.dirname(__FILE__), ".spectral-version")).strip
+
+def spectral_on_path?
+  ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).any? { |dir| File.executable?(File.join(dir, "spectral")) }
+end
+
 namespace :check do
   desc "Build the Jekyll site into _site/"
   task :build do
@@ -93,6 +102,25 @@ namespace :check do
   task :env do
     pinned = File.read(File.join(File.dirname(__FILE__), ".ruby-version")).strip
     warn "rake check:env: running Ruby #{RUBY_VERSION} differs from the pinned #{pinned} (.ruby-version) — CI runs #{pinned}." unless RUBY_VERSION.start_with?(pinned)
+  end
+end
+
+namespace :lint do
+  desc "Run Spectral against openapi/plane-v1.yaml (own task and CI step, not part of rake check)"
+  task :openapi do
+    spec_path = File.join(File.dirname(__FILE__), "openapi", "plane-v1.yaml")
+    next puts "rake lint:openapi: openapi/plane-v1.yaml does not exist — nothing to lint" unless File.exist?(spec_path)
+
+    unless spectral_on_path?
+      abort(<<~MSG)
+        rake lint:openapi: the spectral binary (pinned version #{SPECTRAL_VERSION}) is not on PATH.
+        Install it with:
+          npm install -g @stoplight/spectral-cli@#{SPECTRAL_VERSION}
+        Then confirm `spectral --version` reports #{SPECTRAL_VERSION}.
+      MSG
+    end
+
+    sh "spectral lint openapi/plane-v1.yaml --ruleset .spectral.yaml"
   end
 end
 

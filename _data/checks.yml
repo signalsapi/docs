@@ -267,6 +267,10 @@ items:
   covers:
   - '2.14'
   - '8.2'
+- id: openapi-lint-step-present
+  desc: ci.yml declares a Spectral lint step whenever openapi/plane-v1.yaml exists
+  covers:
+  - '10.2'
 - id: orphan-pages-reported
   desc: Pages with zero inbound in-body links are reported so the health page reflects
     real content
