@@ -179,6 +179,11 @@ items:
     after the host
   covers:
   - '8.3'
+- id: machine-surfaces-in-sync
+  desc: sitemap.xml, robots.txt, llms.txt and llms-full.txt all exist and reference
+    the same page set
+  covers:
+  - '8.9'
 - id: mobile-claim-generated
   desc: The phone page names mobile-support providers via Liquid, not hand-written
     prose
