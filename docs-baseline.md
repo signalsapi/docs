@@ -23,4 +23,5 @@ Source: {{ site.data.baseline.meta.source }}.
 {% endfor %}
 
 **Next scheduled re-measurement:** when every epic in this overhaul ships, tracked against the
-live findings `bundle exec rake check` reports today.
+live findings `bundle exec rake check` reports today — see [Docs health](/docs-health/) for the
+current numbers.

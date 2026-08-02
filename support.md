@@ -25,3 +25,6 @@ What actually happened (include the exact error or status code, if any):
 
 For legal, privacy, or data requests, use the address on the [Privacy Policy](/privacy-policy/) or
 [Terms of Service](/tos/) instead.
+
+Have an idea rather than a problem? Post and vote on it at
+[Request new feature](/features/request-new-feature/).

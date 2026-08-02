@@ -14,3 +14,8 @@ description: A short video walkthrough of SignalsAPI's basic functions, plus the
 A 6-minute walkthrough of SignalsAPI's basic functions: [watch it on YouTube](https://www.youtube.com/watch?v=HDEr2kSVkpA).
 
 Try SignalsAPI here: [https://app.signalsapi.com/register](https://app.signalsapi.com/register)
+
+## Where to go next
+
+- **[Operator quickstart](/operator-quickstart/)** — a first session from creating a search to a real project, in the app's own screens.
+- **[Developer quickstart](/developer-quickstart/)** — export leads over the REST API using its own real examples.

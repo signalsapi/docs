@@ -137,6 +137,7 @@ see, meter against, or revoke another customer's anything.
 - **[REST API reference](../agent-data-plane-api/)** — every endpoint, request and response shape
 - **[MCP server](../agent-data-plane-mcp/)** — the same primitives as agent tools
 - **[Clay integration](../agent-data-plane-clay/)** — SignalsAPI as an enrichment column in Clay
+- **[Agent-builder quickstart](/agent-builder-quickstart/)** — build against the reference today, before the plane opens
 
 Looking for the API that reads **your projects and leads** out of the SignalsAPI app? That is a
 different, self-serve API — see **[API access](../api-access/)**.

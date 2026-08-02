@@ -38,3 +38,6 @@ If more decision-makers are identified, they are prioritized in the order specif
 * Go to [Personas](https://app.signalsapi.com/personas) and create a new one.
 * Write job titles you are interested in talking to, e.g. CEO
 * Optionally, select countries they must be located.
+
+Want to permanently exclude a company or person instead? See
+[Do-Not-Contact list](../do-not-contact-list/).

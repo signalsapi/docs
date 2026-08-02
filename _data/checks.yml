@@ -227,6 +227,11 @@ items:
     exists for the agent data plane
   covers:
   - '5.6'
+- id: no-orphan-pages
+  desc: Every published page that is not a router and not nav_excluded has at least
+    one inbound in-body link
+  covers:
+  - '9.5'
 - id: no-page-deleted-without-redirect
   desc: Every page from the pre-overhaul baseline still resolves, live or via redirect_from
   covers:

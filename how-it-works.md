@@ -13,7 +13,7 @@ description: The step-by-step pipeline SignalsAPI runs, from monitoring the mark
 # How does SignalsAPI work
 
 * **Monitor the Market**\
-  The system continuously scans for intent signals (e.g., job postings) across the market including LinkedIn, Indeed, Monster, Reed and many more.
+  The system continuously scans for intent signals (e.g., job postings) across the market including LinkedIn, Indeed, Monster, Reed and many more. Watching one specific company instead? See [Website Monitoring](/features/website-monitoring/).
 * **Identify a Signal**\
   When a relevant company shows activity or demand that matches your industry or services, the system flags it as a potential lead.
 * **Enrich Company Data**\

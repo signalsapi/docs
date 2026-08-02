@@ -18,4 +18,6 @@ fits together. Start here if you don't.
 
 - [Glossary](/concepts/glossary/) — every product term defined once, in one place.
 - [How it works](/how-it-works/) — the pipeline from a job posting to a qualified lead.
+- [Pipeline](/concepts/pipeline/) — the stages a lead moves through, and which page documents each one.
+- [Anatomy of a lead](/concepts/anatomy-of-a-lead/) — every field on a lead row and where it comes from.
 - [FAQ](/faq/) — answers to the questions people ask most.

@@ -132,7 +132,7 @@ Every filter above lives on the same screen — see its click path in
 
 1. **Start with semantic search** -- it finds signals that keyword search misses
 2. **Combine keyword + semantic** -- use keywords for precision and semantic for breadth
-3. **Add description required words** -- when titles are noisy, require a keyword in the description (e.g. `remote`/`home`/`hybrid` for remote-friendly roles) to cut out signals that don't actually match
+3. **Add description required words** -- when titles are noisy, require a keyword in the description (e.g. `remote`/`home`/`hybrid` for remote-friendly roles) to cut out signals that don't actually match. For a structured filter instead of keywords, see [Work arrangement filter](/features/work-arrangement-filter/)
 4. **Use "Exclude staffing agencies"** instead of manually listing staffing stop words
 5. **Try "Hard to fill"** to focus on companies most likely to respond
 6. **Widen your location** -- add location patterns for specific cities instead of limiting to a single country

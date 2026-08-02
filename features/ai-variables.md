@@ -43,3 +43,6 @@ comparison.
 |---|---|---|
 {% for v in site.data.variables.items %}{% if v.kind == "person" %}| `{{ v.name }}` | {{ v.meaning }} | {{ v.providers | join: ", " }} |
 {% endif %}{% endfor %}
+
+See [Personalize emails with AI](../personalize-emails-with-ai/) for how these variables feed into
+a generated email.
