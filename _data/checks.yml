@@ -152,6 +152,11 @@ items:
     stays under the router word budget
   covers:
   - '5.1'
+- id: howto-jsonld-matches-steps
+  desc: 'Every task page''s built HTML carries one valid HowTo JSON-LD block whose
+    step count matches its ## Steps list'
+  covers:
+  - '8.6'
 - id: integration-stopped-causes-named
   desc: troubleshooting/integration-stopped.md names both the manual-approval and
     credential causes
