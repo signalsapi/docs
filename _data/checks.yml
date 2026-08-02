@@ -1,4 +1,9 @@
 ---
+- id: 404-router-shape
+  desc: _site/404.html exists, references the search input, and links to at least
+    six internal destinations
+  covers:
+  - '2.6'
 - id: canonical-no-double-slash
   desc: No file under _site/ contains docs.signalsapi.com//
   covers:
