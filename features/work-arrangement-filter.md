@@ -1,7 +1,7 @@
 ---
 title: Work arrangement filter
 parent: Features
-layout: home
+layout: default
 nav_order: 5
 ---
 

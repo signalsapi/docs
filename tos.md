@@ -1,6 +1,6 @@
 ---
 title: Terms of Service
-layout: home
+layout: default
 nav_order: 7
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Request new feature
 parent: Features
-layout: home
+layout: default
 nav_order: 1
 ---
 

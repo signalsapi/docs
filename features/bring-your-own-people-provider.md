@@ -1,7 +1,7 @@
 ---
 title: Bring your own people-data provider
 parent: Features
-layout: home
+layout: default
 nav_order: 7
 ---
 

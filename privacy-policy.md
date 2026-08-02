@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-layout: home
+layout: default
 nav_order: 6
 ---
 

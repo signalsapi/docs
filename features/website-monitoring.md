@@ -1,7 +1,7 @@
 ---
 title: Website Monitoring
 parent: Features
-layout: home
+layout: default
 nav_order: 15
 ---
 

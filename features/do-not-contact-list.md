@@ -1,7 +1,7 @@
 ---
 title: Do-Not-Contact list
 parent: Features
-layout: home
+layout: default
 nav_order: 14
 ---
 

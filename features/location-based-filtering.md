@@ -1,7 +1,7 @@
 ---
 title: Location-based filtering
 parent: Features
-layout: home
+layout: default
 nav_order: 4
 ---
 

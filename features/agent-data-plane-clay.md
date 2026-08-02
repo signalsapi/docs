@@ -1,7 +1,7 @@
 ---
 title: Agent data plane — Clay integration
 parent: Features
-layout: home
+layout: default
 nav_order: 20
 ---
 

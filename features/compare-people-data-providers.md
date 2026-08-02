@@ -1,7 +1,7 @@
 ---
 title: Compare people-data providers
 parent: Features
-layout: home
+layout: default
 nav_order: 9
 ---
 

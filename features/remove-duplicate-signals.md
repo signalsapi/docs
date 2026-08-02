@@ -1,7 +1,7 @@
 ---
 title: Remove duplicate signals
 parent: Features
-layout: home
+layout: default
 nav_order: 2
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Is it working?
-layout: home
+layout: default
 nav_order: 5
 ---
 

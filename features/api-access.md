@@ -1,7 +1,7 @@
 ---
 title: API access
 parent: Features
-layout: home
+layout: default
 nav_order: 16
 ---
 

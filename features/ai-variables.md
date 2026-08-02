@@ -1,7 +1,7 @@
 ---
 title: AI variables
 parent: Features
-layout: home
+layout: default
 nav_order: 12
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Personalize emails with AI
 parent: Features
-layout: home
+layout: default
 nav_order: 11
 ---
 

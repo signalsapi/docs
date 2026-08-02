@@ -1,6 +1,6 @@
 ---
 title: Release Notes / Changelog
-layout: home
+layout: default
 nav_order: 8
 ---
 

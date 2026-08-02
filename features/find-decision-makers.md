@@ -1,7 +1,7 @@
 ---
 title: Find decision-makers
 parent: Features
-layout: home
+layout: default
 nav_order: 6
 ---
 

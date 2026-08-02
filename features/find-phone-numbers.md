@@ -1,7 +1,7 @@
 ---
 title: Find phone numbers
 parent: Features
-layout: home
+layout: default
 nav_order: 8
 ---
 
