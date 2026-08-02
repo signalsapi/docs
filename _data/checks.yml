@@ -150,6 +150,10 @@
     false'
   covers:
   - '2.4'
+- id: term-include-keys-resolve
+  desc: Every include term.html key="..." invocation names a term that exists in _data/glossary.yml
+  covers:
+  - '4.3'
 - id: todo-owner-grammar
   desc: 'Every marker matches the grammar TODO(owner: <handle>): <what is needed>'
   covers:
