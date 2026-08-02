@@ -15,6 +15,11 @@
   desc: Gemfile declares html-proofer with a ~> 5 constraint
   covers:
   - '1.3'
+- id: ruby-version-single-source
+  desc: 'Ruby is pinned by .ruby-version only — no inline ruby-version: in CI, no
+    `ruby` directive in the Gemfile'
+  covers:
+  - '1.9'
 - id: site-model-contract
   desc: site.pages, site.html_files, site.data and site.raw(path) are all present
     and non-nil

@@ -58,6 +58,12 @@ namespace :check do
   task :coverage do
     sh "ruby script/check.rb coverage"
   end
+
+  desc "Warn (not fail) when the running Ruby differs from .ruby-version (AD-13)"
+  task :env do
+    pinned = File.read(File.join(File.dirname(__FILE__), ".ruby-version")).strip
+    warn "rake check:env: running Ruby #{RUBY_VERSION} differs from the pinned #{pinned} (.ruby-version) — CI runs #{pinned}." unless RUBY_VERSION.start_with?(pinned)
+  end
 end
 
 # AD-5: the build aborts rake check immediately on failure, since nothing
