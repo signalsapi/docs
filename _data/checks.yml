@@ -39,6 +39,11 @@
   desc: Gemfile declares html-proofer with a ~> 5 constraint
   covers:
   - '1.3'
+- id: no-gitbook-mention-artifacts
+  desc: No .md file contains a Markdown link whose title attribute is the literal
+    string "mention"
+  covers:
+  - '2.7'
 - id: permalink-pretty-set
   desc: '_config.yml declares permalink: pretty'
   covers:
