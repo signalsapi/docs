@@ -106,6 +106,14 @@ items:
   desc: No two pages declare the same description
   covers:
   - '5.3'
+- id: docs-health-links-resolve
+  desc: Every internal markdown link resolves to a known page URL
+  covers:
+  - '9.3'
+- id: docs-health-rows-match-registry
+  desc: Every metric published on docs-health.md has a corresponding registered assertion
+  covers:
+  - '9.3'
 - id: external-links-off-pr-path
   desc: html-proofer runs --disable-external in the Rakefile, and the nightly lychee
     workflow never triggers on pull_request
@@ -157,6 +165,11 @@ items:
     step count matches its ## Steps list'
   covers:
   - '8.6'
+- id: images-alt-text-present
+  desc: Every <img> with an empty alt attribute is reported so the health page reflects
+    real content
+  covers:
+  - '9.3'
 - id: integration-stopped-causes-named
   desc: troubleshooting/integration-stopped.md names both the manual-approval and
     credential causes
@@ -234,6 +247,17 @@ items:
   covers:
   - '2.14'
   - '8.2'
+- id: orphan-pages-reported
+  desc: Pages with zero inbound in-body links are reported so the health page reflects
+    real content
+  covers:
+  - '9.3'
+- id: page-staleness
+  desc: Every page's verified_on more than 90 days old is reported; a page with no
+    verified_on fails outright
+  covers:
+  - '9.3'
+  - '9.4'
 - id: palette-constants
   desc: The hex values in _sass/color_schemes/signalsapi.scss match the fourteen declared
     in DESIGN.md
