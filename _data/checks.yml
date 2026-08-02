@@ -134,6 +134,11 @@
     after the host'
   covers:
   - '2.5'
+- id: router-page-shape
+  desc: 'Every page_type: router page has a ''## Where to go'' heading, at least three
+    internal links, no image, and fewer than 250 words'
+  covers:
+  - '4.6'
 - id: ruby-version-single-source
   desc: 'Ruby is pinned by .ruby-version only — no inline ruby-version: in CI, no
     `ruby` directive in the Gemfile'

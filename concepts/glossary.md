@@ -1,7 +1,8 @@
 ---
 title: Glossary
+parent: Concepts
 layout: default
-nav_order: 10
+nav_order: 1
 description: Every SignalsAPI product term defined once, in one place, in alphabetical order.
 ---
 
