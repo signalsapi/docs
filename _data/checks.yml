@@ -84,6 +84,11 @@ items:
   covers:
   - '3.3'
   - '7.1'
+- id: data-staleness
+  desc: Every _data/*.yml file's meta.verified_on is reported when more than 90 days
+    stale, and never in the future
+  covers:
+  - '7.11'
 - id: data-verified-on-parses
   desc: Every _data/*.yml file's meta.verified_on is a valid ISO date
   covers:
