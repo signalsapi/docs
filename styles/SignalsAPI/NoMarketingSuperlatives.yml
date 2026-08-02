@@ -1,0 +1,13 @@
+extends: existence
+message: "Unsourced superlative '%s' — cite the claim or cut it."
+level: error
+ignorecase: true
+tokens:
+  - revolutionary
+  - game-changing
+  - cutting-edge
+  - world-class
+  - unparalleled
+  - state-of-the-art
+  - best-in-class
+  - industry-leading
