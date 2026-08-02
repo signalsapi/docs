@@ -78,6 +78,10 @@
     term appears twice
   covers:
   - '4.1'
+- id: glossary-page-complete
+  desc: The built /concepts/glossary/ page contains every entry present in _data/glossary.yml
+  covers:
+  - '4.4'
 - id: layout-home-is-index-only
   desc: 'index.md is the only page declaring layout: home; every page declares a layout'
   covers:
