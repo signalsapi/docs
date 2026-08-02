@@ -71,5 +71,5 @@ usable leads still exports cleanly: a header-only CSV rather than an error.
 A `403` means your key is missing, invalid, expired, or deactivated; a `404` means the
 `project_id` isn't yours or doesn't exist — see the status table on
 [API access](/features/api-access/). If the response looks right but the row count doesn't match,
-check [Is it working?](/is-it-working/) for a platform-wide issue, or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com).
+check [Is it working?](/is-it-working/) for a platform-wide issue, or contact
+[Support](/support/).

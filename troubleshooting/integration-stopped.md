@@ -45,6 +45,6 @@ click **Approve**.
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with which integration and search are
+Check [Is it working?](/is-it-working/) or contact
+[Support](/support/) with which integration and search are
 affected.

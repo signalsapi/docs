@@ -42,5 +42,5 @@ Open the project's **Duplicates** setting and check both of its independent cont
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with the project's Duplicates settings.
+Check [Is it working?](/is-it-working/) or contact
+[Support](/support/) with the project's Duplicates settings.

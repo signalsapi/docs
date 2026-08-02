@@ -82,8 +82,8 @@ Please check the status page to find out: [https://status.signalsapi.com/](https
 
 ## Something is not working as expected
 
-The system is currently in the active development stage. If you encountered a glitch, please email at [mykola@signalsapi.com](mailto:mykola@signalsapi.com) with details.
+The system is currently in the active development stage. If you encountered a glitch, please contact [Support](/support/) with details.
 
 ## I have a question not covered here
 
-Please email [mykola@signalsapi.com](mailto:mykola@signalsapi.com) to get more help.
+Please contact [Support](/support/) to get more help.

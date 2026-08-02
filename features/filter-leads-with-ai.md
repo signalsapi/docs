@@ -26,7 +26,7 @@ Stop-words
 client
 ```
 
-Does not fit your case? Let me help: [mykola@signalsapi.com](mailto:mykola@signalsapi.com)
+Does not fit your case? Let me help: [Support](/support/)
 
 ## Getting started
 
@@ -46,4 +46,4 @@ You can fine-tune your prompts by running them in [ChatGPT](https://chatgpt.com/
 
 ## Need help writing a prompt?
 
-Contact me at [mykola@signalsapi.com](mailto:mykola@signalsapi.com) and describe your case.
+Contact [Support](/support/) and describe your case.

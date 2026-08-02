@@ -39,5 +39,5 @@ to use.
 ## If it did not work
 
 If the project stays empty or leads look wrong, start with [Is it working?](/is-it-working/) to
-rule out a platform-wide issue, then check the [FAQ](/faq/). If neither explains it, email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with your search and persona settings.
+rule out a platform-wide issue, then check the [FAQ](/faq/). If neither explains it, contact
+[Support](/support/) with your search and persona settings.

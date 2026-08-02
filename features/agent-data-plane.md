@@ -115,7 +115,7 @@ talk to us and we will quote your usage shape.
 The plane is **not yet open for self-serve signup**, and there is no public base URL to point a
 client at today. Access is arranged directly:
 
-1. Email [mykola@signalsapi.com](mailto:mykola@signalsapi.com) describing what you want to build.
+1. Contact [Support](/support/) describing what you want to build.
 2. We issue your first API key and the base URL to use it against.
 3. From then on you can mint and revoke additional keys yourself via
    [`POST /v1/keys`](../agent-data-plane-api/#issue-a-key), scoped to your own account.

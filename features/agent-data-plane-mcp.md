@@ -23,7 +23,7 @@ The server is code-complete but **not yet deployed to an endpoint you can connec
 no connect snippet on this page. Publishing one before the endpoint exists would be inventing a URL.
 
 This page documents the tool contract so you can plan an integration now.
-[Email us](mailto:mykola@signalsapi.com) if you want the MCP surface hosted — knowing someone is
+Contact [Support](/support/) if you want the MCP surface hosted — knowing someone is
 waiting on it is what moves it up the queue. In the meantime every tool below has an exact REST
 equivalent that works today.
 

@@ -47,5 +47,5 @@ key, or fix the rejected one, then re-run.
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) for a platform-wide issue, or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with your search and persona settings.
+Check [Is it working?](/is-it-working/) for a platform-wide issue, or contact
+[Support](/support/) with your search and persona settings.

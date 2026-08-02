@@ -46,5 +46,5 @@ other provider, phone lookup will never populate no matter what else you change 
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) for a platform-wide issue, or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with which provider you have connected.
+Check [Is it working?](/is-it-working/) for a platform-wide issue, or contact
+[Support](/support/) with which provider you have connected.

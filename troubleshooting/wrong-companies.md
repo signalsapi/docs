@@ -47,5 +47,5 @@ company size, headquarters location — are set at all.
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with your search and filter settings.
+Check [Is it working?](/is-it-working/) or contact
+[Support](/support/) with your search and filter settings.

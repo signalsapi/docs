@@ -15,7 +15,7 @@ The full `/v1` reference. For what the plane *is* and how it is billed, start wi
 ## Base URL
 
 The plane is not yet open for self-serve signup and has **no public base URL**. Your base URL is
-issued together with your first API key — [email us](mailto:mykola@signalsapi.com) to get set up.
+issued together with your first API key — contact [Support](/support/) to get set up.
 The examples below assume you have exported it:
 
 ```bash

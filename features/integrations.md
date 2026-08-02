@@ -23,7 +23,7 @@ We have the following native integrations:
 6. Bullhorn
 7. Webhook
 
-Any other system (that has an open API) can be integrated with SignalsAPI via webhook and receive leads in real time. Contact mykola@signalsapi.com if you need help with integration or would like to&#x20;
+Any other system (that has an open API) can be integrated with SignalsAPI via webhook and receive leads in real time. Contact [Support](/support/) if you need help with integration or would like one added.
 
 ## Setting up
 

@@ -52,5 +52,5 @@ returns.
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with your prompt and connected provider.
+Check [Is it working?](/is-it-working/) or contact
+[Support](/support/) with your prompt and connected provider.

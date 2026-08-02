@@ -78,4 +78,4 @@ Add the custom fields to your CRM or outreach tool, e.g. for [Snovio](https://sn
 
 ## Need help writing a prompt?
 
-Contact me at [mykola@signalsapi.com](mailto:mykola@signalsapi.com) and describe your case.
+Contact [Support](/support/) and describe your case.

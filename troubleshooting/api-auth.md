@@ -49,6 +49,6 @@ Compare your response's status code against this table:
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) or email
-[mykola@signalsapi.com](mailto:mykola@signalsapi.com) with the status code and endpoint you're
+Check [Is it working?](/is-it-working/) or contact
+[Support](/support/) with the status code and endpoint you're
 calling (never your key).

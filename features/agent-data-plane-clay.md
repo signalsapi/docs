@@ -41,8 +41,8 @@ hiring *harder than it was*.
 
 ## Setting it up
 
-You will need a plane API key and your base URL — the plane is not yet self-serve, so
-[email us](mailto:mykola@signalsapi.com) and we will issue both. Then, in Clay:
+You will need a plane API key and your base URL — the plane is not yet self-serve, so contact
+[Support](/support/) and we will issue both. Then, in Clay:
 
 1. Add an **HTTP API** enrichment column to your table.
 2. Set the method to **POST** and the URL to `{YOUR_BASE_URL}/v1/clay/enrich`.
