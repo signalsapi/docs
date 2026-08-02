@@ -5,9 +5,12 @@ layout: default
 nav_order: 20
 page_type: feature
 description: Add a Clay enrichment column that returns a company's hiring motion as flat, filterable rows.
+prereq: plane_access
 ---
 
 # Agent data plane — Clay integration
+
+{% include prereq.html %}
 
 Clay lets you add an enrichment column backed by any HTTP endpoint. The plane ships one built for
 exactly that: give it a company domain, get back that company's hiring motion as flat columns you can

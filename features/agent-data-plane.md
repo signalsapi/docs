@@ -4,10 +4,13 @@ parent: Features
 layout: default
 nav_order: 17
 page_type: feature
+prereq: plane_access
 description: A machine-facing surface reporting what changed in a company's hiring activity, not just what's posted now.
 ---
 
 # Agent data plane
+
+{% include prereq.html %}
 
 Most hiring data tells you what is posted **right now**. The agent data plane tells you what
 **changed** — and when, and how often, and whether it has happened before.

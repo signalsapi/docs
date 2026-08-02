@@ -5,9 +5,12 @@ layout: default
 nav_order: 19
 page_type: feature
 description: The agent data plane's MCP tool contract — code-complete, not yet hosted at a public endpoint.
+prereq: mcp_hosting
 ---
 
 # Agent data plane — MCP server
+
+{% include prereq.html %}
 
 The [Model Context Protocol](https://modelcontextprotocol.io) is how an AI agent discovers and calls
 tools. The plane ships an MCP server, `signalsapi-plane`, that exposes the hiring-panel primitives as

@@ -4,10 +4,13 @@ parent: Quick start
 layout: default
 nav_order: 3
 page_type: task
+prereq: plane_access
 description: Build an agent data plane integration today, against the reference's own example payloads.
 ---
 
 # Agent-builder quickstart
+
+{% include prereq.html %}
 
 ## Before you start
 

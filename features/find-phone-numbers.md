@@ -5,10 +5,13 @@ layout: default
 nav_order: 8
 stage: contact_enrichment
 page_type: feature
+prereq: leadmagic_phone
 description: How mobile phone numbers are looked up for decision-makers, and which provider supports it.
 ---
 
 # Find phone numbers
+
+{% include prereq.html %}
 
 Get a mobile phone number for each decision-maker alongside their email, so you can call or text directly without leaving your leads list.
 

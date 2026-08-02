@@ -214,6 +214,10 @@ items:
     jekyll-seo-tag}'
   covers:
   - '2.14'
+- id: prereq-key-resolves
+  desc: 'Every page''s prereq: value names an entry declared in _data/prereqs.yml'
+  covers:
+  - '7.8'
 - id: pricing-figures-sourced
   desc: Every _data/pricing.yml item declares a value and a source
   covers:
