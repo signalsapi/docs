@@ -45,6 +45,11 @@
     exec rake check`"
   covers:
   - '1.10'
+- id: concept-page-shape
+  desc: 'Every page_type: concept page carries the four required concept headings:
+    What it is, Why it matters, How it fits the pipeline, and Related'
+  covers:
+  - '4.7'
 - id: config-strict-front-matter
   desc: '_config.yml declares strict_front_matter: true'
   covers:
