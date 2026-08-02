@@ -31,7 +31,10 @@ Check.register(
     from_url = page_url.call(page)
     page.body.scan(/(?<!!)\[[^\]]*\]\(((?:\.\.\/|\/)[^)]*)\)/).flatten.uniq.filter_map do |link|
       target = resolve.call(link, from_url)
-      "#{page.path}: #{link}" unless known_urls.include?(target)
+      next if known_urls.include?(target)
+      next if File.exist?(File.join(ROOT, target)) # a real static asset, not a page
+
+      "#{page.path}: #{link}"
     end
   end
 

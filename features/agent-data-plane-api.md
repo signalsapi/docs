@@ -16,7 +16,8 @@ prereq: plane_access
 {% include prereq.html %}
 
 The full `/v1` reference. For what the plane *is* and how it is billed, start with the
-[Agent data plane overview](../agent-data-plane/).
+[Agent data plane overview](../agent-data-plane/). Every operation below is also machine-readable
+as an OpenAPI document: [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml).
 
 ## Base URL
 

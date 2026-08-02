@@ -1,0 +1,833 @@
+openapi: 3.0.3
+info:
+  title: SignalsAPI Agent Data Plane
+  version: "1.0.0"
+  description: >
+    The plane's full /v1 surface, transcribed from
+    features/agent-data-plane-api.md and features/agent-data-plane-clay.md.
+    Every operation carries an x-status (live, code-complete, or planned)
+    and, where a Model Context Protocol tool wraps it, an x-mcp-tool name —
+    see features/agent-data-plane-mcp.md. There is no public base URL; one
+    is issued together with your first key (see Support).
+servers:
+  - url: "{base_url}"
+    variables:
+      base_url:
+        default: https://issued-with-your-first-key.example
+security:
+  - ApiKeyAuth: []
+tags:
+  - name: Your account
+  - name: Tier 0 — cached reads
+  - name: Tier 1 — freshness-aware reads
+  - name: The change feed
+  - name: Writing back
+
+paths:
+  /v1/whoami:
+    get:
+      operationId: whoami
+      tags: [Your account]
+      summary: Who am I
+      x-status: live
+      description: What the presented key resolves to. Useful as a connectivity check.
+      responses:
+        "200":
+          description: The caller's own identity.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  customer_id: { type: string }
+                  tier: { type: string }
+                  plan: { type: string, nullable: true }
+                  scopes: { type: array, items: { type: string } }
+              example:
+                customer_id: acme
+                tier: paid
+                plan: null
+                scopes: []
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /v1/keys:
+    post:
+      operationId: issueKey
+      tags: [Your account]
+      summary: Issue a key
+      x-status: live
+      description: >
+        Mint another key for your own account — the customer_id is always
+        taken from the authenticated caller, never from the request. The
+        raw key is returned once and stored only as a hash.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tier: { type: string, description: "The tier label recorded on the key (visible via /v1/whoami)" }
+              required: [tier]
+            example:
+              tier: paid
+      responses:
+        "201":
+          description: The newly issued key, shown once.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: integer }
+                  key: { type: string }
+                  customer_id: { type: string }
+                  tier: { type: string }
+              example:
+                id: 42
+                key: "…shown once…"
+                customer_id: acme
+                tier: paid
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /v1/keys/{key_id}:
+    delete:
+      operationId: revokeKey
+      tags: [Your account]
+      summary: Revoke a key
+      x-status: live
+      description: >
+        Revoking a key id that belongs to someone else returns 404 —
+        identical to revoking one that never existed.
+      parameters:
+        - $ref: "#/components/parameters/KeyId"
+      responses:
+        "204":
+          description: Revoked.
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/usage:
+    get:
+      operationId: getUsage
+      tags: [Your account]
+      summary: Usage
+      x-status: live
+      description: Metered usage over a rolling window, aggregated across every key the account holds.
+      parameters:
+        - name: window
+          in: query
+          description: Window size in hours
+          schema: { type: integer, default: 24 }
+      responses:
+        "200":
+          description: Rolling usage totals.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  calls: { type: integer }
+                  changes: { type: integer }
+                  watches: { type: integer }
+                  forced_fresh: { type: integer }
+                  by_meter_class:
+                    type: object
+                    properties:
+                      cached: { type: integer }
+                      fresh: { type: integer }
+              example:
+                calls: 1840
+                changes: 22791
+                watches: 12
+                forced_fresh: 3
+                by_meter_class: { cached: 1801, fresh: 42 }
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /v1/companies/{company_id}/is-hiring:
+    get:
+      operationId: isHiring
+      tags: [Tier 0 — cached reads]
+      summary: Is this company hiring?
+      x-status: live
+      x-mcp-tool: is_hiring
+      description: The cheap qualifying gate — call it before spending on a richer read.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+      responses:
+        "200":
+          description: Whether the company currently has active requisitions.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  is_hiring: { type: boolean }
+                  open_req_count: { type: integer }
+                  as_of: { type: string, format: date-time }
+              example:
+                is_hiring: true
+                open_req_count: 7
+                as_of: "2026-07-08T04:11:07Z"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/companies/{company_id}/open-reqs:
+    get:
+      operationId: getOpenReqs
+      tags: [Tier 0 — cached reads]
+      summary: Open requisitions
+      x-status: live
+      x-mcp-tool: get_open_reqs
+      description: The company's currently active reqs, deduped across boards.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+        - name: function
+          in: query
+          description: Filter by function
+          schema: { type: string }
+        - name: country
+          in: query
+          description: Filter by country
+          schema: { type: string }
+        - name: limit
+          in: query
+          description: Page size
+          schema: { type: integer, default: 50 }
+      responses:
+        "200":
+          description: The company's currently active requisitions.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reqs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title: { type: string }
+                        function: { type: string }
+                        country: { type: string }
+                        first_seen: { type: string, format: date-time }
+                        boards: { type: array, items: { type: string } }
+                  as_of: { type: string, format: date-time }
+              example:
+                reqs:
+                  - title: Senior Backend Engineer
+                    function: engineering
+                    country: DE
+                    first_seen: "2026-06-02T10:00:00Z"
+                    boards: [greenhouse, linkedin]
+                as_of: "2026-07-08T04:11:07Z"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/companies/{company_id}/enrichment:
+    get:
+      operationId: getEnrichment
+      tags: [Tier 0 — cached reads]
+      summary: Company enrichment
+      x-status: live
+      description: Basic firmographics derived from ATS and board sources.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+      responses:
+        "200":
+          description: Basic firmographic data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name: { type: string }
+                  domain: { type: string }
+                  hq_country: { type: string }
+                  boards: { type: array, items: { type: string } }
+                  as_of: { type: string, format: date-time }
+              example:
+                name: zollsoft GmbH
+                domain: zollsoft.de
+                hq_country: DE
+                boards: [greenhouse]
+                as_of: "2026-07-08T04:11:07Z"
+        "404":
+          description: The company is unknown.
+
+  /v1/companies/{company_id}/first-hire:
+    get:
+      operationId: getFirstHire
+      tags: [Tier 0 — cached reads]
+      summary: First hire in a function
+      x-status: live
+      description: The earliest role the company ever opened per function — a new budget line.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+        - name: function
+          in: query
+          description: Narrow to one function
+          schema: { type: string }
+      responses:
+        "200":
+          description: The earliest-opened role per function, provenance-wrapped.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  by_function:
+                    type: object
+                    additionalProperties:
+                      $ref: "#/components/schemas/ProvenanceValue"
+                  as_of: { type: string, format: date-time }
+              example:
+                by_function:
+                  sales: { value: "2026-03-14T09:00:00Z", source_board: role-slot, observed_at: "2026-03-14T09:00:00Z", confidence: 1.0 }
+                as_of: "2026-07-08T04:11:07Z"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/companies/{company_id}/repost-pain:
+    get:
+      operationId: getRepostPain
+      tags: [Tier 0 — cached reads]
+      summary: Repost pain
+      x-status: live
+      description: Reqs the company keeps failing to fill, hardest first.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+      responses:
+        "200":
+          description: Requisitions ranked by repost pain.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reqs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title: { type: string }
+                        function: { type: string }
+                        country: { type: string }
+                        first_seen: { type: string, format: date-time }
+                        repost_count:
+                          $ref: "#/components/schemas/ProvenanceValue"
+                  as_of: { type: string, format: date-time }
+              example:
+                reqs:
+                  - title: Staff SRE
+                    function: engineering
+                    country: US
+                    first_seen: "2026-01-08T12:00:00Z"
+                    repost_count: { value: 4, source_board: greenhouse, observed_at: "2026-07-01T06:00:00Z", confidence: 0.9 }
+                as_of: "2026-07-08T04:11:07Z"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/companies/{company_id}/ats-migrations:
+    get:
+      operationId: getAtsMigrations
+      tags: [Tier 0 — cached reads]
+      summary: ATS migrations
+      x-status: live
+      description: Applicant-tracking vendor switches, with a provenance-wrapped occurred_at.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+      responses:
+        "200":
+          description: Applicant-tracking vendor switches.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  migrations:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        from_vendor: { type: string }
+                        to_vendor: { type: string }
+                        occurred_at:
+                          $ref: "#/components/schemas/ProvenanceValue"
+                  as_of: { type: string, format: date-time }
+              example:
+                migrations:
+                  - from_vendor: lever
+                    to_vendor: greenhouse
+                    occurred_at: { value: "2026-02-11T00:00:00Z", source_board: greenhouse, observed_at: "2026-02-11T00:00:00Z", confidence: 0.8 }
+                as_of: "2026-07-08T04:11:07Z"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/reqs/search:
+    get:
+      operationId: searchReqs
+      tags: [Tier 0 — cached reads]
+      summary: Who is hiring for a role?
+      x-status: live
+      x-mcp-tool: who_is_hiring_for
+      description: >
+        The reverse lookup: companies with active reqs matching a role and
+        geography, deduped by company, each with its full hiring pulse and
+        the specific reqs that matched.
+      parameters:
+        - name: role
+          in: query
+          description: Matches the req's function
+          schema: { type: string }
+        - name: geo
+          in: query
+          description: Matches the req's country
+          schema: { type: string }
+        - name: since
+          in: query
+          description: Only reqs first seen at or after this timestamp
+          schema: { type: string, format: date-time }
+        - name: cursor
+          in: query
+          description: Keyset cursor; pass the previous page's next_cursor
+          schema: { type: integer }
+        - name: limit
+          in: query
+          description: Page size
+          schema: { type: integer, default: 20 }
+      responses:
+        "200":
+          description: Companies with matching active requisitions.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  companies:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        company_id: { type: integer }
+                        pulse: { type: object }
+                        matched_reqs: { type: array, items: { type: object } }
+                  next_cursor: { type: integer, nullable: true }
+                  as_of: { type: string, format: date-time }
+              example:
+                companies:
+                  - company_id: 4412
+                    pulse: {}
+                    matched_reqs: []
+                next_cursor: 4412
+                as_of: "2026-07-08T04:11:07Z"
+
+  /v1/markets/role-demand:
+    get:
+      operationId: getMarketRoleDemand
+      tags: [Tier 0 — cached reads]
+      summary: Market role demand
+      x-status: live
+      description: Market-wide (not company-scoped) active-requisition demand over time, for a role and geography.
+      parameters:
+        - name: role
+          in: query
+          description: Matches the req's function
+          schema: { type: string }
+        - name: geo
+          in: query
+          description: Matches the req's country
+          schema: { type: string }
+        - name: since
+          in: query
+          description: Lower bound on the series
+          schema: { type: string, format: date-time }
+      responses:
+        "200":
+          description: A time series of active requisition counts.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  series:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        bucket: { type: string, format: date-time }
+                        active_reqs: { type: integer }
+                  as_of: { type: string, format: date-time }
+              example:
+                series:
+                  - bucket: "2026-06-01T00:00:00Z"
+                    active_reqs: 318
+                as_of: "2026-07-08T04:11:07Z"
+
+  /v1/companies/{company_id}/hiring-pulse:
+    get:
+      operationId: getHiringPulse
+      tags: [Tier 1 — freshness-aware reads]
+      summary: Hiring pulse
+      x-status: live
+      x-mcp-tool: hiring_pulse
+      description: Velocity, direction and momentum in one call.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+        - $ref: "#/components/parameters/MaxAge"
+      responses:
+        "200":
+          description: Velocity, direction and momentum, provenance-wrapped.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  is_hiring: { $ref: "#/components/schemas/ProvenanceValue" }
+                  open_req_count: { $ref: "#/components/schemas/ProvenanceValue" }
+                  new_roles_30d: { $ref: "#/components/schemas/ProvenanceValue" }
+                  velocity: { $ref: "#/components/schemas/ProvenanceValue" }
+                  direction: { $ref: "#/components/schemas/ProvenanceValue" }
+                  is_surge: { $ref: "#/components/schemas/ProvenanceValue" }
+                  by_function: { type: object, additionalProperties: { type: integer } }
+                  momentum:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        bucket_start: { type: string, format: date-time }
+                        open_req_count: { type: integer }
+                  as_of: { type: string, format: date-time }
+        "202":
+          $ref: "#/components/responses/ColdTail"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/companies/{company_id}/pre-action-brief:
+    get:
+      operationId: getPreActionBrief
+      tags: [Tier 1 — freshness-aware reads]
+      summary: Pre-action brief
+      x-status: live
+      x-mcp-tool: pre_action_brief
+      description: >
+        Everything an agent needs before acting on a company, pre-joined
+        into one round-trip. Every list is capped (top reqs 5, repost pain
+        5, momentum points 8, migrations 3) regardless of company history.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+        - $ref: "#/components/parameters/MaxAge"
+      responses:
+        "200":
+          description: A single-call brief, with a rolled-up provenance summary instead of per-field envelopes.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  pulse: { type: object }
+                  first_hires: { type: object, additionalProperties: { type: string, format: date-time } }
+                  repost_pain: { type: array, items: { type: object } }
+                  top_reqs: { type: array, items: { type: object } }
+                  ats_migrations: { type: array, items: { type: object } }
+                  _provenance_summary:
+                    type: object
+                    properties:
+                      as_of: { type: string, format: date-time }
+                      source_boards: { type: array, items: { type: string } }
+        "202":
+          $ref: "#/components/responses/ColdTail"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /v1/events:
+    get:
+      operationId: getChanges
+      tags: [The change feed]
+      summary: Poll for changes
+      x-status: live
+      x-mcp-tool: get_changes
+      description: >
+        The ledger's diff feed: every event with event_seq greater than
+        since, oldest first, plus a next_cursor to replay from. Bills one
+        change unit per event returned — an empty page costs nothing.
+      parameters:
+        - name: since
+          in: query
+          required: true
+          description: Return events after this event_seq. Start at 0.
+          schema: { type: integer }
+        - name: company_id
+          in: query
+          description: Only this company's events
+          schema: { type: integer }
+        - name: event_type
+          in: query
+          description: One of opened, reposted, reobserved
+          schema: { type: string, enum: [opened, reposted, reobserved] }
+        - name: limit
+          in: query
+          description: Page size
+          schema: { type: integer, default: 100 }
+      responses:
+        "200":
+          description: A page of the ledger's diff feed.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  events:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        event_seq: { type: integer }
+                        company_id: { type: integer }
+                        req_key: { type: string }
+                        board: { type: string }
+                        event_type: { type: string }
+                        observed_at: { type: string, format: date-time }
+                        function: { type: string }
+                        country: { type: string }
+                        title: { type: string }
+                        source_board: { type: string }
+                        confidence: { type: number }
+                  next_cursor: { type: integer, nullable: true }
+              example:
+                events:
+                  - event_seq: 1001
+                    company_id: 4412
+                    req_key: "greenhouse:zollsoft:senior-backend-engineer"
+                    board: greenhouse
+                    event_type: opened
+                    observed_at: "2026-07-08T04:11:07Z"
+                    function: engineering
+                    country: DE
+                    title: Senior Backend Engineer
+                    source_board: greenhouse
+                    confidence: 0.94
+                next_cursor: 1001
+
+  /v1/webhooks:
+    post:
+      operationId: registerWebhook
+      tags: [The change feed]
+      summary: Register a webhook
+      x-status: live
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                url: { type: string, description: Where deliveries are POSTed }
+                secret: { type: string, description: Your HMAC signing key. Stored for signing, never logged, never returned. }
+              required: [url, secret]
+      responses:
+        "201":
+          description: The registered webhook.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: integer }
+                  url: { type: string }
+              example:
+                id: 7
+                url: "https://example.com/hooks/signalsapi"
+
+  /v1/watches:
+    post:
+      operationId: watchCompany
+      tags: [The change feed]
+      summary: Watch a company
+      x-status: live
+      x-mcp-tool: watch_company
+      description: Subscribe a registered webhook to one company's hiring events. Bills one watch unit.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                company_id: { type: integer, description: The company to watch }
+                event_types: { type: array, items: { type: string, enum: [opened, reposted, reobserved] } }
+                webhook_endpoint_id: { type: integer, description: An id from POST /v1/webhooks, belonging to your account }
+              required: [company_id, event_types, webhook_endpoint_id]
+      responses:
+        "201":
+          description: The created watch.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: integer }
+              example:
+                id: 15
+        "404":
+          description: The webhook endpoint isn't yours.
+
+  /v1/watches/{watch_id}:
+    delete:
+      operationId: cancelWatch
+      tags: [The change feed]
+      summary: Cancel a watch
+      x-status: live
+      parameters:
+        - name: watch_id
+          in: path
+          required: true
+          schema: { type: integer }
+      responses:
+        "204":
+          description: Cancelled.
+        "404":
+          description: The watch isn't yours.
+
+  /v1/companies/{company_id}/outcomes:
+    post:
+      operationId: recordOutcome
+      tags: [Writing back]
+      summary: Record an outcome
+      x-status: live
+      x-mcp-tool: write_outcome
+      description: Tell the plane what happened after you acted — the substrate for outcome-aware scoring.
+      parameters:
+        - $ref: "#/components/parameters/CompanyId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                outcome: { type: string, description: Your outcome label }
+                observed_at: { type: string, format: date-time, description: When it happened }
+                req_key: { type: string, description: "Optional — ties the outcome to a specific requisition" }
+              required: [outcome, observed_at]
+      responses:
+        "202":
+          description: The outcome was accepted.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: integer }
+              example:
+                id: 88
+
+  /v1/clay/enrich:
+    post:
+      operationId: clayEnrich
+      tags: [Writing back]
+      summary: Clay enrichment
+      x-status: live
+      description: >
+        Documented separately, with setup steps, on
+        features/agent-data-plane-clay.md. One row in, one row out — a
+        company domain (or name) resolves to its hiring motion as flat
+        columns.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                domain: { type: string }
+                name: { type: string }
+              example:
+                domain: zollsoft.de
+      responses:
+        "200":
+          description: The company's hiring motion as flat columns.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  company_id: { type: integer }
+                  name: { type: string }
+                  domain: { type: string }
+                  hq_country: { type: string }
+                  boards: { type: array, items: { type: string } }
+                  is_hiring: { type: boolean }
+                  open_req_count: { type: integer }
+                  new_roles_30d: { type: integer }
+                  velocity: { type: number }
+                  direction: { type: string }
+                  is_surge: { type: boolean }
+                  as_of: { type: string, format: date-time }
+              example:
+                company_id: 4412
+                name: zollsoft GmbH
+                domain: zollsoft.de
+                hq_country: DE
+                boards: [greenhouse]
+                is_hiring: true
+                open_req_count: 7
+                new_roles_30d: 3
+                velocity: 0.1
+                direction: up
+                is_surge: false
+                as_of: "2026-07-08T04:11:07Z"
+        "404":
+          description: The domain or name has never been observed.
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+  parameters:
+    CompanyId:
+      name: company_id
+      in: path
+      required: true
+      schema: { type: integer }
+    KeyId:
+      name: key_id
+      in: path
+      required: true
+      schema: { type: integer }
+    MaxAge:
+      name: max_age
+      in: query
+      description: Freshness ceiling in seconds. Omit for the best available data, billed cached.
+      schema: { type: integer }
+  schemas:
+    ProvenanceValue:
+      type: object
+      description: A single headline value wrapped with where and when it was last confirmed true.
+      properties:
+        value: {}
+        source_board: { type: string, nullable: true }
+        observed_at: { type: string, format: date-time, nullable: true }
+        confidence: { type: number, nullable: true }
+  responses:
+    Unauthorized:
+      description: No X-API-Key header at all.
+    NotFound:
+      description: The company, key, watch or webhook isn't yours, or doesn't exist.
+    ColdTail:
+      description: The company is cold and max_age was declared — a priority crawl was queued instead of blocking.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              job_id: { type: integer }
+              status: { type: string }
+          example:
+            job_id: 91823
+            status: crawling

@@ -370,6 +370,11 @@ items:
     false'
   covers:
   - '2.4'
+- id: spec-covers-documented-operations
+  desc: openapi/plane-v1.yaml covers every operation documented on features/agent-data-plane-api.md,
+    each with a valid x-status
+  covers:
+  - '10.1'
 - id: stage-key-valid
   desc: 'Every page''s stage: front-matter value names a stage declared in _data/pipeline.yml'
   covers:
