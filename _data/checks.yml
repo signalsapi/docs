@@ -101,6 +101,10 @@ items:
     workflow never triggers on pull_request
   covers:
   - '1.13'
+- id: filters-have-click-path
+  desc: Every _data/filters.yml item declares a click_path and a default
+  covers:
+  - '7.6'
 - id: focus-visible-ring-present
   desc: 'custom.scss never sets outline: none on a :focus rule without a paired :focus-visible
     rule'

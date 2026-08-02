@@ -1,0 +1,85 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-02
+  source: transcribed from Advanced search (Story 7.6) — every filter lives on the same Add Search screen, so the click path is uniform; each filter is opt-in, so the default is uniform too.
+
+items:
+  - label: Job title required words
+    click_path: Search -> Add Search
+    options: Free-text words or phrases; a signal matches if its title contains any one of them (OR logic)
+    default: Not applied — every filter is opt-in
+
+  - label: Job description required words
+    click_path: Search -> Add Search
+    options: Free-text words or phrases; a signal matches if its description contains any one of them (OR logic)
+    default: Not applied — every filter is opt-in
+
+  - label: Stop words
+    click_path: Search -> Add Search
+    options: Free-text words or phrases; a signal is excluded if its title or description contains any one of them
+    default: Not applied — every filter is opt-in
+
+  - label: Required skills
+    click_path: Search -> Add Search
+    options: Free-text skills; a signal must mention all of them (AND logic)
+    default: Not applied — every filter is opt-in
+
+  - label: Exclude skills
+    click_path: Search -> Add Search
+    options: Free-text skills; a signal is excluded if it mentions any one of them (OR logic)
+    default: Not applied — every filter is opt-in
+
+  - label: Job families
+    click_path: Search -> Add Search
+    options: "Structured job-family categories (e.g. Engineering, Project Management, Sales)"
+    default: Not applied — every filter is opt-in
+
+  - label: Search location
+    click_path: Search -> Add Search
+    options: Country where the job is posted
+    default: Not applied — every filter is opt-in
+
+  - label: Location patterns
+    click_path: Search -> Add Search
+    options: Free-text city or region names within the selected country
+    default: Not applied — every filter is opt-in
+
+  - label: Maximum age of job posting
+    click_path: Search -> Add Search
+    options: "Number of days since the posting was seen (e.g. 7, 30)"
+    default: Not applied — every filter is opt-in
+
+  - label: Exclude staffing agencies
+    click_path: Search -> Add Search
+    options: On/off toggle
+    default: Not applied — every filter is opt-in
+
+  - label: Headquarters location
+    click_path: Search -> Add Search
+    options: Country where the company is based
+    default: Not applied — every filter is opt-in
+
+  - label: Industries
+    click_path: Search -> Add Search
+    options: Include or exclude specific industries
+    default: Not applied — every filter is opt-in
+
+  - label: Company size
+    click_path: Search -> Add Search
+    options: Minimum and maximum employee count
+    default: Not applied — every filter is opt-in
+
+  - label: Company required words / stop words
+    click_path: Search -> Add Search
+    options: Free-text words matched or excluded against company name, headline, description, and specialties
+    default: Not applied — every filter is opt-in
+
+  - label: Hard to fill
+    click_path: Search -> Add Search
+    options: "On/off toggle — fixed threshold (open 30+ days or reposted 3+ times)"
+    default: Not applied — every filter is opt-in
+
+  - label: Hiring surge
+    click_path: Search -> Add Search
+    options: "On/off toggle — fixed threshold (5+ new roles in 30 days at 1.5x the prior rate)"
+    default: Not applied — every filter is opt-in
