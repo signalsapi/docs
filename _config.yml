@@ -6,7 +6,7 @@ strict_front_matter: true
 
 color_scheme: signalsapi
 
-url: https://docs.signalsapi.com/
+url: https://docs.signalsapi.com
 
 #aux_links:
 #  Template Repository: https://github.com/just-the-docs/just-the-docs-template

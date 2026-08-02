@@ -1,4 +1,9 @@
 ---
+- id: canonical-no-double-slash
+  desc: No file under _site/ contains docs.signalsapi.com//
+  covers:
+  - '2.1'
+  - FR6
 - id: checks-id-matches-filename
   desc: Every script/checks/*.rb file registers an id equal to its own basename
   covers:
