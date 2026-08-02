@@ -16,7 +16,7 @@ items:
   - '7.3'
 - id: ai-variable-names-valid
   desc: Every {variable} referenced in troubleshooting/ai-filter-too-strict.md is
-    documented on AI variables
+    documented in _data/variables.yml
   covers:
   - '6.6'
 - id: aux-links-not-template
@@ -328,3 +328,7 @@ items:
   desc: ".vale-version records a real Vale version, not the literal word 'latest'"
   covers:
   - '1.5'
+- id: variables-reference-providers
+  desc: Every provider named in _data/variables.yml exists in _data/providers.yml
+  covers:
+  - '7.4'
