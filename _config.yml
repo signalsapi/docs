@@ -32,5 +32,8 @@ exclude:
   - styles
   - bmalph
 
-#aux_links:
-#  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+aux_links:
+  "Open the app": "https://app.signalsapi.com/"
+  "Free tier": "/features/bring-your-own-people-provider/"
+  "Pricing": "/faq/"
+  "Support": "mailto:mykola@signalsapi.com"

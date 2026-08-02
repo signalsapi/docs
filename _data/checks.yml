@@ -4,6 +4,11 @@
     six internal destinations
   covers:
   - '2.6'
+- id: aux-links-not-template
+  desc: _config.yml declares real aux_links, not the commented just-the-docs template
+    block
+  covers:
+  - '2.12'
 - id: canonical-no-double-slash
   desc: No file under _site/ contains docs.signalsapi.com//
   covers:
