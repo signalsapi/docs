@@ -1,0 +1,117 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-02
+  source: transcribed from Compare people-data providers and Bring your own people-data provider (Story 7.2) — no cost is estimated; each is an owner-marked placeholder pending a sourced figure.
+
+items:
+  - name: Anymail Finder
+    mobile_support: false
+    filters:
+      title: after_fetch
+      country: unsupported
+      city: unsupported
+      skills: unsupported
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://anymailfinder.com/?via=signalsapi
+    affiliate: true
+    cost: "TODO(owner: mykola): source Anymail Finder's per-lookup or subscription cost before publishing a figure."
+
+  - name: Icypeas
+    mobile_support: false
+    filters:
+      title: at_source
+      country: after_fetch
+      city: after_fetch
+      skills: at_source
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://icypeas.com
+    affiliate: false
+    cost: "TODO(owner: mykola): source Icypeas's per-lookup or subscription cost before publishing a figure."
+
+  - name: People Data Labs
+    mobile_support: false
+    filters:
+      title: at_source
+      country: at_source
+      city: at_source
+      skills: at_source
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://peopledatalabs.com
+    affiliate: false
+    cost: "TODO(owner: mykola): source People Data Labs's per-lookup or subscription cost before publishing a figure."
+
+  - name: Prospeo
+    mobile_support: false
+    filters:
+      title: at_source
+      country: after_fetch
+      city: after_fetch
+      skills: unsupported
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://prospeo.io/?via=signalsapi
+    affiliate: true
+    cost: "TODO(owner: mykola): source Prospeo's per-lookup or subscription cost before publishing a figure."
+
+  - name: Snov.io
+    mobile_support: false
+    filters:
+      title: at_source
+      country: unsupported
+      city: unsupported
+      skills: unsupported
+      department: unsupported
+      seniority: unsupported
+    credential_shape: client_id_and_secret
+    signup_url: https://snov.io/?fp_ref=signalsapi
+    affiliate: true
+    cost: "TODO(owner: mykola): source Snov.io's per-lookup or subscription cost before publishing a figure."
+
+  - name: Hunter
+    mobile_support: false
+    filters:
+      title: after_fetch
+      country: unsupported
+      city: unsupported
+      skills: unsupported
+      department: at_source
+      seniority: at_source
+    credential_shape: api_key
+    signup_url: https://hunter.io
+    affiliate: false
+    cost: "TODO(owner: mykola): source Hunter's per-lookup or subscription cost before publishing a figure."
+
+  - name: LeadMagic
+    mobile_support: true
+    filters:
+      title: after_fetch
+      country: unsupported
+      city: after_fetch
+      skills: unsupported
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://leadmagic.io
+    affiliate: false
+    cost: "TODO(owner: mykola): source LeadMagic's per-lookup or subscription cost before publishing a figure."
+
+  - name: Tomba
+    mobile_support: false
+    filters:
+      title: after_fetch
+      country: unsupported
+      city: unsupported
+      skills: unsupported
+      department: at_source
+      seniority: unsupported
+    credential_shape: key_and_secret
+    signup_url: https://tomba.io
+    affiliate: false
+    cost: "TODO(owner: mykola): source Tomba's per-lookup or subscription cost before publishing a figure."

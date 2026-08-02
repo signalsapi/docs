@@ -201,6 +201,11 @@ items:
     jekyll-seo-tag}'
   covers:
   - '2.14'
+- id: providers-schema
+  desc: Every _data/providers.yml item declares exactly the required keys, with valid
+    filter and credential values
+  covers:
+  - '7.2'
 - id: reference-page-metadata
   desc: 'Every page_type: reference page declares a verified_on date and an owner'
   covers:
