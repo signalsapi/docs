@@ -18,7 +18,9 @@ back** (mobile numbers, LinkedIn headlines) and **which filters they apply at th
 after the fetch. This page compares all eight so you can pick the one that fits your targeting and
 your budget.
 
-SignalsAPI charges **no credits** for people lookups — you only ever pay your own provider.
+SignalsAPI charges **no credits** for people lookups — you only ever pay your own provider. Some
+signup links below pay us a referral fee — see [How we make money](/how-we-make-money/) for which
+ones and why it doesn't change what you pay.
 
 ## What you get
 

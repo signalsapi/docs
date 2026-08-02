@@ -19,6 +19,7 @@ provider** using **your own API key**.
 * **No key** → your account is on the **free tier**: company signals only, no people data.
 * **With a key** → decision-maker search returns people and verified emails using your provider account.
 * **People lookups cost no SignalsAPI credits** — you only pay your provider for what you use.
+* **Some signup links below pay us a referral fee** — see [How we make money](/how-we-make-money/).
 
 You manage everything on one screen: **Settings → Provider**.
 

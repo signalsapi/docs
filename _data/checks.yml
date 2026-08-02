@@ -9,6 +9,11 @@ items:
     six internal destinations
   covers:
   - '2.6'
+- id: affiliate-disclosure-linked
+  desc: Every page that emits an affiliate provider link also links to the commercial-relationship
+    page
+  covers:
+  - '9.8'
 - id: affiliate-links-disclosed
   desc: Every built anchor with an affiliate tracking parameter was emitted by provider-link.html
     and discloses the relationship
