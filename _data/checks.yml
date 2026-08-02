@@ -9,6 +9,10 @@
     block
   covers:
   - '2.12'
+- id: baseline-page-renders-all-keys
+  desc: Every key in _data/baseline.yml appears in the built /docs-baseline/ page
+  covers:
+  - '3.2'
 - id: baseline-values-sourced
   desc: 'Every value in _data/baseline.yml is an integer, a date, a boolean, or a
     well-formed TODO(owner: handle): marker'
