@@ -44,6 +44,11 @@
   desc: Gemfile declares html-proofer with a ~> 5 constraint
   covers:
   - '1.3'
+- id: nav-order-integrity
+  desc: Every sibling group of pages (by parent) has unique, integer, contiguous nav_order
+    values
+  covers:
+  - '2.10'
 - id: no-gitbook-mention-artifacts
   desc: No .md file contains a Markdown link whose title attribute is the literal
     string "mention"

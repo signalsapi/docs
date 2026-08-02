@@ -2,7 +2,7 @@
 title: Bring your own people-data provider
 parent: Features
 layout: home
-nav_order: 3.5
+nav_order: 7
 ---
 
 # Bring your own people-data provider

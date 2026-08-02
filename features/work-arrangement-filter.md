@@ -2,7 +2,7 @@
 title: Work arrangement filter
 parent: Features
 layout: home
-nav_order: 2.5
+nav_order: 5
 ---
 
 # Work arrangement filter

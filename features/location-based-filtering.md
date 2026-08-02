@@ -2,7 +2,7 @@
 title: Location-based filtering
 parent: Features
 layout: home
-nav_order: 2
+nav_order: 4
 ---
 
 # Location-based filtering

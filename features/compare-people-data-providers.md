@@ -2,7 +2,7 @@
 title: Compare people-data providers
 parent: Features
 layout: home
-nav_order: 3.7
+nav_order: 9
 ---
 
 # Compare people-data providers

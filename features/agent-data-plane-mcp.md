@@ -2,7 +2,7 @@
 title: Agent data plane — MCP server
 parent: Features
 layout: home
-nav_order: 11.2
+nav_order: 19
 ---
 
 # Agent data plane — MCP server

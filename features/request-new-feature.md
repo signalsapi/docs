@@ -2,7 +2,7 @@
 title: Request new feature
 parent: Features
 layout: home
-nav_order: 0
+nav_order: 1
 ---
 
 # Request new feature

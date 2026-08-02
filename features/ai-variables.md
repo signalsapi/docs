@@ -2,7 +2,7 @@
 title: AI variables
 parent: Features
 layout: home
-nav_order: 6
+nav_order: 12
 ---
 
 # AI variables

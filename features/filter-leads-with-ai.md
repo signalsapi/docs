@@ -2,7 +2,7 @@
 title: Filter leads with AI
 parent: Features
 layout: home
-nav_order: 4
+nav_order: 10
 ---
 
 # Filter leads with AI

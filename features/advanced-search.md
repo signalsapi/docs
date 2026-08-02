@@ -2,7 +2,7 @@
 title: Advanced search
 parent: Features
 layout: home
-nav_order: 1.5
+nav_order: 3
 ---
 
 # Advanced search

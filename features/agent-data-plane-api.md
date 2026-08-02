@@ -2,7 +2,7 @@
 title: Agent data plane — REST API
 parent: Features
 layout: home
-nav_order: 11.1
+nav_order: 18
 ---
 
 # Agent data plane — REST API
