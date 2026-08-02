@@ -86,6 +86,11 @@
     rule'
   covers:
   - '2.13'
+- id: footer-link-coverage
+  desc: 'Every nav_exclude: true page without a custom permalink is linked from the
+    footer, and every built page renders the footer'
+  covers:
+  - '5.10'
 - id: frontmatter-universal-contract
   desc: Every page carries title, layout, description and page_type, with description
     between 50 and 160 characters

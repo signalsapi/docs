@@ -1,7 +1,7 @@
 ---
 title: Release Notes / Changelog
 layout: default
-nav_order: 8
+nav_order: 5
 page_type: changelog
 description: The dated changelog of every SignalsAPI feature, fix, and behavior change since launch.
 ---

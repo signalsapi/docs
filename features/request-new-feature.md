@@ -2,7 +2,7 @@
 title: Request new feature
 parent: Features
 layout: default
-nav_order: 1
+nav_exclude: true
 page_type: meta
 description: Post and vote on feature suggestions to help shape what SignalsAPI builds next.
 ---
