@@ -405,3 +405,7 @@ items:
   covers:
   - '6.9'
   - '9.1'
+- id: verified-on-rendered
+  desc: Every page's built HTML shows its own verified_on date
+  covers:
+  - '9.2'
