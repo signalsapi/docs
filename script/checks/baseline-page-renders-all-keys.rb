@@ -8,6 +8,6 @@ Check.register(
   page = site.html_files.find { |f| f.path == "_site/docs-baseline/index.html" }
   site.fail!("_site/docs-baseline/index.html is missing") unless page
 
-  missing = site.data["baseline"].keys.reject { |key| page.body.include?(key) }
+  missing = site.data.dig("baseline", "items").keys.reject { |key| page.body.include?(key) }
   site.fail!("docs-baseline page is missing key(s): #{missing.join(', ')}") unless missing.empty?
 end

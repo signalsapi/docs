@@ -1,14 +1,21 @@
 # The site's as-is condition on 2026-07-31, the date of the audit this
-# overhaul responds to (PROJECT_CONTEXT.md). Every value below is measured
+# overhaul responds to (PROJECT_CONTEXT.md). Every item value is measured
 # directly from git commit ddc51a8 (2026-07-09) — the last real-content
 # commit before the overhaul's planning artifacts and Epic 1 harness
 # landed, and identical in content to what the 2026-07-31 audit inspected.
-# Story 3.3 freezes this file against silent edits.
+# items: is a historical record: baseline-immutable fails the build if any
+# value here changes without meta.verified_on changing in the same commit.
 
-published_pages: 28
-pages_with_unique_description: 0
-images_with_empty_alt: 62
-sitemap_present: false
-robots_txt_present: false
-pages_with_zero_inbound_links: 16
-last_changelog_entry: 2026-06-18
+meta:
+  owner: mykola
+  verified_on: 2026-07-31
+  source: git commit ddc51a8 (2026-07-09), the last real-content commit before this overhaul began
+
+items:
+  published_pages: 28
+  pages_with_unique_description: 0
+  images_with_empty_alt: 62
+  sitemap_present: false
+  robots_txt_present: false
+  pages_with_zero_inbound_links: 16
+  last_changelog_entry: 2026-06-18

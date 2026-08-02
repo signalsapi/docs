@@ -9,13 +9,18 @@
     block
   covers:
   - '2.12'
+- id: baseline-immutable
+  desc: '_data/baseline.yml''s items: don''t change without meta.verified_on changing
+    in the same commit'
+  covers:
+  - '3.3'
 - id: baseline-page-renders-all-keys
   desc: Every key in _data/baseline.yml appears in the built /docs-baseline/ page
   covers:
   - '3.2'
 - id: baseline-values-sourced
-  desc: 'Every value in _data/baseline.yml is an integer, a date, a boolean, or a
-    well-formed TODO(owner: handle): marker'
+  desc: 'Every value in _data/baseline.yml''s items: is an integer, a date, a boolean,
+    or a well-formed TODO(owner: handle): marker'
   covers:
   - '3.1'
 - id: canonical-no-double-slash
@@ -49,6 +54,11 @@
     a bare currency figure
   covers:
   - '2.9'
+- id: data-envelope-shape
+  desc: '_data/baseline.yml carries exactly a meta: mapping and an items: mapping
+    at the top level'
+  covers:
+  - '3.3'
 - id: external-links-off-pr-path
   desc: html-proofer runs --disable-external in the Rakefile, and the nightly lychee
     workflow never triggers on pull_request

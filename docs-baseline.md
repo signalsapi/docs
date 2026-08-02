@@ -11,9 +11,12 @@ This is the site's measured condition on **2026-07-31**, the day of the audit th
 responds to, captured before any of the overhaul's own changes landed. Every later claim of
 improvement should be checkable against these numbers, not against memory.
 
+Verified by {{ site.data.baseline.meta.owner }} on {{ site.data.baseline.meta.verified_on }}.
+Source: {{ site.data.baseline.meta.source }}.
+
 | Dimension | 2026-07-31 value |
 |---|---|
-{% for pair in site.data.baseline %}| `{{ pair[0] }}` | {{ pair[1] }} |
+{% for pair in site.data.baseline.items %}| `{{ pair[0] }}` | {{ pair[1] }} |
 {% endfor %}
 
 **Next scheduled re-measurement:** when every epic in this overhaul ships, tracked against the
