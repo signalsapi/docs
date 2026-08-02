@@ -29,7 +29,7 @@ Does not fit your case? Let me help: [mykola@signalsapi.com](mailto:mykola@signa
 
 Open [Lead Lists](https://app.signalsapi.com/leadlists/), add new or edit an existing one. In the "Enrichment" part of the form, add the prompt and stop-words.
 
-Use the following variables in the prompt: [ai-variables.md](ai-variables.md "mention")
+Use the following variables in the prompt: [AI variables](ai-variables)
 
 Find AI generated fields in each lead:
 
