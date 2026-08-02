@@ -15,13 +15,8 @@ Integrations allow new leads to be automatically added to your outreach tool or 
 
 We have the following native integrations:
 
-1. Clay
-2. HubSpot
-3. Apollo
-4. [Snov](https://snov.io/)
-5. Instantly
-6. Bullhorn
-7. Webhook
+{% for item in site.data.integrations.items %}1. {% if item.url %}[{{ item.name }}]({{ item.url }}){% else %}{{ item.name }}{% endif %}
+{% endfor %}
 
 Any other system (that has an open API) can be integrated with SignalsAPI via webhook and receive leads in real time. Contact [Support](/support/) if you need help with integration or would like one added.
 

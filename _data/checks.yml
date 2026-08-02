@@ -139,6 +139,10 @@ items:
     credential causes
   covers:
   - '6.8'
+- id: integrations-complete
+  desc: Every destination named on features/integrations.md has an item in _data/integrations.yml
+  covers:
+  - '7.5'
 - id: layout-home-is-index-only
   desc: 'index.md is the only page declaring layout: home; every page declares a layout'
   covers:
