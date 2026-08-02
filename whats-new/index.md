@@ -1,6 +1,8 @@
 ---
 title: Release Notes / Changelog
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 nav_order: 5
 page_type: changelog
 description: The dated changelog of every SignalsAPI feature, fix, and behavior change since launch.

@@ -2,6 +2,8 @@
 title: API access
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/api-access.html"
 nav_order: 16
 stage: export_and_integration

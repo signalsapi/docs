@@ -2,6 +2,8 @@
 title: Compare people-data providers
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/compare-people-data-providers.html"
 nav_order: 9
 page_type: feature

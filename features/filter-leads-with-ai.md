@@ -2,6 +2,8 @@
 title: Filter leads with AI
 parent: Features
 layout: default
+verified_on: 2024-10-22
+owner: mykola
 redirect_from: "/features/filter-leads-with-ai.html"
 nav_order: 10
 stage: filtering

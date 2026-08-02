@@ -2,6 +2,8 @@
 title: AI variables
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/ai-variables.html"
 nav_order: 12
 page_type: feature

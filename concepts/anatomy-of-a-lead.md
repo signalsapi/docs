@@ -2,6 +2,8 @@
 title: Anatomy of a lead
 parent: Concepts
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 page_type: concept
 nav_order: 2
 description: Every field on a lead row, and which of the three sources it comes from.

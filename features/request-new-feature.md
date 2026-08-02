@@ -2,6 +2,8 @@
 title: Request new feature
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/request-new-feature.html"
 nav_exclude: true
 page_type: meta

@@ -1,6 +1,8 @@
 ---
 title: Introduction
 layout: home
+verified_on: 2026-08-02
+owner: mykola
 nav_order: 1
 page_type: router
 description: SignalsAPI finds companies that are hiring and the decision-maker to contact there first.

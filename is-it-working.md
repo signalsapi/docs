@@ -1,6 +1,8 @@
 ---
 title: Is it working?
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/is-it-working.html"
 nav_exclude: true
 page_type: troubleshooting

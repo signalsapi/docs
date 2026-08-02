@@ -282,10 +282,6 @@ items:
     filter and credential values
   covers:
   - '7.2'
-- id: reference-page-metadata
-  desc: 'Every page_type: reference page declares a verified_on date and an owner'
-  covers:
-  - '6.9'
 - id: robots-sitemap-absolute
   desc: '_site/robots.txt exists with an absolute Sitemap: line and no double slash
     after the host'
@@ -403,3 +399,9 @@ items:
   desc: Every provider named in _data/variables.yml exists in _data/providers.yml
   covers:
   - '7.4'
+- id: verified-on-present
+  desc: Every published page declares verified_on and owner, with verified_on never
+    in the future
+  covers:
+  - '6.9'
+  - '9.1'

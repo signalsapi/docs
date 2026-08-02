@@ -2,6 +2,8 @@
 title: Operator quickstart
 parent: Quick start
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 nav_order: 1
 page_type: task
 description: A first-session path from creating a search to a real project, using SignalsAPI's own screens.

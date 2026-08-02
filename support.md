@@ -1,6 +1,8 @@
 ---
 title: Support
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 nav_exclude: true
 page_type: meta
 description: The one address to email, and exactly what to include so your first message is enough.

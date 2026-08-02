@@ -2,6 +2,8 @@
 title: Website Monitoring
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/website-monitoring.html"
 nav_order: 15
 page_type: feature

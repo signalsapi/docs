@@ -2,6 +2,8 @@
 title: Work arrangement filter
 parent: Features
 layout: default
+verified_on: 2026-06-19
+owner: mykola
 redirect_from: "/features/work-arrangement-filter.html"
 nav_order: 5
 page_type: feature

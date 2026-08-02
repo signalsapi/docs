@@ -1,6 +1,8 @@
 ---
 title: Concepts & FAQs
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/faq.html"
 nav_order: 3
 page_type: faq

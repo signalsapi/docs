@@ -2,6 +2,8 @@
 title: Agent data plane — MCP server
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/agent-data-plane-mcp.html"
 nav_order: 19
 page_type: feature

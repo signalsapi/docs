@@ -2,6 +2,8 @@
 title: Agent data plane
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/agent-data-plane.html"
 nav_order: 17
 page_type: feature

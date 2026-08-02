@@ -2,6 +2,8 @@
 title: Integrations
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/integrations.html"
 nav_order: 13
 page_type: feature

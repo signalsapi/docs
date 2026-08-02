@@ -2,6 +2,8 @@
 title: Agent data plane — Clay integration
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/features/agent-data-plane-clay.html"
 nav_order: 20
 page_type: feature

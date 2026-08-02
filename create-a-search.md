@@ -2,6 +2,8 @@
 title: Create a search
 parent: Features
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 nav_order: 21
 stage: signal_discovery
 page_type: task

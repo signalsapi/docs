@@ -2,6 +2,8 @@
 title: Remove duplicate signals
 parent: Features
 layout: default
+verified_on: 2024-10-22
+owner: mykola
 redirect_from: "/features/remove-duplicate-signals.html"
 nav_order: 2
 page_type: feature

@@ -2,6 +2,8 @@
 title: How it works
 parent: Concepts
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 redirect_from: "/how-it-works.html"
 nav_order: 4
 page_type: overview

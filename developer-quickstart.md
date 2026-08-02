@@ -2,6 +2,8 @@
 title: Developer quickstart
 parent: Quick start
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 nav_order: 2
 page_type: task
 description: The shortest path from an API key to exported rows, using the REST reference's own examples.

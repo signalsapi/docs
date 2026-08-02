@@ -2,6 +2,8 @@
 title: Find decision-makers
 parent: Features
 layout: default
+verified_on: 2024-10-22
+owner: mykola
 redirect_from: "/features/find-decision-makers.html"
 nav_order: 6
 stage: decision_maker_identification

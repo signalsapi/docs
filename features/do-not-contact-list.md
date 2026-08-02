@@ -2,6 +2,8 @@
 title: Do-Not-Contact list
 parent: Features
 layout: default
+verified_on: 2024-10-22
+owner: mykola
 redirect_from: "/features/do-not-contact-list.html"
 nav_order: 14
 page_type: feature

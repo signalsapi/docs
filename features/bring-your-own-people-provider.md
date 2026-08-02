@@ -2,6 +2,8 @@
 title: Bring your own people-data provider
 parent: Features
 layout: default
+verified_on: 2026-06-06
+owner: mykola
 redirect_from: "/features/bring-your-own-people-provider.html"
 nav_order: 7
 page_type: feature

@@ -2,6 +2,8 @@
 title: Integration stopped receiving leads
 parent: Troubleshooting
 layout: default
+verified_on: 2026-08-02
+owner: mykola
 nav_order: 7
 page_type: symptom
 search_aliases:
