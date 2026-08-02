@@ -109,18 +109,75 @@ module Check
   end
 end
 
+# AD-6: each assertion declares what it covers, so the manifest — and the
+# gap report built from it — can contradict a story that claims coverage it
+# doesn't have.
+module ChecksManifest
+  PATH = File.join(ROOT, "_data", "checks.yml")
+
+  def self.live_entries
+    Check.registry.sort_by(&:id).map { |a| { "id" => a.id, "desc" => a.desc, "covers" => a.covers } }
+  end
+
+  def self.current?
+    File.exist?(PATH) && YAML.safe_load(File.read(PATH)) == live_entries
+  end
+
+  def self.write!
+    require "fileutils"
+    FileUtils.mkdir_p(File.dirname(PATH))
+    File.write(PATH, YAML.dump(live_entries))
+    puts "_data/checks.yml regenerated (#{live_entries.size} assertions)"
+  end
+
+  # Story and requirement IDs live in .ralph/, which is this checkout's own
+  # gitignored planning workspace, not a repo deliverable — so this report
+  # only works from inside it and says so plainly when it isn't present.
+  def self.report_uncovered
+    fix_plan = File.join(ROOT, ".ralph", "@fix_plan.md")
+    prd = File.join(ROOT, ".ralph", "specs", "planning-artifacts", "prd.md")
+    context = File.join(ROOT, ".ralph", "PROJECT_CONTEXT.md")
+
+    unless File.exist?(fix_plan) && File.exist?(prd) && File.exist?(context)
+      puts "check:coverage: .ralph/ planning artifacts aren't present in this checkout — nothing to compare against"
+      return
+    end
+
+    story_ids = File.read(fix_plan).scan(/Story (\d+\.\d+)/).flatten.uniq
+    fr_ids = File.read(prd).scan(/^-\s+\*\*FR(\d+)\.\*\*/).flatten.map { |n| "FR#{n}" }
+    nfr_ids = File.read(context).scan(/^-\s+\*\*NFR(\d+)/).flatten.map { |n| "NFR#{n}" }
+
+    covered = Check.registry.flat_map(&:covers).to_a
+    uncovered = (story_ids + fr_ids + nfr_ids) - covered
+
+    if uncovered.empty?
+      puts "check:coverage: every story and requirement ID is covered by an assertion"
+    else
+      puts "check:coverage: #{uncovered.size} uncovered id#{uncovered.size == 1 ? '' : 's'}:"
+      uncovered.each { |id| puts "  - #{id}" }
+    end
+  end
+end
+
 Dir.glob(File.join(ROOT, "script", "checks", "*.rb")).sort.each { |f| require f }
 
-site = Site.new
-failures = Check.run(site)
-
-count = Check.registry.size
-puts "script/check.rb: #{count} assertion#{count == 1 ? '' : 's'} registered"
-
-if failures.empty?
-  puts "script/check.rb: all assertions passed"
+case ARGV[0]
+when "manifest"
+  ChecksManifest.write!
+when "coverage"
+  ChecksManifest.report_uncovered
 else
-  warn "script/check.rb: #{failures.size} assertion#{failures.size == 1 ? '' : 's'} failed"
-  failures.each { |f| warn "  - #{f}" }
-  exit 1
+  site = Site.new
+  failures = Check.run(site)
+
+  count = Check.registry.size
+  puts "script/check.rb: #{count} assertion#{count == 1 ? '' : 's'} registered"
+
+  if failures.empty?
+    puts "script/check.rb: all assertions passed"
+  else
+    warn "script/check.rb: #{failures.size} assertion#{failures.size == 1 ? '' : 's'} failed"
+    failures.each { |f| warn "  - #{f}" }
+    exit 1
+  end
 end

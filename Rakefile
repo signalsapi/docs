@@ -48,6 +48,16 @@ namespace :check do
   task :assert do
     sh "ruby script/check.rb"
   end
+
+  desc "Regenerate _data/checks.yml from the live assertion registry"
+  task :manifest do
+    sh "ruby script/check.rb manifest"
+  end
+
+  desc "Print every story ID and requirement ID with no covering assertion"
+  task :coverage do
+    sh "ruby script/check.rb coverage"
+  end
 end
 
 # AD-5: the build aborts rake check immediately on failure, since nothing

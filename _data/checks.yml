@@ -1,0 +1,34 @@
+---
+- id: checks-manifest-current
+  desc: _data/checks.yml matches the live Check registry
+  covers:
+  - '1.8'
+- id: checks-one-per-file
+  desc: Each script/checks/*.rb file calls Check.register exactly once (AD-3)
+  covers:
+  - '1.6'
+- id: config-strict-front-matter
+  desc: '_config.yml declares strict_front_matter: true'
+  covers:
+  - '1.2'
+- id: gemfile-html-proofer-pinned
+  desc: Gemfile declares html-proofer with a ~> 5 constraint
+  covers:
+  - '1.3'
+- id: site-model-contract
+  desc: site.pages, site.html_files, site.data and site.raw(path) are all present
+    and non-nil
+  covers:
+  - '1.7'
+- id: vale-config-present
+  desc: ".vale.ini exists and its StylesPath resolves to an existing directory"
+  covers:
+  - '1.4'
+- id: vale-styles-nonempty
+  desc: styles/SignalsAPI/ contains at least one Vale rule file
+  covers:
+  - '1.4'
+- id: vale-version-pinned
+  desc: ".vale-version records a real Vale version, not the literal word 'latest'"
+  covers:
+  - '1.5'
