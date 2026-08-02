@@ -3,6 +3,7 @@ title: Advanced search
 parent: Features
 layout: default
 nav_order: 3
+stage: signal_discovery
 ---
 
 # Advanced search

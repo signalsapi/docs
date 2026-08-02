@@ -164,6 +164,10 @@
     false'
   covers:
   - '2.4'
+- id: stage-key-valid
+  desc: 'Every page''s stage: front-matter value names a stage declared in _data/pipeline.yml'
+  covers:
+  - '4.8'
 - id: term-include-keys-resolve
   desc: Every include term.html key="..." invocation names a term that exists in _data/glossary.yml
   covers:

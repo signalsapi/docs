@@ -3,6 +3,7 @@ title: Filter leads with AI
 parent: Features
 layout: default
 nav_order: 10
+stage: filtering
 ---
 
 # Filter leads with AI

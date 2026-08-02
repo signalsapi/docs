@@ -3,6 +3,7 @@ title: Find decision-makers
 parent: Features
 layout: default
 nav_order: 6
+stage: decision_maker_identification
 ---
 
 # Find decision-makers

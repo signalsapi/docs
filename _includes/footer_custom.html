@@ -1,0 +1,19 @@
+{%- if page.stage -%}
+  {%- assign current = nil -%}
+  {%- for s in site.data.pipeline -%}
+    {%- if s.key == page.stage -%}{%- assign current = s -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if current -%}
+    {%- assign previous = nil -%}
+    {%- assign next = nil -%}
+    {%- for s in site.data.pipeline -%}
+      {%- if s.key == current.prerequisite -%}{%- assign previous = s -%}{%- endif -%}
+      {%- if s.prerequisite == current.key -%}{%- assign next = s -%}{%- endif -%}
+    {%- endfor -%}
+    <p class="text-small text-grey-dk-000">
+      Pipeline stage: <strong>{{ current.name }}</strong>.
+      {%- if previous %} Previous: <a href="{{ previous.owning_page }}">{{ previous.name }}</a>.{% endif %}
+      {%- if next %} Next: <a href="{{ next.owning_page }}">{{ next.name }}</a>.{% endif %}
+    </p>
+  {%- endif -%}
+{%- endif -%}
