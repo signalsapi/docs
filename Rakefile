@@ -8,6 +8,15 @@ require "rake"
 # matter, or lint prose that was never meant to ship.
 VALE_EXCLUDED_DIRS = %w[_site _drafts .claude .github .ralph .jekyll-cache _bmad _bmad-output bmalph].freeze
 
+# AD-12: Vale is provisioned the same way locally and in CI, from this one
+# file (.github/workflows/ci.yml reads it too), so a prose failure reproduces
+# on a contributor's machine instead of only in CI.
+VALE_VERSION = File.read(File.join(File.dirname(__FILE__), ".vale-version")).strip
+
+def vale_on_path?
+  ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).any? { |dir| File.executable?(File.join(dir, "vale")) }
+end
+
 namespace :check do
   desc "Build the Jekyll site into _site/"
   task :build do
@@ -21,6 +30,17 @@ namespace :check do
 
   desc "Run Vale against every .md file outside _site/ and _drafts/"
   task :prose do
+    unless vale_on_path?
+      abort(<<~MSG)
+        rake check:prose: the vale binary (pinned version #{VALE_VERSION}) is not on PATH.
+        Install it with:
+          brew install vale   # macOS
+        or download the pinned release directly (same binary CI installs):
+          https://github.com/errata-ai/vale/releases/tag/v#{VALE_VERSION}
+        Then confirm `vale --version` reports #{VALE_VERSION}.
+      MSG
+    end
+
     sh "vale --glob='!{#{VALE_EXCLUDED_DIRS.join(',')}}/**' ."
   end
 
