@@ -86,6 +86,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.3.4)
   just-the-docs (= 0.10.0)
+  rake (~> 13.0)
 
 BUNDLED WITH
    2.5.9
