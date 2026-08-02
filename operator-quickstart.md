@@ -25,9 +25,9 @@ works on the free tier (company signals only); connecting a people-data provider
    decision-makers you want to reach (e.g. `CEO`) — see [Find decision-makers](/features/find-decision-makers/).
 3. **Connect a people-data provider (optional).** In **Settings → Provider**, choose a provider,
    paste its API key, and click **Save & validate** — see [Bring your own people-data provider](/features/bring-your-own-people-provider/).
-4. **Open your project.** Go to **Projects**, add a new one or open an existing one, and let the
-   search run — see [API access](/features/api-access/) for pulling the same data
-   programmatically.
+4. **Open your project.** Open your [project list](https://app.signalsapi.com/leadlists/), add a
+   new one or open an existing one, and let the search run — see [API access](/features/api-access/)
+   for pulling the same data programmatically.
 
 ## Check it worked
 
