@@ -176,6 +176,11 @@
     after the host'
   covers:
   - '2.5'
+- id: root-section-count
+  desc: The number of top-level pages (integer nav_order, no parent:) matches the
+    constant declared in this file
+  covers:
+  - '5.9'
 - id: router-page-shape
   desc: 'Every page_type: router page has a ''## Where to go'' heading, at least three
     internal links, no image, and fewer than 250 words'
@@ -219,6 +224,10 @@
   desc: Every include term.html key="..." invocation names a term that exists in _data/glossary.yml
   covers:
   - '4.3'
+- id: title-unique
+  desc: No two pages declare the same title
+  covers:
+  - '5.9'
 - id: todo-owner-grammar
   desc: 'Every marker matches the grammar TODO(owner: <handle>): <what is needed>'
   covers:
