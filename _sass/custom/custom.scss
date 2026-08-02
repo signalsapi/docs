@@ -518,9 +518,19 @@ pre.highlight {
 }
 
 // ── Focus states ──
+// :focus-visible, not :focus — a solid ring for keyboard navigation
+// without flashing on every mouse click. custom.scss compiles once per
+// color scheme (light/dark/signalsapi), so this hardcodes the accent hex
+// from _sass/color_schemes/signalsapi.scss's $accent rather than
+// referencing the variable, which isn't in scope for the other two.
 
 *:focus {
-  outline-color: rgba(0, 232, 123, 0.4);
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #00e87b;
+  outline-offset: 2px;
 }
 
 // ── Aux nav ──

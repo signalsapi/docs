@@ -45,6 +45,11 @@
     workflow never triggers on pull_request
   covers:
   - '1.13'
+- id: focus-visible-ring-present
+  desc: 'custom.scss never sets outline: none on a :focus rule without a paired :focus-visible
+    rule'
+  covers:
+  - '2.13'
 - id: gemfile-html-proofer-pinned
   desc: Gemfile declares html-proofer with a ~> 5 constraint
   covers:
