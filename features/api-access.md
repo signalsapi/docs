@@ -4,7 +4,7 @@ parent: Features
 layout: default
 nav_order: 16
 stage: export_and_integration
-page_type: task
+page_type: feature
 description: Pull your own projects and leads out of SignalsAPI as JSON or CSV over a read-only REST API.
 ---
 

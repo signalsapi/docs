@@ -3,7 +3,7 @@ title: Agent data plane — MCP server
 parent: Features
 layout: default
 nav_order: 19
-page_type: task
+page_type: feature
 description: The agent data plane's MCP tool contract — code-complete, not yet hosted at a public endpoint.
 ---
 

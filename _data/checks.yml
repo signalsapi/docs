@@ -191,6 +191,11 @@
   desc: 'Every page''s stage: front-matter value names a stage declared in _data/pipeline.yml'
   covers:
   - '4.8'
+- id: task-page-shape
+  desc: 'Every page_type: task page carries the four required task headings: Before
+    you start, Steps, Check it worked, and If it did not work'
+  covers:
+  - '5.4'
 - id: term-include-keys-resolve
   desc: Every include term.html key="..." invocation names a term that exists in _data/glossary.yml
   covers:

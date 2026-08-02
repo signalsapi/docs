@@ -3,7 +3,7 @@ title: Remove duplicate signals
 parent: Features
 layout: default
 nav_order: 2
-page_type: task
+page_type: feature
 description: Choose how SignalsAPI handles the same job posted multiple times across different regions.
 ---
 

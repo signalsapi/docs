@@ -3,7 +3,7 @@ title: Agent data plane — Clay integration
 parent: Features
 layout: default
 nav_order: 20
-page_type: task
+page_type: feature
 description: Add a Clay enrichment column that returns a company's hiring motion as flat, filterable rows.
 ---
 

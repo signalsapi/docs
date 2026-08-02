@@ -3,7 +3,7 @@ title: Compare people-data providers
 parent: Features
 layout: default
 nav_order: 9
-page_type: task
+page_type: feature
 description: How the eight supported people-data providers differ on data returned and where filters run.
 ---
 

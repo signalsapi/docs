@@ -4,7 +4,7 @@ parent: Features
 layout: default
 nav_order: 10
 stage: filtering
-page_type: task
+page_type: feature
 description: Use AI to filter leads against your ICP beyond what keyword and structured filters can catch.
 ---
 

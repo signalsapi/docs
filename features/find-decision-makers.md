@@ -4,7 +4,7 @@ parent: Features
 layout: default
 nav_order: 6
 stage: decision_maker_identification
-page_type: task
+page_type: feature
 description: Set up a persona to find and prioritize the right job titles and locations at a matched company.
 ---
 

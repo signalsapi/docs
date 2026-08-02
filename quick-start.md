@@ -3,7 +3,7 @@ title: Quick start
 layout: default
 nav_order: 2
 has_children: true
-page_type: task
+page_type: section
 description: A short video walkthrough of SignalsAPI's basic functions, plus the link to create your account.
 ---
 

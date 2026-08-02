@@ -3,7 +3,7 @@ title: Do-Not-Contact list
 parent: Features
 layout: default
 nav_order: 14
-page_type: task
+page_type: feature
 description: Block companies by domain or people by email so they're never matched or contacted again.
 ---
 

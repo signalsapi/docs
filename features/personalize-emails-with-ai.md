@@ -3,7 +3,7 @@ title: Personalize emails with AI
 parent: Features
 layout: default
 nav_order: 11
-page_type: task
+page_type: feature
 description: Use AI to clean up or transform raw signal data before dropping it into an email template.
 ---
 
