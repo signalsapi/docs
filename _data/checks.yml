@@ -53,6 +53,11 @@
     and non-nil
   covers:
   - '1.7'
+- id: sitemap-covers-published-pages
+  desc: 'sitemap.xml lists every page that is not nav_exclude''d and not sitemap:
+    false'
+  covers:
+  - '2.4'
 - id: todo-owner-grammar
   desc: 'Every marker matches the grammar TODO(owner: <handle>): <what is needed>'
   covers:

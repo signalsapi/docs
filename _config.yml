@@ -10,6 +10,11 @@ url: https://docs.signalsapi.com
 
 permalink: pretty
 
+# NFR7 / AD-11: the plugin budget is three (jekyll-sitemap, jekyll-redirect-from,
+# jekyll-seo-tag). Adding one requires two edits: the gem in Gemfile and an entry here.
+plugins:
+  - jekyll-sitemap
+
 # Repository scaffolding that must never reach the built site. The first six
 # are the story's own list; Rakefile, script/, styles/ and bmalph/ are the
 # verification harness and planning-tool state discovered leaking into
