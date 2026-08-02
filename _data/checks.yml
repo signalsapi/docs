@@ -68,6 +68,10 @@
     string "mention"
   covers:
   - '2.7'
+- id: one-canonical-per-page
+  desc: Every built HTML file contains exactly one rel="canonical" element
+  covers:
+  - '2.14'
 - id: permalink-pretty-set
   desc: '_config.yml declares permalink: pretty'
   covers:
@@ -77,6 +81,11 @@
     appears nowhere
   covers:
   - '2.8'
+- id: plugin-budget
+  desc: '_config.yml''s plugins: list is a subset of {jekyll-sitemap, jekyll-redirect-from,
+    jekyll-seo-tag}'
+  covers:
+  - '2.14'
 - id: robots-sitemap-absolute
   desc: '_site/robots.txt exists with an absolute Sitemap: line and no double slash
     after the host'
