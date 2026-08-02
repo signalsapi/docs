@@ -214,6 +214,10 @@ items:
     jekyll-seo-tag}'
   covers:
   - '2.14'
+- id: pricing-figures-sourced
+  desc: Every _data/pricing.yml item declares a value and a source
+  covers:
+  - '7.7'
 - id: providers-schema
   desc: Every _data/providers.yml item declares exactly the required keys, with valid
     filter and credential values
