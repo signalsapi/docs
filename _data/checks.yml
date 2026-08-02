@@ -120,6 +120,11 @@
     floor
   covers:
   - '2.15'
+- id: parent-resolves-to-has-children
+  desc: 'Every page''s parent: value matches the title of a page declaring has_children:
+    true'
+  covers:
+  - '4.9'
 - id: permalink-pretty-set
   desc: '_config.yml declares permalink: pretty'
   covers:

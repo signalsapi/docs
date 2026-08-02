@@ -1,5 +1,6 @@
 ---
 title: How it works
+parent: Concepts
 layout: default
 nav_order: 4
 ---

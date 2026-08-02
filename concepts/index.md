@@ -3,7 +3,7 @@ title: Concepts
 layout: default
 has_children: true
 page_type: router
-nav_order: 10
+nav_order: 9
 description: Orient yourself in SignalsAPI's vocabulary and pipeline before diving into a task page.
 ---
 

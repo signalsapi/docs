@@ -1,7 +1,7 @@
 ---
 title: Release Notes / Changelog
 layout: default
-nav_order: 8
+nav_order: 7
 ---
 
 # What's new
