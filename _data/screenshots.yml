@@ -1,310 +1,61 @@
 meta:
   owner: mykola
   verified_on: 2026-08-03
-  source: path and capture_date read from the repository; subject and alt text transcribed from each image's owning page (its changelog bullet or surrounding prose) -- see Story 11.1
+  source: path and capture_date read from the repository; subject and alt text transcribed from each image's owning page (its changelog bullet or surrounding prose) -- see Story 11.1; Story 11.10 retired the 53 whats-new/*.png changelog screenshots (1.9 MB, the bulk of the repository's image payload) as purely decorative and without instructional purpose now that every entry's text lives in _data/changelog.yml, and added each surviving image's intrinsic width/height (read from its own PNG header) so screenshot.html can declare both and avoid layout shift
 items:
 - path: features/byo-people-provider-1.png
   subject: People-data provider settings with no key saved
   capture_date: 2026-06-06
   owning_page: features/bring-your-own-people-provider.md
   alt: People-data provider settings with no key saved
+  width: 2560
+  height: 1400
 - path: features/byo-people-provider-2.png
   subject: Snov.io selected, showing Client ID and Client Secret fields
   capture_date: 2026-06-06
   owning_page: features/bring-your-own-people-provider.md
   alt: Snov.io selected, showing Client ID and Client Secret fields
+  width: 2560
+  height: 1400
 - path: features/byo-people-provider-3.png
   subject: Key saved with active status
   capture_date: 2026-06-06
   owning_page: features/bring-your-own-people-provider.md
   alt: Key saved with active status
+  width: 2560
+  height: 1440
 - path: features/byo-people-provider-4.png
   subject: Key rejected, invalid status
   capture_date: 2026-06-06
   owning_page: features/bring-your-own-people-provider.md
   alt: Key rejected, invalid status
+  width: 2560
+  height: 1440
 - path: features/find-phone-numbers-1.png
   subject: Persona settings showing the 'Find phone numbers' checkbox next to 'Email is required'
   capture_date: 2026-06-07
   owning_page: features/find-phone-numbers.md
   alt: Persona settings showing the 'Find phone numbers' checkbox next to 'Email is required'
+  width: 820
+  height: 340
 - path: features/find-phone-numbers-2.png
   subject: My Leads list with a Phone column showing numbers like +15551234567 for some rows and a dash for others
   capture_date: 2026-06-07
   owning_page: features/find-phone-numbers.md
   alt: My Leads list with a Phone column showing numbers like +15551234567 for some rows and a dash for others
+  width: 928
+  height: 60
 - path: features/work-arrangement-filter-1.png
   subject: Work arrangement filter with Include only selected and Remote + Unspecified checked
   capture_date: 2026-06-19
   owning_page: features/work-arrangement-filter.md
   alt: Work arrangement filter with Include only selected and Remote + Unspecified checked
+  width: 680
+  height: 283
 - path: features/work-arrangement-filter-2.png
   subject: Remote-friendly toggle enabled
   capture_date: 2026-06-19
   owning_page: features/work-arrangement-filter.md
   alt: Remote-friendly toggle enabled
-- path: whats-new/2024-01-29-statistics-per-processor.png
-  subject: Statistics per processor to "Processors" page
-  capture_date: 2024-01-29
-  owning_page: whats-new/index.md
-  alt: Statistics per processor to "Processors" page
-- path: whats-new/2024-02-04-company-filter-by-country.png
-  subject: Company filter by country has 'exclude' mode&#x20;
-  capture_date: 2024-02-04
-  owning_page: whats-new/index.md
-  alt: Company filter by country has 'exclude' mode&#x20;
-- path: whats-new/2024-03-01-job-researcher-can-be-set.png
-  subject: Job researcher can be set to match only remote or only on-site positions
-  capture_date: 2024-03-01
-  owning_page: whats-new/index.md
-  alt: Job researcher can be set to match only remote or only on-site positions
-- path: whats-new/2024-03-02-exact-match-in-title.png
-  subject: '"Exact match in title" checkbox for stricter matching'
-  capture_date: 2024-03-02
-  owning_page: whats-new/index.md
-  alt: '"Exact match in title" checkbox for stricter matching'
-- path: whats-new/2024-03-04-matches-page-shows-stats.png
-  subject: Matches page shows stats instead of a progress bar
-  capture_date: 2024-03-04
-  owning_page: whats-new/index.md
-  alt: Matches page shows stats instead of a progress bar
-- path: whats-new/2024-03-20-de-duplication.png
-  subject: De-duplication policy in search
-  capture_date: 2024-03-20
-  owning_page: whats-new/index.md
-  alt: De-duplication policy in search
-- path: whats-new/2024-03-20-matches-downloadable-as-csv.png
-  subject: Matches are downloadable as CSV, go to Matches -> Download
-  capture_date: 2024-03-20
-  owning_page: whats-new/index.md
-  alt: Matches are downloadable as CSV, go to Matches -> Download
-- path: whats-new/2024-03-22-run-displays-statuses.png
-  subject: Runs display their statuses
-  capture_date: 2024-03-22
-  owning_page: whats-new/index.md
-  alt: Runs display their statuses
-- path: whats-new/2024-03-23-stop-words.png
-  subject: Stop words for job title and company name / headline / description
-  capture_date: 2024-03-23
-  owning_page: whats-new/index.md
-  alt: Stop words for job title and company name / headline / description
-- path: whats-new/2024-03-24-matches-can-be-manually-2.png
-  subject: Matches can be manually approved
-  capture_date: 2024-03-24
-  owning_page: whats-new/index.md
-  alt: Matches can be manually approved
-- path: whats-new/2024-03-24-matches-can-be-manually.png
-  subject: Matches can be manually approved
-  capture_date: 2024-03-24
-  owning_page: whats-new/index.md
-  alt: Matches can be manually approved
-- path: whats-new/2024-03-24-search-has-a-new-parameter.png
-  subject: Search has a new parameter to require manual pre-approval of each lead before uploading
-  capture_date: 2024-03-24
-  owning_page: whats-new/index.md
-  alt: Search has a new parameter to require manual pre-approval of each lead before uploading
-- path: whats-new/2024-03-26-settings-have-their-own.png
-  subject: Settings have their own menuitem now
-  capture_date: 2024-03-26
-  owning_page: whats-new/index.md
-  alt: Settings have their own menuitem now
-- path: whats-new/2024-03-27-people-without-a-verified.png
-  subject: People without a verified email (only having a LinkedIn URL) can also be matched now. Use "require email" option in search to control this.
-  capture_date: 2024-03-27
-  owning_page: whats-new/index.md
-  alt: People without a verified email (only having a LinkedIn URL) can also be matched now. Use "require email" option in search to control this.
-- path: whats-new/2024-03-27-showing-uploaded-matches-2.png
-  subject: Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
-  capture_date: 2024-03-27
-  owning_page: whats-new/index.md
-  alt: Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
-- path: whats-new/2024-03-27-showing-uploaded-matches.png
-  subject: Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
-  capture_date: 2024-03-27
-  owning_page: whats-new/index.md
-  alt: Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
-- path: whats-new/2024-03-31-filtering-companies-by.png
-  subject: Filtering companies by keywords
-  capture_date: 2024-03-31
-  owning_page: whats-new/index.md
-  alt: Filtering companies by keywords
-- path: whats-new/2024-04-04-daily-match-limit.png
-  subject: Daily match limit
-  capture_date: 2024-04-04
-  owning_page: whats-new/index.md
-  alt: Daily match limit
-- path: whats-new/2024-04-10-search-can-be-opened-to-see.png
-  subject: Search can be opened to see queries. Showing last run date/time, today/yesterday signal/match count, next run date/time.
-  capture_date: 2024-04-10
-  owning_page: whats-new/index.md
-  alt: Search can be opened to see queries. Showing last run date/time, today/yesterday signal/match count, next run date/time.
-- path: whats-new/2024-04-16-any-query-can-be-run.png
-  subject: Any query can be run manually.
-  capture_date: 2024-04-16
-  owning_page: whats-new/index.md
-  alt: Any query can be run manually.
-- path: whats-new/2024-04-16-control-runs-schedule.png
-  subject: You can now control how often runs are scheduled (and if they are scheduled at all) in each individual search settings.
-  capture_date: 2024-04-16
-  owning_page: whats-new/index.md
-  alt: You can now control how often runs are scheduled (and if they are scheduled at all) in each individual search settings.
-- path: whats-new/2024-04-16-filter-out-companies-without.png
-  subject: You can now choose if you still want to filter out companies without identified decision-makers, using "Minimum number of identified decision-makers" and "Minimum number of valid emails per match" fields.
-  capture_date: 2024-04-16
-  owning_page: whats-new/index.md
-  alt: You can now choose if you still want to filter out companies without identified decision-makers, using "Minimum number of identified decision-makers" and "Minimum number of valid emails per match" fields.
-- path: whats-new/2024-04-16-if-minimum-valid-emails.png
-  subject: If "Minimum number of valid emails per match" is left empty, emails will not be automatically unlocked, you can unlock them manually
-  capture_date: 2024-04-16
-  owning_page: whats-new/index.md
-  alt: If "Minimum number of valid emails per match" is left empty, emails will not be automatically unlocked, you can unlock them manually
-- path: whats-new/2024-04-22-search-filters-personas.png
-  subject: Searches, Filters, and Personas are separated into different tabs and steps, so instead of having to wait until the whole search & processing will end, you can see intermediate results much faster.
-  capture_date: 2024-04-22
-  owning_page: whats-new/index.md
-  alt: Searches, Filters, and Personas are separated into different tabs and steps, so instead of having to wait until the whole search & processing will end, you can see intermediate results much faster.
-- path: whats-new/2024-04-23-showing-running-status.png
-  subject: Each page (searches, filters, personas, export) showing running status automatically updates when running is finished
-  capture_date: 2024-04-23
-  owning_page: whats-new/index.md
-  alt: Each page (searches, filters, personas, export) showing running status automatically updates when running is finished
-- path: whats-new/2024-04-26-one-job-title-per-search.png
-  subject: '"Data sources" renamed to "Searches", "Filters" and "Personas" to avoid confusion'
-  capture_date: 2024-04-26
-  owning_page: whats-new/index.md
-  alt: '"Data sources" renamed to "Searches", "Filters" and "Personas" to avoid confusion'
-- path: whats-new/2024-04-28-automatic-approval-and-rej.png
-  subject: Automatic approval and rejection rules can be set in lead list settings.
-  capture_date: 2024-04-28
-  owning_page: whats-new/index.md
-  alt: Automatic approval and rejection rules can be set in lead list settings.
-- path: whats-new/2024-04-28-lead-settings.png
-  subject: Lead settings can be applied to new leads only, or the whole lead list can be emptied and re-run with the new settings.
-  capture_date: 2024-04-28
-  owning_page: whats-new/index.md
-  alt: Lead settings can be applied to new leads only, or the whole lead list can be emptied and re-run with the new settings.
-- path: whats-new/2024-04-28-new-tab-leads-for-working.png
-  subject: New tab "Leads" for working with leads in a mailbox-style with folders, downloading, unlocking emails, etc
-  capture_date: 2024-04-28
-  owning_page: whats-new/index.md
-  alt: New tab "Leads" for working with leads in a mailbox-style with folders, downloading, unlocking emails, etc
-- path: whats-new/2024-04-29-leads-will-get-exported.png
-  subject: Leads will get exported after you approve them by clicking "Approve" or "Reject" buttons, or enabling auto-approval in lead list settings.
-  capture_date: 2024-04-29
-  owning_page: whats-new/index.md
-  alt: Leads will get exported after you approve them by clicking "Approve" or "Reject" buttons, or enabling auto-approval in lead list settings.
-- path: whats-new/2024-04-29-new-leads-are-marked.png
-  subject: New leads are marked as "New", and then change to "Seen" when you open them for the first time.
-  capture_date: 2024-04-29
-  owning_page: whats-new/index.md
-  alt: New leads are marked as "New", and then change to "Seen" when you open them for the first time.
-- path: whats-new/2024-05-01-people-can-be-filtered.png
-  subject: People can be filtered by location
-  capture_date: 2024-05-01
-  owning_page: whats-new/index.md
-  alt: People can be filtered by location
-- path: whats-new/2024-05-01-people-in-lead-list.png
-  subject: People in lead list have addresses
-  capture_date: 2024-05-01
-  owning_page: whats-new/index.md
-  alt: People in lead list have addresses
-- path: whats-new/2024-05-01-save-save-and-re-run.png
-  subject: Save / save and re-run buttons in filters and personas
-  capture_date: 2024-05-01
-  owning_page: whats-new/index.md
-  alt: Save / save and re-run buttons in filters and personas
-- path: whats-new/2024-05-03-filtering-by-job-stop.png
-  subject: Filtering by job stop words and required words
-  capture_date: 2024-05-03
-  owning_page: whats-new/index.md
-  alt: Filtering by job stop words and required words
-- path: whats-new/2024-05-06-showing-job-description.png
-  subject: Showing job description
-  capture_date: 2024-05-06
-  owning_page: whats-new/index.md
-  alt: Showing job description
-- path: whats-new/2024-05-10-ai-powered-rejection-1.png
-  subject: AI powered rejection of leads
-  capture_date: 2024-05-10
-  owning_page: whats-new/index.md
-  alt: AI powered rejection of leads
-- path: whats-new/2024-05-10-ai-powered-rejection-2.png
-  subject: AI powered rejection of leads
-  capture_date: 2024-05-10
-  owning_page: whats-new/index.md
-  alt: AI powered rejection of leads
-- path: whats-new/2024-05-10-searches-filters-personas.png
-  subject: Searches, filters, personas and leadlists can be cloned
-  capture_date: 2024-05-10
-  owning_page: whats-new/index.md
-  alt: Searches, filters, personas and leadlists can be cloned
-- path: whats-new/2024-05-13-leads-within-a-leadlist.png
-  subject: Leads within a leadlist, matches within personas and filters can be filtered by date
-  capture_date: 2024-05-13
-  owning_page: whats-new/index.md
-  alt: Leads within a leadlist, matches within personas and filters can be filtered by date
-- path: whats-new/2024-05-18-list-views-of-searches.png
-  subject: List views of searches, filters, personas, lead lists and exports show where they are taking data from and where they are sending it to.
-  capture_date: 2024-05-18
-  owning_page: whats-new/index.md
-  alt: List views of searches, filters, personas, lead lists and exports show where they are taking data from and where they are sending it to.
-- path: whats-new/2024-05-20-do-not-contact-list.png
-  subject: Do-Not-Contact list allows to make sure you do not contact companies or people you do not want to. Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/).
-  capture_date: 2024-05-20
-  owning_page: whats-new/index.md
-  alt: Do-Not-Contact list allows to make sure you do not contact companies or people you do not want to. Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/).
-- path: whats-new/2024-05-20-limit-the-number-of-dec.png
-  subject: Limit the number of decision-makers per company. If more decision-makers are identified, they are prioritized in the order specified in the 'titles' field, and those with valid email addresses come first.
-  capture_date: 2024-05-20
-  owning_page: whats-new/index.md
-  alt: Limit the number of decision-makers per company. If more decision-makers are identified, they are prioritized in the order specified in the 'titles' field, and those with valid email addresses come first.
-- path: whats-new/2024-05-30-auto-validating-emails.png
-  subject: Auto-validating emails in [Snov.io](https://snov.io/) (exports -> add -> snovio -> validate emails)
-  capture_date: 2024-05-30
-  owning_page: whats-new/index.md
-  alt: Auto-validating emails in [Snov.io](https://snov.io/) (exports -> add -> snovio -> validate emails)
-- path: whats-new/2024-05-30-worldwide-search-on-linkedin.png
-  subject: Worldwide search on LinkedIn (searches -> add -> hiring location)
-  capture_date: 2024-05-30
-  owning_page: whats-new/index.md
-  alt: Worldwide search on LinkedIn (searches -> add -> hiring location)
-- path: whats-new/2024-06-14-sourcing-from-indeed.png
-  subject: Sourcing from Indeed
-  capture_date: 2024-06-14
-  owning_page: whats-new/index.md
-  alt: Sourcing from Indeed
-- path: whats-new/2024-06-17-filtering-jobs.png
-  subject: Filtering jobs based on where the match was found. Solving two most popular problems -- "too few matches" and "too many junk matches".
-  capture_date: 2024-06-17
-  owning_page: whats-new/index.md
-  alt: Filtering jobs based on where the match was found. Solving two most popular problems -- "too few matches" and "too many junk matches".
-- path: whats-new/2024-06-18-job-posting-age.png
-  subject: Search has a "Job posting age" setting, which controls how recent the job posting should be to get matched.
-  capture_date: 2024-06-18
-  owning_page: whats-new/index.md
-  alt: Search has a "Job posting age" setting, which controls how recent the job posting should be to get matched.
-- path: whats-new/2024-06-19-ability-to-choose-all.png
-  subject: Ability to choose all popular choices with one click
-  capture_date: 2024-06-19
-  owning_page: whats-new/index.md
-  alt: Ability to choose all popular choices with one click
-- path: whats-new/2024-06-19-exporting-to-a-specific.png
-  subject: Exporting to a specific list in Hubspot
-  capture_date: 2024-06-19
-  owning_page: whats-new/index.md
-  alt: Exporting to a specific list in Hubspot
-- path: whats-new/2025-03-06-unknown_headcount.png
-  subject: Option to not filter out companies with unknown number of employees
-  capture_date: 2025-03-06
-  owning_page: whats-new/index.md
-  alt: Option to not filter out companies with unknown number of employees
-- path: whats-new/2025-04-04-emails_required.png
-  subject: '"Unlock email" link removed from lead lists, as all emails are already unlocked.'
-  capture_date: 2025-04-04
-  owning_page: whats-new/index.md
-  alt: '"Unlock email" link removed from lead lists, as all emails are already unlocked.'
-- path: whats-new/2025-04-09-hiring_cafe-min.png
-  subject: HiringCafe as a job source
-  capture_date: 2025-04-09
-  owning_page: whats-new/index.md
-  alt: HiringCafe as a job source
+  width: 680
+  height: 284

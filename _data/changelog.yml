@@ -1,7 +1,7 @@
 meta:
   owner: mykola
   verified_on: 2026-08-03
-  source: transcribed from whats-new/index.md's changelog (222 entries as of this repository's current state) for Story 11.7; feature is the existing page each entry's bullet is about, judged by keyword match against the entry text where no page was already linked; Story 11.9 backfilled the API access (2026-06-30) and agent data plane (2026-07-09) launches, dated from each page's own first commit (git log --follow), since neither had a changelog entry documenting its launch
+  source: 'transcribed from whats-new/index.md''s changelog (222 entries as of this repository''s current state) for Story 11.7; feature is the existing page each entry''s bullet is about, judged by keyword match against the entry text where no page was already linked; Story 11.9 backfilled the API access (2026-06-30) and agent data plane (2026-07-09) launches, dated from each page''s own first commit (git log --follow), since neither had a changelog entry documenting its launch; Story 11.10 removed the screenshots: field once those images were retired'
 items:
 - date: 2026-06-30
   summary: 'API access launches: a read-only REST API for pulling your own projects and leads out of SignalsAPI as JSON or CSV.'
@@ -81,21 +81,15 @@ items:
 - date: 2025-04-09
   summary: HiringCafe as a job source
   feature: how-it-works.md
-  screenshots:
-  - whats-new/2025-04-09-hiring_cafe-min.png
 - date: 2025-04-05
   summary: Phone numbers
   feature: features/find-phone-numbers.md
 - date: 2025-04-04
   summary: Option "Auto-reject people without emails" was removed from Lead lists, option "Emails required" was added to personas instead. If turned on, all people will have emails already on the "Personas" stage. "Unlock email" link removed from lead lists, as all emails are already unlocked.
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2025-04-04-emails_required.png
 - date: 2025-03-06
   summary: Option to not filter out companies with unknown number of employees
   feature: features/advanced-search.md
-  screenshots:
-  - whats-new/2025-03-06-unknown_headcount.png
 - date: 2025-01-22
   summary: ToS
   feature: tos.md
@@ -234,26 +228,18 @@ items:
 - date: 2024-06-19
   summary: Exporting to a specific list in Hubspot
   feature: features/integrations.md
-  screenshots:
-  - whats-new/2024-06-19-exporting-to-a-specific.png
 - date: 2024-06-19
   summary: Popular choices are shown separately
   feature: features/advanced-search.md
 - date: 2024-06-19
   summary: Ability to choose all popular choices with one click
   feature: features/advanced-search.md
-  screenshots:
-  - whats-new/2024-06-19-ability-to-choose-all.png
 - date: 2024-06-18
   summary: Search has a "Job posting age" setting, which controls how recent the job posting should be to get matched.
   feature: features/advanced-search.md
-  screenshots:
-  - whats-new/2024-06-18-job-posting-age.png
 - date: 2024-06-17
   summary: Filtering jobs based on where the match was found. Solving two most popular problems -- "too few matches" and "too many junk matches".
   feature: features/advanced-search.md
-  screenshots:
-  - whats-new/2024-06-17-filtering-jobs.png
 - date: 2024-06-16
   summary: Showing in the run which part of the signal matches search terms. Some matches do not contain search terms at all, but the search engine (Indeed or LinkedIn) still shows them.
   feature: how-it-works.md
@@ -263,8 +249,6 @@ items:
 - date: 2024-06-14
   summary: Sourcing from Indeed
   feature: how-it-works.md
-  screenshots:
-  - whats-new/2024-06-14-sourcing-from-indeed.png
 - date: 2024-06-07
   summary: Sped up navigation by moving frontend to a separate server
   feature: concepts/pipeline.md
@@ -274,31 +258,21 @@ items:
 - date: 2024-05-30
   summary: Worldwide search on LinkedIn (searches -> add -> hiring location)
   feature: features/advanced-search.md
-  screenshots:
-  - whats-new/2024-05-30-worldwide-search-on-linkedin.png
 - date: 2024-05-30
   summary: Auto-validating emails in [Snov.io](https://snov.io/) (exports -> add -> snovio -> validate emails)
   feature: features/bring-your-own-people-provider.md
-  screenshots:
-  - whats-new/2024-05-30-auto-validating-emails.png
 - date: 2024-05-29
   summary: Weekly emails with statistics
   feature: whats-new/index.md
 - date: 2024-05-20
   summary: Limit the number of decision-makers per company. If more decision-makers are identified, they are prioritized in the order specified in the 'titles' field, and those with valid email addresses come first.
   feature: features/find-decision-makers.md
-  screenshots:
-  - whats-new/2024-05-20-limit-the-number-of-dec.png
 - date: 2024-05-20
   summary: Do-Not-Contact list allows to make sure you do not contact companies or people you do not want to. Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/).
   feature: features/do-not-contact-list.md
-  screenshots:
-  - whats-new/2024-05-20-do-not-contact-list.png
 - date: 2024-05-18
   summary: List views of searches, filters, personas, lead lists and exports show where they are taking data from and where they are sending it to.
   feature: features/api-access.md
-  screenshots:
-  - whats-new/2024-05-18-list-views-of-searches.png
 - date: 2024-05-18
   summary: 'Fixed: Searches get stuck forever in "running" status if run has failed.'
   feature: create-a-search.md
@@ -314,8 +288,6 @@ items:
 - date: 2024-05-13
   summary: Leads within a leadlist, matches within personas and filters can be filtered by date
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-05-13-leads-within-a-leadlist.png
 - date: 2024-05-13
   summary: Leads are downloaded based on the applied filters
   feature: features/api-access.md
@@ -334,14 +306,9 @@ items:
 - date: 2024-05-10
   summary: Searches, filters, personas and leadlists can be cloned
   feature: features/find-decision-makers.md
-  screenshots:
-  - whats-new/2024-05-10-searches-filters-personas.png
 - date: 2024-05-10
   summary: AI powered rejection of leads
   feature: features/filter-leads-with-ai.md
-  screenshots:
-  - whats-new/2024-05-10-ai-powered-rejection-1.png
-  - whats-new/2024-05-10-ai-powered-rejection-2.png
 - date: 2024-05-10
   summary: Search shows status as "running" while its runs are fetching
   feature: create-a-search.md
@@ -381,8 +348,6 @@ items:
 - date: 2024-05-06
   summary: Showing job description
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-05-06-showing-job-description.png
 - date: 2024-05-06
   summary: Company description is shown with line breaks instead of smashing all lines together
   feature: concepts/anatomy-of-a-lead.md
@@ -404,8 +369,6 @@ items:
 - date: 2024-05-03
   summary: Filtering by job stop words and required words
   feature: features/filter-leads-with-ai.md
-  screenshots:
-  - whats-new/2024-05-03-filtering-by-job-stop.png
 - date: 2024-05-03
   summary: 'Fixed: duplicate leads'
   feature: features/remove-duplicate-signals.md
@@ -427,18 +390,12 @@ items:
 - date: 2024-05-01
   summary: People in lead list have addresses
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-05-01-people-in-lead-list.png
 - date: 2024-05-01
   summary: People can be filtered by location
   feature: features/find-decision-makers.md
-  screenshots:
-  - whats-new/2024-05-01-people-can-be-filtered.png
 - date: 2024-05-01
   summary: Save / save and re-run buttons in filters and personas
   feature: features/find-decision-makers.md
-  screenshots:
-  - whats-new/2024-05-01-save-save-and-re-run.png
 - date: 2024-05-01
   summary: All yearly credits are debited on the payment date
   feature: pricing.md
@@ -469,28 +426,18 @@ items:
 - date: 2024-04-29
   summary: New leads are marked as "New", and then change to "Seen" when you open them for the first time.
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-04-29-new-leads-are-marked.png
 - date: 2024-04-29
   summary: Leads will get exported after you approve them by clicking "Approve" or "Reject" buttons, or enabling auto-approval in lead list settings.
   feature: features/api-access.md
-  screenshots:
-  - whats-new/2024-04-29-leads-will-get-exported.png
 - date: 2024-04-28
   summary: New tab "Leads" for working with leads in a mailbox-style with folders, downloading, unlocking emails, etc
   feature: features/api-access.md
-  screenshots:
-  - whats-new/2024-04-28-new-tab-leads-for-working.png
 - date: 2024-04-28
   summary: Automatic approval and rejection rules can be set in lead list settings.
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-04-28-automatic-approval-and-rej.png
 - date: 2024-04-28
   summary: Lead settings can be applied to new leads only, or the whole lead list can be emptied and re-run with the new settings.
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-04-28-lead-settings.png
 - date: 2024-04-26
   summary: One job title per search. Splitting a search into multiple ones with one title each produces results much faster, and also shows which searches are yielding matches, and which are not.
   feature: features/advanced-search.md
@@ -500,8 +447,6 @@ items:
 - date: 2024-04-26
   summary: '"Data sources" renamed to "Searches", "Filters" and "Personas" to avoid confusion'
   feature: features/find-decision-makers.md
-  screenshots:
-  - whats-new/2024-04-26-one-job-title-per-search.png
 - date: 2024-04-26
   summary: Uniqueness / deduplication policy is now a part of the Searches form
   feature: create-a-search.md
@@ -520,13 +465,9 @@ items:
 - date: 2024-04-23
   summary: Each page (searches, filters, personas, export) showing running status automatically updates when running is finished
   feature: features/api-access.md
-  screenshots:
-  - whats-new/2024-04-23-showing-running-status.png
 - date: 2024-04-22
   summary: Searches, Filters, and Personas are separated into different tabs and steps, so instead of having to wait until the whole search & processing will end, you can see intermediate results much faster.
   feature: features/find-decision-makers.md
-  screenshots:
-  - whats-new/2024-04-22-search-filters-personas.png
 - date: 2024-04-22
   summary: Different countries were separated to different searches for the same purpose -- you can see first country results faster, before all countries searches have finished.
   feature: features/advanced-search.md
@@ -545,31 +486,21 @@ items:
 - date: 2024-04-16
   summary: You can now control how often runs are scheduled (and if they are scheduled at all) in each individual search settings.
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-04-16-control-runs-schedule.png
 - date: 2024-04-16
   summary: Any query can be run manually.
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-04-16-any-query-can-be-run.png
 - date: 2024-04-16
   summary: You can now choose if you still want to filter out companies without identified decision-makers, using "Minimum number of identified decision-makers" and "Minimum number of valid emails per match" fields.
   feature: features/find-decision-makers.md
-  screenshots:
-  - whats-new/2024-04-16-filter-out-companies-without.png
 - date: 2024-04-16
   summary: If "Minimum number of valid emails per match" is left empty, emails will not be automatically unlocked, you can unlock them manually
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-04-16-if-minimum-valid-emails.png
 - date: 2024-04-11
   summary: Matches list is opening much faster now
   feature: create-a-search.md
 - date: 2024-04-10
   summary: Search can be opened to see queries. Showing last run date/time, today/yesterday signal/match count, next run date/time.
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-04-10-search-can-be-opened-to-see.png
 - date: 2024-04-07
   summary: Started using Featurebase [https://signalsapi.featurebase.app/](https://signalsapi.featurebase.app/) to collect feedback / feature requests
   feature: whats-new/index.md
@@ -579,8 +510,6 @@ items:
 - date: 2024-04-04
   summary: Daily match limit
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-04-04-daily-match-limit.png
 - date: 2024-04-04
   summary: Trial is either 150 leads or 7 days now, starting counting from user getting first match
   feature: pricing.md
@@ -590,38 +519,24 @@ items:
 - date: 2024-03-31
   summary: Filtering companies by keywords
   feature: features/advanced-search.md
-  screenshots:
-  - whats-new/2024-03-31-filtering-companies-by.png
 - date: 2024-03-28
   summary: HubSpot integration
   feature: features/integrations.md
 - date: 2024-03-27
   summary: People without a verified email (only having a LinkedIn URL) can also be matched now. Use "require email" option in search to control this.
   feature: how-it-works.md
-  screenshots:
-  - whats-new/2024-03-27-people-without-a-verified.png
 - date: 2024-03-27
   summary: Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-03-27-showing-uploaded-matches.png
-  - whats-new/2024-03-27-showing-uploaded-matches-2.png
 - date: 2024-03-26
   summary: Settings have their own menuitem now
   feature: how-it-works.md
-  screenshots:
-  - whats-new/2024-03-26-settings-have-their-own.png
 - date: 2024-03-24
   summary: Search has a new parameter to require manual pre-approval of each lead before uploading
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-03-24-search-has-a-new-parameter.png
 - date: 2024-03-24
   summary: Matches can be manually approved
   feature: concepts/anatomy-of-a-lead.md
-  screenshots:
-  - whats-new/2024-03-24-matches-can-be-manually.png
-  - whats-new/2024-03-24-matches-can-be-manually-2.png
 - date: 2024-03-23
   summary: We started offering [business developer as a service](https://signalsapi.com/bizdev)
   feature: whats-new/index.md
@@ -631,8 +546,6 @@ items:
 - date: 2024-03-23
   summary: Stop words for job title and company name / headline / description
   feature: features/filter-leads-with-ai.md
-  screenshots:
-  - whats-new/2024-03-23-stop-words.png
 - date: 2024-03-22
   summary: FAQ section in docs
   feature: faq.md
@@ -642,8 +555,6 @@ items:
 - date: 2024-03-22
   summary: Runs display their statuses
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-03-22-run-displays-statuses.png
 - date: 2024-03-22
   summary: Some runs got stuck, and needed to be deleted manually
   feature: create-a-search.md
@@ -671,13 +582,9 @@ items:
 - date: 2024-03-20
   summary: De-duplication policy in search
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-03-20-de-duplication.png
 - date: 2024-03-20
   summary: Matches are downloadable as CSV, go to Matches -> Download
   feature: features/api-access.md
-  screenshots:
-  - whats-new/2024-03-20-matches-downloadable-as-csv.png
 - date: 2024-03-20
   summary: 'Fixed: all matches are now visible, not only first 50'
   feature: create-a-search.md
@@ -702,21 +609,15 @@ items:
 - date: 2024-03-04
   summary: Matches page shows stats instead of a progress bar
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-03-04-matches-page-shows-stats.png
 - date: 2024-03-02
   summary: Showing a message if no matches are found
   feature: create-a-search.md
 - date: 2024-03-02
   summary: '"Exact match in title" checkbox for stricter matching'
   feature: create-a-search.md
-  screenshots:
-  - whats-new/2024-03-02-exact-match-in-title.png
 - date: 2024-03-01
   summary: Job researcher can be set to match only remote or only on-site positions
   feature: features/work-arrangement-filter.md
-  screenshots:
-  - whats-new/2024-03-01-job-researcher-can-be-set.png
 - date: 2024-02-25
   summary: Progress bar showing research progress in Matches
   feature: create-a-search.md
@@ -765,8 +666,6 @@ items:
 - date: 2024-02-04
   summary: Company filter by country has 'exclude' mode&#x20;
   feature: features/advanced-search.md
-  screenshots:
-  - whats-new/2024-02-04-company-filter-by-country.png
 - date: 2024-02-04
   summary: Backend performance and stability improved
   feature: concepts/pipeline.md
@@ -776,8 +675,6 @@ items:
 - date: 2024-01-29
   summary: Statistics per processor to "Processors" page
   feature: concepts/pipeline.md
-  screenshots:
-  - whats-new/2024-01-29-statistics-per-processor.png
 - date: 2024-01-29
   summary: Status page [https://status.signalsapi.com/](https://status.signalsapi.com/)
   feature: is-it-working.md

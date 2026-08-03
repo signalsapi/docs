@@ -24,7 +24,4 @@ block on each feature page it names.
 {% endif %}
 {% assign target = site.pages | where: "path", e.feature | first %}
 - {{ e.summary }}{% if target %} — see [{{ target.title }}]({{ target.url }}){% endif %}
-{% for shot_path in e.screenshots %}
-{% include screenshot.html path=shot_path %}
-{% endfor %}
 {% endfor %}

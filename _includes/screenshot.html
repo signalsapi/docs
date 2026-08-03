@@ -3,7 +3,9 @@
   {%- if s.path == include.path -%}{%- assign shot = s -%}{%- endif -%}
 {%- endfor -%}
 {%- if shot -%}
-<figure><img src="/{{ include.path }}" alt="{{ shot.alt | escape }}"{% if include.width %} width="{{ include.width }}"{% endif %}><figcaption></figcaption></figure>
+{%- assign display_width = include.width | default: shot.width -%}
+{%- assign display_height = display_width | times: shot.height | divided_by: shot.width -%}
+<figure><img src="/{{ include.path }}" alt="{{ shot.alt | escape }}" width="{{ display_width }}" height="{{ display_height }}"><figcaption></figcaption></figure>
 {%- else -%}
 **[unknown screenshot: {{ include.path }}]**
 {%- endif -%}

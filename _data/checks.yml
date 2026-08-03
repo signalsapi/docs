@@ -212,6 +212,10 @@ items:
     step count matches its ## Steps list'
   covers:
   - '8.6'
+- id: image-dimensions-declared
+  desc: every built <img> element declares both width and height
+  covers:
+  - '11.10'
 - id: image-requires-inventory-entry
   desc: every image referenced in the built site has an _data/screenshots.yml item
     with non-empty alt text and a capture date
