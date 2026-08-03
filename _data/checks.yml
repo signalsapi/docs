@@ -79,6 +79,11 @@ items:
   desc: Every script/checks/*.rb file registers an id equal to its own basename
   covers:
   - '1.11'
+- id: checks-ignore-dependency-trees
+  desc: Site excludes third-party dependency trees, so the gate reads the same page
+    set in CI as locally
+  covers:
+  - '1.10'
 - id: checks-manifest-current
   desc: _data/checks.yml matches the live Check registry
   covers:
@@ -87,6 +92,11 @@ items:
   desc: Each script/checks/*.rb file calls Check.register exactly once (AD-3)
   covers:
   - '1.6'
+- id: ci-checkout-has-full-history
+  desc: ".github/workflows/ci.yml checks out full history, which the baseline-commit
+    assertions read"
+  covers:
+  - '1.10'
 - id: ci-runs-rake-check
   desc: ".github/workflows/ci.yml contains a step whose run command is exactly `bundle
     exec rake check`"

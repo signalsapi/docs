@@ -12,6 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # no-page-deleted-without-redirect reads the pre-overhaul baseline
+          # tree with `git ls-tree ddc51a8`; the default shallow clone has no
+          # such commit, so the assertion would fail on an empty file list.
+          fetch-depth: 0
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:

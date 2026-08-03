@@ -21,8 +21,15 @@ class Site
   HtmlFile = Struct.new(:path, :body, keyword_init: true)
 
   # Directories that hold no publishable page content: build output, drafts
-  # (NFR10), and the planning/tooling scaffolds this repo happens to carry.
-  CONTENT_EXCLUDED_DIRS = %w[_site _drafts .claude .github .ralph .jekyll-cache _bmad _bmad-output bmalph].freeze
+  # (NFR10), the planning/tooling scaffolds this repo happens to carry, and
+  # third-party dependency trees. `vendor/` and `node_modules/` are absent on a
+  # developer machine but present in CI, where `bundler-cache: true` installs
+  # gems into `vendor/bundle/` inside the checkout — jekyll ignores them via its
+  # own default excludes, and every assertion here has to ignore them too, or a
+  # gem's spec fixtures get audited as if they were our pages.
+  CONTENT_EXCLUDED_DIRS = %w[
+    _site _drafts .claude .github .ralph .jekyll-cache _bmad _bmad-output bmalph vendor node_modules
+  ].freeze
 
   def pages
     @pages ||= Dir.glob(File.join(ROOT, "**", "*.md"))
