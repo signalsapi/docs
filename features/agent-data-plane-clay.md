@@ -2,7 +2,7 @@
 title: Agent data plane — Clay integration
 parent: Features
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/agent-data-plane-clay.html"
 nav_order: 20
@@ -47,8 +47,13 @@ hiring *harder than it was*.
 
 ## Setting it up
 
-You will need a plane API key and your base URL — the plane is not yet self-serve, so contact
-[Support](/support/) and we will issue both. Then, in Clay:
+The plane is not yet self-serve, so there is no base URL to point Clay at yet. You do not need one to
+plan the column: the fixture at
+[`/fixtures/v1/clay-enrich.json`](/fixtures/v1/clay-enrich.json) is this exact response shape, and the
+[local mock](../agent-data-plane-mock/) runs the full request/response cycle before you have a key.
+Want to be first in line once self-serve opens? Tell [Support](/support/) what you're building.
+
+Once you have a key and a base URL, in Clay:
 
 1. Add an **HTTP API** enrichment column to your table.
 2. Set the method to **POST** and the URL to `{YOUR_BASE_URL}/v1/clay/enrich`.

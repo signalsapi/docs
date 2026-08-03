@@ -31,8 +31,9 @@ source is committed under `mcp/` in this repository, and it proxies every tool c
 URL you control — by default the [local mock](../agent-data-plane-mock/) from your own machine, so the
 whole stack runs with no key and no hosted endpoint.
 
-Contact [Support](/support/) if you want the real MCP surface hosted — knowing someone is waiting on
-it is what moves it up the queue. In the meantime every tool below has an exact REST equivalent that
+Want to be first in line once the real MCP surface is hosted? Tell [Support](/support/) what you're
+building — that is not a prerequisite for anything above, just a signal that moves it up the queue.
+In the meantime every tool below has an exact REST equivalent that
 works today.
 
 ## Run it yourself

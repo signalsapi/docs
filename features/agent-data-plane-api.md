@@ -25,9 +25,10 @@ recorded, schema-checked response on this origin. Each operation's status —
 
 ## Base URL
 
-The plane is not yet open for self-serve signup and has **no public base URL**. Your base URL is
-issued together with your first API key — contact [Support](/support/) to get set up.
-The examples below assume you have exported it:
+The plane is not yet open for self-serve signup and has **no public base URL**. You do not need one
+to start — every operation below has a [recorded fixture](../agent-data-plane-fixtures/) at an
+absolute URL on this origin, and the whole surface [runs locally as a mock](../agent-data-plane-mock/).
+Once a base URL and key are issued, the examples below assume you have exported them:
 
 ```bash
 export PLANE_BASE_URL="…"   # issued with your first key

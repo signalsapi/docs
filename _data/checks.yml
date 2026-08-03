@@ -247,6 +247,11 @@ items:
     one other page'
   covers:
   - '5.8'
+- id: no-email-for-access
+  desc: No page instructs the reader to email in order to obtain access, a base URL,
+    or a key
+  covers:
+  - '10.8'
 - id: no-gitbook-mention-artifacts
   desc: No .md file contains a Markdown link whose title attribute is the literal
     string "mention"

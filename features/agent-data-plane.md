@@ -2,7 +2,7 @@
 title: Agent data plane
 parent: Features
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/agent-data-plane.html"
 nav_order: 17
@@ -119,16 +119,22 @@ talk to us and we will quote your usage shape.
 ## Getting access
 
 The plane is **not yet open for self-serve signup**, and there is no public base URL to point a
-client at today. Access is arranged directly:
+client at today. You do not need either to start:
 
-1. Contact [Support](/support/) describing what you want to build.
-2. We issue your first API key and the base URL to use it against.
-3. From then on you can mint and revoke additional keys yourself via
-   [`POST /v1/keys`](../agent-data-plane-api/#issue-a-key), scoped to your own account.
+- Read every operation's exact request and response shape in the specification:
+  [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml).
+- Fetch a recorded response for any operation from the
+  [fixture gallery](../agent-data-plane-fixtures/) — no key required.
+- Run the whole interface [locally as a mock](../agent-data-plane-mock/) and develop against it today,
+  including the write operations.
 
-Keys are shown **once**, at issuance, and stored only as a hash — we cannot recover one for you, so
-put it straight into your secret manager. Every request is scoped to your own account: you can never
-see, meter against, or revoke another customer's anything.
+Once self-serve opens, keys are minted and revoked yourself via
+[`POST /v1/keys`](../agent-data-plane-api/#issue-a-key), scoped to your own account, and shown **once**
+at issuance — stored only as a hash, so put it straight into your secret manager. Every request is
+scoped to your own account: you can never see, meter against, or revoke another customer's anything.
+
+Want to be first in line when self-serve opens? Tell [Support](/support/) what you're building —
+that is not a prerequisite for anything above, just a signal that moves it up the queue.
 
 ---
 
