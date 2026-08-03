@@ -147,3 +147,5 @@ that is not a prerequisite for anything above, just a signal that moves it up th
 
 Looking for the API that reads **your projects and leads** out of the SignalsAPI app? That is a
 different, self-serve API — see **[API access](../api-access/)**.
+
+{% include recent-changes.html %}

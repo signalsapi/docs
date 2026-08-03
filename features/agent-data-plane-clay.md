@@ -134,3 +134,5 @@ One `call` unit per row, billed at class `cached` — the same as any
 
 - **[Agent data plane overview](../agent-data-plane/)** — the ledger, the tiers, getting access
 - **[REST API reference](../agent-data-plane-api/)** — go deeper than one flat row per company
+
+{% include recent-changes.html %}

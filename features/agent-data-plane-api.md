@@ -546,3 +546,5 @@ Documented separately, with setup steps, on the
 
 See [Limits](/limits/) for every pagination default and rate limit stated across the API in one
 place.
+
+{% include recent-changes.html %}

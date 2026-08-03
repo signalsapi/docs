@@ -66,6 +66,11 @@ items:
     in the built site
   covers:
   - '11.7'
+- id: changelog-not-behind-docs
+  desc: no pre-overhaul feature page is newer than the newest changelog entry and
+    unnamed by one
+  covers:
+  - '11.9'
 - id: changelog-page-complete
   desc: every _data/changelog.yml entry appears in the built changelog page
   covers:

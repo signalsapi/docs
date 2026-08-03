@@ -130,3 +130,5 @@ See [Tiers and metering](../agent-data-plane/#tiers-and-metering) for exactly ho
 
 - **[REST API reference](../agent-data-plane-api/)** — every tool above, callable over HTTP today
 - **[Agent data plane overview](../agent-data-plane/)** — the ledger, the tiers, getting access
+
+{% include recent-changes.html %}
