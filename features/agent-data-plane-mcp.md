@@ -7,8 +7,8 @@ owner: mykola
 redirect_from: "/features/agent-data-plane-mcp.html"
 nav_order: 4
 page_type: feature
-description: The agent data plane's MCP tool contract — code-complete, not yet hosted at a public endpoint.
-prereq: mcp_hosting
+description: The agent data plane's MCP tool contract — a local stdio server, waiting on the plane's base URL and key.
+prereq: plane_access
 ---
 
 # Agent data plane — MCP server
@@ -23,18 +23,26 @@ agent tools — the same data, the same metering, and the same key as the
 Where a REST client has to know which URL to build, an MCP agent sees {{ site.data.mcp_tools.items | size }} tools with typed
 arguments and picks one at reasoning time.
 
-## Status: not hosted yet
+## Status: local by design, waiting on plane access
 
-The server is code-complete but **not yet deployed to an endpoint you can connect to** — there is no
-public base URL, and nothing below claims otherwise. What you can do today is run it yourself: the
-source is committed under `mcp/` in this repository, and it proxies every tool call to a REST base
-URL you control — by default the [local mock](../agent-data-plane-mock/) from your own machine, so the
-whole stack runs with no key and no hosted endpoint.
+`signalsapi-plane` is a **stdio server**: your MCP client spawns it as a subprocess and talks to it
+over stdin and stdout, exactly as the connect snippet below shows. That is the ordinary shape for an
+MCP server, and it is not a temporary arrangement — there is no public MCP endpoint to connect to,
+and there will not be one. The server runs on your machine before the plane opens and after it.
 
-Want to be first in line once the real MCP surface is hosted? Tell [Support](/support/) what you're
-building — that is not a prerequisite for anything above, just a signal that moves it up the queue.
-In the meantime every tool below has an exact REST equivalent that
-works today.
+What is missing is the same thing the [REST API](../agent-data-plane-api/) is waiting on: the plane
+is not yet open for self-serve signup and has **no public base URL**. The server is a thin proxy —
+every tool call becomes a REST request against `PLANE_MCP_BASE_URL` — so until a base URL and key are
+issued, point it at the [local mock](../agent-data-plane-mock/) and the whole stack runs on your own
+machine with no key. The source is committed under `mcp/` in this repository.
+
+On the day access is issued, nothing about the setup below changes: set `PLANE_MCP_BASE_URL` to the
+issued base URL and pass the issued key as the `plane_api_key` argument.
+
+Want to be first in line? Tell [Support](/support/) what you're building — that is not a prerequisite
+for anything above, just a signal that moves it up the queue. In the meantime every tool below has an
+exact REST equivalent, runnable now against the
+[fixture gallery](../agent-data-plane-fixtures/) or the local mock.
 
 ## Run it yourself
 
