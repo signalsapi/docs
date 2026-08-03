@@ -194,6 +194,11 @@ items:
     step count matches its ## Steps list'
   covers:
   - '8.6'
+- id: image-requires-inventory-entry
+  desc: every image referenced in the built site has an _data/screenshots.yml item
+    with non-empty alt text and a capture date
+  covers:
+  - '11.4'
 - id: images-alt-text-present
   desc: Every <img> with an empty alt attribute is reported so the health page reflects
     real content
@@ -404,6 +409,11 @@ items:
     `ruby` directive in the Gemfile'
   covers:
   - '1.9'
+- id: screenshot-age
+  desc: Every image whose capture_date is more than 180 days old is listed in the
+    run summary
+  covers:
+  - '11.4'
 - id: screenshot-inventory-complete
   desc: every image file has an item in _data/screenshots.yml, and every item's path
     resolves to a real file
