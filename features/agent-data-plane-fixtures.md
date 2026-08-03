@@ -4,7 +4,7 @@ parent: Features
 layout: default
 verified_on: 2026-08-03
 owner: mykola
-nav_order: 22
+nav_order: 17
 page_type: feature
 description: "One runnable curl command per plane operation, each pointed at a recorded fixture on this origin — no key, no backend, no waiting for access."
 ---

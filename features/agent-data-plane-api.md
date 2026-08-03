@@ -1,11 +1,11 @@
 ---
 title: Agent data plane — REST API
-parent: Features
+parent: APIs
 layout: default
 verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/agent-data-plane-api.html"
-nav_order: 18
+nav_order: 3
 page_type: feature
 description: "The full /v1 REST reference for the agent data plane: every endpoint, request, and response shape."
 prereq: plane_access

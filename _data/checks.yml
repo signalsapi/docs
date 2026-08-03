@@ -24,6 +24,10 @@ items:
     documented in _data/variables.yml
   covers:
   - '6.6'
+- id: api-pages-urls-unchanged
+  desc: each of the five interface pages' built URL matches its recorded baseline
+  covers:
+  - '10.10'
 - id: aux-links-not-template
   desc: _config.yml declares real aux_links, not the commented just-the-docs template
     block

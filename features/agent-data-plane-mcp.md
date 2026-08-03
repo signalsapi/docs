@@ -1,11 +1,11 @@
 ---
 title: Agent data plane — MCP server
-parent: Features
+parent: APIs
 layout: default
 verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/agent-data-plane-mcp.html"
-nav_order: 19
+nav_order: 4
 page_type: feature
 description: The agent data plane's MCP tool contract — code-complete, not yet hosted at a public endpoint.
 prereq: mcp_hosting

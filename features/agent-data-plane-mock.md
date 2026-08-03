@@ -4,7 +4,7 @@ parent: Features
 layout: default
 verified_on: 2026-08-03
 owner: mykola
-nav_order: 23
+nav_order: 18
 page_type: task
 description: "The one command that serves openapi/plane-v1.yaml locally, with responses matching the published fixtures."
 ---

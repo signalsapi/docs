@@ -1,0 +1,16 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-03
+  source: "recorded when Story 10.10 re-parented these five pages under the new APIs router, to prove
+    parent: is nav-structure-only and never changes a page's own URL"
+items:
+  - path: features/api-access.md
+    url: /features/api-access/
+  - path: features/agent-data-plane.md
+    url: /features/agent-data-plane/
+  - path: features/agent-data-plane-api.md
+    url: /features/agent-data-plane-api/
+  - path: features/agent-data-plane-mcp.md
+    url: /features/agent-data-plane-mcp/
+  - path: features/agent-data-plane-clay.md
+    url: /features/agent-data-plane-clay/

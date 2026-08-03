@@ -1,11 +1,11 @@
 ---
 title: Agent data plane
-parent: Features
+parent: APIs
 layout: default
 verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/agent-data-plane.html"
-nav_order: 17
+nav_order: 2
 page_type: feature
 prereq: plane_access
 description: A machine-facing surface reporting what changed in a company's hiring activity, not just what's posted now.

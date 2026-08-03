@@ -4,7 +4,7 @@ parent: Features
 layout: default
 verified_on: 2026-08-02
 owner: mykola
-nav_order: 21
+nav_order: 16
 stage: signal_discovery
 page_type: task
 description: Every field on the search-creation screen, how they combine, and where to read the full reference.
