@@ -33,6 +33,10 @@ items:
   desc: each of the five interface pages' built URL matches its recorded baseline
   covers:
   - '10.10'
+- id: apis-router-covers-children
+  desc: 'Every page with parent: APIs is linked from the APIs router''s table'
+  covers:
+  - '11.5'
 - id: aux-links-not-template
   desc: _config.yml declares real aux_links, not the commented just-the-docs template
     block

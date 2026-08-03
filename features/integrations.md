@@ -2,7 +2,7 @@
 title: Integrations
 parent: Features
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/integrations.html"
 nav_order: 13
@@ -38,6 +38,10 @@ If your search has "Manual Approval" enabled, your leads will be uploaded to the
 Lead status changes to "Approved" when you click "Approve". After lead was uploaded, status changes to "Uploaded".
 
 ## Integrating with Clay
+
+**Not what you're looking for?** This pushes your SignalsAPI leads *out* to Clay. To pull company
+hiring data *into* a Clay table instead, see
+[Agent data plane — Clay integration](/features/agent-data-plane-clay/).
 
 Clay is a data enrichment and outreach platform. SignalsAPI automatically pushes new verified leads to your Clay table in real time.
 

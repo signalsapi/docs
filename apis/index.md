@@ -16,8 +16,11 @@ projects and leads, or reading and writing the agent data plane's hiring-events 
 
 ## Where to go
 
-- **[API access](/features/api-access/)** — pull your own projects and leads out as JSON or CSV
-- **[Agent data plane](/features/agent-data-plane/)** — the ledger, the tiers, getting access
-- **[Agent data plane — REST API](/features/agent-data-plane-api/)** — every endpoint, request and response shape
-- **[Agent data plane — MCP server](/features/agent-data-plane-mcp/)** — the same primitives as agent tools
-- **[Agent data plane — Clay integration](/features/agent-data-plane-clay/)** — a company's hiring motion as flat columns
+| I want to... | Go to |
+|---|---|
+| Pull my own projects and leads out as JSON or CSV | [API access](/features/api-access/) |
+| Understand the agent data plane — the ledger, the tiers, getting access | [Agent data plane](/features/agent-data-plane/) |
+| Call the plane's REST API directly | [Agent data plane — REST API](/features/agent-data-plane-api/) |
+| Give an agent tools instead of a URL to call | [Agent data plane — MCP server](/features/agent-data-plane-mcp/) |
+| Enrich a Clay table with a company's hiring motion by domain | [Agent data plane — Clay integration](/features/agent-data-plane-clay/) |
+| Push my SignalsAPI leads out to a Clay table instead | [Integrating with Clay](/features/integrations/#integrating-with-clay) |

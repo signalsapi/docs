@@ -13,6 +13,10 @@ prereq: plane_access
 
 # Agent data plane — Clay integration
 
+**Not what you're looking for?** This page pulls company hiring data *into* a Clay table (an
+enrichment column). To push your SignalsAPI leads *out* to Clay instead, see
+[Integrating with Clay](/features/integrations/#integrating-with-clay).
+
 {% include prereq.html %}
 
 Clay lets you add an enrichment column backed by any HTTP endpoint. The plane ships one built for
