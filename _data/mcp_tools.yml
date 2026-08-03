@@ -11,6 +11,7 @@ items:
   - company_id?
   - event_type?
   - limit?
+  - idempotency_key?
   method: GET
   path: "/v1/events"
   summary: Poll for changes
@@ -21,6 +22,7 @@ items:
   - function?
   - country?
   - limit?
+  - idempotency_key?
   method: GET
   path: "/v1/companies/{company_id}/open-reqs"
   summary: Open requisitions
@@ -29,6 +31,7 @@ items:
   args:
   - company_id
   - max_age?
+  - idempotency_key?
   method: GET
   path: "/v1/companies/{company_id}/hiring-pulse"
   summary: Hiring pulse
@@ -36,6 +39,7 @@ items:
 - tool: is_hiring
   args:
   - company_id
+  - idempotency_key?
   method: GET
   path: "/v1/companies/{company_id}/is-hiring"
   summary: Is this company hiring?
@@ -44,6 +48,7 @@ items:
   args:
   - company_id
   - max_age?
+  - idempotency_key?
   method: GET
   path: "/v1/companies/{company_id}/pre-action-brief"
   summary: Pre-action brief
@@ -55,6 +60,7 @@ items:
   - since?
   - cursor?
   - limit?
+  - idempotency_key?
   method: GET
   path: "/v1/jobs/search"
   summary: Search open jobs
@@ -64,6 +70,7 @@ items:
   - company_id
   - event_types
   - webhook_endpoint_id
+  - idempotency_key?
   method: POST
   path: "/v1/watches"
   summary: Watch a company
@@ -75,6 +82,7 @@ items:
   - since?
   - cursor?
   - limit?
+  - idempotency_key?
   method: GET
   path: "/v1/reqs/search"
   summary: Who is hiring for a role?

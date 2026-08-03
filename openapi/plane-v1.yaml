@@ -157,6 +157,7 @@ paths:
       description: The cheap qualifying gate — call it before spending on a richer read.
       parameters:
         - $ref: "#/components/parameters/CompanyId"
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: Whether the company currently has active requisitions.
@@ -197,6 +198,7 @@ paths:
           in: query
           description: Page size
           schema: { type: integer, default: 50 }
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: The company's currently active requisitions.
@@ -236,6 +238,7 @@ paths:
       description: Basic firmographics derived from ATS and board sources.
       parameters:
         - $ref: "#/components/parameters/CompanyId"
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: Basic firmographic data.
@@ -271,6 +274,7 @@ paths:
           in: query
           description: Narrow to one function
           schema: { type: string }
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: The earliest-opened role per function, provenance-wrapped.
@@ -300,6 +304,7 @@ paths:
       description: Reqs the company keeps failing to fill, hardest first.
       parameters:
         - $ref: "#/components/parameters/CompanyId"
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: Requisitions ranked by repost pain.
@@ -340,6 +345,7 @@ paths:
       description: Applicant-tracking vendor switches, with a provenance-wrapped occurred_at.
       parameters:
         - $ref: "#/components/parameters/CompanyId"
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: Applicant-tracking vendor switches.
@@ -399,6 +405,7 @@ paths:
           in: query
           description: Page size
           schema: { type: integer, default: 20 }
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: Companies with matching active requisitions.
@@ -459,6 +466,7 @@ paths:
           in: query
           description: Page size
           schema: { type: integer, default: 20 }
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: Individual open roles matching the search.
@@ -513,6 +521,7 @@ paths:
           in: query
           description: Lower bound on the series
           schema: { type: string, format: date-time }
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: A time series of active requisition counts.
@@ -546,6 +555,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/CompanyId"
         - $ref: "#/components/parameters/MaxAge"
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: Velocity, direction and momentum, provenance-wrapped.
@@ -602,6 +612,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/CompanyId"
         - $ref: "#/components/parameters/MaxAge"
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: A single-call brief, with a rolled-up provenance summary instead of per-field envelopes.
@@ -683,6 +694,7 @@ paths:
           in: query
           description: Page size
           schema: { type: integer, default: 100 }
+        - $ref: "#/components/parameters/IdempotencyKey"
       responses:
         "200":
           description: A page of the ledger's diff feed.
@@ -762,6 +774,8 @@ paths:
       x-status: live
       x-mcp-tool: watch_company
       description: Subscribe a registered webhook to one company's hiring events. Bills one watch unit.
+      parameters:
+        - $ref: "#/components/parameters/IdempotencyKey"
       requestBody:
         required: true
         content:
@@ -849,6 +863,8 @@ paths:
         features/agent-data-plane-clay.md. One row in, one row out — a
         company domain (or name) resolves to its hiring motion as flat
         columns.
+      parameters:
+        - $ref: "#/components/parameters/IdempotencyKey"
       requestBody:
         required: true
         content:
@@ -918,6 +934,23 @@ components:
       in: query
       description: Freshness ceiling in seconds. Omit for the best available data, billed cached.
       schema: { type: integer }
+    # Referenced from every metered operation and from no unmetered one — the
+    # idempotency-key-on-metered-operations assertion fails the build in both
+    # directions if that ever stops being true. x-mcp-arg is what carries the
+    # header across the header-less MCP transport: `rake mcp:manifest` and
+    # mcp/server.js both read it, and neither surfaces a header parameter that
+    # does not declare one (see features/agent-data-plane-mcp.md).
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      description: >
+        Optional exactly-once billing token. Reuse the same value on a retry of the same
+        logical call and it bills once rather than once per attempt, within a fixed 24h
+        window namespaced per key and per operation. Omit it and every call bills
+        independently.
+      schema: { type: string }
+      x-mcp-arg: idempotency_key
   schemas:
     ProvenanceValue:
       type: object
