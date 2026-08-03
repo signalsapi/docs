@@ -362,11 +362,6 @@ items:
   covers:
   - '2.14'
   - '8.2'
-- id: openapi-enum-no-duplicates
-  desc: no enum in openapi/plane-v1.yaml repeats a value (replaces Spectral's disabled
-    duplicated-entry-in-enum)
-  covers:
-  - '10.2'
 - id: openapi-lint-step-present
   desc: ci.yml declares a Spectral lint step whenever openapi/plane-v1.yaml exists
   covers:
@@ -426,8 +421,8 @@ items:
   covers:
   - '7.8'
 - id: pricing-figure-names-resolve
-  desc: 'Every include pricing-figure.html name="..." invocation names an item that
-    exists in _data/pricing.yml'
+  desc: Every include pricing-figure.html name="..." invocation names an item that
+    exists in _data/pricing.yml
   covers:
   - '11.6'
 - id: pricing-figures-sourced
@@ -518,6 +513,11 @@ items:
     each with a valid x-status
   covers:
   - '10.1'
+- id: spectral-ruleset-pinned
+  desc: the Spectral ruleset version is pinned in .spectral-ruleset-version and installed
+    from it by ci.yml
+  covers:
+  - '10.2'
 - id: stage-key-valid
   desc: 'Every page''s stage: front-matter value names a stage declared in _data/pipeline.yml'
   covers:

@@ -24,6 +24,13 @@ end
 # reproduces on a contributor's machine instead of only in CI.
 SPECTRAL_VERSION = File.read(File.join(File.dirname(__FILE__), ".spectral-version")).strip
 
+# The CLI pin above does not pin the rules it enforces: @stoplight/spectral-cli
+# declares "@stoplight/spectral-rulesets": ">=1", so spectral:oas floats to
+# whatever npm resolves at install time. On 2026-08-03 the same pinned CLI
+# 6.16.2 aborted this lint under rulesets 1.22.6 and passed under 1.22.7.
+# Pinning both is what makes the promise in the comment above true.
+SPECTRAL_RULESET_VERSION = File.read(File.join(File.dirname(__FILE__), ".spectral-ruleset-version")).strip
+
 def spectral_on_path?
   ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).any? { |dir| File.executable?(File.join(dir, "spectral")) }
 end
@@ -117,8 +124,11 @@ namespace :lint do
       abort(<<~MSG)
         rake lint:openapi: the spectral binary (pinned version #{SPECTRAL_VERSION}) is not on PATH.
         Install it with:
-          npm install -g @stoplight/spectral-cli@#{SPECTRAL_VERSION}
+          npm install -g @stoplight/spectral-cli@#{SPECTRAL_VERSION} @stoplight/spectral-rulesets@#{SPECTRAL_RULESET_VERSION}
         Then confirm `spectral --version` reports #{SPECTRAL_VERSION}.
+        The second package is not optional: without it npm resolves the rules
+        to whatever is newest, and the CLI version alone does not decide the
+        verdict.
       MSG
     end
 

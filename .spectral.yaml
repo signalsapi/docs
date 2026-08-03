@@ -1,12 +1,17 @@
 extends: spectral:oas
 
-rules:
-  # Spectral 6.16.2 (the pinned, and currently newest, release) crashes with
-  # "Cannot read properties of null (reading 'enum')" whenever the document
-  # holds a literal null anywhere: this rule's JSONPath is compiled by nimma
-  # into a traversal that dereferences the node before testing it. The whoami
-  # example carries `plan: null` because the recorded fixture does, and
-  # mock-examples-match-fixtures requires the two to agree by value — so the
-  # null is load-bearing and cannot be dropped to appease the linter.
-  # script/checks/openapi-enum-no-duplicates.rb replaces the lost coverage.
-  duplicated-entry-in-enum: off
+# No rule overrides.
+#
+# duplicated-entry-in-enum was turned off here until 2026-08-03, not because
+# the rule was wrong but because it aborted the whole run: its JSONPath
+# dereferenced `@.enum` before testing `@` for null, so nimma's compiled
+# traversal threw "Cannot read properties of null (reading 'enum')" on the
+# `plan: null` the whoami example carries. That null is load-bearing —
+# fixtures/v1/whoami.json records it and mock-examples-match-fixtures requires
+# the example and the fixture to agree by value.
+#
+# @stoplight/spectral-rulesets 1.22.7 added the missing `@ != null` guard, so
+# the rule now traverses past the null and runs clean. The fix arrived in a
+# transitive dependency, not the CLI — 6.16.2 is unchanged either side of it —
+# which is why .spectral-ruleset-version pins the ruleset alongside
+# .spectral-version, and why spectral-ruleset-pinned asserts CI installs both.
