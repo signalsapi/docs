@@ -13,23 +13,16 @@
 # said. Found while declaring its subject (signalsapi-4324): the vacuity
 # instrument cannot see this one — the subject set is non-empty and the pages
 # really are read, it is the predicate that was always true.
-DISCLOSURE_CONTENT_REGION_RE = %r{<main\b[^>]*>(.*?)</main>}m.freeze
-
+#
+# The region itself is site.content_pages rather than a regexp of this check's
+# own: no-instruction-only-in-image turned out to have the same hole
+# (signalsapi-4327), and a second copy is how a third one gets written.
 Check.register(
   id: "affiliate-disclosure-linked",
   desc: "Every page that emits an affiliate provider link also links to the commercial-relationship page",
   covers: ["9.8"]
 ) do |site|
   disclosure_path = "/how-we-make-money/"
-
-  content = site.html_files.each_with_object({}) do |file, h|
-    region = file.body[DISCLOSURE_CONTENT_REGION_RE, 1]
-    if region.nil?
-      site.fail!("#{file.path} renders no <main> element, so this assertion cannot tell what the page " \
-                 "itself says from the chrome every page carries")
-    end
-    h[file.path] = region
-  end
 
   # The pages that actually emit an affiliate link are the subject, not every
   # built page. provider-link.html's rel signature is the whole selector, so if
@@ -39,12 +32,12 @@ Check.register(
   # the only such page is a run that checked nothing.
   emitting = site.examining(
     "built pages emitting an affiliate provider link",
-    site.html_files
-        .select { |file| content[file.path].include?('rel="sponsored nofollow"') }
-        .reject { |file| file.path.include?("how-we-make-money") } # the disclosure page itself
+    site.content_pages
+        .select { |page| page.body.include?('rel="sponsored nofollow"') }
+        .reject { |page| page.path.include?("how-we-make-money") } # the disclosure page itself
   )
 
-  offenders = emitting.reject { |file| content[file.path].include?(%(href="#{disclosure_path}")) }.map(&:path)
+  offenders = emitting.reject { |page| page.body.include?(%(href="#{disclosure_path}")) }.map(&:path)
 
   unless offenders.empty?
     site.fail!("page(s) emit an affiliate link without linking to #{disclosure_path} — #{offenders.join(', ')}")

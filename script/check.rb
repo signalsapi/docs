@@ -14,7 +14,7 @@ class CheckFailure < StandardError; end
 
 # Site model (AD-4): parsed once per run and handed to every assertion, so
 # twenty assertions don't each re-walk _site/ and re-parse front matter.
-# Exposes exactly eight accessors; a check that needs something else adds one
+# Exposes exactly nine accessors; a check that needs something else adds one
 # here rather than reading the filesystem directly.
 #
 # Every accessor also tallies what it handed the running assertion, which is
@@ -60,6 +60,36 @@ class Site
     end
     note("built pages", @html_files.size)
     @html_files
+  end
+
+  # A built page narrowed to its own content, with the chrome every page
+  # carries stripped off. just-the-docs renders the nav, the search box, the
+  # breadcrumbs and the footer into all of them, so an assertion that searches
+  # a whole built body asks "does the SITE say this?" when it means "does this
+  # PAGE say it?" — and anything the theme emits then satisfies it everywhere
+  # at once, whatever the page itself says.
+  #
+  # That is not hypothetical. affiliate-disclosure-linked could not fail at all,
+  # because the nav links to /how-we-make-money/ from all 58 pages
+  # (signalsapi-4324); no-instruction-only-in-image accepted a control name
+  # documented only inside a built <img alt> (signalsapi-4327). Neither vacuity
+  # instrument sees this class — the subject set is non-empty and the pages
+  # really are read, so only the predicate is degenerate — which is why the
+  # region lives here, where the next assertion inherits it, rather than in
+  # whichever check happened to need it last.
+  CONTENT_REGION_RE = %r{<main\b[^>]*>(.*?)</main>}m.freeze
+
+  def content_pages
+    @content_pages ||= html_files.map do |file|
+      region = file.body[CONTENT_REGION_RE, 1]
+      if region.nil?
+        fail!("#{file.path} renders no <main> element, so no assertion can tell what the page " \
+              "itself says from the chrome every page carries")
+      end
+      HtmlFile.new(path: file.path, body: region)
+    end
+    note("built page content regions", @content_pages.size)
+    @content_pages
   end
 
   def data

@@ -11,6 +11,19 @@
 # rather than hand-typed — that text exists only in the BUILT output, not in
 # any page's raw source, so a control is now "documented as real text" if it
 # appears in either place.
+#
+# "Real text" has to mean the same thing on both sides of that disjunction, and
+# for a while it did not (signalsapi-4327): the source half stripped <img …>
+# tags before searching, while the built half searched each page's whole
+# rendered HTML. So a control name written only into an alt attribute passed —
+# the one thing this assertion exists to forbid — and so did one appearing
+# anywhere in the chrome just-the-docs renders into every page, which satisfied
+# the check for the whole site at once. Both halves now strip images and read
+# page content only; the built side gets its content region from the Site model
+# (site.content_pages), which is where affiliate-disclosure-linked gets the same
+# thing after the same defect (signalsapi-4324).
+IMG_TAG_RE = /<img\b[^>]*>/i.freeze
+
 DOCUMENTED_CONTROLS = [
   "Within this list",
   "Among all lists",
@@ -26,12 +39,12 @@ Check.register(
   covers: %w[6.5 11.3]
 ) do |site|
   offenders = DOCUMENTED_CONTROLS.reject do |control|
-    found_in_source = site.pages.any? do |page|
-      text_only = page.body.gsub(/<img\b[^>]*>/i, "")
-      text_only.include?(control)
+    documented = lambda do |body|
+      body.gsub(IMG_TAG_RE, "").include?(control)
     end
 
-    found_in_source || site.html_files.any? { |file| file.body.include?(control) }
+    site.pages.any? { |page| documented.call(page.body) } ||
+      site.content_pages.any? { |page| documented.call(page.body) }
   end
 
   unless offenders.empty?
