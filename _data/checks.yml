@@ -393,6 +393,11 @@ items:
     `ruby` directive in the Gemfile'
   covers:
   - '1.9'
+- id: screenshot-inventory-complete
+  desc: every image file has an item in _data/screenshots.yml, and every item's path
+    resolves to a real file
+  covers:
+  - '11.1'
 - id: search-creation-documented
   desc: 'Some page in the built site declares the pipeline''s first stage as its stage:
     value'
