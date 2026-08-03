@@ -1,38 +1,40 @@
 ---
 title: Compare people-data providers
 parent: Features
-layout: home
-nav_order: 3.7
+layout: default
+verified_on: 2026-08-02
+owner: mykola
+redirect_from: "/features/compare-people-data-providers.html"
+nav_order: 9
+page_type: feature
+description: How the eight supported people-data providers differ on data returned and where filters run.
 ---
 
 # Compare people-data providers
 
-You [connect one people-data provider](bring-your-own-people-provider) with your own API key.
+You [connect one people-data provider](../bring-your-own-people-provider/) with your own API key.
 Every supported provider returns people and emails, but they differ in **what extra data comes
 back** (mobile numbers, LinkedIn headlines) and **which filters they apply at the source** versus
 after the fetch. This page compares all eight so you can pick the one that fits your targeting and
 your budget.
 
-SignalsAPI charges **no credits** for people lookups — you only ever pay your own provider.
+SignalsAPI charges **no credits** for people lookups — you only ever pay your own provider. Some
+signup links below pay us a referral fee — see [How we make money](/how-we-make-money/) for which
+ones and why it doesn't change what you pay.
 
 ## What you get
 
 | Provider | Email | Mobile phone | LinkedIn profile | Headline | Credentials to paste |
 |---|---|---|---|---|---|
-| **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** | ✅ verified | — | ✅ | — | API key |
-| **Icypeas** | ✅ verified | — | ✅ | ✅ | API key |
-| **People Data Labs** | ✅ verified | — | ✅ | ✅ | API key |
-| **[Prospeo](https://prospeo.io/?via=signalsapi)** | ✅ verified | — | ✅ | ✅ | API key |
-| **[Snov.io](https://snov.io/?fp_ref=signalsapi)** | ✅ verified | — | partial | — | Client ID + Client Secret |
-| **Hunter** | ✅ verified | — | ✅ | — | API key |
-| **LeadMagic** | ✅ verified | ✅ | ✅ | — | API key |
-| **Tomba** | ✅ verified | — | ✅ | — | Key + Secret |
+{% for p in site.data.providers.items %}| **{% include provider-link.html name=p.name cost=false %}** | ✅ verified | {% if p.mobile_support %}✅{% else %}—{% endif %} | {% if p.linkedin_profile == "full" %}✅{% else %}partial{% endif %} | {% if p.headline %}✅{% else %}—{% endif %} | {% case p.credential_shape %}{% when "api_key" %}API key{% when "client_id_and_secret" %}Client ID + Client Secret{% when "key_and_secret" %}Key + Secret{% endcase %} |
+{% endfor %}
 
-- **Mobile phone** is only returned by **LeadMagic** today, and only when
-  [Find phone numbers](find-phone-numbers) is enabled.
+- **Mobile phone** is only returned by the provider(s) marked ✅ above, and only when
+  [Find phone numbers](../find-phone-numbers/) is enabled.
 - **Headline** is the person's LinkedIn one-liner (e.g. *"VP Engineering at Acme"*). Providers that
-  return it — **Icypeas, People Data Labs, [Prospeo](https://prospeo.io/?via=signalsapi)** — give you more context for AI personalization.
-- Every provider returns a LinkedIn profile URL for matched people ([Snov.io](https://snov.io/?fp_ref=signalsapi) returns it for some).
+  return it give you more context for AI personalization.
+- Every provider returns a LinkedIn profile URL for matched people (providers marked **partial**
+  above return it for some, not all).
 
 ## Where each filter runs
 
@@ -48,16 +50,12 @@ A dash (**—**) means the provider doesn't support that filter at all. SignalsA
 offer it for that provider — it never silently drops your leads on a filter the provider can't
 honor.
 
+{% assign filter_keys = "title,country,city,skills,department,seniority" | split: "," %}
+
 | Provider | Title | Country | City | Skills | Department | Seniority |
 |---|---|---|---|---|---|---|
-| **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** | after fetch | — | — | — | — | — |
-| **Icypeas** | at source | after fetch | after fetch | at source | — | — |
-| **People Data Labs** | at source | **at source** | **at source** | at source | — | — |
-| **[Prospeo](https://prospeo.io/?via=signalsapi)** | at source | after fetch | after fetch | — | — | — |
-| **[Snov.io](https://snov.io/?fp_ref=signalsapi)** | at source | — | — | — | — | — |
-| **Hunter** | after fetch | — | — | — | **at source** | **at source** |
-| **LeadMagic** | after fetch | — | after fetch | — | — | — |
-| **Tomba** | after fetch | — | — | — | **at source** | — |
+{% for p in site.data.providers.items %}| **{% include provider-link.html name=p.name cost=false %}** |{% for key in filter_keys %} {% assign v = p.filters[key] %}{% if v == "at_source" %}at source{% elsif v == "after_fetch" %}after fetch{% else %}—{% endif %} |{% endfor %}
+{% endfor %}
 
 **Rule of thumb:** the more filters a provider applies *at source*, the fewer credits you waste on
 people who get filtered out. **People Data Labs** filters the most at source (title, country, city,
@@ -71,7 +69,7 @@ Domain-based decision-maker lookup: it maps your job-title list to a decision-ma
 returns the matching person per company. **Job title** is matched after fetch; no country, city,
 skills, or headline. Email comes inline and verified. Resolves people from the company **domain
 alone** — no LinkedIn profile needed — so it also works on companies with no LinkedIn page. Get an
-API key at [anymailfinder.com](https://anymailfinder.com/?via=signalsapi). **One API key.**
+API key at {% include provider-link.html name="Anymail Finder" text="anymailfinder.com" %}. **One API key.**
 
 ### Icypeas
 People search with title and skills filtered at source; country and city matched after fetch.
@@ -84,12 +82,12 @@ searches stay cheap. Returns LinkedIn profile and headline. **One API key.**
 
 ### Prospeo
 Title filtered at source; country and city after fetch. Returns LinkedIn profile and headline.
-Get an API key at [prospeo.io](https://prospeo.io/?via=signalsapi). **One API key.**
+Get an API key at {% include provider-link.html name="Prospeo" text="prospeo.io" %}. **One API key.**
 
 ### Snov.io
 Title filtered at source. No country/city/skills filtering and no headline. Uses **two secrets** —
 a **Client ID** and **Client Secret** from your Snov.io API settings. Sign up at
-[snov.io](https://snov.io/?fp_ref=signalsapi).
+{% include provider-link.html name="Snov.io" text="snov.io" %}.
 
 ### Hunter
 Builds the people list from a company-domain search, so **department** and **seniority** are
@@ -101,7 +99,7 @@ inline with each person. No country/city. **One API key.**
 - **Seniority** (pick any): junior, senior, executive
 
 ### LeadMagic
-The only provider that returns **mobile phone numbers** (see [Find phone numbers](find-phone-numbers)).
+The only provider that returns **mobile phone numbers** (see [Find phone numbers](../find-phone-numbers/)).
 Email comes inline; title and city are matched after fetch. **One API key.**
 
 ### Tomba
@@ -115,12 +113,12 @@ after fetch. Email comes inline. Uses **two secrets** — a **Key** and a **Secr
 
 - **You want mobile numbers** → **LeadMagic**.
 - **You filter by country or city** → **People Data Labs** (the only one that does both at source).
-  Icypeas, [Prospeo](https://prospeo.io/?via=signalsapi) and LeadMagic can still filter location, but after fetch (extra spend).
+  Icypeas, {% include provider-link.html name="Prospeo" cost=false %} and LeadMagic can still filter location, but after fetch (extra spend).
 - **You target by department / seniority** → **Hunter** (department + seniority) or **Tomba**
   (department) — filtered at source, so precise and credit-efficient.
 - **You want LinkedIn headlines for AI-written outreach** → **Icypeas**, **People Data Labs**, or
-  **[Prospeo](https://prospeo.io/?via=signalsapi)**.
-- **You have domain-only companies (no LinkedIn page)** → **[Anymail Finder](https://anymailfinder.com/?via=signalsapi)** — it resolves the
+  **{% include provider-link.html name="Prospeo" cost=false %}**.
+- **You have domain-only companies (no LinkedIn page)** → **{% include provider-link.html name="Anymail Finder" cost=false %}** — it resolves the
   decision maker from the company domain alone.
 - **You already have an account somewhere** → just connect it; all eight cover the core
   people + verified-email job.
@@ -129,5 +127,5 @@ Not sure which fits? Start a trial with one provider, run a search, and check th
 **fetched-vs-disqualified** breakdown on your leads — it shows exactly how many people were fetched
 and why any were dropped, so you can see result quality and credit use before committing.
 
-See also: [Bring your own people-data provider](bring-your-own-people-provider) ·
-[Find decision makers](find-decision-makers) · [Find phone numbers](find-phone-numbers)
+See also: [Bring your own people-data provider](../bring-your-own-people-provider/) ·
+[Find decision makers](../find-decision-makers/) · [Find phone numbers](../find-phone-numbers/)

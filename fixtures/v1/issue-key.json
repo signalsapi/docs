@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /fixtures/v1/issue-key.json
+operation_id: issueKey
+---
+{
+  "recorded_on": "2026-07-08",
+  "id": 42,
+  "key": "…shown once…",
+  "customer_id": "acme",
+  "tier": "paid"
+}

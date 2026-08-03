@@ -1,0 +1,87 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-03
+  source: the canonical self-serve ladder and the managed-service figures published on faq.md (commit 2768259, 2026-07-31, closing signalsapi-4208 and signalsapi-4210); everything still unconfirmed is an owner-marked placeholder citing where its last known value came from, not a claim that value still holds today.
+
+items:
+  - name: free_tier_description
+    kind: free_tier
+    value: No connected people-data provider key — company signals only, no people data, no SignalsAPI credits spent on lookups.
+    source: features/bring-your-own-people-provider.md
+
+  - name: self_serve_ladder_summary
+    kind: ladder
+    value: "You pay for qualifying signals, not for companies monitored: €79/month for 50 signals, €199 for 250, €399 for 1,000, custom above 5,000."
+    source: faq.md (canonical answer-engine pull quote, 2026-07-31)
+
+  - name: qualifying_signal_definition
+    kind: definition
+    value: one verified hiring event at one company that passes your filters. Several roles posted by the same company in the same window count once; agency reposts, duplicates and unverified postings never count, and false positives are credited back.
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_evaluation_tier
+    kind: free_tier
+    value: There is a free evaluation tier, and enrichment runs on your own provider key at that provider's cost.
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_starter
+    kind: plan_tier
+    label: Starter
+    value: "€79"
+    included: "50"
+    per_additional: "€1.58"
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_growth
+    kind: plan_tier
+    label: Growth
+    value: "€199"
+    included: "250"
+    per_additional: "€0.80"
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_pro
+    kind: plan_tier
+    label: Pro
+    value: "€399"
+    included: "1,000"
+    per_additional: "€0.40"
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_enterprise
+    kind: plan_tier
+    label: Enterprise
+    value: custom
+    included: above 5,000
+    per_additional: custom
+    source: faq.md (2026-07-31)
+
+  - name: managed_service_monthly
+    kind: managed
+    value: "£400/€490/$550"
+    source: faq.md (2026-07-31)
+
+  - name: managed_phone_packages
+    kind: managed
+    value: "£49/month for 100 telephone numbers, £149 for 300 and £199 for 500"
+    source: faq.md (2026-07-31)
+
+  - name: free_tier_credit_allowance
+    kind: allowance
+    value: "TODO(owner: mykola): confirm the current free-tier credit allowance — last stated as 150 credits total in the 2024-03-08 changelog entry, well over a year stale."
+    source: whats-new/index.md (2024-03-08 entry)
+
+  - name: trial_allowance
+    kind: allowance
+    value: "TODO(owner: mykola): confirm the current trial allowance — last stated as 150 leads or 7 days, whichever comes first, in the 2024-04-04 changelog entry, well over a year stale."
+    source: whats-new/index.md (2024-04-04 entry)
+
+  - name: credit_expiry
+    kind: expiry
+    value: "TODO(owner: mykola): confirm the current unspent-credit expiry window — last stated as 60 days in the 2025-04-11 changelog entry."
+    source: whats-new/index.md (2025-04-11 entry)
+
+  - name: run_frequency_by_plan
+    kind: plan
+    value: "TODO(owner: mykola): document which plans get which run frequency — the 2024-03-20 changelog entry says run frequency depends on plan, but names no specific plans or frequencies."
+    source: whats-new/index.md (2024-03-20 entry)

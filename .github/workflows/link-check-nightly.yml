@@ -1,0 +1,43 @@
+name: Nightly external link check
+
+# AD-10: external links never gate a pull request. rake check runs
+# html-proofer with --disable-external, so a third party's outage can't
+# redden an unrelated PR. This workflow sweeps the full external set on a
+# schedule instead and files or updates one tracking issue.
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  external-links:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write # required for peter-evans/create-issue-from-file
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          cache-version: 0
+
+      - name: Build the site
+        run: bundle exec rake check:build
+
+      - name: Check external links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress './_site/**/*.html'
+          fail: false
+
+      - name: File or update the tracking issue
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Nightly external link check found broken links
+          content-filepath: ./lychee/out.md
+          labels: link-rot, automated

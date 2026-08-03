@@ -1,0 +1,29 @@
+---
+layout: null
+permalink: /llms.txt
+---
+{%- assign real_pages = site.pages | where_exp: "p", "p.page_type" | sort: "title" -%}
+{%- assign section_names = "Quick start,Concepts,Features,Troubleshooting,Trust,APIs" | split: "," -%}
+# {{ site.title }}
+
+{{ site.description }}
+{%- for section in section_names %}
+
+## {{ section }}
+{%- assign root = real_pages | where_exp: "p", "p.title == section" | first %}
+{%- if root %}
+- {{ root.title }}: {{ site.url }}{{ root.url }} — {{ root.description }}
+{%- endif %}
+{%- assign section_pages = real_pages | where_exp: "p", "p.parent == section" %}
+{%- for p in section_pages %}
+- {{ p.title }}: {{ site.url }}{{ p.url }} — {{ p.description }}
+{%- endfor %}
+{%- endfor %}
+
+## General
+{%- assign general_pages = real_pages | where_exp: "p", "p.parent == nil" %}
+{%- for p in general_pages %}
+{%- unless section_names contains p.title %}
+- {{ p.title }}: {{ site.url }}{{ p.url }} — {{ p.description }}
+{%- endunless %}
+{%- endfor %}

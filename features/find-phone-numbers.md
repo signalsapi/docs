@@ -1,21 +1,31 @@
 ---
 title: Find phone numbers
 parent: Features
-layout: home
-nav_order: 3.6
+layout: default
+verified_on: 2026-06-07
+owner: mykola
+redirect_from: "/features/find-phone-numbers.html"
+nav_order: 8
+stage: contact_enrichment
+page_type: feature
+prereq: leadmagic_phone
+description: How mobile phone numbers are looked up for decision-makers, and which provider supports it.
 ---
 
 # Find phone numbers
 
+{% include prereq.html %}
+
 Get a mobile phone number for each decision-maker alongside their email, so you can call or text directly without leaving your leads list.
 
-Phone lookup is powered by your connected [people-data provider](bring-your-own-people-provider). Currently **LeadMagic** is the only provider that supports mobile lookup — when you have a LeadMagic key saved, the option becomes available.
+{% assign mobile_providers = site.data.providers.items | where: "mobile_support", true %}
+Phone lookup is powered by your connected [people-data provider](../bring-your-own-people-provider/). Mobile lookup is currently supported by: {% for p in mobile_providers %}**{% include provider-link.html name=p.name cost=false %}**{% unless forloop.last %}, {% endunless %}{% endfor %} — when you have a matching key saved, the option becomes available.
 
 ## Enable phone lookup on a project
 
 Open your project's **Persona** settings and tick **Find phone numbers**.
 
-<figure><img src="/features/find-phone-numbers-1.png" alt="Persona settings showing the 'Find phone numbers' checkbox next to 'Email is required'" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/find-phone-numbers-1.png" width="720" %}
 
 Phone lookup only runs when your connected provider supports it. If you select a provider that does not include mobile lookup the checkbox has no effect — no extra provider calls are made and no credits are spent.
 
@@ -23,7 +33,7 @@ Phone lookup only runs when your connected provider supports it. If you select a
 
 Once personation runs with the option enabled, a **Phone** column appears in your leads list.
 
-<figure><img src="/features/find-phone-numbers-2.png" alt="My Leads list with a Phone column showing numbers like +15551234567 for some rows and a dash for others" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/find-phone-numbers-2.png" width="720" %}
 
 A dash (—) means the provider searched but found no number for that person. The lookup is on a best-effort basis — coverage depends on your provider's database.
 
@@ -35,7 +45,7 @@ The full phone number and its status are also shown on the individual lead page,
 
 Phone numbers are included in the **Download CSV** export as the `decision_maker_phone` column, placed between email and job title.
 
-```
+```text
 website,decision_maker_linkedin_url,decision_maker_email,decision_maker_phone,signal_job_title
 https://acme.com,https://linkedin.com/in/jane,jane@acme.com,+15551234567,Head of Sales
 https://widget.co,https://linkedin.com/in/bob,bob@widget.co,,VP Engineering
@@ -47,12 +57,12 @@ An empty `decision_maker_phone` cell means no number was found for that lead.
 
 The `{phone}` variable is available in any AI-generated field once a lead has a phone number. It's most useful for generating an SMS-ready opener or a CRM routing note:
 
-```
+```text
 Draft a one-line SMS to {first_name} at {company_name} (hiring for {job_title}).
 Their number is {phone}.
 ```
 
-See [AI variables](ai-variables) for the full list.
+See [AI variables](../ai-variables/) for the full list.
 
 ## How it fits into the cost-staged pipeline
 
@@ -67,6 +77,8 @@ This keeps phone costs proportional to the leads you actually surface.
 
 ## Getting started
 
-1. Go to **Settings → Provider** and save a **LeadMagic** API key ([leadmagic.io](https://leadmagic.io)).
+1. Go to **Settings → Provider** and save {% for p in mobile_providers %}a **{% include provider-link.html name=p.name cost=false %}** API key{% unless forloop.last %} or {% endunless %}{% endfor %}.
 2. Open a project, go to **Persona**, and tick **Find phone numbers**.
 3. Run personation — phone numbers appear in the leads list as results come in.
+
+{% include recent-changes.html %}

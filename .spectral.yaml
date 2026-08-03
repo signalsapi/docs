@@ -1,0 +1,12 @@
+extends: spectral:oas
+
+rules:
+  # Spectral 6.16.2 (the pinned, and currently newest, release) crashes with
+  # "Cannot read properties of null (reading 'enum')" whenever the document
+  # holds a literal null anywhere: this rule's JSONPath is compiled by nimma
+  # into a traversal that dereferences the node before testing it. The whoami
+  # example carries `plan: null` because the recorded fixture does, and
+  # mock-examples-match-fixtures requires the two to agree by value — so the
+  # null is load-bearing and cannot be dropped to appease the linter.
+  # script/checks/openapi-enum-no-duplicates.rb replaces the lost coverage.
+  duplicated-entry-in-enum: off

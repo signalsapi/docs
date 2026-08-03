@@ -1,13 +1,19 @@
 ---
 title: How it works
-layout: home
+parent: Concepts
+layout: default
+verified_on: 2026-08-02
+owner: mykola
+redirect_from: "/how-it-works.html"
 nav_order: 4
+page_type: overview
+description: The step-by-step pipeline SignalsAPI runs, from monitoring the market to notifying your sales team.
 ---
 
 # How does SignalsAPI work
 
 * **Monitor the Market**\
-  The system continuously scans for intent signals (e.g., job postings) across the market including LinkedIn, Indeed, Monster, Reed and many more.
+  The system continuously scans for intent signals (e.g., job postings) across the market including LinkedIn, Indeed, Monster, Reed and many more. Watching one specific company instead? See [Website Monitoring](/features/website-monitoring/).
 * **Identify a Signal**\
   When a relevant company shows activity or demand that matches your industry or services, the system flags it as a potential lead.
 * **Enrich Company Data**\
@@ -23,7 +29,7 @@ nav_order: 4
 * **Enrich Contact Data**\
   Contact details for the decision-makers (e.g., email addresses, phone numbers, LinkedIn profiles) are enriched and verified.
 * **Makes The Connection & Pitches Your Offering**\
-  Once a decision-maker is identified and their contact information is verified, your AI agent makes the connection and pitches your services. Alternatively, you can use your own outreach tool (e.g., [Snovio](https://snov.io/?fp_ref=signalsapi), Apollo.io) for automated engagement.
+  Once a decision-maker is identified and their contact information is verified, your AI agent makes the connection and pitches your services. Alternatively, you can use your own outreach tool (e.g., [Snovio](https://snov.io/), Apollo.io) for automated engagement.
 
 To achieve a fully automated lead generation process using your own outreach tool, do the following (do it yourself, or ask us about our managed service so we will be doing it for you):
 
@@ -35,3 +41,5 @@ To achieve a fully automated lead generation process using your own outreach too
   Positive replies, or those showing interest, are automatically added to your CRM with relevant details for follow-up.
 * **Notify Sales Team**\
   Your sales team is immediately notified of high-interest leads, allowing them to take action and begin the sales conversation while the lead is still warm.
+
+{% include recent-changes.html %}

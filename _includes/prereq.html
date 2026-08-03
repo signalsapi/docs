@@ -1,0 +1,11 @@
+{%- if page.prereq -%}
+  {%- assign entry = nil -%}
+  {%- for p in site.data.prereqs.items -%}
+    {%- if p.key == page.prereq -%}{%- assign entry = p -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if entry -%}
+<p class="prereq-warning"><strong>Before you read further:</strong> {{ entry.warning }}</p>
+  {%- else -%}
+<p class="prereq-warning"><strong>[unknown prereq: {{ page.prereq }}]</strong></p>
+  {%- endif -%}
+{%- endif -%}

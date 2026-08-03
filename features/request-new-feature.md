@@ -1,8 +1,13 @@
 ---
 title: Request new feature
 parent: Features
-layout: home
-nav_order: 0
+layout: default
+verified_on: 2026-08-02
+owner: mykola
+redirect_from: "/features/request-new-feature.html"
+nav_exclude: true
+page_type: meta
+description: Post and vote on feature suggestions to help shape what SignalsAPI builds next.
 ---
 
 # Request new feature

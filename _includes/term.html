@@ -1,0 +1,11 @@
+{%- assign entry = nil -%}
+{%- for candidate in site.data.glossary.items -%}
+  {%- if candidate.term == include.key -%}
+    {%- assign entry = candidate -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if entry -%}
+**{{ entry.term }}** ({{ entry.definition }} — [full definition](/concepts/glossary/#{{ entry.term | slugify }}))
+{%- else -%}
+**[unknown glossary term: {{ include.key }}]**
+{%- endif -%}

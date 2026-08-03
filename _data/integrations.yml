@@ -1,0 +1,95 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-02
+  source: transcribed from Integrations and the What's new changelog (Story 7.5) — Zoho and Firefish setup exists only as a video walkthrough today, so their fields say so plainly rather than guessing.
+
+items:
+  - name: Clay
+    url: null
+    credentials: Webhook URL generated from your Clay table
+    plan_requirement: Not documented
+    field_mapping: Full lead field set (person, company, signal, and AI fields) — see #what-gets-sent
+    setup_steps:
+      - Create or open a table in Clay
+      - "Clay: Actions -> Import -> Webhook"
+      - Copy the generated webhook URL
+      - "SignalsAPI: Settings -> Integrations -> Add Integration -> Clay"
+      - Paste the webhook URL and click Save
+
+  - name: HubSpot
+    url: null
+    credentials: OAuth confirmation — no key to paste
+    plan_requirement: Not documented
+    field_mapping: Not documented beyond optional list assignment
+    setup_steps:
+      - Add the HubSpot integration in SignalsAPI
+      - Confirm the integration in HubSpot when redirected
+      - Optionally choose which HubSpot "Contact-based" static lists new contacts join
+
+  - name: Apollo
+    url: null
+    credentials: Apollo API key
+    plan_requirement: Not documented
+    field_mapping: Not documented
+    setup_steps:
+      - Get an API key from developer.apollo.io/keys
+      - "SignalsAPI: Integrations -> Apollo -> Add Destination"
+      - Provide a name, Sequence ID, and Mailbox ID from Apollo
+
+  - name: Snov.io
+    url: https://snov.io/
+    credentials: Snov.io API User ID and API Secret
+    plan_requirement: Not documented
+    field_mapping: Not documented
+    setup_steps:
+      - Get your API User ID and Secret from app.snov.io/account/api
+      - Add the Snov.io integration in SignalsAPI with those values
+
+  - name: Instantly
+    url: null
+    credentials: Not documented
+    plan_requirement: Not documented
+    field_mapping: Not documented
+    setup_steps:
+      - Not documented
+
+  - name: Bullhorn
+    url: null
+    credentials: Client ID, Client Secret, API Username, and API Password from Bullhorn support
+    plan_requirement: Not documented
+    field_mapping: Configurable — every field to be exported must be explicitly mapped, nothing exports by default
+    setup_steps:
+      - Contact Bullhorn support for API access, providing the SignalsAPI redirect URL
+      - Add the Bullhorn export in SignalsAPI with the four provided values
+
+  - name: Webhook
+    url: null
+    credentials: None — any system with an open API can receive a webhook
+    plan_requirement: Not documented
+    field_mapping: Not documented
+    setup_steps:
+      - Contact Support to set up a webhook destination
+
+  - name: Zoho
+    url: null
+    credentials: Not documented — only a video walkthrough exists today
+    plan_requirement: Not documented
+    field_mapping: Not documented
+    setup_steps:
+      - Not documented as text — see the linked video walkthrough
+
+  - name: Firefish
+    url: null
+    credentials: Not documented — only a video walkthrough exists today
+    plan_requirement: Not documented
+    field_mapping: Not documented
+    setup_steps:
+      - Not documented as text — see the linked video walkthrough
+
+  - name: Recruit CRM
+    url: null
+    credentials: Not documented beyond the Recruit CRM Open API requirement
+    plan_requirement: Business-tier Recruit CRM plan or higher — the Recruit CRM Open API is not available on lower plans
+    field_mapping: Leads pushed as contacts (sales-side prospects, not candidates), linked to the hiring company; duplicates detected by email
+    setup_steps:
+      - "SignalsAPI: Settings -> Integrations -> Recruit CRM"

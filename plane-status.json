@@ -1,0 +1,17 @@
+---
+layout: null
+permalink: /plane-status.json
+---
+{
+  "operations": [
+{%- for item in site.data.plane_status.items %}
+    {
+      "operation_id": "{{ item.operation_id }}",
+      "method": "{{ item.method }}",
+      "path": "{{ item.path }}",
+      "status": "{{ item.status }}",
+      "mcp_tool": {% if item.mcp_tool %}"{{ item.mcp_tool }}"{% else %}null{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+  ]
+}

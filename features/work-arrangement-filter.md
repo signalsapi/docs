@@ -1,8 +1,13 @@
 ---
 title: Work arrangement filter
 parent: Features
-layout: home
-nav_order: 2.5
+layout: default
+verified_on: 2026-06-19
+owner: mykola
+redirect_from: "/features/work-arrangement-filter.html"
+nav_order: 5
+page_type: feature
+description: Filter signals to remote, hybrid, on-site, or unspecified roles, with a one-click remote-friendly toggle.
 ---
 
 # Work arrangement filter
@@ -15,7 +20,7 @@ Open [Filter settings](https://app.signalsapi.com/filters/) and scroll to the **
 
 One click to include remote, hybrid, and unspecified roles — while excluding on-site only.
 
-<figure><img src="/features/work-arrangement-filter-2.png" alt="Remote-friendly toggle enabled" width="600"></figure>
+{% include screenshot.html path="features/work-arrangement-filter-2.png" width="600" %}
 
 Turn it on when you want to catch every role that could plausibly be remote-friendly, including jobs that don't explicitly state their arrangement ("Unspecified"). Roles with a clear on-site label are excluded.
 
@@ -25,7 +30,7 @@ When the toggle is on, it overrides the arrangement selection below.
 
 Turn the toggle off to choose specific arrangements yourself.
 
-<figure><img src="/features/work-arrangement-filter-1.png" alt="Work arrangement filter with Include only selected and Remote + Unspecified checked" width="600"></figure>
+{% include screenshot.html path="features/work-arrangement-filter-1.png" width="600" %}
 
 * **Any arrangement** — no filter, all signals pass through (default)
 * **Include only selected** — keep signals matching the checked arrangements
@@ -52,3 +57,5 @@ The **Remote-friendly toggle** handles this automatically: it pre-selects Remote
 * To find only explicitly-advertised remote roles, turn the toggle off and check **Remote** only.
 * To exclude on-site signals without locking to a specific set, use **Exclude selected → On-site**.
 * For even more control, combine with **Job description required words** (e.g. `remote`, `home`, `hybrid`) — this checks the actual description text rather than the structured label.
+
+{% include recent-changes.html %}

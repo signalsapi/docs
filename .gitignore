@@ -14,4 +14,15 @@ _site/
 .bundle/
 vendor/
 
+# mcp/'s own npm dependencies — package-lock.json is committed, node_modules isn't
+mcp/node_modules/
+
 .idea/
+.ralph/logs/
+_bmad-output/
+
+# Agent tooling runtimes — not part of the site
+.claude/
+_bmad/
+bmalph/
+.ralph/

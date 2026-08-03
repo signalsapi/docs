@@ -2,9 +2,42 @@ title: SignalsAPI docs
 description: SignalsAPI documentation
 theme: just-the-docs
 
+strict_front_matter: true
+
 color_scheme: signalsapi
 
-url: https://docs.signalsapi.com/
+url: https://docs.signalsapi.com
 
-#aux_links:
-#  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+permalink: pretty
+
+# NFR7 / AD-11: the plugin budget is three (jekyll-sitemap, jekyll-redirect-from,
+# jekyll-seo-tag). Adding one requires two edits: the gem in Gemfile and an entry here.
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+
+# Repository scaffolding that must never reach the built site. The first six
+# are the story's own list; Rakefile, script/, styles/ and bmalph/ are the
+# verification harness and planning-tool state discovered leaking into
+# _site/ once Epic 1 created them — Jekyll only skips dotfiles and
+# underscore-prefixed directories by default, not these.
+exclude:
+  - README.md
+  - LICENSE
+  - push.sh
+  - run.sh
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - script
+  - styles
+  - bmalph
+  - DESIGN.md
+  - mcp
+
+aux_links:
+  "Open the app": "https://app.signalsapi.com/"
+  "Free tier": "/features/bring-your-own-people-provider/"
+  "Pricing": "/pricing/"
+  "Support": "mailto:mykola@signalsapi.com"

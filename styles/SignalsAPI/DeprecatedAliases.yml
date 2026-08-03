@@ -1,0 +1,7 @@
+extends: existence
+message: "'%s' is a deprecated alias — use the canonical term from the glossary (see /concepts/glossary/)."
+level: error
+ignorecase: true
+tokens:
+  - Lead List
+  - Lead Lists

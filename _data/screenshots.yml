@@ -1,0 +1,61 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-03
+  source: path and capture_date read from the repository; subject and alt text transcribed from each image's owning page (its changelog bullet or surrounding prose) -- see Story 11.1; Story 11.10 retired the 53 whats-new/*.png changelog screenshots (1.9 MB, the bulk of the repository's image payload) as purely decorative and without instructional purpose now that every entry's text lives in _data/changelog.yml, and added each surviving image's intrinsic width/height (read from its own PNG header) so screenshot.html can declare both and avoid layout shift
+items:
+- path: features/byo-people-provider-1.png
+  subject: People-data provider settings with no key saved
+  capture_date: 2026-06-06
+  owning_page: features/bring-your-own-people-provider.md
+  alt: People-data provider settings with no key saved
+  width: 2560
+  height: 1400
+- path: features/byo-people-provider-2.png
+  subject: Snov.io selected, showing Client ID and Client Secret fields
+  capture_date: 2026-06-06
+  owning_page: features/bring-your-own-people-provider.md
+  alt: Snov.io selected, showing Client ID and Client Secret fields
+  width: 2560
+  height: 1400
+- path: features/byo-people-provider-3.png
+  subject: Key saved with active status
+  capture_date: 2026-06-06
+  owning_page: features/bring-your-own-people-provider.md
+  alt: Key saved with active status
+  width: 2560
+  height: 1440
+- path: features/byo-people-provider-4.png
+  subject: Key rejected, invalid status
+  capture_date: 2026-06-06
+  owning_page: features/bring-your-own-people-provider.md
+  alt: Key rejected, invalid status
+  width: 2560
+  height: 1440
+- path: features/find-phone-numbers-1.png
+  subject: Persona settings showing the 'Find phone numbers' checkbox next to 'Email is required'
+  capture_date: 2026-06-07
+  owning_page: features/find-phone-numbers.md
+  alt: Persona settings showing the 'Find phone numbers' checkbox next to 'Email is required'
+  width: 820
+  height: 340
+- path: features/find-phone-numbers-2.png
+  subject: My Leads list with a Phone column showing numbers like +15551234567 for some rows and a dash for others
+  capture_date: 2026-06-07
+  owning_page: features/find-phone-numbers.md
+  alt: My Leads list with a Phone column showing numbers like +15551234567 for some rows and a dash for others
+  width: 928
+  height: 60
+- path: features/work-arrangement-filter-1.png
+  subject: Work arrangement filter with Include only selected and Remote + Unspecified checked
+  capture_date: 2026-06-19
+  owning_page: features/work-arrangement-filter.md
+  alt: Work arrangement filter with Include only selected and Remote + Unspecified checked
+  width: 680
+  height: 283
+- path: features/work-arrangement-filter-2.png
+  subject: Remote-friendly toggle enabled
+  capture_date: 2026-06-19
+  owning_page: features/work-arrangement-filter.md
+  alt: Remote-friendly toggle enabled
+  width: 680
+  height: 284

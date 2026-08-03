@@ -2,3 +2,72 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+
+{%- capture newline %}
+{% endcapture -%}
+{%- assign h2_delimiter = newline | append: "## " -%}
+
+{%- if page.page_type == "faq" -%}
+{%- assign faq_sections = page.content | split: h2_delimiter -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+{%- for section in faq_sections -%}
+  {%- unless forloop.first -%}
+    {%- assign question_raw = section | split: newline | first -%}
+    {%- assign answer_raw = section | remove_first: question_raw -%}
+    {%- assign question = question_raw | markdownify | strip_html | replace: "&gt;", ">" | replace: "&lt;", "<" | replace: "&amp;", "&" | strip -%}
+    {%- assign answer = answer_raw | markdownify | strip_html | replace: newline, " " | replace: "&gt;", ">" | replace: "&lt;", "<" | replace: "&amp;", "&" | strip -%}
+    {
+      "@type": "Question",
+      "name": {{ question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ answer | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+  {%- endunless -%}
+{%- endfor %}
+  ]
+}
+</script>
+{%- endif -%}
+
+{%- if page.page_type == "task" -%}
+{%- assign steps_delimiter = newline | append: "## Steps" -%}
+{%- assign after_steps_heading = page.content | split: steps_delimiter | last -%}
+{%- assign steps_section = after_steps_heading | split: h2_delimiter | first -%}
+{%- assign step_prefixes = "1. ,2. ,3. ,4. ,5. ,6. ,7. ,8. ,9. " | split: "," -%}
+{%- assign step_marker = "%%%STEP%%%" -%}
+{%- assign marked_steps = steps_section -%}
+{%- for prefix in step_prefixes -%}
+  {%- assign find = newline | append: prefix -%}
+  {%- assign replace_with = newline | append: step_marker | append: prefix -%}
+  {%- assign marked_steps = marked_steps | replace: find, replace_with -%}
+{%- endfor -%}
+{%- assign step_blocks = marked_steps | split: step_marker -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": {{ page.title | jsonify }},
+  "step": [
+{%- for block in step_blocks -%}
+  {%- unless forloop.first -%}
+    {%- assign step_number = forloop.index | minus: 1 -%}
+    {%- assign step_prefix = step_number | append: ". " -%}
+    {%- assign step_body = block | remove_first: step_prefix -%}
+    {%- assign step_text = step_body | markdownify | strip_html | replace: newline, " " | replace: "&gt;", ">" | replace: "&lt;", "<" | replace: "&amp;", "&" | strip -%}
+    {
+      "@type": "HowToStep",
+      "position": {{ step_number }},
+      "text": {{ step_text | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {%- endunless -%}
+{%- endfor %}
+  ]
+}
+</script>
+{%- endif -%}

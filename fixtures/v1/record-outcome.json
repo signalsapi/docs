@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /fixtures/v1/record-outcome.json
+operation_id: recordOutcome
+---
+{
+  "recorded_on": "2026-07-08",
+  "id": 88
+}

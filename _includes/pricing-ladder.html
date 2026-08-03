@@ -1,0 +1,11 @@
+{%- assign tiers = site.data.pricing.items | where: "kind", "plan_tier" -%}
+<table>
+  <thead>
+    <tr><th>Plan</th><th>Per month</th><th>Qualifying signals included</th><th>Per additional signal</th></tr>
+  </thead>
+  <tbody>
+  {%- for tier in tiers %}
+    <tr><td>{{ tier.label }}</td><td>{{ tier.value }}</td><td>{{ tier.included }}</td><td>{{ tier.per_additional }}</td></tr>
+  {%- endfor %}
+  </tbody>
+</table>

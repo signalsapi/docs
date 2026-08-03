@@ -1,8 +1,13 @@
 ---
 title: Do-Not-Contact list
 parent: Features
-layout: home
-nav_order: 8
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/features/do-not-contact-list.html"
+nav_order: 14
+page_type: feature
+description: Block companies by domain or people by email so they're never matched or contacted again.
 ---
 
 # Do-Not-Contact list
@@ -11,13 +16,9 @@ Make sure you do not contact companies or people you do not want to
 
 ## Getting started
 
-Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/)
+Set it up at [app.signalsapi.com/dnc](https://app.signalsapi.com/dnc/):
 
-<div align="left">
-
-<figure><img src="/features/do-not-contact-list.png" alt="" width="375"><figcaption></figcaption></figure>
-
-</div>
+{% include controls-table.html screen="Edit Do-Not-Contact List" %}
 
 ## Filtering out domains
 
@@ -31,3 +32,5 @@ It filters out all companies that have websites with these domains or ending wit
 ## Filtering out individual emails
 
 To filter out someone without filtering out the whole company, put their email in "Emails" field of the Do-Not-Contact list.
+
+{% include recent-changes.html %}

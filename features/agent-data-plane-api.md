@@ -1,20 +1,34 @@
 ---
 title: Agent data plane — REST API
-parent: Features
-layout: home
-nav_order: 11.1
+parent: APIs
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/features/agent-data-plane-api.html"
+nav_order: 3
+page_type: feature
+description: "The full /v1 REST reference for the agent data plane: every endpoint, request, and response shape."
+prereq: plane_access
 ---
 
 # Agent data plane — REST API
 
+{% include prereq.html %}
+
 The full `/v1` reference. For what the plane *is* and how it is billed, start with the
-[Agent data plane overview](agent-data-plane).
+[Agent data plane overview](../agent-data-plane/). Every operation below is also machine-readable
+as an OpenAPI document: [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml). Before you have a key, the
+[fixture gallery](../agent-data-plane-fixtures/) has one runnable command per operation against a
+recorded, schema-checked response on this origin. Each operation's status —
+`live`, `code-complete`, or `planned` — is also published as data at
+[`/plane-status.json`](/plane-status.json).
 
 ## Base URL
 
-The plane is not yet open for self-serve signup and has **no public base URL**. Your base URL is
-issued together with your first API key — [email us](mailto:mykola@signalsapi.com) to get set up.
-The examples below assume you have exported it:
+The plane is not yet open for self-serve signup and has **no public base URL**. You do not need one
+to start — every operation below has a [recorded fixture](../agent-data-plane-fixtures/) at an
+absolute URL on this origin, and the whole surface [runs locally as a mock](../agent-data-plane-mock/).
+Once a base URL and key are issued, the examples below assume you have exported them:
 
 ```bash
 export PLANE_BASE_URL="…"   # issued with your first key
@@ -25,7 +39,7 @@ export PLANE_API_KEY="…"
 
 Every request carries your key in the `X-API-Key` header:
 
-```
+```text
 X-API-Key: YOUR_API_KEY
 ```
 
@@ -43,7 +57,7 @@ Unknown and revoked keys are deliberately indistinguishable. Every request is sc
 Every **metered** route accepts an optional `Idempotency-Key` request header. Send the same key on a
 retry of the same logical call and it bills **exactly once** rather than once per attempt (NFR-D4):
 
-```
+```text
 Idempotency-Key: <your-token>
 ```
 
@@ -58,7 +72,7 @@ Idempotency-Key: <your-token>
   endpoint once.
 
 `/v1/clay/enrich` accepts the header too, but a Clay column can't attach a per-row key from its UI, so
-Clay enrichment bills per call — see [the Clay billing note](agent-data-plane-clay#billing).
+Clay enrichment bills per call — see [the Clay billing note](../agent-data-plane-clay/#billing).
 
 ## Response conventions
 
@@ -97,7 +111,7 @@ or the key/webhook/watch management routes.
 
 ### Who am I
 
-```
+```text
 GET /v1/whoami
 ```
 
@@ -113,7 +127,7 @@ curl -H "X-API-Key: $PLANE_API_KEY" "$PLANE_BASE_URL/v1/whoami"
 
 ### Issue a key
 
-```
+```text
 POST /v1/keys
 ```
 
@@ -138,7 +152,7 @@ Returns `201`.
 
 ### Revoke a key
 
-```
+```text
 DELETE /v1/keys/{key_id}
 ```
 
@@ -147,7 +161,7 @@ one that never existed.
 
 ### Usage
 
-```
+```text
 GET /v1/usage?window=24
 ```
 
@@ -172,11 +186,11 @@ Your metered usage over a rolling window, aggregated across **every key** your a
 ## Tier 0 — cached reads
 
 Each bills one `call` unit at class `cached`, and is floored on data freshness (see
-[Tiers and metering](agent-data-plane#tiers-and-metering)).
+[Tiers and metering](../agent-data-plane/#tiers-and-metering)).
 
 ### Is this company hiring?
 
-```
+```text
 GET /v1/companies/{company_id}/is-hiring
 ```
 
@@ -193,7 +207,7 @@ curl -H "X-API-Key: $PLANE_API_KEY" \
 
 ### Open requisitions
 
-```
+```text
 GET /v1/companies/{company_id}/open-reqs
 ```
 
@@ -223,7 +237,7 @@ boards appears once, with both boards listed.
 
 ### Company enrichment
 
-```
+```text
 GET /v1/companies/{company_id}/enrichment
 ```
 
@@ -241,7 +255,7 @@ Basic firmographics derived from ATS and board sources. `404` when the company i
 
 ### First hire in a function
 
-```
+```text
 GET /v1/companies/{company_id}/first-hire
 ```
 
@@ -259,7 +273,7 @@ narrows it to one. Values are provenance-wrapped.
 
 ### Repost pain
 
-```
+```text
 GET /v1/companies/{company_id}/repost-pain
 ```
 
@@ -282,7 +296,7 @@ Reqs the company keeps failing to fill, hardest first. `repost_count` is provena
 
 ### ATS migrations
 
-```
+```text
 GET /v1/companies/{company_id}/ats-migrations
 ```
 
@@ -303,7 +317,7 @@ Applicant-tracking vendor switches, with a provenance-wrapped `occurred_at`.
 
 ### Who is hiring for a role?
 
-```
+```text
 GET /v1/reqs/search
 ```
 
@@ -332,7 +346,7 @@ Paginate by passing `next_cursor` back as `cursor` until it comes back `null`.
 
 ### Search open jobs
 
-```
+```text
 GET /v1/jobs/search
 ```
 
@@ -373,7 +387,7 @@ an opaque string — treat it as a token and don't parse it.
 
 ### Market role demand
 
-```
+```text
 GET /v1/markets/role-demand
 ```
 
@@ -398,12 +412,12 @@ Market-wide (not company-scoped) active-requisition demand over time, for a role
 
 Both routes below accept `max_age` (seconds) and are dual-metered against it. Omit `max_age` and you
 get the best available data, billed `cached`. See the
-[Tier 1 table](agent-data-plane#tiers-and-metering) for exactly how each case bills, including the
+[Tier 1 table](../agent-data-plane/#tiers-and-metering) for exactly how each case bills, including the
 `202` cold-tail response.
 
 ### Hiring pulse
 
-```
+```text
 GET /v1/companies/{company_id}/hiring-pulse?max_age=3600
 ```
 
@@ -433,7 +447,7 @@ When the company is cold and you declared a `max_age`, you get `202` instead:
 
 ### Pre-action brief
 
-```
+```text
 GET /v1/companies/{company_id}/pre-action-brief?max_age=3600
 ```
 
@@ -468,7 +482,7 @@ Cold behaves exactly as `hiring-pulse`: `202 {"job_id": …, "status": "crawling
 
 ### Poll for changes
 
-```
+```text
 GET /v1/events?since={cursor}
 ```
 
@@ -513,7 +527,7 @@ returned, independent of poll count** — an empty page costs nothing, so poll a
 
 ### Register a webhook
 
-```
+```text
 POST /v1/webhooks
 ```
 
@@ -530,7 +544,7 @@ Returns `201`.
 
 ### Watch a company
 
-```
+```text
 POST /v1/watches
 ```
 
@@ -546,7 +560,7 @@ Returns `201 {"id": 15}`, or `404` when the webhook endpoint isn't yours.
 
 ### Cancel a watch
 
-```
+```text
 DELETE /v1/watches/{watch_id}
 ```
 
@@ -558,7 +572,7 @@ Returns `204`, or `404` when the watch isn't yours.
 
 ### Record an outcome
 
-```
+```text
 POST /v1/companies/{company_id}/outcomes
 ```
 
@@ -574,12 +588,12 @@ Returns `202 {"id": 88}`.
 
 ### Clay enrichment
 
-```
+```text
 POST /v1/clay/enrich
 ```
 
 Documented separately, with setup steps, on the
-**[Clay integration](agent-data-plane-clay)** page.
+**[Clay integration](../agent-data-plane-clay/)** page.
 
 ---
 
@@ -592,3 +606,8 @@ Documented separately, with setup steps, on the
   the request thread is never held open on a live crawl.
 - **The change feed is the cheap path.** Polling `/v1/events` costs nothing when nothing changed —
   prefer it over re-reading company endpoints on a timer.
+
+See [Limits](/limits/) for every pagination default and rate limit stated across the API in one
+place.
+
+{% include recent-changes.html %}

@@ -1,0 +1,12 @@
+{%- assign rows = site.data.controls.items | where: "screen", include.screen -%}
+{%- if rows.size > 0 -%}
+**Click path:** {{ rows.first.click_path }}
+
+| Field | Description | Example |
+|---|---|---|
+{%- for r in rows %}
+| **{{ r.field }}** | {{ r.description }} | `{{ r.example }}` |
+{%- endfor %}
+{%- else -%}
+**[unknown control screen: {{ include.screen }}]**
+{%- endif -%}

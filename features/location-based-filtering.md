@@ -1,8 +1,13 @@
 ---
 title: Location-based filtering
 parent: Features
-layout: home
-nav_order: 2
+layout: default
+verified_on: 2026-08-02
+owner: mykola
+redirect_from: "/features/location-based-filtering.html"
+nav_order: 4
+page_type: feature
+description: Filter a signal by its own location, the hiring company's location, or the decision-maker's location.
 ---
 
 # Location-based filtering

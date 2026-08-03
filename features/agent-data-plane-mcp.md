@@ -1,29 +1,74 @@
 ---
 title: Agent data plane — MCP server
-parent: Features
-layout: home
-nav_order: 11.2
+parent: APIs
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/features/agent-data-plane-mcp.html"
+nav_order: 4
+page_type: feature
+description: The agent data plane's MCP tool contract — code-complete, not yet hosted at a public endpoint.
+prereq: mcp_hosting
 ---
 
 # Agent data plane — MCP server
 
+{% include prereq.html %}
+
 The [Model Context Protocol](https://modelcontextprotocol.io) is how an AI agent discovers and calls
 tools. The plane ships an MCP server, `signalsapi-plane`, that exposes the hiring-panel primitives as
 agent tools — the same data, the same metering, and the same key as the
-[REST API](agent-data-plane-api).
+[REST API](../agent-data-plane-api/).
 
-Where a REST client has to know which URL to build, an MCP agent sees nine tools with typed
+Where a REST client has to know which URL to build, an MCP agent sees {{ site.data.mcp_tools.items | size }} tools with typed
 arguments and picks one at reasoning time.
 
 ## Status: not hosted yet
 
-The server is code-complete but **not yet deployed to an endpoint you can connect to**, so there is
-no connect snippet on this page. Publishing one before the endpoint exists would be inventing a URL.
+The server is code-complete but **not yet deployed to an endpoint you can connect to** — there is no
+public base URL, and nothing below claims otherwise. What you can do today is run it yourself: the
+source is committed under `mcp/` in this repository, and it proxies every tool call to a REST base
+URL you control — by default the [local mock](../agent-data-plane-mock/) from your own machine, so the
+whole stack runs with no key and no hosted endpoint.
 
-This page documents the tool contract so you can plan an integration now.
-[Email us](mailto:mykola@signalsapi.com) if you want the MCP surface hosted — knowing someone is
-waiting on it is what moves it up the queue. In the meantime every tool below has an exact REST
-equivalent that works today.
+Want to be first in line once the real MCP surface is hosted? Tell [Support](/support/) what you're
+building — that is not a prerequisite for anything above, just a signal that moves it up the queue.
+In the meantime every tool below has an exact REST equivalent that
+works today.
+
+## Run it yourself
+
+1. **Start the local mock** (see [Run the specification as a local mock](../agent-data-plane-mock/)):
+
+   ```bash
+   npx @stoplight/prism-cli@5.16.0 mock openapi/plane-v1.yaml
+   ```
+
+2. **Install the server's dependencies**, from the repository root:
+
+   ```bash
+   cd mcp && npm install
+   ```
+
+3. **Point your MCP client at it.** For a client that reads a `mcpServers` block (for example,
+   Claude Desktop's config file):
+
+   ```json
+   {
+     "mcpServers": {
+       "signalsapi-plane": {
+         "command": "node",
+         "args": ["/absolute/path/to/mcp/server.js"],
+         "env": {
+           "PLANE_MCP_BASE_URL": "http://127.0.0.1:4010"
+         }
+       }
+     }
+   }
+   ```
+
+Every tool call is forwarded as a REST request to `PLANE_MCP_BASE_URL` — point it at a real base URL
+and pass a real key as the `plane_api_key` argument once one is issued, and nothing else changes.
 
 ## Authentication
 
@@ -38,29 +83,31 @@ never inline it into a prompt.
 
 ## The tools
 
+This table is generated from `openapi/plane-v1.yaml`'s `x-mcp-tool` operations, not hand-typed — the
+`mcp-tool-table-generated` assertion fails the build if it ever drifts from the specification.
+
 | Tool | Arguments | REST equivalent |
 |---|---|---|
-| `is_hiring` | `company_id` | [`GET /v1/companies/{id}/is-hiring`](agent-data-plane-api#is-this-company-hiring) |
-| `get_open_reqs` | `company_id`, `function?`, `country?`, `limit?` | [`GET /v1/companies/{id}/open-reqs`](agent-data-plane-api#open-requisitions) |
-| `hiring_pulse` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/hiring-pulse`](agent-data-plane-api#hiring-pulse) |
-| `who_is_hiring_for` | `role?`, `geo?`, `since?`, `cursor?`, `limit?` | [`GET /v1/reqs/search`](agent-data-plane-api#who-is-hiring-for-a-role) |
-| `search_jobs` | `role?`, `geo?`, `since?`, `cursor?`, `limit?` | [`GET /v1/jobs/search`](agent-data-plane-api#search-open-jobs) |
-| `pre_action_brief` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/pre-action-brief`](agent-data-plane-api#pre-action-brief) |
-| `get_changes` | `since`, `company_id?`, `event_type?`, `limit?` | [`GET /v1/events`](agent-data-plane-api#poll-for-changes) |
-| `watch_company` | `company_id`, `event_types`, `webhook_endpoint_id` | [`POST /v1/watches`](agent-data-plane-api#watch-a-company) |
-| `write_outcome` | `company_id`, `outcome`, `observed_at`, `req_key?` | [`POST /v1/companies/{id}/outcomes`](agent-data-plane-api#record-an-outcome) |
+{%- for item in site.data.mcp_tools.items %}
+| `{{ item.tool }}` | {% for a in item.args %}`{{ a }}`{% unless forloop.last %}, {% endunless %}{% endfor %} | [`{{ item.method }} {{ item.path }}`](../agent-data-plane-api/#{{ item.summary | slugify }}) |
+{%- endfor %}
 
 Every tool also takes `plane_api_key`. Arguments marked `?` are optional and share the REST defaults.
 
 Every **metered** tool additionally accepts an optional `idempotency_key` argument — the header-less
-transport's equivalent of the REST [`Idempotency-Key`](agent-data-plane-api#idempotency) header, with
+transport's equivalent of the REST [`Idempotency-Key`](../agent-data-plane-api/#idempotency) header, with
 identical semantics: reuse the same value on a retry and the call bills exactly once within a fixed
 24h window, namespaced per key and per tool. `write_outcome` is a write-back rather than a metered
 read, so it does not take one.
 
 Each tool returns the same JSON shape its REST counterpart serializes — provenance envelopes and all.
-No business logic is reimplemented behind the MCP surface; both entry points call the same code, so
-the two can never drift.
+No business logic is reimplemented behind the MCP surface: every tool above proxies the identical REST
+operation, generated from the same `x-mcp-tool` set as the table above, not hand-counted:
+{%- assign plane_ops = site.data.plane_status.items -%}
+{%- assign mcp_op_count = plane_ops | where_exp: "op", "op.mcp_tool" | size -%}
+{%- assign total_op_count = plane_ops | size -%}
+{%- assign rest_only_count = total_op_count | minus: mcp_op_count -%}
+MCP exposes {{ mcp_op_count }} of {{ total_op_count }} operations; {{ rest_only_count }} are REST-only.
 
 ---
 
@@ -82,11 +129,13 @@ The tools are designed to be composed cheaply-first, expensively-last:
 company is cold and you declared a `max_age`, they return `{"job_id": …, "status": "crawling"}`
 rather than blocking — queue it, do something else, ask again shortly.
 
-See [Tiers and metering](agent-data-plane#tiers-and-metering) for exactly how each call bills.
+See [Tiers and metering](../agent-data-plane/#tiers-and-metering) for exactly how each call bills.
 
 ---
 
 ## Where to go next
 
-- **[REST API reference](agent-data-plane-api)** — every tool above, callable over HTTP today
-- **[Agent data plane overview](agent-data-plane)** — the ledger, the tiers, getting access
+- **[REST API reference](../agent-data-plane-api/)** — every tool above, callable over HTTP today
+- **[Agent data plane overview](../agent-data-plane/)** — the ledger, the tiers, getting access
+
+{% include recent-changes.html %}

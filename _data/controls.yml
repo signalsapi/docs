@@ -1,0 +1,43 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-03
+  source: transcribed directly from the settings-panel screenshots this story deletes (features/do-not-contact-list.png,
+    features/find-decision-makers-1.png, features/find-decision-makers-2.png, features/remove-duplicate-signals-2.png)
+    before removing them -- see Story 11.3
+items:
+  - screen: Edit Do-Not-Contact List
+    click_path: Leads -> Do-Not-Contact
+    field: Domains
+    description: Disqualify companies based on domain, and people based on email domain. One per line.
+    example: google.com
+    owning_page: features/do-not-contact-list.md
+  - screen: Select decision-makers
+    click_path: Personas -> create a new persona
+    field: Job titles of decision-makers
+    description: Look for decision-makers with any of these titles. One per line.
+    example: CEO, managing director
+    owning_page: features/find-decision-makers.md
+  - screen: Select decision-makers
+    click_path: Personas -> create a new persona
+    field: Person location
+    description: Where the decision-maker must be located.
+    example: Anywhere (default), Include only selected, Exclude selected
+    owning_page: features/find-decision-makers.md
+  - screen: Select decision-makers
+    click_path: Personas -> create a new persona
+    field: Max decision-makers per company
+    description: Limit the number of decision-makers identified for each company.
+    example: '3'
+    owning_page: features/find-decision-makers.md
+  - screen: Duplicates
+    click_path: Lead Lists -> set up a project -> Duplicates
+    field: Within this list
+    description: If a company has already been added to this list, it can be added again.
+    example: After 1 month
+    owning_page: features/remove-duplicate-signals.md
+  - screen: Duplicates
+    click_path: Lead Lists -> set up a project -> Duplicates
+    field: Among all lists
+    description: If a company has already been added to another list, it can be added to this one.
+    example: 'Yes'
+    owning_page: features/remove-duplicate-signals.md

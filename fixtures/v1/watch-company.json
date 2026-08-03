@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /fixtures/v1/watch-company.json
+operation_id: watchCompany
+---
+{
+  "recorded_on": "2026-07-08",
+  "id": 15
+}

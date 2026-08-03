@@ -1,11 +1,19 @@
 ---
 title: Agent data plane
-parent: Features
-layout: home
-nav_order: 11
+parent: APIs
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/features/agent-data-plane.html"
+nav_order: 2
+page_type: feature
+prereq: plane_access
+description: A machine-facing surface reporting what changed in a company's hiring activity, not just what's posted now.
 ---
 
 # Agent data plane
+
+{% include prereq.html %}
 
 Most hiring data tells you what is posted **right now**. The agent data plane tells you what
 **changed** — and when, and how often, and whether it has happened before.
@@ -13,10 +21,10 @@ Most hiring data tells you what is posted **right now**. The agent data plane te
 It is a machine-facing surface built for AI agents and automated workflows rather than for people
 clicking around the app. Two ways in, over the same data and the same key:
 
-- a **[REST API](agent-data-plane-api)** at `/v1`
-- an **[MCP server](agent-data-plane-mcp)** exposing the same primitives as agent tools
+- a **[REST API](../agent-data-plane-api/)** at `/v1`
+- an **[MCP server](../agent-data-plane-mcp/)** exposing the same primitives as agent tools
 
-Plus a **[Clay HTTP provider](agent-data-plane-clay)**, so Clay can call SignalsAPI as an
+Plus a **[Clay HTTP provider](../agent-data-plane-clay/)**, so Clay can call SignalsAPI as an
 enrichment column in your table.
 
 ---
@@ -98,12 +106,12 @@ A `202` never blocks. It queues a priority crawl and hands you a `job_id`; poll 
 shortly after.
 
 Four meter units are recorded: `call`, `change`, `watch` and `forced_fresh`.
-[`GET /v1/usage`](agent-data-plane-api#usage) reports your rolling totals. Notably, the **change feed
+[`GET /v1/usage`](../agent-data-plane-api/#usage) reports your rolling totals. Notably, the **change feed
 bills per event returned, not per poll**: an empty page costs nothing, so you can poll it as tightly
 as you like.
 
 **Exactly-once billing on retries.** Any metered read can opt into idempotent billing: supply an
-idempotency token — the [`Idempotency-Key`](agent-data-plane-api#idempotency) header over REST, or the
+idempotency token — the [`Idempotency-Key`](../agent-data-plane-api/#idempotency) header over REST, or the
 `idempotency_key` argument over MCP — and a retry of the same logical call within a fixed 24h window
 bills once, not once per attempt. Omit it and every call bills independently, as before.
 
@@ -116,24 +124,33 @@ talk to us and we will quote your usage shape.
 ## Getting access
 
 The plane is **not yet open for self-serve signup**, and there is no public base URL to point a
-client at today. Access is arranged directly:
+client at today. You do not need either to start:
 
-1. Email [mykola@signalsapi.com](mailto:mykola@signalsapi.com) describing what you want to build.
-2. We issue your first API key and the base URL to use it against.
-3. From then on you can mint and revoke additional keys yourself via
-   [`POST /v1/keys`](agent-data-plane-api#issue-a-key), scoped to your own account.
+- Read every operation's exact request and response shape in the specification:
+  [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml).
+- Fetch a recorded response for any operation from the
+  [fixture gallery](../agent-data-plane-fixtures/) — no key required.
+- Run the whole interface [locally as a mock](../agent-data-plane-mock/) and develop against it today,
+  including the write operations.
 
-Keys are shown **once**, at issuance, and stored only as a hash — we cannot recover one for you, so
-put it straight into your secret manager. Every request is scoped to your own account: you can never
-see, meter against, or revoke another customer's anything.
+Once self-serve opens, keys are minted and revoked yourself via
+[`POST /v1/keys`](../agent-data-plane-api/#issue-a-key), scoped to your own account, and shown **once**
+at issuance — stored only as a hash, so put it straight into your secret manager. Every request is
+scoped to your own account: you can never see, meter against, or revoke another customer's anything.
+
+Want to be first in line when self-serve opens? Tell [Support](/support/) what you're building —
+that is not a prerequisite for anything above, just a signal that moves it up the queue.
 
 ---
 
 ## Where to go next
 
-- **[REST API reference](agent-data-plane-api)** — every endpoint, request and response shape
-- **[MCP server](agent-data-plane-mcp)** — the same primitives as agent tools
-- **[Clay integration](agent-data-plane-clay)** — SignalsAPI as an enrichment column in Clay
+- **[REST API reference](../agent-data-plane-api/)** — every endpoint, request and response shape
+- **[MCP server](../agent-data-plane-mcp/)** — the same primitives as agent tools
+- **[Clay integration](../agent-data-plane-clay/)** — SignalsAPI as an enrichment column in Clay
+- **[Agent-builder quickstart](/agent-builder-quickstart/)** — build against the reference today, before the plane opens
 
 Looking for the API that reads **your projects and leads** out of the SignalsAPI app? That is a
-different, self-serve API — see **[API access](api-access)**.
+different, self-serve API — see **[API access](../api-access/)**.
+
+{% include recent-changes.html %}

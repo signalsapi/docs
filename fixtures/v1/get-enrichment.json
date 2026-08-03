@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /fixtures/v1/get-enrichment.json
+operation_id: getEnrichment
+---
+{
+  "recorded_on": "2026-07-08",
+  "name": "zollsoft GmbH",
+  "domain": "zollsoft.de",
+  "hq_country": "DE",
+  "boards": ["greenhouse"],
+  "as_of": "2026-07-08T04:11:07Z"
+}

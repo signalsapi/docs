@@ -1,0 +1,686 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-03
+  source: 'transcribed from whats-new/index.md''s changelog (222 entries as of this repository''s current state) for Story 11.7; feature is the existing page each entry''s bullet is about, judged by keyword match against the entry text where no page was already linked; Story 11.9 backfilled the API access (2026-06-30) and agent data plane (2026-07-09) launches, dated from each page''s own first commit (git log --follow), since neither had a changelog entry documenting its launch; Story 11.10 removed the screenshots: field once those images were retired; Story 11.11 remapped the entry naming is-it-working.md to faq.md once that page was retired'
+items:
+- date: 2026-06-30
+  summary: 'API access launches: a read-only REST API for pulling your own projects and leads out of SignalsAPI as JSON or CSV.'
+  feature: features/api-access.md
+- date: 2026-07-09
+  summary: 'The agent data plane launches: a machine-facing surface reporting what changed in a company''s hiring activity, not just what''s posted now -- a REST API, an MCP server, and a Clay integration.'
+  feature: features/agent-data-plane.md
+- date: 2026-07-09
+  summary: 'Agent data plane REST API published: the full /v1 reference for every endpoint, request, and response shape.'
+  feature: features/agent-data-plane-api.md
+- date: 2026-07-09
+  summary: 'Agent data plane MCP server published: the same primitives as agent tools -- code-complete, not yet hosted at a public endpoint.'
+  feature: features/agent-data-plane-mcp.md
+- date: 2026-07-09
+  summary: 'Agent data plane Clay integration published: a company''s hiring motion as flat, filterable columns from a single enrichment call.'
+  feature: features/agent-data-plane-clay.md
+- date: 2026-06-18
+  summary: '**Job description required words** -- the "Job description search terms" field is now a hard requirement and has been renamed accordingly. A signal is kept only if its description contains at least one of the words you list (OR within the list), on top of any job-title requirement. This is the description counterpart of "Job title required words". Use case: keep only **remote-friendly** roles by requiring `remote`, `home`, or `hybrid` in the description. Previously these words only widened the search, so jobs that didn''t actually mention them could still slip through. Read more: [Advanced search](/features/advanced-search)'
+  feature: features/advanced-search.md
+- date: 2026-04-16
+  summary: '**Company website always in exports** -- CSV exports now always include the company website and domain, even when no decision-makers were found. Companies from sources that don''t provide website data are automatically enriched in the background via LinkedIn lookup. While enrichment is in progress, the signal detail page shows an "Enriching..." badge on the Website and LinkedIn URL fields. Use case: you see an interesting signal and want to dig into the company before finding the right people.'
+  feature: features/find-decision-makers.md
+- date: 2026-04-16
+  summary: '**"Available on paid plans" on sample pages** -- sample lead pages and CSV downloads now show "available on paid plans" instead of blank fields for decision-maker data (name, title, LinkedIn, email). This encourages trial users to upgrade for full lead details.'
+  feature: features/find-decision-makers.md
+- date: 2026-04-16
+  summary: '**Company name in CSV exports** -- the company name column was missing from CSV downloads; now included.'
+  feature: features/api-access.md
+- date: 2026-04-16
+  summary: '**Accurate signal status badges** -- the Signals page now correctly distinguishes between companies where decision-makers were actually found vs. companies that only passed qualification filters. Previously, all qualified companies showed "Leads found" even when no decision-makers existed. Now:'
+  feature: features/find-decision-makers.md
+- date: 2026-04-14
+  summary: '**Recruit CRM** integration — push qualified leads into your Recruit CRM as **contacts** (sales-side prospects, not candidates), linked to the hiring company. Duplicate contacts are detected by email, so re-exports do not create duplicates. Add it in Settings → Integrations → Recruit CRM (requires a Business-tier Recruit CRM plan or higher, as the Recruit CRM Open API is not available on lower plans).'
+  feature: features/integrations.md
+- date: 2026-03-17
+  summary: '**Semantic search** -- AI-powered search that finds similar job titles beyond exact keyword matching. "Project manager" now also finds "delivery manager", "program director", "PMO lead" and other semantically related roles.'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Description search** -- search within job descriptions separately from titles. Catches signals where relevant terms appear in the description but not the title.'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Skills filter** -- require or exclude specific skills mentioned in the job posting (e.g., PMP, PRINCE2, Agile).'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Job families** -- filter by structured job classification regardless of title wording.'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Location patterns** -- match specific cities or regions (e.g., "London", "Manchester") instead of filtering by country only.'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Exclude staffing agencies** -- built-in filter that''s more reliable than manual stop words.'
+  feature: features/filter-leads-with-ai.md
+- date: 2026-03-17
+  summary: '**Hard to fill** -- only show roles open 30+ days or reposted 3+ times.'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Hiring surge** -- only show companies with 5+ new roles in 30 days at 1.5x rate.'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Job posting age** now works correctly -- the "Maximum age of job posting" setting is now properly applied.'
+  feature: features/advanced-search.md
+- date: 2026-03-17
+  summary: '**Company stop words** are now applied during search (previously only applied after fetching, wasting credits).'
+  feature: features/filter-leads-with-ai.md
+- date: 2026-03-17
+  summary: '**Automatic retry for failed personations** -- companies that initially returned "no leads found" (e.g., because their LinkedIn profile wasn''t resolved yet) are now automatically re-checked. When enrichment data improves, tasks are reset and decision-maker search runs again — no manual intervention needed.'
+  feature: features/find-decision-makers.md
+- date: 2026-01-18
+  summary: We now support more jobs including TechInAsia, Reed, Justjoin, Jooble, Finn.no, Jobindex, Monster, RocketJobs + more
+  feature: how-it-works.md
+- date: 2026-01-18
+  summary: Telephone numbers for qualified decision-makers are now provided as an add-on
+  feature: features/find-decision-makers.md
+- date: 2025-04-11
+  summary: Unspent credits expire in 60 days
+  feature: pricing.md
+- date: 2025-04-09
+  summary: HiringCafe as a job source
+  feature: how-it-works.md
+- date: 2025-04-05
+  summary: Phone numbers
+  feature: features/find-phone-numbers.md
+- date: 2025-04-04
+  summary: Option "Auto-reject people without emails" was removed from Lead lists, option "Emails required" was added to personas instead. If turned on, all people will have emails already on the "Personas" stage. "Unlock email" link removed from lead lists, as all emails are already unlocked.
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2025-03-06
+  summary: Option to not filter out companies with unknown number of employees
+  feature: features/advanced-search.md
+- date: 2025-01-22
+  summary: ToS
+  feature: tos.md
+- date: 2025-01-17
+  summary: Demo registration fixed
+  feature: operator-quickstart.md
+- date: 2025-01-14
+  summary: Fewer fields in CSV export
+  feature: features/api-access.md
+- date: 2025-01-14
+  summary: 'Bugfix: Bullhorn integration silently continued sending leads to nowhere after integration has expired'
+  feature: features/integrations.md
+- date: 2025-01-14
+  summary: 'Bugfix: Low search result count'
+  feature: create-a-search.md
+- date: 2025-01-13
+  summary: 'Bugfix: Trial credits were added twice'
+  feature: pricing.md
+- date: 2024-12-09
+  summary: Indeed searches are temporarily limited to US and UK
+  feature: how-it-works.md
+- date: 2024-12-03
+  summary: 'Bugfix: not exporting leads that are in process of unlocking email'
+  feature: features/api-access.md
+- date: 2024-12-01
+  summary: Bullhorn export field mapping must include all fields to be exported, nothing is exported by default anymore
+  feature: features/integrations.md
+- date: 2024-12-01
+  summary: 'Bugfix: AI prompts with job_location field did not work'
+  feature: features/filter-leads-with-ai.md
+- date: 2024-11-30
+  summary: Exporting date fields to Bullhorn
+  feature: features/integrations.md
+- date: 2024-11-30
+  summary: Bullhorn export has a field mapping setting
+  feature: features/integrations.md
+- date: 2024-11-29
+  summary: Showing integration type in export list
+  feature: features/api-access.md
+- date: 2024-11-29
+  summary: Field mapping for Bullhorn integration
+  feature: features/integrations.md
+- date: 2024-11-28
+  summary: Bullhorn integration
+  feature: features/integrations.md
+- date: 2024-11-28
+  summary: Showing date filter instead of pagination in Lead lists
+  feature: features/advanced-search.md
+- date: 2024-11-27
+  summary: Matches are called "results" now
+  feature: create-a-search.md
+- date: 2024-11-27
+  summary: 'Bugfix: some searches returned 1 day old results'
+  feature: create-a-search.md
+- date: 2024-11-26
+  summary: Showing pagination instead of a date filter in matches lists in Filters, Personas, and Lead lists
+  feature: features/find-decision-makers.md
+- date: 2024-11-26
+  summary: Default view mode of filter matches is "All" instead of "Qualified"
+  feature: features/advanced-search.md
+- date: 2024-11-26
+  summary: 'Bugfix: personator produced no results if both Person location and Max decision-makers per company are specified'
+  feature: features/find-decision-makers.md
+- date: 2024-11-25
+  summary: Manual runs have higher priority than automated
+  feature: create-a-search.md
+- date: 2024-11-25
+  summary: Jobs with match in title have higher fetching priority than without
+  feature: create-a-search.md
+- date: 2024-11-25
+  summary: Jobs with match in title show first in run view
+  feature: create-a-search.md
+- date: 2024-11-25
+  summary: Search can be limited by a US state or UK country
+  feature: features/advanced-search.md
+- date: 2024-11-24
+  summary: New searching core working faster, but not allowing more that 4 words as search term, quotes and special characters, words "or" and "and"
+  feature: create-a-search.md
+- date: 2024-11-16
+  summary: Normalizing job title on save -- trimmed, lowercase, no special chars, quotes, "and", "or" etc
+  feature: features/advanced-search.md
+- date: 2024-11-13
+  summary: 'Improvement: showing some warning messages that search will take long to run after a search is created'
+  feature: create-a-search.md
+- date: 2024-11-08
+  summary: 'Improvement: Scheduling the next run after a search with a running schedule has been created or edited and if you press a "Save" button (not "Save and run") is behaving more predictably'
+  feature: create-a-search.md
+- date: 2024-11-08
+  summary: 'Bugfix: disabled search schedules were shown as if they are enabled'
+  feature: create-a-search.md
+- date: 2024-11-02
+  summary: 'Bugfix: checking ai field value to contain correct variables'
+  feature: features/personalize-emails-with-ai.md
+- date: 2024-10-30
+  summary: 'Bugfix: Daily searches sometimes did not plan the next run.'
+  feature: pricing.md
+- date: 2024-10-29
+  summary: 'Bugfix: The new search engine introduced September 29th was not properly fed the "remote" parameter so it was ignored in LinkedIn searches.'
+  feature: features/work-arrangement-filter.md
+- date: 2024-10-26
+  summary: When search is scheduled for the first time, it will not require a manual "Run now" anymore but will start running after a defined interval
+  feature: create-a-search.md
+- date: 2024-10-23
+  summary: Automated daily testing of new user registration, verification, welcome email
+  feature: operator-quickstart.md
+- date: 2024-10-22
+  summary: New engine for docs.signalsapi.com
+  feature: concepts/pipeline.md
+- date: 2024-10-20
+  summary: Added more country options into both LinkedIn and Indeed searches.
+  feature: features/advanced-search.md
+- date: 2024-10-20
+  summary: Added more location clusters to LinkedIn searches, like North America, Latin America etc.
+  feature: how-it-works.md
+- date: 2024-10-19
+  summary: Users on expired and cancelled plans are still able to go to billing and download invoices
+  feature: pricing.md
+- date: 2024-10-18
+  summary: Fixed bug -- manually initiated search never stopped but created a new run right after previous one has ended
+  feature: create-a-search.md
+- date: 2024-09-29
+  summary: Search speed and stability improved
+  feature: create-a-search.md
+- date: 2024-09-26
+  summary: Searching and fetching engine were completely re-written. The new one works slower, but much more stable.
+  feature: concepts/pipeline.md
+- date: 2024-07-08
+  summary: Scheduled searches that were paused because of low balance continue automatically after balance top-up
+  feature: pricing.md
+- date: 2024-06-20
+  summary: Export showing integration name and exports per day stats.
+  feature: features/api-access.md
+- date: 2024-06-20
+  summary: Fixed webhook exporting
+  feature: features/integrations.md
+- date: 2024-06-19
+  summary: Exporting to a specific list in Hubspot
+  feature: features/integrations.md
+- date: 2024-06-19
+  summary: Popular choices are shown separately
+  feature: features/advanced-search.md
+- date: 2024-06-19
+  summary: Ability to choose all popular choices with one click
+  feature: features/advanced-search.md
+- date: 2024-06-18
+  summary: Search has a "Job posting age" setting, which controls how recent the job posting should be to get matched.
+  feature: features/advanced-search.md
+- date: 2024-06-17
+  summary: Filtering jobs based on where the match was found. Solving two most popular problems -- "too few matches" and "too many junk matches".
+  feature: features/advanced-search.md
+- date: 2024-06-16
+  summary: Showing in the run which part of the signal matches search terms. Some matches do not contain search terms at all, but the search engine (Indeed or LinkedIn) still shows them.
+  feature: how-it-works.md
+- date: 2024-06-16
+  summary: Highlighting relevant keywords in the job title and description when viewing the match
+  feature: features/advanced-search.md
+- date: 2024-06-14
+  summary: Sourcing from Indeed
+  feature: how-it-works.md
+- date: 2024-06-07
+  summary: Sped up navigation by moving frontend to a separate server
+  feature: concepts/pipeline.md
+- date: 2024-06-07
+  summary: '[whoishiring.uk](https://whoishiring.uk/) -- a simplified stand-alone tool for developer jobs'
+  feature: how-it-works.md
+- date: 2024-05-30
+  summary: Worldwide search on LinkedIn (searches -> add -> hiring location)
+  feature: features/advanced-search.md
+- date: 2024-05-30
+  summary: Auto-validating emails in [Snov.io](https://snov.io/) (exports -> add -> snovio -> validate emails)
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-05-29
+  summary: Weekly emails with statistics
+  feature: whats-new/index.md
+- date: 2024-05-20
+  summary: Limit the number of decision-makers per company. If more decision-makers are identified, they are prioritized in the order specified in the 'titles' field, and those with valid email addresses come first.
+  feature: features/find-decision-makers.md
+- date: 2024-05-20
+  summary: Do-Not-Contact list allows to make sure you do not contact companies or people you do not want to. Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/).
+  feature: features/do-not-contact-list.md
+- date: 2024-05-18
+  summary: List views of searches, filters, personas, lead lists and exports show where they are taking data from and where they are sending it to.
+  feature: features/api-access.md
+- date: 2024-05-18
+  summary: 'Fixed: Searches get stuck forever in "running" status if run has failed.'
+  feature: create-a-search.md
+- date: 2024-05-18
+  summary: 'Fixed: Resetting a failed search did not reset match counts in that search so search match count stopped matching sum of success counts of its runs.'
+  feature: create-a-search.md
+- date: 2024-05-18
+  summary: 'Fixed: Opening a filter and a persona took significant time.'
+  feature: features/find-decision-makers.md
+- date: 2024-05-14
+  summary: Leadlist has an AI field which applied to each person, available templates are {first_name}, {last_name}, {title}, {email}, {linkedin_url}
+  feature: features/personalize-emails-with-ai.md
+- date: 2024-05-13
+  summary: Leads within a leadlist, matches within personas and filters can be filtered by date
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-05-13
+  summary: Leads are downloaded based on the applied filters
+  feature: features/api-access.md
+- date: 2024-05-12
+  summary: Anti-bot protection
+  feature: concepts/pipeline.md
+- date: 2024-05-12
+  summary: Accepting registrations with personal emails, but asking for company info and limiting free runs in this case
+  feature: features/find-decision-makers.md
+- date: 2024-05-11
+  summary: Requiring business email to register
+  feature: operator-quickstart.md
+- date: 2024-05-11
+  summary: Multiple bugs fixed
+  feature: whats-new/index.md
+- date: 2024-05-10
+  summary: Searches, filters, personas and leadlists can be cloned
+  feature: features/find-decision-makers.md
+- date: 2024-05-10
+  summary: AI powered rejection of leads
+  feature: features/filter-leads-with-ai.md
+- date: 2024-05-10
+  summary: Search shows status as "running" while its runs are fetching
+  feature: create-a-search.md
+- date: 2024-05-09
+  summary: By default, deduplication of matches occurs within each run, not across the entire search. This avoids confusion regarding the actual match count for a given run. Deduplication on the search level and globally is still available as a lead list setting.
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-05-09
+  summary: LinkedIn match limits per search run increased.
+  feature: how-it-works.md
+- date: 2024-05-09
+  summary: 'New run status: Fetching'
+  feature: create-a-search.md
+- date: 2024-05-09
+  summary: Regions of England in search location
+  feature: features/advanced-search.md
+- date: 2024-05-09
+  summary: 'Fixed: runs in "Fetching" status were showing as "Completed"'
+  feature: create-a-search.md
+- date: 2024-05-08
+  summary: Preventing double submissions in forms by disabling buttons on first click
+  feature: how-it-works.md
+- date: 2024-05-08
+  summary: If leadlist is reset while running, the run is terminated
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-05-08
+  summary: 'Fixed: deleting filter fails with a missing variable'
+  feature: features/advanced-search.md
+- date: 2024-05-08
+  summary: 'Fixed: deleting filters'
+  feature: features/advanced-search.md
+- date: 2024-05-07
+  summary: AI-powered enrichment
+  feature: features/filter-leads-with-ai.md
+- date: 2024-05-07
+  summary: 'Fixed: personas pulling disqualified matches'
+  feature: features/find-decision-makers.md
+- date: 2024-05-06
+  summary: Showing job description
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-05-06
+  summary: Company description is shown with line breaks instead of smashing all lines together
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-05-06
+  summary: Lead view has clickable hyperlinks for job posting, company website and LinkedIn, person LinkedIn
+  feature: how-it-works.md
+- date: 2024-05-05
+  summary: 'Speed-up under the hood: searching and fetching+enriching happens in separate processes, allowing new matches to appear and get processed before the whole search run is completed'
+  feature: concepts/pipeline.md
+- date: 2024-05-04
+  summary: Email unlocking speed increased
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-05-04
+  summary: Checkboxes are changing state when clicked on their labels
+  feature: features/advanced-search.md
+- date: 2024-05-04
+  summary: 'Fixed: newly created filters processed runs before they were completed'
+  feature: features/advanced-search.md
+- date: 2024-05-03
+  summary: Filtering by job stop words and required words
+  feature: features/filter-leads-with-ai.md
+- date: 2024-05-03
+  summary: 'Fixed: duplicate leads'
+  feature: features/remove-duplicate-signals.md
+- date: 2024-05-03
+  summary: 'Fixed: showing people counts in persona list'
+  feature: features/find-decision-makers.md
+- date: 2024-05-03
+  summary: 'Fixed: filter is counting qualified matches, not all matches'
+  feature: features/advanced-search.md
+- date: 2024-05-02
+  summary: Warning message on trying to create a duplicate search with the same parameters
+  feature: features/remove-duplicate-signals.md
+- date: 2024-05-02
+  summary: Auto-unlocking all emails if auto-approve is enabled
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-05-02
+  summary: 'Fixed: unlocking emails gets stuck if email is missing'
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-05-01
+  summary: People in lead list have addresses
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-05-01
+  summary: People can be filtered by location
+  feature: features/find-decision-makers.md
+- date: 2024-05-01
+  summary: Save / save and re-run buttons in filters and personas
+  feature: features/find-decision-makers.md
+- date: 2024-05-01
+  summary: All yearly credits are debited on the payment date
+  feature: pricing.md
+- date: 2024-05-01
+  summary: 'Fixed: email unlocking'
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-05-01
+  summary: 'Fixed: lead status does not change to "exported" after exporting happens'
+  feature: features/api-access.md
+- date: 2024-04-30
+  summary: Moved to a more powerful server, everything works much faster now
+  feature: concepts/pipeline.md
+- date: 2024-04-30
+  summary: Showing running status in search list
+  feature: create-a-search.md
+- date: 2024-04-30
+  summary: When you click "approve" or "reject" it shows the next lead, saving a few clicks
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-04-30
+  summary: 'Fixed: it is now possible to reject a lead that does not have unlocked emails'
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-04-30
+  summary: 'Fixed: it is now possible to approve a lead before emails finished unlocking, export will happen automatically when unlocking is finished'
+  feature: features/api-access.md
+- date: 2024-04-30
+  summary: 'Fixed: searches are getting stuck in an infinite loop'
+  feature: create-a-search.md
+- date: 2024-04-29
+  summary: New leads are marked as "New", and then change to "Seen" when you open them for the first time.
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-04-29
+  summary: Leads will get exported after you approve them by clicking "Approve" or "Reject" buttons, or enabling auto-approval in lead list settings.
+  feature: features/api-access.md
+- date: 2024-04-28
+  summary: New tab "Leads" for working with leads in a mailbox-style with folders, downloading, unlocking emails, etc
+  feature: features/api-access.md
+- date: 2024-04-28
+  summary: Automatic approval and rejection rules can be set in lead list settings.
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-04-28
+  summary: Lead settings can be applied to new leads only, or the whole lead list can be emptied and re-run with the new settings.
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-04-26
+  summary: One job title per search. Splitting a search into multiple ones with one title each produces results much faster, and also shows which searches are yielding matches, and which are not.
+  feature: features/advanced-search.md
+- date: 2024-04-26
+  summary: 'To use multiple keywords in one search, you can:'
+  feature: create-a-search.md
+- date: 2024-04-26
+  summary: '"Data sources" renamed to "Searches", "Filters" and "Personas" to avoid confusion'
+  feature: features/find-decision-makers.md
+- date: 2024-04-26
+  summary: Uniqueness / deduplication policy is now a part of the Searches form
+  feature: create-a-search.md
+- date: 2024-04-26
+  summary: Tables got condensed to fit more data on the screen
+  feature: how-it-works.md
+- date: 2024-04-25
+  summary: '"Unlock email" link works much faster'
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-04-25
+  summary: Showing people counts in filters, personas, exports
+  feature: features/api-access.md
+- date: 2024-04-25
+  summary: Showing date in matches
+  feature: create-a-search.md
+- date: 2024-04-23
+  summary: Each page (searches, filters, personas, export) showing running status automatically updates when running is finished
+  feature: features/api-access.md
+- date: 2024-04-22
+  summary: Searches, Filters, and Personas are separated into different tabs and steps, so instead of having to wait until the whole search & processing will end, you can see intermediate results much faster.
+  feature: features/find-decision-makers.md
+- date: 2024-04-22
+  summary: Different countries were separated to different searches for the same purpose -- you can see first country results faster, before all countries searches have finished.
+  feature: features/advanced-search.md
+- date: 2024-04-22
+  summary: Credits are charged per run, not per match, so, hopefully, you'll get much more matches per credit.
+  feature: pricing.md
+- date: 2024-04-22
+  summary: Previous matches are temporarily unavailable
+  feature: create-a-search.md
+- date: 2024-04-16
+  summary: 'The pricing model has changed to monthly run limits. A "run" is one job title, in one country, from one source, per day. To calculate your needed runs: (Number of Job Titles) x (Number of Countries) x (Number of Sources) x (Runs per Day) x (30 days)'
+  feature: features/advanced-search.md
+- date: 2024-04-16
+  summary: '"Max credits daily" setting is removed since match count do not influence cost.'
+  feature: pricing.md
+- date: 2024-04-16
+  summary: You can now control how often runs are scheduled (and if they are scheduled at all) in each individual search settings.
+  feature: create-a-search.md
+- date: 2024-04-16
+  summary: Any query can be run manually.
+  feature: create-a-search.md
+- date: 2024-04-16
+  summary: You can now choose if you still want to filter out companies without identified decision-makers, using "Minimum number of identified decision-makers" and "Minimum number of valid emails per match" fields.
+  feature: features/find-decision-makers.md
+- date: 2024-04-16
+  summary: If "Minimum number of valid emails per match" is left empty, emails will not be automatically unlocked, you can unlock them manually
+  feature: create-a-search.md
+- date: 2024-04-11
+  summary: Matches list is opening much faster now
+  feature: create-a-search.md
+- date: 2024-04-10
+  summary: Search can be opened to see queries. Showing last run date/time, today/yesterday signal/match count, next run date/time.
+  feature: create-a-search.md
+- date: 2024-04-07
+  summary: Started using Featurebase [https://signalsapi.featurebase.app/](https://signalsapi.featurebase.app/) to collect feedback / feature requests
+  feature: whats-new/index.md
+- date: 2024-04-05
+  summary: Search performance improved significantly by using 2.5x more proxies, and caching all search results
+  feature: concepts/pipeline.md
+- date: 2024-04-04
+  summary: Daily match limit
+  feature: create-a-search.md
+- date: 2024-04-04
+  summary: Trial is either 150 leads or 7 days now, starting counting from user getting first match
+  feature: pricing.md
+- date: 2024-04-04
+  summary: Fixed a bug that led to "Failed" match status
+  feature: create-a-search.md
+- date: 2024-03-31
+  summary: Filtering companies by keywords
+  feature: features/advanced-search.md
+- date: 2024-03-28
+  summary: HubSpot integration
+  feature: features/integrations.md
+- date: 2024-03-27
+  summary: People without a verified email (only having a LinkedIn URL) can also be matched now. Use "require email" option in search to control this.
+  feature: how-it-works.md
+- date: 2024-03-27
+  summary: Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-03-26
+  summary: Settings have their own menuitem now
+  feature: how-it-works.md
+- date: 2024-03-24
+  summary: Search has a new parameter to require manual pre-approval of each lead before uploading
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-03-24
+  summary: Matches can be manually approved
+  feature: concepts/anatomy-of-a-lead.md
+- date: 2024-03-23
+  summary: We started offering [business developer as a service](https://signalsapi.com/bizdev)
+  feature: whats-new/index.md
+- date: 2024-03-23
+  summary: Run view (Runs -> click any run) is showing disqualified signals
+  feature: create-a-search.md
+- date: 2024-03-23
+  summary: Stop words for job title and company name / headline / description
+  feature: features/filter-leads-with-ai.md
+- date: 2024-03-22
+  summary: FAQ section in docs
+  feature: faq.md
+- date: 2024-03-22
+  summary: Run displays count of disqualified matches, duplicates, and matches without people
+  feature: features/remove-duplicate-signals.md
+- date: 2024-03-22
+  summary: Runs display their statuses
+  feature: create-a-search.md
+- date: 2024-03-22
+  summary: Some runs got stuck, and needed to be deleted manually
+  feature: create-a-search.md
+- date: 2024-03-20
+  summary: Research and matching core is rewritten, the process sped up significantly
+  feature: concepts/pipeline.md
+- date: 2024-03-20
+  summary: All users must edit and save their searches for new core to kick in
+  feature: create-a-search.md
+- date: 2024-03-20
+  summary: '"Runs" tab showing which queries are running and their run status'
+  feature: create-a-search.md
+- date: 2024-03-20
+  summary: Editing a search no longer deletes previous matches, they still can be deleted manually by deleting items in "runs" tab
+  feature: create-a-search.md
+- date: 2024-03-20
+  summary: Run frequency depends on plan now -- check the [pricing](https://signalsapi.com/pricing) page for details
+  feature: pricing.md
+- date: 2024-03-20
+  summary: Credits spending can be limited to avoid spending everything in one go -- check profile -> settings
+  feature: pricing.md
+- date: 2024-03-20
+  summary: Matches are shown per day
+  feature: create-a-search.md
+- date: 2024-03-20
+  summary: De-duplication policy in search
+  feature: create-a-search.md
+- date: 2024-03-20
+  summary: Matches are downloadable as CSV, go to Matches -> Download
+  feature: features/api-access.md
+- date: 2024-03-20
+  summary: 'Fixed: all matches are now visible, not only first 50'
+  feature: create-a-search.md
+- date: 2024-03-20
+  summary: 'Fixed: matches randomly appearing and disappearing'
+  feature: create-a-search.md
+- date: 2024-03-11
+  summary: More integrations are listed in Profile -> Integrations -> Add Integration, some are not yet available. Selecting an unavailable integration will increase priority for that one integration in the roadmap.
+  feature: features/integrations.md
+- date: 2024-03-09
+  summary: Webhook integration. Sending Webhook on new matches.
+  feature: features/integrations.md
+- date: 2024-03-08
+  summary: Credits now are per-month, not per-day
+  feature: pricing.md
+- date: 2024-03-08
+  summary: Free user gets a total of 150 credits
+  feature: pricing.md
+- date: 2024-03-08
+  summary: Message "Search will be automatically repeated every hour" makes it clear that search is not one-time but continuous
+  feature: create-a-search.md
+- date: 2024-03-04
+  summary: Matches page shows stats instead of a progress bar
+  feature: create-a-search.md
+- date: 2024-03-02
+  summary: Showing a message if no matches are found
+  feature: create-a-search.md
+- date: 2024-03-02
+  summary: '"Exact match in title" checkbox for stricter matching'
+  feature: create-a-search.md
+- date: 2024-03-01
+  summary: Job researcher can be set to match only remote or only on-site positions
+  feature: features/work-arrangement-filter.md
+- date: 2024-02-25
+  summary: Progress bar showing research progress in Matches
+  feature: create-a-search.md
+- date: 2024-02-23
+  summary: 'Large frontend update: user interface simplified, Researchers + Qualifiers + Personas + Processors were removed, it''s all called "Searches" now. One large form instead of 4 small ones.'
+  feature: concepts/pipeline.md
+- date: 2024-02-19
+  summary: Mobile layout
+  feature: how-it-works.md
+- date: 2024-02-18
+  summary: '[Apollo](https://apollo.grsm.io/u7of3p5poia1) integration'
+  feature: features/integrations.md
+- date: 2024-02-15
+  summary: Multiple job titles in one researcher
+  feature: features/advanced-search.md
+- date: 2024-02-15
+  summary: Showing signal details in match view
+  feature: create-a-search.md
+- date: 2024-02-14
+  summary: When subscription plan changes, research starts right away to use new credits
+  feature: pricing.md
+- date: 2024-02-14
+  summary: Showing match details on click
+  feature: create-a-search.md
+- date: 2024-02-12
+  summary: Same company can be matched multiple times within one day by different processors
+  feature: concepts/pipeline.md
+- date: 2024-02-11
+  summary: '[Snov.io](https://snov.io/) integration'
+  feature: features/bring-your-own-people-provider.md
+- date: 2024-02-09
+  summary: The product is usable, more effort will be spent on promotion now
+  feature: whats-new/index.md
+- date: 2024-02-09
+  summary: Intro section of docs rewritten from scratch
+  feature: whats-new/index.md
+- date: 2024-02-09
+  summary: Screenshots were added to "How it works" section
+  feature: whats-new/index.md
+- date: 2024-02-08
+  summary: Dashboard is showing signal count by researcher over time as a chart and in a table
+  feature: how-it-works.md
+- date: 2024-02-04
+  summary: '"Personas" form is accepting comma-delimited values, not only newline-delimited (foolproofing)'
+  feature: features/find-decision-makers.md
+- date: 2024-02-04
+  summary: Company filter by country has 'exclude' mode&#x20;
+  feature: features/advanced-search.md
+- date: 2024-02-04
+  summary: Backend performance and stability improved
+  feature: concepts/pipeline.md
+- date: 2024-01-29
+  summary: '"What''s new" page in docs'
+  feature: whats-new/index.md
+- date: 2024-01-29
+  summary: Statistics per processor to "Processors" page
+  feature: concepts/pipeline.md
+- date: 2024-01-29
+  summary: Status page [https://status.signalsapi.com/](https://status.signalsapi.com/)
+  feature: faq.md
+- date: 2024-01-22
+  summary: First user has registered
+  feature: operator-quickstart.md
+- date: 2023-03-30
+  summary: First line of code was written
+  feature: whats-new/index.md

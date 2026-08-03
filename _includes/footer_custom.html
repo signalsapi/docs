@@ -1,0 +1,30 @@
+{%- if page.stage -%}
+  {%- assign current = nil -%}
+  {%- for s in site.data.pipeline.items -%}
+    {%- if s.key == page.stage -%}{%- assign current = s -%}{%- endif -%}
+  {%- endfor -%}
+  {%- if current -%}
+    {%- assign previous = nil -%}
+    {%- assign next = nil -%}
+    {%- for s in site.data.pipeline.items -%}
+      {%- if s.key == current.prerequisite -%}{%- assign previous = s -%}{%- endif -%}
+      {%- if s.prerequisite == current.key -%}{%- assign next = s -%}{%- endif -%}
+    {%- endfor -%}
+    <p class="text-small text-grey-dk-000">
+      Pipeline stage: <strong>{{ current.name }}</strong>.
+      {%- if previous %} Previous: <a href="{{ previous.owning_page }}">{{ previous.name }}</a>.{% endif %}
+      {%- if next %} Next: <a href="{{ next.owning_page }}">{{ next.name }}</a>.{% endif %}
+    </p>
+  {%- endif -%}
+{%- endif -%}
+{%- assign secondary_pages = site.pages | where_exp: "p", "p.nav_exclude == true" | where_exp: "p", "p.permalink == nil" -%}
+{%- if secondary_pages.size > 0 -%}
+<nav class="footer-secondary-links" aria-label="Secondary pages">
+  {%- for p in secondary_pages -%}
+    <a href="{{ p.url }}">{{ p.title }}</a>{% unless forloop.last %} · {% endunless %}
+  {%- endfor -%}
+</nav>
+{%- endif -%}
+{%- if page.verified_on -%}
+<p class="text-small text-grey-dk-000">Verified {{ page.verified_on | date: "%Y-%m-%d" }}{% if page.owner %} by {{ page.owner }}{% endif %}.</p>
+{%- endif -%}

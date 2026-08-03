@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /fixtures/v1/whoami.json
+operation_id: whoami
+---
+{
+  "recorded_on": "2026-07-08",
+  "customer_id": "acme",
+  "tier": "paid",
+  "plan": null,
+  "scopes": []
+}

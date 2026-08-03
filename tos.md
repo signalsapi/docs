@@ -1,7 +1,12 @@
 ---
 title: Terms of Service
-layout: home
-nav_order: 7
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/tos.html"
+nav_exclude: true
+page_type: legal
+description: The terms you agree to by using SignalsAPI's services, subscriptions, and integrations.
 ---
 
 Terms of Service
@@ -49,7 +54,7 @@ To use our Services, you must:
 5\. Subscription and Payment
 ----------------------------
 
-*   Subscription Fees: Our Services are offered on a subscription basis, with fees outlined on our pricing page.
+*   Subscription Fees: Our Services are offered on a subscription basis, with fees outlined on our [pricing page](/pricing/).
     
 *   Payment Terms: Payment obligations are non-cancellable, and all fees paid are non-refundable unless otherwise specified in a separate agreement or as required by law.
     
@@ -150,3 +155,5 @@ Email: [support@signalsapi.com](mailto:support@signalsapi.com)
 Postal Address: Deal Baker Ltd, International House, 64 Nile Street, London, United Kingdom, N1 7SR
 
 By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms.
+
+{% include recent-changes.html %}

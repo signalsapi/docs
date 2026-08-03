@@ -1,0 +1,90 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-02
+  source: transcribed from AI variables and cross-referenced against Compare people-data providers (Story 7.4) — company and signal variables come from SignalsAPI's own enrichment, not a connected people-data provider, so they name no providers.
+
+items:
+  - name: company_name
+    meaning: The hiring company's name.
+    kind: company
+    providers: []
+
+  - name: company_country
+    meaning: The hiring company's country.
+    kind: company
+    providers: []
+
+  - name: company_headcount
+    meaning: The hiring company's employee count.
+    kind: company
+    providers: []
+
+  - name: company_industry
+    meaning: The hiring company's industry.
+    kind: company
+    providers: []
+
+  - name: company_headline
+    meaning: The hiring company's one-line description.
+    kind: company
+    providers: []
+
+  - name: company_description
+    meaning: The hiring company's full description.
+    kind: company
+    providers: []
+
+  - name: job_title
+    meaning: The job title from the hiring signal.
+    kind: signal
+    providers: []
+
+  - name: job_location
+    meaning: The location stated on the hiring signal.
+    kind: signal
+    providers: []
+
+  - name: job_country
+    meaning: The country stated on the hiring signal.
+    kind: signal
+    providers: []
+
+  - name: job_description
+    meaning: The full job description from the hiring signal.
+    kind: signal
+    providers: []
+
+  - name: first_name
+    meaning: The decision-maker's first name.
+    kind: person
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+
+  - name: last_name
+    meaning: The decision-maker's last name.
+    kind: person
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+
+  - name: title
+    meaning: The decision-maker's job title.
+    kind: person
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+
+  - name: email
+    meaning: The decision-maker's verified email address.
+    kind: person
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+
+  - name: linkedin_url
+    meaning: The decision-maker's LinkedIn profile URL.
+    kind: person
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+
+  - name: phone
+    meaning: The decision-maker's mobile phone number.
+    kind: person
+    providers: [LeadMagic]
+
+  - name: phone_status
+    meaning: Whether a phone lookup for this decision-maker succeeded.
+    kind: person
+    providers: [LeadMagic]

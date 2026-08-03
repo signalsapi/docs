@@ -12,11 +12,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # no-page-deleted-without-redirect reads the pre-overhaul baseline
+          # tree with `git ls-tree ddc51a8`; the default shallow clone has no
+          # such commit, so the assertion would fail on an empty file list.
+          fetch-depth: 0
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
-      - name: Build with Jekyll
-        run: bundle exec jekyll build
+      - name: Install Vale
+        run: |
+          VALE_VERSION="$(cat .vale-version)"
+          curl -sfL "https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz" | sudo tar -xz -C /usr/local/bin vale
+          vale --version
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install Spectral
+        run: |
+          SPECTRAL_VERSION="$(cat .spectral-version)"
+          npm install -g "@stoplight/spectral-cli@${SPECTRAL_VERSION}"
+          spectral --version
+      - name: Lint the OpenAPI specification
+        run: bundle exec rake lint:openapi
+      - name: Run the verification gate
+        run: bundle exec rake check

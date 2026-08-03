@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /fixtures/v1/get-market-role-demand.json
+operation_id: getMarketRoleDemand
+---
+{
+  "recorded_on": "2026-07-08",
+  "series": [
+    { "bucket": "2026-06-01T00:00:00Z", "active_reqs": 318 }
+  ],
+  "as_of": "2026-07-08T04:11:07Z"
+}

@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /fixtures/v1/get-hiring-pulse.json
+operation_id: getHiringPulse
+---
+{
+  "recorded_on": "2026-07-08",
+  "is_hiring": { "value": true, "source_board": "greenhouse", "observed_at": "2026-07-08T04:11:07Z", "confidence": 0.9 },
+  "open_req_count": { "value": 7, "source_board": "greenhouse", "observed_at": "2026-07-08T04:11:07Z", "confidence": 0.9 },
+  "new_roles_30d": { "value": 3, "source_board": "greenhouse", "observed_at": "2026-07-08T04:11:07Z", "confidence": 0.8 },
+  "velocity": { "value": 0.1, "source_board": "greenhouse", "observed_at": "2026-07-08T04:11:07Z", "confidence": 0.8 },
+  "direction": { "value": "up", "source_board": "greenhouse", "observed_at": "2026-07-08T04:11:07Z", "confidence": 0.8 },
+  "is_surge": { "value": false, "source_board": "greenhouse", "observed_at": "2026-07-08T04:11:07Z", "confidence": 0.8 },
+  "by_function": { "engineering": 4, "sales": 2 },
+  "momentum": [
+    { "bucket_start": "2026-06-01T00:00:00Z", "open_req_count": 5 },
+    { "bucket_start": "2026-07-01T00:00:00Z", "open_req_count": 7 }
+  ],
+  "as_of": "2026-07-08T04:11:07Z"
+}

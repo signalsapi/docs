@@ -1,11 +1,23 @@
 ---
 title: Agent data plane — Clay integration
-parent: Features
-layout: home
-nav_order: 11.3
+parent: APIs
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/features/agent-data-plane-clay.html"
+nav_order: 5
+page_type: feature
+description: Add a Clay enrichment column that returns a company's hiring motion as flat, filterable rows.
+prereq: plane_access
 ---
 
 # Agent data plane — Clay integration
+
+**Not what you're looking for?** This page pulls company hiring data *into* a Clay table (an
+enrichment column). To push your SignalsAPI leads *out* to Clay instead, see
+[Integrating with Clay](/features/integrations/#integrating-with-clay).
+
+{% include prereq.html %}
 
 Clay lets you add an enrichment column backed by any HTTP endpoint. The plane ships one built for
 exactly that: give it a company domain, get back that company's hiring motion as flat columns you can
@@ -19,7 +31,7 @@ For each company, a single flat object:
 
 | Column | Type | Meaning |
 |---|---|---|
-| `company_id` | number | The plane's id for the company — use it against the [REST API](agent-data-plane-api) |
+| `company_id` | number | The plane's id for the company — use it against the [REST API](../agent-data-plane-api/) |
 | `name` | string | Company name |
 | `domain` | string | Company domain |
 | `hq_country` | string | Headquarters country |
@@ -39,8 +51,13 @@ hiring *harder than it was*.
 
 ## Setting it up
 
-You will need a plane API key and your base URL — the plane is not yet self-serve, so
-[email us](mailto:mykola@signalsapi.com) and we will issue both. Then, in Clay:
+The plane is not yet self-serve, so there is no base URL to point Clay at yet. You do not need one to
+plan the column: the fixture at
+[`/fixtures/v1/clay-enrich.json`](/fixtures/v1/clay-enrich.json) is this exact response shape, and the
+[local mock](../agent-data-plane-mock/) runs the full request/response cycle before you have a key.
+Want to be first in line once self-serve opens? Tell [Support](/support/) what you're building.
+
+Once you have a key and a base URL, in Clay:
 
 1. Add an **HTTP API** enrichment column to your table.
 2. Set the method to **POST** and the URL to `{YOUR_BASE_URL}/v1/clay/enrich`.
@@ -110,15 +127,17 @@ which is itself a useful filter.
 ## Billing
 
 One `call` unit per row, billed at class `cached` — the same as any
-[Tier 0 read](agent-data-plane#tiers-and-metering). Re-running a column re-bills it.
-[`GET /v1/usage`](agent-data-plane-api#usage) shows your rolling totals.
+[Tier 0 read](../agent-data-plane/#tiers-and-metering). Re-running a column re-bills it.
+[`GET /v1/usage`](../agent-data-plane-api/#usage) shows your rolling totals.
 
-Elsewhere on the plane you can opt into [exactly-once billing](agent-data-plane-api#idempotency) by
+Elsewhere on the plane you can opt into [exactly-once billing](../agent-data-plane-api/#idempotency) by
 sending an `Idempotency-Key`, but a Clay column issues the same fixed request for every row with no
 place to attach a per-row key — so Clay enrichment always bills per call. That is why the key stayed
 optional across the plane rather than being required.
 
 ## Where to go next
 
-- **[Agent data plane overview](agent-data-plane)** — the ledger, the tiers, getting access
-- **[REST API reference](agent-data-plane-api)** — go deeper than one flat row per company
+- **[Agent data plane overview](../agent-data-plane/)** — the ledger, the tiers, getting access
+- **[REST API reference](../agent-data-plane-api/)** — go deeper than one flat row per company
+
+{% include recent-changes.html %}

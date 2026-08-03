@@ -1,8 +1,13 @@
 ---
 title: Integrations
 parent: Features
-layout: home
-nav_order: 7
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/features/integrations.html"
+nav_order: 13
+page_type: feature
+description: "Push new leads automatically into your CRM or outreach tool: Clay, HubSpot, Apollo, and more."
 ---
 
 # Integrations
@@ -13,15 +18,10 @@ Integrations allow new leads to be automatically added to your outreach tool or 
 
 We have the following native integrations:
 
-1. Clay
-2. HubSpot
-3. Apollo
-4. [Snov](https://snov.io/?fp_ref=signalsapi)
-5. Instantly
-6. Bullhorn
-7. Webhook
+{% for item in site.data.integrations.items %}1. {% if item.url %}[{{ item.name }}]({{ item.url }}){% else %}{{ item.name }}{% endif %}
+{% endfor %}
 
-Any other system (that has an open API) can be integrated with SignalsAPI via webhook and receive leads in real time. Contact mykola@signalsapi.com if you need help with integration or would like to&#x20;
+Any other system (that has an open API) can be integrated with SignalsAPI via webhook and receive leads in real time. Contact [Support](/support/) if you need help with integration or would like one added.
 
 ## Setting up
 
@@ -38,6 +38,10 @@ If your search has "Manual Approval" enabled, your leads will be uploaded to the
 Lead status changes to "Approved" when you click "Approve". After lead was uploaded, status changes to "Uploaded".
 
 ## Integrating with Clay
+
+**Not what you're looking for?** This pushes your SignalsAPI leads *out* to Clay. To pull company
+hiring data *into* a Clay table instead, see
+[Agent data plane — Clay integration](/features/agent-data-plane-clay/).
 
 Clay is a data enrichment and outreach platform. SignalsAPI automatically pushes new verified leads to your Clay table in real time.
 
@@ -108,7 +112,7 @@ Destination is a combination of a Sequence and Mailbox used to send emails. Afte
 
 ## Integrating with Snov.io
 
-[Snov.io](https://snov.io/?fp_ref=signalsapi) integration requires a Snov.io API User ID and API Secret.
+[Snov.io](https://snov.io/) integration requires a Snov.io API User ID and API Secret.
 
 They can be found here: [https://app.snov.io/account/api](https://app.snov.io/account/api)
 
@@ -138,3 +142,5 @@ Add Bullhorn export to your SignalsAPI account and provide these values when pro
 ## Integrating with Firefish
 
 [https://youtu.be/CTC4VHMeYqw](https://youtu.be/CTC4VHMeYqw)
+
+{% include recent-changes.html %}

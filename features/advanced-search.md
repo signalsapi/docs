@@ -1,8 +1,14 @@
 ---
 title: Advanced search
 parent: Features
-layout: home
-nav_order: 1.5
+layout: default
+verified_on: 2026-08-02
+owner: mykola
+redirect_from: "/features/advanced-search.html"
+nav_order: 3
+stage: signal_discovery
+page_type: feature
+description: Semantic search, description search, skills filters, and other ways to narrow which signals match.
 ---
 
 # Advanced search
@@ -15,7 +21,7 @@ SignalsAPI offers multiple ways to find relevant hiring signals. Combine them to
 
 The default search method. Enter job titles or keywords and the system will match them against job posting titles and descriptions using full-text search.
 
-```
+```text
 project manager
 construction site manager
 senior project lead
@@ -27,7 +33,7 @@ Each line is a separate search term. A signal matches if any of the terms appear
 
 AI-powered search that finds signals with similar meaning, not just exact keywords. Enter a natural language description of the role you're looking for.
 
-```
+```text
 project manager, delivery lead
 ```
 
@@ -37,62 +43,98 @@ Use semantic search when keyword search returns too few results, or when the sam
 
 ## Filtering signals
 
+Every filter below is optional. Required words use OR logic *within* a field (match any one of
+them) and AND logic *across* fields (e.g. a title requirement and a description requirement must
+both hold), so you can stack them — e.g. require `qa` in the title **and** `remote`/`home`/`hybrid`
+in the description.
+
 ### Job title and description requirements
 
-* **Job title required words** -- the signal title must contain at least one of these words. Narrows results to the titles you actually want (e.g. `qa`, `quality assurance`).
-* **Job description required words** -- the signal description must contain at least one of these words. A signal is kept only if its description matches. Great for **remote-friendly** filtering -- list `remote`, `home`, `hybrid` to keep only roles whose description mentions remote work.
-* **Stop words** -- signals whose title **or** description contains any of these words are excluded (e.g. `our client`, `on behalf`, `intern`).
-
-Required words use OR logic *within* a field (match any one of them) and AND logic *across* fields (title requirement and description requirement must both hold), so you can stack them -- e.g. require `qa` in the title **and** `remote`/`home`/`hybrid` in the description.
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Job title required words,Job description required words,Stop words" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ### Skills filter
 
 Filter by skills mentioned in the job posting.
 
-* **Required skills** -- signal must mention ALL of these skills (AND logic). Example: `PMP, Agile`
-* **Exclude skills** -- signals mentioning ANY of these skills are excluded (OR logic). Example: `SAP`
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Required skills,Exclude skills" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ### Job families
 
-Filter by structured job classification. The system categorizes each signal into a job family (e.g., "Engineering", "Project Management", "Sales"). This catches relevant signals regardless of how the title is worded.
+Filter by structured job classification. This catches relevant signals regardless of how the title is worded.
+
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Job families" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ### Location filters
 
-* **Search location** -- country where the job is posted (e.g., United Kingdom)
-* **Location patterns** -- match specific cities or regions within a country (e.g., `London`, `Manchester`, `Birmingham`). Useful when you need results from specific areas, not the entire country.
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Search location,Location patterns" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ### Date filter
 
-**Maximum age of job posting** controls how recent the signal must be. Set to 7 to only see signals from the last week, or 30 for the last month.
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Maximum age of job posting" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ## Filtering companies
 
 ### Exclude staffing agencies
 
-A built-in filter that automatically removes signals posted by staffing, recruiting, and outsourcing agencies. More reliable than manually listing stop words like "staffing" or "recruiting".
+More reliable than manually listing stop words like "staffing" or "recruiting".
+
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Exclude staffing agencies" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ### Company attributes
 
-* **Headquarters location** -- filter by where the company is based
-* **Industries** -- include or exclude specific industries
-* **Company size** -- minimum and maximum number of employees
-* **Required words / Stop words** -- match or exclude based on company name, headline, description, and specialties
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Headquarters location,Industries,Company size,Company required words / stop words" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ## Signal quality filters
 
 ### Hard to fill
 
-Only shows roles that have been open for 30+ days or reposted 3+ times. These companies are actively struggling to fill the position, making them more receptive to outreach.
+Companies actively struggling to fill the position are more receptive to outreach.
+
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Hard to fill" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
 
 ### Hiring surge
 
-Only shows signals from companies with 5+ new roles in the last 30 days at 1.5x their previous hiring rate. These companies are in a growth phase and are more likely to engage.
+Companies in a growth phase are more likely to engage.
+
+| Filter | Options | Default |
+|---|---|---|
+{% assign section_filters = "Hiring surge" | split: "," %}{% for f in site.data.filters.items %}{% if section_filters contains f.label %}| **{{ f.label }}** | {{ f.options }} | {{ f.default }} |
+{% endif %}{% endfor %}
+
+Every filter above lives on the same screen — see its click path in
+[Create a search](/create-a-search/) for the full step-by-step walkthrough.
 
 ## Tips for getting more results
 
 1. **Start with semantic search** -- it finds signals that keyword search misses
 2. **Combine keyword + semantic** -- use keywords for precision and semantic for breadth
-3. **Add description required words** -- when titles are noisy, require a keyword in the description (e.g. `remote`/`home`/`hybrid` for remote-friendly roles) to cut out signals that don't actually match
+3. **Add description required words** -- when titles are noisy, require a keyword in the description (e.g. `remote`/`home`/`hybrid` for remote-friendly roles) to cut out signals that don't actually match. For a structured filter instead of keywords, see [Work arrangement filter](/features/work-arrangement-filter/)
 4. **Use "Exclude staffing agencies"** instead of manually listing staffing stop words
 5. **Try "Hard to fill"** to focus on companies most likely to respond
 6. **Widen your location** -- add location patterns for specific cities instead of limiting to a single country
+
+{% include recent-changes.html %}

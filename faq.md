@@ -1,7 +1,15 @@
 ---
 title: Concepts & FAQs
-layout: home
-nav_order: 2
+layout: default
+verified_on: 2026-08-02
+owner: mykola
+redirect_from:
+  - "/faq.html"
+  - "/is-it-working.html"
+  - "/is-it-working/"
+nav_order: 3
+page_type: faq
+description: Answers to the questions people ask most about SignalsAPI before and after signing up.
 ---
 
 # Frequently asked questions
@@ -26,29 +34,27 @@ You get the qualifying signals through the platform, the API or your CRM, and yo
 ### Managed, Option 1 – Done‑with‑you: we deliver the prospects, you run the outreach  
 Harness the power of buying signals to fuel your own outbound campaigns. We’ll deliver qualified prospects in the format that works best for you, whether that’s direct integration with your CRM or outreach tools, platform access, or email delivery.  
 
-You start with a **2‑week test drive**, then continue on a simple monthly subscription of **£400/€490/$550**. That figure prices the **managed service**, not the self‑serve SignalsAPI subscription — the two are separate offers, see below.
+You start with a **2‑week test drive**, then continue on a simple monthly subscription of **{% include pricing-figure.html name="managed_service_monthly" %}**. That figure prices the **managed service**, not the self‑serve SignalsAPI subscription — the two are separate offers, see below.
 
 ### Managed, Option 2 – Done‑for‑you outbound (SignalsAPI + Virtual Networker)  
 Let our full business suite handle the outreach for you. By combining **SignalsAPI** with **[Virtual Networker](https://virtualnetworker.com/)**, we build familiarity and trust with your ideal prospects *before* they’re ready to buy. This way, when they show active interest, your brand is already top of mind meaning warmer introductions, stronger conversations, and higher conversion rates.
 
 ## How much does SignalsAPI cost?
 
+Every figure below renders from `_data/pricing.yml`, the one file allowed to hold a price — see [Pricing](/pricing/).
+
 **SignalsAPI itself — the self‑serve subscription — is priced per qualifying signal:**
 
-> You pay for qualifying signals, not for companies monitored: €79/month for 50 signals, €199 for 250, €399 for 1,000, custom above 5,000.
+> {% include pricing-figure.html name="self_serve_ladder_summary" %}
 
-| Plan | Per month | Qualifying signals included | Per additional signal |
-|---|---|---|---|
-| Starter | €79 | 50 | €1.58 |
-| Growth | €199 | 250 | €0.80 |
-| Pro | €399 | 1,000 | €0.40 |
-| Enterprise | custom | above 5,000 | custom |
+{% include pricing-ladder.html %}
 
-There is a free evaluation tier, and enrichment runs on your own provider key at that provider's cost. Current plans and sign‑up are at **[signalsapi.com](https://signalsapi.com)**.
+{% include pricing-figure.html name="self_serve_evaluation_tier" %} Current plans and sign‑up are at **[signalsapi.com](https://signalsapi.com)**.
 
-A **qualifying signal** is one verified hiring event at one company that passes your filters. Several roles posted by the same company in the same window count once; agency reposts, duplicates and unverified postings never count, and false positives are credited back.
+A **qualifying signal** is {% include pricing-figure.html name="qualifying_signal_definition" %}
 
-**The managed service is a different offer and is priced separately.** Done‑with‑you / done‑for‑you outbound is **£400/€490/$550 per month** after the 2‑week test drive (above), and qualified telephone numbers are their own packages (below). Those figures are not the price of the SignalsAPI subscription and do not appear on the ladder above.
+**The managed service is a different offer and is priced separately.** Done‑with‑you / done‑for‑you outbound is **{% include pricing-figure.html name="managed_service_monthly" %} per month** after the 2‑week test drive (above), and qualified telephone numbers are their own packages (below). Those figures are not the price of the SignalsAPI subscription and do not appear on the ladder above.
+
 
 ## What information do you need from me to get started?
 
@@ -70,7 +76,14 @@ Absolutely however keep in mind that traditional cold outreach is often ignored 
 
 ## Do you provide contact telephone numbers?
 
-We do, as part of the **managed service** — these packages are separate from the self‑serve SignalsAPI subscription priced above. Qualified telephone numbers are provided as follows: £49/month for 100 telephone numbers, £149 for 300 & £199 for 500. We offer larger packages if you are receiving a higher number of propsects matching your ICP.
+**On the self‑serve subscription**, mobile phone lookup is bring-your-own-provider: connect your own
+people-data provider key and enable **Find phone numbers** on a project. See
+[Find phone numbers](/features/find-phone-numbers/) for how it works and which provider currently
+supports it.
+
+**On the managed service**, we supply the numbers ourselves as packages, separate from the self‑serve
+subscription priced above: {% include pricing-figure.html name="managed_phone_packages" %}. We offer
+larger packages if you are receiving a higher number of prospects matching your ICP.
 
 ## How many qualified prospects do you guarantee in the first month?
 
@@ -100,8 +113,10 @@ Please check the status page to find out: [https://status.signalsapi.com/](https
 
 ## Something is not working as expected
 
-The system is currently in the active development stage. If you encountered a glitch, please email at [mykola@signalsapi.com](mailto:mykola@signalsapi.com) with details.
+The system is currently in the active development stage. If you encountered a glitch, please contact [Support](/support/) with details.
 
 ## I have a question not covered here
 
-Please email [mykola@signalsapi.com](mailto:mykola@signalsapi.com) to get more help.
+Please contact [Support](/support/) to get more help.
+
+{% include recent-changes.html %}

@@ -1,8 +1,14 @@
 ---
 title: API access
-parent: Features
-layout: home
-nav_order: 10
+parent: APIs
+layout: default
+verified_on: 2026-08-03
+owner: mykola
+redirect_from: "/features/api-access.html"
+nav_order: 1
+stage: export_and_integration
+page_type: feature
+description: Pull your own projects and leads out of SignalsAPI as JSON or CSV over a read-only REST API.
 ---
 
 # API access
@@ -17,11 +23,11 @@ identical to the project's **Download CSV** button.
 
 Building an AI agent, or want the underlying hiring panel rather than your own leads?
 That is a separate machine-facing surface — see the
-**[Agent data plane](agent-data-plane)**.
+**[Agent data plane](../agent-data-plane/)**.
 
 ## Base URL
 
-```
+```text
 https://api.signalsapi.com
 ```
 
@@ -29,7 +35,7 @@ https://api.signalsapi.com
 
 Every request uses your personal API key as a Bearer token:
 
-```
+```text
 Authorization: Bearer YOUR_API_KEY
 ```
 
@@ -48,7 +54,7 @@ your own account: you can only ever see your own projects and leads.
 
 ## List your projects
 
-```
+```text
 GET /projects/
 ```
 
@@ -80,7 +86,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 
 ## Browse a project's leads
 
-```
+```text
 GET /projects/{project_id}/leads
 ```
 
@@ -143,7 +149,7 @@ endpoint below instead of paging.
 
 ## Export a whole project
 
-```
+```text
 GET /projects/{project_id}/leads/export?format=json|csv
 ```
 
@@ -168,7 +174,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 
 The CSV columns are:
 
-```
+```text
 website,decision_maker_linkedin_url,decision_maker_email,decision_maker_phone,signal_job_title
 ```
 
@@ -190,3 +196,8 @@ on both ends. It is read‑only and never consumes credits.
   project id returns `404`.
 - **Rate limiting** on the export endpoint is not yet enforced — be reasonable
   with very frequent full pulls.
+
+See [Limits](/limits/) for every pagination default and rate limit stated across the API in one
+place.
+
+{% include recent-changes.html %}
