@@ -32,6 +32,13 @@
 #
 # An action with no entry here fails rather than passing quietly: the way this
 # regresses is a new action added without anyone asking what runtime it declares.
+#
+# Both of the ways this assertion could be dodged were ways of never being shown
+# the step at all, and neither looked wrong on the page (signalsapi-4306): a
+# workflow saved as `.yaml`, which GitHub runs and a `*.yml` glob does not
+# collect, and a step written `- uses:` on one line, which is ordinary YAML and
+# the form GitHub's own examples use. Both are read here now — the extension
+# pair via Site#workflows, the inline step via the optional list marker below.
 Check.register(
   id: "actions-not-on-deprecated-node",
   desc: "no workflow pins an action whose runtime is the deprecated Node 20, or asks for Node 20 itself",
@@ -51,7 +58,7 @@ Check.register(
     "lycheeverse/lychee-action" => 2
   }.freeze
 
-  workflows = site.examining("workflow files", site.glob(".github/workflows/*.yml"))
+  workflows = site.examining("workflow files", site.workflows)
 
   below_floor = []
   unrecognised = []
@@ -60,7 +67,7 @@ Check.register(
 
   workflows.each do |path|
     site.raw(path).each_line.with_index(1) do |line, number|
-      if (step = line.match(%r{^\s*uses:\s*(?<action>[\w.-]+/[\w.-]+)@(?<ref>\S+)}))
+      if (step = line.match(%r{^\s*(?:-\s*)?uses:\s*["']?(?<action>[\w.-]+/[\w.-]+)@(?<ref>[^\s"']+)}))
         action = step[:action]
         ref = step[:ref]
         floor = floors[action]

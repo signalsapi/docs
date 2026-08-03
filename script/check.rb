@@ -14,7 +14,7 @@ class CheckFailure < StandardError; end
 
 # Site model (AD-4): parsed once per run and handed to every assertion, so
 # twenty assertions don't each re-walk _site/ and re-parse front matter.
-# Exposes exactly seven accessors; a check that needs something else adds one
+# Exposes exactly eight accessors; a check that needs something else adds one
 # here rather than reading the filesystem directly.
 #
 # Every accessor also tallies what it handed the running assertion, which is
@@ -103,6 +103,21 @@ class Site
     matches = Dir.glob(File.join(ROOT, pattern)).select { |f| File.file?(f) }.map { |f| relative(f) }.sort
     note("#{pattern} matches", matches.size)
     matches
+  end
+
+  # GitHub Actions runs a workflow saved with either extension, so the subject
+  # set meant by "every workflow" is both. A single-extension glob silently
+  # exempts `probe.yaml` from whatever rule an assertion means to apply to all
+  # of them, and nothing about that filename looks wrong to the contributor who
+  # writes it (signalsapi-4306). The vacuity instrument above cannot catch it:
+  # the narrow glob still examines the files it does match, so the count is
+  # non-zero and the assertion passes for a reason unrelated to what it claims.
+  #
+  # Which extensions count is a fact about GitHub, not about any one assertion,
+  # so it is recorded here once. That is what stops the next workflow-reading
+  # assertion from copying the narrow glob out of the last one.
+  def workflows
+    glob(".github/workflows/*.{yml,yaml}")
   end
 
   # Declares the subject set an assertion actually asserts over, when that is
