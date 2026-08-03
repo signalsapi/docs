@@ -228,6 +228,11 @@ items:
     step count matches its ## Steps list'
   covers:
   - '8.6'
+- id: idempotency-key-on-metered-operations
+  desc: openapi/plane-v1.yaml declares the Idempotency-Key header on exactly the operations
+    features/agent-data-plane-api.md documents as metered
+  covers:
+  - '10.1'
 - id: image-dimensions-declared
   desc: every built <img> element declares both width and height
   covers:
@@ -283,6 +288,11 @@ items:
     fresh count of openapi/plane-v1.yaml's operations
   covers:
   - '10.9'
+- id: mcp-tool-args-carry-idempotency-key
+  desc: _data/mcp_tools.yml lists the Idempotency-Key header's x-mcp-arg name on exactly
+    the MCP tools whose openapi/plane-v1.yaml operation declares that header
+  covers:
+  - '10.6'
 - id: mcp-tool-table-generated
   desc: the MCP tool table rendered on agent-data-plane-mcp.md exactly matches the
     x-mcp-tool set in openapi/plane-v1.yaml
@@ -367,11 +377,6 @@ items:
   covers:
   - '2.14'
   - '8.2'
-- id: openapi-enum-no-duplicates
-  desc: no enum in openapi/plane-v1.yaml repeats a value (replaces Spectral's disabled
-    duplicated-entry-in-enum)
-  covers:
-  - '10.2'
 - id: openapi-lint-step-present
   desc: ci.yml declares a Spectral lint step whenever openapi/plane-v1.yaml exists
   covers:
@@ -523,6 +528,11 @@ items:
     each with a valid x-status
   covers:
   - '10.1'
+- id: spectral-ruleset-pinned
+  desc: the Spectral ruleset version is pinned in .spectral-ruleset-version and installed
+    from it by ci.yml
+  covers:
+  - '10.2'
 - id: stage-key-valid
   desc: 'Every page''s stage: front-matter value names a stage declared in _data/pipeline.yml'
   covers:

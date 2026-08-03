@@ -24,6 +24,13 @@ end
 # reproduces on a contributor's machine instead of only in CI.
 SPECTRAL_VERSION = File.read(File.join(File.dirname(__FILE__), ".spectral-version")).strip
 
+# The CLI pin above does not pin the rules it enforces: @stoplight/spectral-cli
+# declares "@stoplight/spectral-rulesets": ">=1", so spectral:oas floats to
+# whatever npm resolves at install time. On 2026-08-03 the same pinned CLI
+# 6.16.2 aborted this lint under rulesets 1.22.6 and passed under 1.22.7.
+# Pinning both is what makes the promise in the comment above true.
+SPECTRAL_RULESET_VERSION = File.read(File.join(File.dirname(__FILE__), ".spectral-ruleset-version")).strip
+
 def spectral_on_path?
   ENV.fetch("PATH", "").split(File::PATH_SEPARATOR).any? { |dir| File.executable?(File.join(dir, "spectral")) }
 end
@@ -117,8 +124,11 @@ namespace :lint do
       abort(<<~MSG)
         rake lint:openapi: the spectral binary (pinned version #{SPECTRAL_VERSION}) is not on PATH.
         Install it with:
-          npm install -g @stoplight/spectral-cli@#{SPECTRAL_VERSION}
+          npm install -g @stoplight/spectral-cli@#{SPECTRAL_VERSION} @stoplight/spectral-rulesets@#{SPECTRAL_RULESET_VERSION}
         Then confirm `spectral --version` reports #{SPECTRAL_VERSION}.
+        The second package is not optional: without it npm resolves the rules
+        to whatever is newest, and the CLI version alone does not decide the
+        verdict.
       MSG
     end
 
@@ -141,12 +151,29 @@ namespace :mcp do
         next unless op.is_a?(Hash) && op["x-mcp-tool"]
 
         params = (op["parameters"] || []).map { |p| p["$ref"] ? resolve_ref.call(p["$ref"]) : p }
-        args = params.map { |p| p["required"] ? p["name"] : "#{p['name']}?" }
+
+        # MCP has no request headers, so a header parameter reaches a tool only
+        # under the argument name it declares in x-mcp-arg — and one that
+        # declares none contributes nothing rather than surfacing to an agent
+        # under a header spelling the transport would then drop.
+        arg_name = lambda do |p|
+          name = p["in"] == "header" ? p["x-mcp-arg"] : p["name"]
+          next nil unless name
+
+          p["required"] ? name : "#{name}?"
+        end
+
+        path_query_params, header_params = params.partition { |p| p["in"] != "header" }
+        args = path_query_params.filter_map(&arg_name)
 
         if (body_schema = op.dig("requestBody", "content", "application/json", "schema"))
           required = body_schema["required"] || []
           (body_schema["properties"] || {}).each_key { |name| args << (required.include?(name) ? name : "#{name}?") }
         end
+
+        # Header-derived arguments sort last: they are envelope concerns that
+        # every metered tool carries, not part of the call's own shape.
+        args.concat(header_params.filter_map(&arg_name))
 
         {
           "tool" => op["x-mcp-tool"],

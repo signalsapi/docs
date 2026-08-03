@@ -34,7 +34,11 @@ jobs:
       - name: Install Spectral
         run: |
           SPECTRAL_VERSION="$(cat .spectral-version)"
-          npm install -g "@stoplight/spectral-cli@${SPECTRAL_VERSION}"
+          # The CLI declares "@stoplight/spectral-rulesets": ">=1", so without
+          # this second pin the rules float and `spectral --version` below
+          # reports a number that does not decide the outcome.
+          SPECTRAL_RULESET_VERSION="$(cat .spectral-ruleset-version)"
+          npm install -g "@stoplight/spectral-cli@${SPECTRAL_VERSION}" "@stoplight/spectral-rulesets@${SPECTRAL_RULESET_VERSION}"
           spectral --version
       - name: Lint the OpenAPI specification
         run: bundle exec rake lint:openapi
