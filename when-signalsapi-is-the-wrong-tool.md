@@ -1,20 +1,19 @@
 ---
 title: When SignalsAPI is the wrong tool
 layout: default
+parent: Trust
+nav_order: 7
 permalink: /when-signalsapi-is-the-wrong-tool/
 page_type: reference
 owner: mykola
-sign_off: pending
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 description: The documented cases where SignalsAPI is not the right fit, named honestly.
 ---
 
 # When SignalsAPI is the wrong tool
 
-**Draft — pending owner sign-off. Not published.**
-
-Every point below is already stated, as an aside, on another page in this repository. This page
-just collects them in one place instead of making a reader find them one at a time.
+Every point below is already stated, as an aside, on another page of this site. This page just
+collects them in one place instead of making a reader find them one at a time.
 
 ## You need candidate sourcing, not client sourcing
 
