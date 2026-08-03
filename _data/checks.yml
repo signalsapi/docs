@@ -356,6 +356,11 @@ items:
     real content
   covers:
   - '9.3'
+- id: page-budget
+  desc: the hand-written page count never exceeds _data/baseline.yml's pinned ceiling
+    without the ceiling changing in the same commit
+  covers:
+  - '11.12'
 - id: page-staleness
   desc: Every page's verified_on more than 90 days old is reported and marked red
     on docs-health.md; a page with no verified_on fails outright
