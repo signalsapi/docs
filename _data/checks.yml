@@ -425,6 +425,11 @@ items:
   desc: 'Every page''s prereq: value names an entry declared in _data/prereqs.yml'
   covers:
   - '7.8'
+- id: pricing-figure-names-resolve
+  desc: 'Every include pricing-figure.html name="..." invocation names an item that
+    exists in _data/pricing.yml'
+  covers:
+  - '11.6'
 - id: pricing-figures-sourced
   desc: Every _data/pricing.yml item declares a value and a source
   covers:
