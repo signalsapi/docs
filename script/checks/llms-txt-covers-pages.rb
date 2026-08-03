@@ -5,10 +5,9 @@ Check.register(
   desc: "_site/llms.txt lists every published page's absolute URL, with no double slash after the host",
   covers: ["8.3"]
 ) do |site|
-  llms_path = File.join(ROOT, "_site", "llms.txt")
-  site.fail!("_site/llms.txt is missing") unless File.exist?(llms_path)
+  site.fail!("_site/llms.txt is missing") unless site.exist?("_site/llms.txt")
 
-  content = File.read(llms_path)
+  content = site.raw("_site/llms.txt")
   base_url = YAML.safe_load(site.raw("_config.yml"))["url"]
 
   urls = content.scan(%r{https?://\S+})

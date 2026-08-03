@@ -24,7 +24,7 @@ Check.register(
     site.fail!("Site::CONTENT_EXCLUDED_DIRS no longer excludes _drafts/ — a draft would be audited as a published page")
   end
 
-  build_commands = File.read(File.join(ROOT, "Rakefile")).scan(/sh ["'][^"']*jekyll build[^"']*["']/)
+  build_commands = site.raw("Rakefile").scan(/sh ["'][^"']*jekyll build[^"']*["']/)
   if build_commands.empty?
     site.fail!("the Rakefile invokes no `jekyll build` — the drafts exclusion this pins is no longer where it was")
   end
@@ -33,13 +33,13 @@ Check.register(
     site.fail!("`jekyll build` is invoked with --drafts (#{drafty.join(', ')}) — drafts would render into _site/")
   end
 
-  draft_paths = Dir.glob(File.join(ROOT, "_drafts", "*.md"))
+  draft_paths = site.glob("_drafts/*.md")
 
   offenders = []
   permalinks = []
 
   draft_paths.each do |path|
-    content = File.read(path)
+    content = site.raw(path)
     front_matter = YAML.safe_load(content.split(/^---\s*$/, 3)[1], permitted_classes: [Date]) || {}
 
     offenders << "#{path}: missing owner" unless front_matter["owner"]
@@ -51,29 +51,16 @@ Check.register(
   end
 
   permalinks.each do |permalink|
-    built_path = if permalink.end_with?("/")
-                   File.join(ROOT, "_site", permalink, "index.html")
-                 else
-                   File.join(ROOT, "_site", permalink)
-                 end
-    offenders << "#{permalink} is present in the built site at #{built_path}" if File.exist?(built_path)
+    built_path = permalink.end_with?("/") ? "_site#{permalink}index.html" : "_site#{permalink}"
+    offenders << "#{permalink} is present in the built site at #{built_path}" if site.exist?(built_path)
   end
 
-  %w[sitemap.xml llms.txt llms-full.txt].each do |surface|
-    surface_path = File.join(ROOT, "_site", surface)
-    next unless File.exist?(surface_path)
+  %w[sitemap.xml llms.txt llms-full.txt assets/js/search-data.json].each do |surface|
+    next unless site.exist?("_site/#{surface}")
 
-    surface_content = File.read(surface_path)
+    surface_content = site.raw("_site/#{surface}")
     permalinks.each do |permalink|
       offenders << "#{permalink} appears in _site/#{surface}" if surface_content.include?(permalink)
-    end
-  end
-
-  search_index_path = File.join(ROOT, "_site", "assets", "js", "search-data.json")
-  if File.exist?(search_index_path)
-    search_content = File.read(search_index_path)
-    permalinks.each do |permalink|
-      offenders << "#{permalink} appears in the lunr search index" if search_content.include?(permalink)
     end
   end
 

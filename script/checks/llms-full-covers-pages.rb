@@ -5,10 +5,9 @@ Check.register(
   desc: "_site/llms-full.txt concatenates every published page's title into one document",
   covers: ["8.4"]
 ) do |site|
-  llms_full_path = File.join(ROOT, "_site", "llms-full.txt")
-  site.fail!("_site/llms-full.txt is missing") unless File.exist?(llms_full_path)
+  site.fail!("_site/llms-full.txt is missing") unless site.exist?("_site/llms-full.txt")
 
-  content = File.read(llms_full_path)
+  content = site.raw("_site/llms-full.txt")
 
   missing = site.pages.select { |p| p.front_matter["page_type"] }
                        .reject { |p| content.include?("# #{p.front_matter['title']}\n") }

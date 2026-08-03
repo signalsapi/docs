@@ -12,15 +12,7 @@ Check.register(
   desc: "No built page under _site/ publishes an owner-marked figure placeholder",
   covers: ["1.9"]
 ) do |site|
-  site_dir = File.join(ROOT, "_site")
-  next unless Dir.exist?(site_dir)
+  offenders = site.glob("_site/**/*").select { |path| site.raw(path).include?("TODO(owner:") }
 
-  offenders = Dir.glob(File.join(site_dir, "**", "*")).select do |path|
-    File.file?(path) && File.read(path).include?("TODO(owner:")
-  end
-
-  unless offenders.empty?
-    rels = offenders.map { |p| p.sub("#{ROOT}/", "") }.sort
-    site.fail!("TODO(owner:) marker published in: #{rels.join(', ')}")
-  end
+  site.fail!("TODO(owner:) marker published in: #{offenders.join(', ')}") unless offenders.empty?
 end

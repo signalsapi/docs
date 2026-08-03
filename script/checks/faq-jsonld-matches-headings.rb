@@ -7,11 +7,10 @@ Check.register(
   desc: "The built FAQ page carries one valid FAQPage JSON-LD block whose question count equals its ## heading count",
   covers: ["8.5"]
 ) do |site|
-  faq_path = File.join(ROOT, "_site", "faq", "index.html")
-  site.fail!("_site/faq/index.html is missing") unless File.exist?(faq_path)
+  faq = site.html_files.find { |f| f.path == "_site/faq/index.html" }
+  site.fail!("_site/faq/index.html is missing") unless faq
 
-  html = File.read(faq_path)
-  blocks = html.scan(%r{<script type="application/ld\+json">(.*?)</script>}m)
+  blocks = faq.body.scan(%r{<script type="application/ld\+json">(.*?)</script>}m)
                 .map { |m| m.first.strip }
                 .select { |b| b.include?('"FAQPage"') }
 

@@ -21,6 +21,6 @@ Check.register(
   desc: "none of the nine GitBook-era instructional screenshots Story 11.3 replaced with text comes back",
   covers: ["11.3"]
 ) do |site|
-  restored = DELETED_INSTRUCTIONAL_IMAGES.select { |path| File.exist?(File.join(ROOT, path)) }
+  restored = DELETED_INSTRUCTIONAL_IMAGES.select { |path| site.exist?(path) }
   site.fail!("instructional image(s) that should stay deleted are back — #{restored.join(', ')}") unless restored.empty?
 end

@@ -5,10 +5,9 @@ Check.register(
   desc: "_site/robots.txt exists with an absolute Sitemap: line and no double slash after the host",
   covers: ["2.5"]
 ) do |site|
-  robots_path = File.join(ROOT, "_site", "robots.txt")
-  site.fail!("_site/robots.txt is missing") unless File.exist?(robots_path)
+  site.fail!("_site/robots.txt is missing") unless site.exist?("_site/robots.txt")
 
-  content = File.read(robots_path)
+  content = site.raw("_site/robots.txt")
   sitemap_line = content.lines.find { |l| l.start_with?("Sitemap:") }
   site.fail!("_site/robots.txt has no Sitemap: line") unless sitemap_line
 

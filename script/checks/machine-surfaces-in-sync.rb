@@ -10,18 +10,13 @@ Check.register(
   desc: "sitemap.xml, robots.txt, llms.txt and llms-full.txt all exist and reference the same page set",
   covers: ["8.9"]
 ) do |site|
-  paths = {
-    "sitemap.xml" => File.join(ROOT, "_site", "sitemap.xml"),
-    "robots.txt" => File.join(ROOT, "_site", "robots.txt"),
-    "llms.txt" => File.join(ROOT, "_site", "llms.txt"),
-    "llms-full.txt" => File.join(ROOT, "_site", "llms-full.txt")
-  }
+  %w[sitemap.xml robots.txt llms.txt llms-full.txt].each do |name|
+    site.fail!("_site/#{name} is missing") unless site.exist?("_site/#{name}")
+  end
 
-  paths.each { |name, path| site.fail!("_site/#{name} is missing") unless File.exist?(path) }
-
-  sitemap_urls = File.read(paths["sitemap.xml"]).scan(%r{<loc>(.*?)</loc>}).flatten.uniq
-  llms_txt_urls = File.read(paths["llms.txt"]).scan(%r{https?://\S+}).uniq
-  llms_full_urls = File.read(paths["llms-full.txt"]).scan(%r{https?://\S+}).uniq
+  sitemap_urls = site.raw("_site/sitemap.xml").scan(%r{<loc>(.*?)</loc>}).flatten.uniq
+  llms_txt_urls = site.raw("_site/llms.txt").scan(%r{https?://\S+}).uniq
+  llms_full_urls = site.raw("_site/llms-full.txt").scan(%r{https?://\S+}).uniq
 
   missing_from_llms_txt = sitemap_urls - llms_txt_urls
   missing_from_llms_full = llms_txt_urls - llms_full_urls

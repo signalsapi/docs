@@ -15,7 +15,8 @@ Check.register(
 ) do |site|
   registered_ids = Check.registry.map(&:id)
 
-  missing = DOCS_HEALTH_METRIC_ASSERTIONS.reject { |_metric, id| registered_ids.include?(id) }
+  missing = site.examining("published docs-health metrics", DOCS_HEALTH_METRIC_ASSERTIONS)
+                .reject { |_metric, id| registered_ids.include?(id) }
   unless missing.empty?
     details = missing.map { |metric, id| "#{metric.inspect} expects assertion #{id.inspect}" }.join("; ")
     site.fail!("docs-health.md metric(s) with no corresponding registered assertion — #{details}")

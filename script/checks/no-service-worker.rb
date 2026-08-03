@@ -10,12 +10,10 @@ Check.register(
   desc: "no committed JavaScript file registers a service worker",
   covers: ["10.3"]
 ) do |site|
-  offenders = Dir.glob(File.join(ROOT, "**", "*.js"))
-                 .reject { |f| f.sub("#{ROOT}/", "").start_with?(*Site::CONTENT_EXCLUDED_DIRS.map { |d| "#{d}/" }) }
-                 .reject { |f| f.include?("/node_modules/") }
-                 .select { |f| File.file?(f) && File.read(f).include?("serviceWorker.register") }
+  offenders = site.glob("**/*.js")
+                  .reject { |f| f.start_with?(*Site::CONTENT_EXCLUDED_DIRS.map { |d| "#{d}/" }) }
+                  .reject { |f| f.include?("/node_modules/") }
+                  .select { |f| site.raw(f).include?("serviceWorker.register") }
 
-  unless offenders.empty?
-    site.fail!("JavaScript file(s) register a service worker — #{offenders.map { |f| f.sub("#{ROOT}/", '') }.join(', ')}")
-  end
+  site.fail!("JavaScript file(s) register a service worker — #{offenders.join(', ')}") unless offenders.empty?
 end
