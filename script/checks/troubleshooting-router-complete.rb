@@ -13,9 +13,9 @@ Check.register(
   router = site.pages.find { |p| p.path == "troubleshooting/index.md" }
   site.fail!("troubleshooting/index.md is missing") unless router
 
-  symptom_pages = site.pages.select do |p|
+  symptom_pages = site.examining("pages under troubleshooting/", site.pages.select { |p|
     p.path.start_with?("troubleshooting/") && p.path != "troubleshooting/index.md"
-  end
+  })
 
   missing = symptom_pages.reject { |p| router.body.include?("(#{page_url.call(p.path)})") }
 

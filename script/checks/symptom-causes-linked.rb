@@ -10,7 +10,7 @@ Check.register(
 ) do |site|
   offenders = []
 
-  site.pages.select { |p| p.front_matter["page_type"] == "symptom" }.each do |page|
+  site.examining("symptom pages", site.pages.select { |p| p.front_matter["page_type"] == "symptom" }).each do |page|
     most_likely = page.body[/## Most likely cause\n(.*?)(?:\n## |\z)/m, 1]
     offenders << "#{page.path}: Most likely cause has no link" if most_likely && !most_likely.include?("](")
 

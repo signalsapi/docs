@@ -5,9 +5,8 @@ Check.register(
   desc: "Every page declaring has_children: true is named as a parent: by at least one other page",
   covers: ["5.8"]
 ) do |site|
-  section_titles = site.pages
-                        .select { |p| p.front_matter["has_children"] == true }
-                        .map { |p| p.front_matter["title"] }
+  section_titles = site.examining("section pages", site.pages.select { |p| p.front_matter["has_children"] == true })
+                       .map { |p| p.front_matter["title"] }
 
   parent_values = site.pages.map { |p| p.front_matter["parent"] }.compact.uniq
 

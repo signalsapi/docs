@@ -7,7 +7,7 @@ Check.register(
 ) do |site|
   offenders = []
 
-  site.pages.select { |p| p.front_matter["page_type"] == "router" }.each do |page|
+  site.examining("router pages", site.pages.select { |p| p.front_matter["page_type"] == "router" }).each do |page|
     problems = []
     problems << "missing a '## Where to go' heading" unless page.body.include?("## Where to go")
 

@@ -9,8 +9,8 @@ Check.register(
 
   valid_keys = site.data["prereqs"]["items"].map { |p| p["key"] }
 
-  offenders = site.pages.select { |p| p.front_matter.key?("prereq") }
-                        .reject { |p| valid_keys.include?(p.front_matter["prereq"]) }
+  offenders = site.examining("pages declaring a prereq", site.pages.select { |p| p.front_matter.key?("prereq") })
+                  .reject { |p| valid_keys.include?(p.front_matter["prereq"]) }
 
   unless offenders.empty?
     details = offenders.map { |p| "#{p.path}: #{p.front_matter['prereq'].inspect}" }.join(", ")

@@ -8,7 +8,10 @@ Check.register(
   desc: "Every 4xx status code documented in the REST reference pages is covered by the statuses reference",
   covers: %w[6.7 6.9]
 ) do |site|
-  codes = REFERENCE_PAGES.flat_map { |path| site.raw(path).scan(/`(4\d{2})`/) }.flatten.uniq
+  codes = site.examining(
+    "documented 4xx status codes",
+    REFERENCE_PAGES.flat_map { |path| site.raw(path).scan(/`(4\d{2})`/) }.flatten.uniq
+  )
 
   page = site.pages.find { |p| p.path == "troubleshooting/statuses.md" }
   site.fail!("troubleshooting/statuses.md is missing") unless page
