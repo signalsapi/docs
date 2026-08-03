@@ -2,7 +2,7 @@
 title: Agent data plane — REST API
 parent: Features
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/agent-data-plane-api.html"
 nav_order: 18
@@ -17,7 +17,9 @@ prereq: plane_access
 
 The full `/v1` reference. For what the plane *is* and how it is billed, start with the
 [Agent data plane overview](../agent-data-plane/). Every operation below is also machine-readable
-as an OpenAPI document: [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml).
+as an OpenAPI document: [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml). Before you have a key, the
+[fixture gallery](../agent-data-plane-fixtures/) has one runnable command per operation against a
+recorded, schema-checked response on this origin.
 
 ## Base URL
 
