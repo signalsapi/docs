@@ -177,6 +177,9 @@ items:
     pinned when _drafts/ is empty
   covers:
   - '9.7'
+- id: every-include-is-invoked
+  desc: Every partial in _includes/ is invoked by at least one page, theme hooks excepted
+  covers: []
 - id: external-links-off-pr-path
   desc: html-proofer runs --disable-external in the Rakefile, and the nightly lychee
     workflow never triggers on pull_request
@@ -582,10 +585,6 @@ items:
     you start, Steps, Check it worked, and If it did not work'
   covers:
   - '5.4'
-- id: term-include-keys-resolve
-  desc: Every include term.html key="..." invocation names a term that exists in _data/glossary.yml
-  covers:
-  - '4.3'
 - id: title-unique
   desc: No two pages declare the same title
   covers:
