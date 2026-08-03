@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -41,7 +41,7 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
@@ -49,7 +49,15 @@ jobs:
           JEKYLL_ENV: production
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
-        uses: actions/upload-pages-artifact@v3
+        #
+        # v5, not v4: this action is a composite, and the deprecated Node 20
+        # runtime rides the actions/upload-artifact it calls internally. v3
+        # calls @v4 and v4 calls @v4.6.2 — both node20 — so v4 would look like
+        # the fix and change nothing. v5 is the first to pin @v7.0.0 (node24).
+        # v4's own breaking change (dotfiles are no longer uploaded) is inert
+        # here: _config.yml declares no `include:`, so Jekyll copies no dotfile
+        # into _site in the first place.
+        uses: actions/upload-pages-artifact@v5
 
   # Deployment job
   #
@@ -67,7 +75,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages (attempt 1)
         id: deploy_1
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         continue-on-error: true
 
       - name: Wait before retry
@@ -77,7 +85,7 @@ jobs:
       - name: Deploy to GitHub Pages (attempt 2)
         id: deploy_2
         if: steps.deploy_1.outcome == 'failure'
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
         continue-on-error: true
 
       - name: Wait before final retry
@@ -87,4 +95,4 @@ jobs:
       - name: Deploy to GitHub Pages (attempt 3)
         id: deployment
         if: steps.deploy_1.outcome == 'failure' && steps.deploy_2.outcome == 'failure'
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
