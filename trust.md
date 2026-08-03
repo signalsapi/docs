@@ -22,3 +22,4 @@ this site's own claims before trusting anything else on it.
 - [How we make money](/how-we-make-money/) — which provider links pay a referral fee, and why it doesn't change what you pay.
 - [Pricing](/pricing/) — every plan figure, rendered from one data file.
 - [Retirement ledger](/retirement-ledger/) — every retired URL, its replacement, and why.
+- [When SignalsAPI is the wrong tool](/when-signalsapi-is-the-wrong-tool/) — the cases this product loses, collected from the asides that state them.

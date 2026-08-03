@@ -158,7 +158,8 @@ items:
   - '9.3'
 - id: drafts-not-published
   desc: No file under _drafts/ appears in the built site or any machine-readable surface;
-    each draft carries an owner and a sign-off marker
+    each draft carries an owner and a sign-off marker; the exclusion mechanism stays
+    pinned when _drafts/ is empty
   covers:
   - '9.7'
 - id: external-links-off-pr-path
@@ -424,6 +425,11 @@ items:
   desc: 'Every page''s prereq: value names an entry declared in _data/prereqs.yml'
   covers:
   - '7.8'
+- id: pricing-figure-names-resolve
+  desc: 'Every include pricing-figure.html name="..." invocation names an item that
+    exists in _data/pricing.yml'
+  covers:
+  - '11.6'
 - id: pricing-figures-sourced
   desc: Every _data/pricing.yml item declares a value and a source
   covers:
