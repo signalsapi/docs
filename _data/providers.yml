@@ -1,7 +1,7 @@
 meta:
   owner: mykola
   verified_on: 2026-08-03
-  source: capabilities transcribed from Compare people-data providers and Bring your own people-data provider (Story 7.2); each cost figure is read off that provider's own public pricing page and carries the URL and the date it was read in its item's source. A figure we could not read there stays an owner-marked placeholder rather than a guess. Recheck cadence is the existing data-staleness assertion — bump meta.verified_on when the ladder is re-read, and the build reports this file once it passes 90 days.
+  source: capabilities transcribed from Compare people-data providers and Bring your own people-data provider (Story 7.2); each cost figure is read off that provider's own public pricing page and carries the URL and the date it was read in its item's source. Where a page renders its ladder client-side, the figure comes from the first-party endpoint that page reads, named in the same source — never from a third party's transcription of it. Recheck cadence is the existing data-staleness assertion — bump meta.verified_on when the ladder is re-read, and the build reports this file once it passes 90 days.
 
 items:
   - name: Anymail Finder
@@ -69,8 +69,8 @@ items:
     credential_shape: api_key
     signup_url: https://prospeo.io/?via=signalsapi
     affiliate: true
-    cost: "TODO(owner: mykola): source Prospeo's per-lookup or subscription cost in a browser — the pricing page renders its Free/Starter/Growth/Pro ladder client-side from a runtime API, so no figure is readable from the served HTML."
-    source: https://prospeo.io/pricing, read 2026-08-03 — no figure served
+    cost: "free tier 100 credits; from USD 49/month for 2,000 credits — USD 0.025 per credit, falling to USD 0.017 at USD 249/month for 15,000; annual billing brings the entry tier to USD 441/year for 24,000 credits (about USD 37/month)"
+    source: https://prospeo.io/pricing, served by https://prod.prospeo.io/api/v2/pricing-preview (the endpoint that page renders its ladder from), read 2026-08-03
 
   - name: Snov.io
     mobile_support: false
