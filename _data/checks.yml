@@ -223,6 +223,11 @@ items:
     step count matches its ## Steps list'
   covers:
   - '8.6'
+- id: idempotency-key-on-metered-operations
+  desc: openapi/plane-v1.yaml declares the Idempotency-Key header on exactly the operations
+    features/agent-data-plane-api.md documents as metered
+  covers:
+  - '10.1'
 - id: image-dimensions-declared
   desc: every built <img> element declares both width and height
   covers:
@@ -278,6 +283,11 @@ items:
     fresh count of openapi/plane-v1.yaml's operations
   covers:
   - '10.9'
+- id: mcp-tool-args-carry-idempotency-key
+  desc: _data/mcp_tools.yml lists the Idempotency-Key header's x-mcp-arg name on exactly
+    the MCP tools whose openapi/plane-v1.yaml operation declares that header
+  covers:
+  - '10.6'
 - id: mcp-tool-table-generated
   desc: the MCP tool table rendered on agent-data-plane-mcp.md exactly matches the
     x-mcp-tool set in openapi/plane-v1.yaml
@@ -426,8 +436,8 @@ items:
   covers:
   - '7.8'
 - id: pricing-figure-names-resolve
-  desc: 'Every include pricing-figure.html name="..." invocation names an item that
-    exists in _data/pricing.yml'
+  desc: Every include pricing-figure.html name="..." invocation names an item that
+    exists in _data/pricing.yml
   covers:
   - '11.6'
 - id: pricing-figures-sourced
