@@ -151,12 +151,29 @@ namespace :mcp do
         next unless op.is_a?(Hash) && op["x-mcp-tool"]
 
         params = (op["parameters"] || []).map { |p| p["$ref"] ? resolve_ref.call(p["$ref"]) : p }
-        args = params.map { |p| p["required"] ? p["name"] : "#{p['name']}?" }
+
+        # MCP has no request headers, so a header parameter reaches a tool only
+        # under the argument name it declares in x-mcp-arg — and one that
+        # declares none contributes nothing rather than surfacing to an agent
+        # under a header spelling the transport would then drop.
+        arg_name = lambda do |p|
+          name = p["in"] == "header" ? p["x-mcp-arg"] : p["name"]
+          next nil unless name
+
+          p["required"] ? name : "#{name}?"
+        end
+
+        path_query_params, header_params = params.partition { |p| p["in"] != "header" }
+        args = path_query_params.filter_map(&arg_name)
 
         if (body_schema = op.dig("requestBody", "content", "application/json", "schema"))
           required = body_schema["required"] || []
           (body_schema["properties"] || {}).each_key { |name| args << (required.include?(name) ? name : "#{name}?") }
         end
+
+        # Header-derived arguments sort last: they are envelope concerns that
+        # every metered tool carries, not part of the call's own shape.
+        args.concat(header_params.filter_map(&arg_name))
 
         {
           "tool" => op["x-mcp-tool"],
