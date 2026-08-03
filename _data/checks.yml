@@ -24,6 +24,11 @@ items:
     documented in _data/variables.yml
   covers:
   - '6.6'
+- id: alt-text-from-inventory
+  desc: every built image's alt attribute exactly matches the value recorded for it
+    in _data/screenshots.yml
+  covers:
+  - '11.2'
 - id: api-pages-urls-unchanged
   desc: each of the five interface pages' built URL matches its recorded baseline
   covers:

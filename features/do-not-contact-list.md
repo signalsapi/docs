@@ -20,7 +20,7 @@ Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/)
 
 <div align="left">
 
-<figure><img src="/features/do-not-contact-list.png" alt="" width="375"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/do-not-contact-list.png" width="375" %}
 
 </div>
 

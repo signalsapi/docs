@@ -61,21 +61,21 @@ Add the custom fields to your CRM or outreach tool, e.g. for [Snovio](https://sn
 
     <div align="left">
 
-    <figure><img src="/features/personalize-emails-with-ai-1.png" alt="" width="563"><figcaption></figcaption></figure>
+    {% include screenshot.html path="features/personalize-emails-with-ai-1.png" width="563" %}
 
     </div>
 2.  Add custom fields with any names, for example **ai\_field\_1** or **job\_title** to the list
 
     <div align="left">
 
-    <figure><img src="/features/personalize-emails-with-ai-2.png" alt="" width="375"><figcaption></figcaption></figure>
+    {% include screenshot.html path="features/personalize-emails-with-ai-2.png" width="375" %}
 
     </div>
 3.  Use them in email text
 
     <div align="left">
 
-    <figure><img src="/features/personalize-emails-with-ai-3.png" alt="" width="200"><figcaption></figcaption></figure>
+    {% include screenshot.html path="features/personalize-emails-with-ai-3.png" width="200" %}
 
     </div>
 

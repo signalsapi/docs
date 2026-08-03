@@ -23,7 +23,7 @@ provider** using **your own API key**.
 
 You manage everything on one screen: **Settings → Provider**.
 
-<figure><img src="/features/byo-people-provider-1.png" alt="People-data provider settings with no key saved" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/byo-people-provider-1.png" width="720" %}
 
 ## Choose your provider
 
@@ -43,7 +43,7 @@ The form shows exactly the fields your provider needs. Most use a single **API k
 two secrets — for example **{% include provider-link.html name="Snov.io" cost=false %}** asks for a **Client ID** and a **Client Secret** (found at
 [app.snov.io/account/api](https://app.snov.io/account/api)), which appear as soon as you select it.
 
-<figure><img src="/features/byo-people-provider-2.png" alt="Snov.io selected, showing Client ID and Client Secret fields" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/byo-people-provider-2.png" width="720" %}
 
 Paste your value(s) and click **Save & validate**. SignalsAPI checks the key with the provider
 straight away — it doesn't just store whatever you typed.
@@ -53,12 +53,12 @@ straight away — it doesn't just store whatever you typed.
 If the key is accepted you get a green confirmation and an **active** status. Only a masked
 fingerprint of your key (the last 4 characters) is ever shown.
 
-<figure><img src="/features/byo-people-provider-3.png" alt="Key saved with active status" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/byo-people-provider-3.png" width="720" %}
 
 If the provider rejects it, the status is **invalid** and no people data is fetched until you
 fix it.
 
-<figure><img src="/features/byo-people-provider-4.png" alt="Key rejected, invalid status" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/byo-people-provider-4.png" width="720" %}
 
 If you see **invalid**, check that you:
 

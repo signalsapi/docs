@@ -20,7 +20,7 @@ Open [Filter settings](https://app.signalsapi.com/filters/) and scroll to the **
 
 One click to include remote, hybrid, and unspecified roles — while excluding on-site only.
 
-<figure><img src="/features/work-arrangement-filter-2.png" alt="Remote-friendly toggle enabled" width="600"></figure>
+{% include screenshot.html path="features/work-arrangement-filter-2.png" width="600" %}
 
 Turn it on when you want to catch every role that could plausibly be remote-friendly, including jobs that don't explicitly state their arrangement ("Unspecified"). Roles with a clear on-site label are excluded.
 
@@ -30,7 +30,7 @@ When the toggle is on, it overrides the arrangement selection below.
 
 Turn the toggle off to choose specific arrangements yourself.
 
-<figure><img src="/features/work-arrangement-filter-1.png" alt="Work arrangement filter with Include only selected and Remote + Unspecified checked" width="600"></figure>
+{% include screenshot.html path="features/work-arrangement-filter-1.png" width="600" %}
 
 * **Any arrangement** — no filter, all signals pass through (default)
 * **Include only selected** — keep signals matching the checked arrangements

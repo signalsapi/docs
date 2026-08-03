@@ -60,7 +60,7 @@ Read more: [Advanced search](/features/advanced-search)
 
 - HiringCafe as a job source
 
-![](/whats-new/2025-04-09-hiring_cafe-min.png)
+{% include screenshot.html path="whats-new/2025-04-09-hiring_cafe-min.png" %}
 
 ## 05.04.2025
 
@@ -73,13 +73,13 @@ option "Emails required" was added to personas instead.
 If turned on, all people will have emails already on the "Personas" stage.
 "Unlock email" link removed from lead lists, as all emails are already unlocked.
 
-![](/whats-new/2025-04-04-emails_required.png)
+{% include screenshot.html path="whats-new/2025-04-04-emails_required.png" %}
 
 ## 06.03.2025
 
 - Option to not filter out companies with unknown number of employees
 
-![](/whats-new/2025-03-06-unknown_headcount.png)
+{% include screenshot.html path="whats-new/2025-03-06-unknown_headcount.png" %}
 
 
 ## 22.01.2025
@@ -224,24 +224,24 @@ Bugfixes
 
 - Exporting to a specific list in Hubspot
 
-![](/whats-new/2024-06-19-exporting-to-a-specific.png)
+{% include screenshot.html path="whats-new/2024-06-19-exporting-to-a-specific.png" %}
 
 - Popular choices are shown separately
 - Ability to choose all popular choices with one click
 
-![](/whats-new/2024-06-19-ability-to-choose-all.png)
+{% include screenshot.html path="whats-new/2024-06-19-ability-to-choose-all.png" %}
 
 ## 18.06.2024
 
 - Search has a "Job posting age" setting, which controls how recent the job posting should be to get matched.
 
-![](/whats-new/2024-06-18-job-posting-age.png)
+{% include screenshot.html path="whats-new/2024-06-18-job-posting-age.png" %}
 
 ## 17.06.2024
 
 - Filtering jobs based on where the match was found. Solving two most popular problems -- "too few matches" and "too many junk matches".
 
-![](/whats-new/2024-06-17-filtering-jobs.png)
+{% include screenshot.html path="whats-new/2024-06-17-filtering-jobs.png" %}
 
 ## 16.06.2024
 
@@ -252,7 +252,7 @@ Bugfixes
 
 - Sourcing from Indeed
 
-![](/whats-new/2024-06-14-sourcing-from-indeed.png)
+{% include screenshot.html path="whats-new/2024-06-14-sourcing-from-indeed.png" %}
 
 ## 07.06.2024
 
@@ -263,11 +263,11 @@ Bugfixes
 
 - Worldwide search on LinkedIn (searches -> add -> hiring location)
 
-![](/whats-new/2024-05-30-worldwide-search-on-linkedin.png)
+{% include screenshot.html path="whats-new/2024-05-30-worldwide-search-on-linkedin.png" %}
 
 - Auto-validating emails in [Snov.io](https://snov.io/) (exports -> add -> snovio -> validate emails)
 
-![](/whats-new/2024-05-30-auto-validating-emails.png)
+{% include screenshot.html path="whats-new/2024-05-30-auto-validating-emails.png" %}
 
 ## 29.05.2024
 
@@ -277,17 +277,17 @@ Bugfixes
 
 - Limit the number of decision-makers per company. If more decision-makers are identified, they are prioritized in the order specified in the 'titles' field, and those with valid email addresses come first.
 
-![](/whats-new/2024-05-20-limit-the-number-of-dec.png)
+{% include screenshot.html path="whats-new/2024-05-20-limit-the-number-of-dec.png" %}
 
 - Do-Not-Contact list allows to make sure you do not contact companies or people you do not want to. Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/).
 
-![](/whats-new/2024-05-20-do-not-contact-list.png)
+{% include screenshot.html path="whats-new/2024-05-20-do-not-contact-list.png" %}
 
 ## 18.05.2024
 
 - List views of searches, filters, personas, lead lists and exports show where they are taking data from and where they are sending it to.
 
-![](/whats-new/2024-05-18-list-views-of-searches.png)
+{% include screenshot.html path="whats-new/2024-05-18-list-views-of-searches.png" %}
 
 Bugfixes:
 
@@ -303,7 +303,7 @@ Bugfixes:
 
 - Leads within a leadlist, matches within personas and filters can be filtered by date
 
-![](/whats-new/2024-05-13-leads-within-a-leadlist.png)
+{% include screenshot.html path="whats-new/2024-05-13-leads-within-a-leadlist.png" %}
 
 - Leads are downloaded based on the applied filters
 
@@ -321,13 +321,13 @@ Bugfixes:
 
 - Searches, filters, personas and leadlists can be cloned
 
-![](/whats-new/2024-05-10-searches-filters-personas.png)
+{% include screenshot.html path="whats-new/2024-05-10-searches-filters-personas.png" %}
 
 - AI powered rejection of leads
 
-![](/whats-new/2024-05-10-ai-powered-rejection-1.png)
+{% include screenshot.html path="whats-new/2024-05-10-ai-powered-rejection-1.png" %}
 
-![](/whats-new/2024-05-10-ai-powered-rejection-2.png)
+{% include screenshot.html path="whats-new/2024-05-10-ai-powered-rejection-2.png" %}
 
 - Search shows status as "running" while its runs are fetching
 
@@ -364,7 +364,7 @@ Bugfixes
 
 - Showing job description
 
-![](/whats-new/2024-05-06-showing-job-description.png)
+{% include screenshot.html path="whats-new/2024-05-06-showing-job-description.png" %}
 
 - Company description is shown with line breaks instead of smashing all lines together
 - Lead view has clickable hyperlinks for job posting, company website and LinkedIn, person LinkedIn
@@ -388,7 +388,7 @@ Bugfixes:
 
 - Filtering by job stop words and required words
 
-![](/whats-new/2024-05-03-filtering-by-job-stop.png)
+{% include screenshot.html path="whats-new/2024-05-03-filtering-by-job-stop.png" %}
 
 Bugfixes:
 
@@ -409,15 +409,15 @@ Bugfix:
 
 - People in lead list have addresses
 
-![](/whats-new/2024-05-01-people-in-lead-list.png)
+{% include screenshot.html path="whats-new/2024-05-01-people-in-lead-list.png" %}
 
 - People can be filtered by location
 
-![](/whats-new/2024-05-01-people-can-be-filtered.png)
+{% include screenshot.html path="whats-new/2024-05-01-people-can-be-filtered.png" %}
 
 - Save / save and re-run buttons in filters and personas
 
-![](/whats-new/2024-05-01-save-save-and-re-run.png)
+{% include screenshot.html path="whats-new/2024-05-01-save-save-and-re-run.png" %}
 
 - All yearly credits are debited on the payment date
 
@@ -442,25 +442,25 @@ Bugfixes:
 
 - New leads are marked as "New", and then change to "Seen" when you open them for the first time.
 
-![](/whats-new/2024-04-29-new-leads-are-marked.png)
+{% include screenshot.html path="whats-new/2024-04-29-new-leads-are-marked.png" %}
 
 - Leads will get exported after you approve them by clicking "Approve" or "Reject" buttons, or enabling auto-approval in lead list settings.
 
-![](/whats-new/2024-04-29-leads-will-get-exported.png)
+{% include screenshot.html path="whats-new/2024-04-29-leads-will-get-exported.png" %}
 
 ## 28.04.2024
 
 - New tab "Leads" for working with leads in a mailbox-style with folders, downloading, unlocking emails, etc
 
-![](/whats-new/2024-04-28-new-tab-leads-for-working.png)
+{% include screenshot.html path="whats-new/2024-04-28-new-tab-leads-for-working.png" %}
 
 - Automatic approval and rejection rules can be set in lead list settings.
 
-![](/whats-new/2024-04-28-automatic-approval-and-rej.png)
+{% include screenshot.html path="whats-new/2024-04-28-automatic-approval-and-rej.png" %}
 
 - Lead settings can be applied to new leads only, or the whole lead list can be emptied and re-run with the new settings.
 
-![](/whats-new/2024-04-28-lead-settings.png)
+{% include screenshot.html path="whats-new/2024-04-28-lead-settings.png" %}
 
 ## 26.04.2024
 
@@ -470,7 +470,7 @@ Bugfixes:
   * or use modifiers in one search, for example, **keyword1 OR keyword2** for LinkedIn ([details](https://www.linkedin.com/help/linkedin/answer/a507571/using-boolean-modifiers-when-searching-for-jobs-on-linkedin))
 - "Data sources" renamed to "Searches", "Filters" and "Personas" to avoid confusion
 
-![](/whats-new/2024-04-26-one-job-title-per-search.png)
+{% include screenshot.html path="whats-new/2024-04-26-one-job-title-per-search.png" %}
 
 - Uniqueness / deduplication policy is now a part of the Searches form
 - Tables got condensed to fit more data on the screen
@@ -485,13 +485,13 @@ Bugfixes:
 
 - Each page (searches, filters, personas, export) showing running status automatically updates when running is finished
 
-![](/whats-new/2024-04-23-showing-running-status.png)
+{% include screenshot.html path="whats-new/2024-04-23-showing-running-status.png" %}
 
 ## 22.04.2024
 
 - Searches, Filters, and Personas are separated into different tabs and steps, so instead of having to wait until the whole search & processing will end, you can see intermediate results much faster.
 
-![](/whats-new/2024-04-22-search-filters-personas.png)
+{% include screenshot.html path="whats-new/2024-04-22-search-filters-personas.png" %}
 
 - Different countries were separated to different searches for the same purpose -- you can see first country results faster, before all countries searches have finished.
 - Credits are charged per run, not per match, so, hopefully, you'll get much more matches per credit.
@@ -503,19 +503,19 @@ Bugfixes:
 - "Max credits daily" setting is removed since match count do not influence cost.
 - You can now control how often runs are scheduled (and if they are scheduled at all) in each individual search settings.
 
-![](/whats-new/2024-04-16-control-runs-schedule.png)
+{% include screenshot.html path="whats-new/2024-04-16-control-runs-schedule.png" %}
 
 - Any query can be run manually.
 
-![](/whats-new/2024-04-16-any-query-can-be-run.png)
+{% include screenshot.html path="whats-new/2024-04-16-any-query-can-be-run.png" %}
 
 - You can now choose if you still want to filter out companies without identified decision-makers, using "Minimum number of identified decision-makers" and "Minimum number of valid emails per match" fields.
 
-![](/whats-new/2024-04-16-filter-out-companies-without.png)
+{% include screenshot.html path="whats-new/2024-04-16-filter-out-companies-without.png" %}
 
 - If "Minimum number of valid emails per match" is left empty, emails will not be automatically unlocked, you can unlock them manually
 
-![](/whats-new/2024-04-16-if-minimum-valid-emails.png)
+{% include screenshot.html path="whats-new/2024-04-16-if-minimum-valid-emails.png" %}
 
 ## 11.04.2024
 
@@ -527,7 +527,7 @@ Improvements
 
 - Search can be opened to see queries. Showing last run date/time, today/yesterday signal/match count, next run date/time.
 
-![](/whats-new/2024-04-10-search-can-be-opened-to-see.png)
+{% include screenshot.html path="whats-new/2024-04-10-search-can-be-opened-to-see.png" %}
 
 ## 07.04.2024
 
@@ -541,7 +541,7 @@ Improvements
 
 - Daily match limit
 
-![](/whats-new/2024-04-04-daily-match-limit.png)
+{% include screenshot.html path="whats-new/2024-04-04-daily-match-limit.png" %}
 
 - Trial is either 150 leads or 7 days now, starting counting from user getting first match
 
@@ -553,7 +553,7 @@ Bugfixes:
 
 - Filtering companies by keywords
 
-![](/whats-new/2024-03-31-filtering-companies-by.png)
+{% include screenshot.html path="whats-new/2024-03-31-filtering-companies-by.png" %}
 
 ## 28.03.2024
 
@@ -563,29 +563,29 @@ Bugfixes:
 
 - People without a verified email (only having a LinkedIn URL) can also be matched now. Use "require email" option in search to control this.
 
-![](/whats-new/2024-03-27-people-without-a-verified.png)
+{% include screenshot.html path="whats-new/2024-03-27-people-without-a-verified.png" %}
 
 - Showing uploaded matches with a white "uploaded" badge in the matches list, and an "uploaded" button in place of approval buttons in match view.
 
-![](/whats-new/2024-03-27-showing-uploaded-matches.png)
-![](/whats-new/2024-03-27-showing-uploaded-matches-2.png)
+{% include screenshot.html path="whats-new/2024-03-27-showing-uploaded-matches.png" %}
+{% include screenshot.html path="whats-new/2024-03-27-showing-uploaded-matches-2.png" %}
 
 ## 26.03.2024
 
 - Settings have their own menuitem now
 
-![](/whats-new/2024-03-26-settings-have-their-own.png)
+{% include screenshot.html path="whats-new/2024-03-26-settings-have-their-own.png" %}
 
 ## 24.03.2024
 
 - Search has a new parameter to require manual pre-approval of each lead before uploading
 
-![](/whats-new/2024-03-24-search-has-a-new-parameter.png)
+{% include screenshot.html path="whats-new/2024-03-24-search-has-a-new-parameter.png" %}
 
 - Matches can be manually approved
 
-![](/whats-new/2024-03-24-matches-can-be-manually.png)
-![](/whats-new/2024-03-24-matches-can-be-manually-2.png)
+{% include screenshot.html path="whats-new/2024-03-24-matches-can-be-manually.png" %}
+{% include screenshot.html path="whats-new/2024-03-24-matches-can-be-manually-2.png" %}
 
 ## 23.03.2024
 
@@ -593,7 +593,7 @@ Bugfixes:
 - Run view (Runs -> click any run) is showing disqualified signals
 - Stop words for job title and company name / headline / description
 
-![](/whats-new/2024-03-23-stop-words.png)
+{% include screenshot.html path="whats-new/2024-03-23-stop-words.png" %}
 
 ## 22.03.2024
 
@@ -601,7 +601,7 @@ Bugfixes:
 - Run displays count of disqualified matches, duplicates, and matches without people
 - Runs display their statuses
 
-![](/whats-new/2024-03-22-run-displays-statuses.png)
+{% include screenshot.html path="whats-new/2024-03-22-run-displays-statuses.png" %}
 
 Bugfixes
 
@@ -618,11 +618,11 @@ Bugfixes
 - Matches are shown per day
 - De-duplication policy in search
 
-![](/whats-new/2024-03-20-de-duplication.png)
+{% include screenshot.html path="whats-new/2024-03-20-de-duplication.png" %}
 
 - Matches are downloadable as CSV, go to Matches -> Download
 
-![](/whats-new/2024-03-20-matches-downloadable-as-csv.png)
+{% include screenshot.html path="whats-new/2024-03-20-matches-downloadable-as-csv.png" %}
 
 Bugfixes:
 
@@ -647,20 +647,20 @@ Bugfixes:
 
 - Matches page shows stats instead of a progress bar
 
-![](/whats-new/2024-03-04-matches-page-shows-stats.png)
+{% include screenshot.html path="whats-new/2024-03-04-matches-page-shows-stats.png" %}
 
 ## 02.03.2024
 
 - Showing a message if no matches are found
 - "Exact match in title" checkbox for stricter matching
 
-![](/whats-new/2024-03-02-exact-match-in-title.png)
+{% include screenshot.html path="whats-new/2024-03-02-exact-match-in-title.png" %}
 
 ## 01.03.2024
 
 - Job researcher can be set to match only remote or only on-site positions
 
-![](/whats-new/2024-03-01-job-researcher-can-be-set.png)
+{% include screenshot.html path="whats-new/2024-03-01-job-researcher-can-be-set.png" %}
 
 ## 25.02.2024
 
@@ -711,7 +711,7 @@ Bugfixes:
 - "Personas" form is accepting comma-delimited values, not only newline-delimited (foolproofing)
 - Company filter by country has 'exclude' mode&#x20;
 
-![](/whats-new/2024-02-04-company-filter-by-country.png)
+{% include screenshot.html path="whats-new/2024-02-04-company-filter-by-country.png" %}
 
 - Backend performance and stability improved
 
@@ -720,7 +720,7 @@ Bugfixes:
 - "What's new" page in docs
 - Statistics per processor to "Processors" page
 
-![](/whats-new/2024-01-29-statistics-per-processor.png)
+{% include screenshot.html path="whats-new/2024-01-29-statistics-per-processor.png" %}
 
 - Status page [https://status.signalsapi.com/](https://status.signalsapi.com/)
 

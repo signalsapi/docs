@@ -25,7 +25,7 @@ Phone lookup is powered by your connected [people-data provider](../bring-your-o
 
 Open your project's **Persona** settings and tick **Find phone numbers**.
 
-<figure><img src="/features/find-phone-numbers-1.png" alt="Persona settings showing the 'Find phone numbers' checkbox next to 'Email is required'" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/find-phone-numbers-1.png" width="720" %}
 
 Phone lookup only runs when your connected provider supports it. If you select a provider that does not include mobile lookup the checkbox has no effect — no extra provider calls are made and no credits are spent.
 
@@ -33,7 +33,7 @@ Phone lookup only runs when your connected provider supports it. If you select a
 
 Once personation runs with the option enabled, a **Phone** column appears in your leads list.
 
-<figure><img src="/features/find-phone-numbers-2.png" alt="My Leads list with a Phone column showing numbers like +15551234567 for some rows and a dash for others" width="720"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/find-phone-numbers-2.png" width="720" %}
 
 A dash (—) means the provider searched but found no number for that person. The lookup is on a best-effort basis — coverage depends on your provider's database.
 

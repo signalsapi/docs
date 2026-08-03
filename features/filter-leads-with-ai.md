@@ -41,7 +41,7 @@ Find AI generated fields in each lead:
 
 <div align="left">
 
-<figure><img src="/features/filter-leads-with-ai.png" alt="" width="375"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/filter-leads-with-ai.png" width="375" %}
 
 </div>
 

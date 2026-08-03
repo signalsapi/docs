@@ -16,7 +16,7 @@ Some companies post the same job multiple times in different regions:
 
 <div align="left">
 
-<figure><img src="/features/remove-duplicate-signals-1.png" alt="" width="375"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/remove-duplicate-signals-1.png" width="375" %}
 
 </div>
 
@@ -24,6 +24,6 @@ When setting up a [project](https://app.signalsapi.com/leadlists/), choose how t
 
 <div align="left">
 
-<figure><img src="/features/remove-duplicate-signals-2.png" alt="" width="375"><figcaption></figcaption></figure>
+{% include screenshot.html path="features/remove-duplicate-signals-2.png" width="375" %}
 
 </div>

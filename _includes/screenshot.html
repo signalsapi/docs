@@ -1,0 +1,9 @@
+{%- assign shot = nil -%}
+{%- for s in site.data.screenshots.items -%}
+  {%- if s.path == include.path -%}{%- assign shot = s -%}{%- endif -%}
+{%- endfor -%}
+{%- if shot -%}
+<figure><img src="/{{ include.path }}" alt="{{ shot.alt | escape }}"{% if include.width %} width="{{ include.width }}"{% endif %}><figcaption></figcaption></figure>
+{%- else -%}
+**[unknown screenshot: {{ include.path }}]**
+{%- endif -%}
