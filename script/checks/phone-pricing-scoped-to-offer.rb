@@ -24,18 +24,34 @@ Check.register(
   covers: ["2.8"]
 ) do |site|
   # The typo scan runs first and reads source, so it still reports when _site/
-  # is absent — only the rendered half below depends on a build.
+  # is absent — only the rendered half below depends on a build. It is an
+  # offender set ("this string appears nowhere"), where empty is the healthy
+  # state, so it is deliberately not declared as a subject.
   typos = site.pages.select { |p| site.raw(p.path).include?("propsects") }
   site.fail!("the string 'propsects' appears in: #{typos.map(&:path).join(', ')}") unless typos.empty?
 
   faq = site.html_files.find { |f| f.path == "_site/faq/index.html" }
   site.fail!("_site/faq/index.html is missing") unless faq
 
-  faq.body.scan(PHONE_PRICE_BLOCK_RE) do |(inner)|
-    text = inner.gsub(/<[^>]+>/, " ").gsub(/\s+/, " ").strip
-    next unless text.match?(/phone/i) && text.match?(/[£$€]\s?\d/)
-    next if text.match?(MANAGED_OFFER_RE)
+  # The priced blocks are the subject; the page is only where they live. Finding
+  # none is exactly the state that produced signalsapi-4292 — the source scan
+  # this replaced matched nothing and passed while /faq/ published the figure —
+  # and the rendered form is just as breakable: an escaped currency symbol, or a
+  # figure that moves out of p/li/td, empties the set the same silent way. The
+  # figure is data-driven (pricing.yml's managed_phone_packages, via
+  # pricing-figure.html), so an empty set means either the scan broke or the
+  # offer was retired. Both are worth a look; neither is a clean run.
+  priced = site.examining(
+    "built /faq/ blocks stating a phone price",
+    faq.body.scan(PHONE_PRICE_BLOCK_RE).flatten.filter_map { |inner|
+      text = inner.gsub(/<[^>]+>/, " ").gsub(/\s+/, " ").strip
+      text if text.match?(/phone/i) && text.match?(/[£$€]\s?\d/)
+    }
+  )
 
-    site.fail!("the built /faq/ prices a phone number without naming the offer it belongs to: #{text[0, 120]}")
+  unscoped = priced.reject { |text| text.match?(MANAGED_OFFER_RE) }
+
+  unless unscoped.empty?
+    site.fail!("the built /faq/ prices a phone number without naming the offer it belongs to: #{unscoped.first[0, 120]}")
   end
 end

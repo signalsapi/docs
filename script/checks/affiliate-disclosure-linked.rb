@@ -11,14 +11,21 @@ Check.register(
   covers: ["9.8"]
 ) do |site|
   disclosure_path = "/how-we-make-money/"
-  offenders = []
 
-  site.html_files.each do |file|
-    next unless file.body.include?('rel="sponsored nofollow"')
-    next if file.path.include?("how-we-make-money") # the disclosure page itself
+  # The pages that actually emit an affiliate link are the subject, not every
+  # built page. provider-link.html's rel signature is the whole selector, so if
+  # that markup changes the set empties silently and this passes having checked
+  # no page (signalsapi-4324). The disclosure page is dropped before the count
+  # on purpose: the rule has nothing to say about it, so a run in which it is
+  # the only such page is a run that checked nothing.
+  emitting = site.examining(
+    "built pages emitting an affiliate provider link",
+    site.html_files
+        .select { |file| file.body.include?('rel="sponsored nofollow"') }
+        .reject { |file| file.path.include?("how-we-make-money") } # the disclosure page itself
+  )
 
-    offenders << file.path unless file.body.include?(%(href="#{disclosure_path}"))
-  end
+  offenders = emitting.reject { |file| file.body.include?(%(href="#{disclosure_path}")) }.map(&:path)
 
   unless offenders.empty?
     site.fail!("page(s) emit an affiliate link without linking to #{disclosure_path} — #{offenders.join(', ')}")
