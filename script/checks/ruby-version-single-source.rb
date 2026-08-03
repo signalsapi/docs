@@ -7,9 +7,12 @@ Check.register(
 ) do |site|
   site.fail!(".ruby-version is missing from the repository root") unless site.exist?(".ruby-version")
 
-  %w[.github/workflows/ci.yml .github/workflows/pages.yml].each do |workflow|
-    next unless site.exist?(workflow)
-
+  # Every workflow, not the two that happened to exist when AD-13 landed: the
+  # ci.yml/pages.yml pair this used to name was an exhaustive list at 8d31257,
+  # then went stale in silence when link-check-nightly.yml arrived setting Ruby
+  # up of its own accord — the same blind subject set signalsapi-4306 reported
+  # one assertion over.
+  site.examining("workflow files", site.workflows).each do |workflow|
     if site.raw(workflow) =~ /^\s*ruby-version:\s*['"]?[\d.]/
       site.fail!("#{workflow} declares an inline ruby-version: key — remove it so ruby/setup-ruby reads .ruby-version")
     end
