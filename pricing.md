@@ -39,13 +39,12 @@ drive. Qualified telephone numbers are their own packages:
 
 ## Credits
 
-- **Free-tier allowance:** {% include pricing-figure.html name="free_tier_credit_allowance" %}
-- **Trial allowance:** {% include pricing-figure.html name="trial_allowance" %}
+- **What a new account gets:** {% include pricing-figure.html name="trial_allowance" %}
 - **Unspent credit expiry:** {% include pricing-figure.html name="credit_expiry" %}
 
 ## Run frequency
 
-{% include pricing-figure.html name="run_frequency_by_plan" %}
+{% include pricing-figure.html name="run_frequency" %}
 
 ## Agent data plane
 
