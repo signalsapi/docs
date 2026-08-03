@@ -9,8 +9,7 @@ Check.register(
                         .select { |p| p.front_matter["has_children"] == true }
                         .map { |p| p.front_matter["title"] }
 
-  offenders = site.pages
-                  .select { |p| p.front_matter["parent"] }
+  offenders = site.examining("pages declaring a parent", site.pages.select { |p| p.front_matter["parent"] })
                   .reject { |p| section_titles.include?(p.front_matter["parent"]) }
 
   unless offenders.empty?

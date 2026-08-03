@@ -7,7 +7,7 @@ Check.register(
   desc: "Every task page's built HTML carries one valid HowTo JSON-LD block whose step count matches its ## Steps list",
   covers: ["8.6"]
 ) do |site|
-  task_pages = site.pages.select { |p| p.front_matter["page_type"] == "task" }
+  task_pages = site.examining("task pages", site.pages.select { |p| p.front_matter["page_type"] == "task" })
   offenders = []
 
   task_pages.each do |page|

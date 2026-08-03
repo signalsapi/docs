@@ -15,7 +15,7 @@ Check.register(
 
   offenders = []
 
-  site.pages.select { |p| p.front_matter["page_type"] == "symptom" }.each do |page|
+  site.examining("symptom pages", site.pages.select { |p| p.front_matter["page_type"] == "symptom" }).each do |page|
     missing = required_headings.reject { |heading| page.body.include?(heading) }
     offenders << "#{page.path} is missing: #{missing.join(', ')}" unless missing.empty?
 

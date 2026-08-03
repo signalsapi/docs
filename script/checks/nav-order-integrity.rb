@@ -5,10 +5,10 @@ Check.register(
   desc: "Every sibling group of pages (by parent) has unique, integer, contiguous nav_order values",
   covers: ["2.10"]
 ) do |site|
-  groups = site.pages
-               .reject { |p| p.front_matter["nav_exclude"] }
-               .select { |p| !p.front_matter["nav_order"].nil? }
-               .group_by { |p| p.front_matter["parent"] }
+  groups = site.examining(
+    "navigable pages declaring a nav_order",
+    site.pages.reject { |p| p.front_matter["nav_exclude"] }.select { |p| !p.front_matter["nav_order"].nil? }
+  ).group_by { |p| p.front_matter["parent"] }
 
   groups.each do |parent, pages|
     label = parent.nil? ? "top-level pages" : "children of #{parent}"

@@ -13,7 +13,10 @@ Check.register(
   page = site.pages.find { |p| p.path == "features/integrations.md" }
   site.fail!("features/integrations.md is missing") unless page
 
-  heading_names = page.body.scan(/^## Integrating with (.+)$/).flatten.map(&:strip)
+  heading_names = site.examining(
+    "destinations named on features/integrations.md",
+    page.body.scan(/^## Integrating with (.+)$/).flatten.map(&:strip)
+  )
 
   site.fail!("_data/integrations.yml is missing") unless site.data["integrations"]
   data_names = site.data["integrations"]["items"].map { |i| i["name"] }

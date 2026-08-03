@@ -18,13 +18,19 @@ Check.register(
 
   names = (site.data["pricing"]["items"] || []).map { |item| item["name"] }
 
-  offenders = []
-  site.pages.each do |page|
-    page.body.scan(/include\s+pricing-figure\.html\s+([^%]*)%\}/) do |match|
-      args = match.first
-      name = args[/\bname=["']([^"']+)["']/, 1]
-      offenders << "#{page.path}: #{name || args.strip.inspect}" unless names.include?(name)
+  # The invocations are the subject, not the pages they sit on: move every
+  # figure behind a template or a data-driven table and this reads all 58 pages
+  # while checking nothing, which is the state signalsapi-4292 found by hand.
+  invocations = site.examining(
+    "pricing-figure.html invocations",
+    site.pages.flat_map do |page|
+      page.body.scan(/include\s+pricing-figure\.html\s+([^%]*)%\}/).map { |match| [page.path, match.first] }
     end
+  )
+
+  offenders = invocations.filter_map do |path, args|
+    name = args[/\bname=["']([^"']+)["']/, 1]
+    "#{path}: #{name || args.strip.inspect}" unless names.include?(name)
   end
 
   site.fail!("pricing-figure.html invoked with unresolved name(s): #{offenders.join(', ')}") unless offenders.empty?

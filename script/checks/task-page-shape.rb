@@ -9,7 +9,7 @@ Check.register(
   required_headings = ["## Before you start", "## Steps", "## Check it worked", "## If it did not work"]
 
   offenders = []
-  site.pages.select { |p| p.front_matter["page_type"] == "task" }.each do |page|
+  site.examining("task pages", site.pages.select { |p| p.front_matter["page_type"] == "task" }).each do |page|
     missing = required_headings.reject { |heading| page.body.include?(heading) }
     offenders << "#{page.path} is missing: #{missing.join(', ')}" unless missing.empty?
   end

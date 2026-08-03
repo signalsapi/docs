@@ -14,9 +14,13 @@ Check.register(
     rel.empty? ? "/" : "/#{rel}/"
   end
 
-  secondary_hrefs = site.pages
-                        .select { |p| p.front_matter["nav_exclude"] == true && p.front_matter["permalink"].nil? }
-                        .map { |p| page_url.call(p.path) }
+  # The per-href sweep below is the assertion's real subject: with no secondary
+  # page to look for, its loop body never runs and the built pages it would
+  # have read go unexamined, while the accessors above still report every page.
+  secondary_hrefs = site.examining(
+    "footer-linked secondary pages",
+    site.pages.select { |p| p.front_matter["nav_exclude"] == true && p.front_matter["permalink"].nil? }
+  ).map { |p| page_url.call(p.path) }
 
   missing_footer = site.html_files.reject { |f| f.body.include?('class="footer-secondary-links"') }
   unless missing_footer.empty?

@@ -7,8 +7,7 @@ Check.register(
 ) do |site|
   valid_keys = site.data["pipeline"]["items"].map { |s| s["key"] }
 
-  offenders = site.pages
-                  .select { |p| p.front_matter.key?("stage") }
+  offenders = site.examining("pages declaring a stage", site.pages.select { |p| p.front_matter.key?("stage") })
                   .reject { |p| valid_keys.include?(p.front_matter["stage"]) }
 
   unless offenders.empty?

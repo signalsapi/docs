@@ -6,8 +6,8 @@ Check.register(
         "is reachable from at least one task page",
   covers: ["6.11"]
 ) do |site|
-  task_pages = site.pages.select { |p| p.front_matter["page_type"] == "task" }
-  symptom_pages = site.pages.select { |p| p.front_matter["page_type"] == "symptom" }
+  task_pages = site.examining("task pages", site.pages.select { |p| p.front_matter["page_type"] == "task" })
+  symptom_pages = site.examining("symptom pages", site.pages.select { |p| p.front_matter["page_type"] == "symptom" })
 
   linked_troubleshooting_urls = []
   offenders = []

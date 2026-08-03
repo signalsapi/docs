@@ -11,7 +11,7 @@ Check.register(
   index_text = site.raw(index_path)
 
   offenders = []
-  site.pages.select { |p| p.front_matter["page_type"] == "symptom" }.each do |page|
+  site.examining("symptom pages", site.pages.select { |p| p.front_matter["page_type"] == "symptom" }).each do |page|
     aliases = page.front_matter["search_aliases"] || []
     missing = aliases.reject { |a| index_text.include?(a) }
     offenders << "#{page.path}: #{missing.join(', ')}" unless missing.empty?
