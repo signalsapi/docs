@@ -42,8 +42,9 @@ key, or fix the rejected one, then re-run.
   that didn't meet them — see the 2024-04-16 entry on [What's new](/whats-new/).
 - **Your account balance is too low**, which pauses a scheduled search until you top up — see
   [What's new](/whats-new/).
-- **The search hasn't run yet.** A new search starts running after its configured interval, not
-  necessarily immediately — run frequency depends on your plan. See [What's new](/whats-new/).
+- **The search hasn't run yet.** Searches are topped up continuously in the background rather than
+  on a per-plan schedule, so a brand-new one fills shortly after you create it, not instantly. See
+  [Pricing](/pricing/#run-frequency).
 - **Phone numbers specifically are missing** even though other fields are populated — phone lookup
   only works with a connected **LeadMagic** key. See [Find phone numbers](/features/find-phone-numbers/).
 

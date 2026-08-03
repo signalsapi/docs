@@ -1,7 +1,7 @@
 meta:
   owner: mykola
   verified_on: 2026-08-03
-  source: the canonical self-serve ladder and the managed-service figures published on faq.md (commit 2768259, 2026-07-31, closing signalsapi-4208 and signalsapi-4210); everything still unconfirmed is an owner-marked placeholder citing where its last known value came from, not a claim that value still holds today.
+  source: the canonical self-serve ladder and the managed-service figures published on faq.md (commit 2768259, 2026-07-31, closing signalsapi-4208 and signalsapi-4210); the credit and run-frequency figures below were confirmed on 2026-08-03 against the billing system itself — the s2 application's trial/credit code and its production database — rather than against the changelog that first announced them (signalsapi-4279).
 
 items:
   - name: free_tier_description
@@ -66,22 +66,21 @@ items:
     value: "£49/month for 100 telephone numbers, £149 for 300 and £199 for 500"
     source: faq.md (2026-07-31)
 
-  - name: free_tier_credit_allowance
-    kind: allowance
-    value: "TODO(owner: mykola): confirm the current free-tier credit allowance — last stated as 150 credits total in the 2024-03-08 changelog entry, well over a year stale."
-    source: whats-new/index.md (2024-03-08 entry)
-
+  # The 2024-03-08 changelog entry's separate "free user gets a total of 150
+  # credits" allowance has no counterpart in the billing system: there is one
+  # automatic grant, and it is the trial's. Folded into trial_allowance rather
+  # than left standing as a figure nothing implements (signalsapi-4279).
   - name: trial_allowance
     kind: allowance
-    value: "TODO(owner: mykola): confirm the current trial allowance — last stated as 150 leads or 7 days, whichever comes first, in the 2024-04-04 changelog entry, well over a year stale."
-    source: whats-new/index.md (2024-04-04 entry)
+    value: 20 credits, granted once when you verify your email address, and 7 days of access from that moment. There is no separate free-tier credit allowance on top of it.
+    source: the billing system — s2 `app/app_di_container.py` (trial_duration_days 7, trial_credits 20) feeding `services/app_user_service.py` UserTrialService.start_trial, confirmed on 2026-08-03 against the production credits ledger, whose only automatic grant on record is a 20-credit Trial entry.
 
   - name: credit_expiry
     kind: expiry
-    value: "TODO(owner: mykola): confirm the current unspent-credit expiry window — last stated as 60 days in the 2025-04-11 changelog entry."
-    source: whats-new/index.md (2025-04-11 entry)
+    value: Unspent credits do not expire — a balance carries forward until it is spent. What ends is access to the account, when its term runs out.
+    source: the billing system — a balance is an unfiltered sum over the credits ledger (s2 `repositories/user_repository.py`), no code path or scheduled job expires a credit, and the production ledger holds no expiry entry (checked 2026-08-03). The 60-day window announced in the 2025-04-11 changelog entry was never implemented or has since been removed.
 
-  - name: run_frequency_by_plan
-    kind: plan
-    value: "TODO(owner: mykola): document which plans get which run frequency — the 2024-03-20 changelog entry says run frequency depends on plan, but names no specific plans or frequencies."
-    source: whats-new/index.md (2024-03-20 entry)
+  - name: run_frequency
+    kind: schedule
+    value: Searches are not scheduled per plan. They are topped up continuously in the background, and what bounds a run is your available credit balance, shared evenly across your searches.
+    source: the billing system — s2 `processors/board_project_feeder.py` driven by `orchestrators/main_board_project_feeder.py` loops over every active account every few seconds and splits that account's credit balance across its searches; the plans table carries no run-frequency column and holds no rows in production (checked 2026-08-03). Supersedes the 2024-03-20 changelog entry's "run frequency depends on plan".
