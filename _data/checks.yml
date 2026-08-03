@@ -222,6 +222,11 @@ items:
     the same page set
   covers:
   - '8.9'
+- id: mcp-parity-generated
+  desc: the MCP/REST parity sentence on agent-data-plane-mcp.md exactly matches a
+    fresh count of openapi/plane-v1.yaml's operations
+  covers:
+  - '10.9'
 - id: mcp-tool-table-generated
   desc: the MCP tool table rendered on agent-data-plane-mcp.md exactly matches the
     x-mcp-tool set in openapi/plane-v1.yaml

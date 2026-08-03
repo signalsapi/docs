@@ -95,8 +95,13 @@ This table is generated from `openapi/plane-v1.yaml`'s `x-mcp-tool` operations, 
 Every tool also takes `plane_api_key`. Arguments marked `?` are optional and share the REST defaults.
 
 Each tool returns the same JSON shape its REST counterpart serializes — provenance envelopes and all.
-No business logic is reimplemented behind the MCP surface; both entry points call the same code, so
-the two can never drift.
+No business logic is reimplemented behind the MCP surface: every tool above proxies the identical REST
+operation, generated from the same `x-mcp-tool` set as the table above, not hand-counted:
+{%- assign plane_ops = site.data.plane_status.items -%}
+{%- assign mcp_op_count = plane_ops | where_exp: "op", "op.mcp_tool" | size -%}
+{%- assign total_op_count = plane_ops | size -%}
+{%- assign rest_only_count = total_op_count | minus: mcp_op_count -%}
+MCP exposes {{ mcp_op_count }} of {{ total_op_count }} operations; {{ rest_only_count }} are REST-only.
 
 ---
 
