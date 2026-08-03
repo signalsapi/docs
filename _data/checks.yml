@@ -61,6 +61,11 @@ items:
   covers:
   - '2.1'
   - FR6
+- id: changelog-entry-has-target
+  desc: every _data/changelog.yml entry has a date and names a feature page present
+    in the built site
+  covers:
+  - '11.7'
 - id: checks-id-matches-filename
   desc: Every script/checks/*.rb file registers an id equal to its own basename
   covers:
