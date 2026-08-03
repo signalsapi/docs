@@ -15,7 +15,8 @@ Every command below is real: paste it into a terminal and it returns the exact r
 shown beneath it — no `X-API-Key` header, no base URL, and no waiting on [Support](/support/). Each
 fixture is a static file, checked against [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml)'s schema
 for the operation it stands in for. The [REST reference](/features/agent-data-plane-api/) shows the
-real request shape once you have a key.
+real request shape once you have a key. For the write operations, or anything more interactive than a
+fetch, [run the specification as a local mock](../agent-data-plane-mock/) instead.
 
 `revokeKey` (`DELETE /v1/keys/{key_id}`) and `cancelWatch` (`DELETE /v1/watches/{watch_id}`) return
 `204` with no body, so neither has a fixture here.

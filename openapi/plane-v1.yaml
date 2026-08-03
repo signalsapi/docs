@@ -501,6 +501,20 @@ paths:
                         bucket_start: { type: string, format: date-time }
                         open_req_count: { type: integer }
                   as_of: { type: string, format: date-time }
+              example:
+                is_hiring: { value: true, source_board: greenhouse, observed_at: "2026-07-08T04:11:07Z", confidence: 0.9 }
+                open_req_count: { value: 7, source_board: greenhouse, observed_at: "2026-07-08T04:11:07Z", confidence: 0.9 }
+                new_roles_30d: { value: 3, source_board: greenhouse, observed_at: "2026-07-08T04:11:07Z", confidence: 0.8 }
+                velocity: { value: 0.1, source_board: greenhouse, observed_at: "2026-07-08T04:11:07Z", confidence: 0.8 }
+                direction: { value: up, source_board: greenhouse, observed_at: "2026-07-08T04:11:07Z", confidence: 0.8 }
+                is_surge: { value: false, source_board: greenhouse, observed_at: "2026-07-08T04:11:07Z", confidence: 0.8 }
+                by_function: { engineering: 4, sales: 2 }
+                momentum:
+                  - bucket_start: "2026-06-01T00:00:00Z"
+                    open_req_count: 5
+                  - bucket_start: "2026-07-01T00:00:00Z"
+                    open_req_count: 7
+                as_of: "2026-07-08T04:11:07Z"
         "202":
           $ref: "#/components/responses/ColdTail"
         "404":
@@ -538,6 +552,35 @@ paths:
                     properties:
                       as_of: { type: string, format: date-time }
                       source_boards: { type: array, items: { type: string } }
+              example:
+                pulse:
+                  is_hiring: true
+                  open_req_count: 7
+                  new_roles_30d: 3
+                  velocity: 0.1
+                  direction: up
+                  is_surge: false
+                first_hires:
+                  sales: "2026-03-14T09:00:00Z"
+                repost_pain:
+                  - title: Staff SRE
+                    function: engineering
+                    country: US
+                    first_seen: "2026-01-08T12:00:00Z"
+                    repost_count: 4
+                top_reqs:
+                  - title: Senior Backend Engineer
+                    function: engineering
+                    country: DE
+                    first_seen: "2026-06-02T10:00:00Z"
+                    boards: [greenhouse, linkedin]
+                ats_migrations:
+                  - from_vendor: lever
+                    to_vendor: greenhouse
+                    occurred_at: "2026-02-11T00:00:00Z"
+                _provenance_summary:
+                  as_of: "2026-07-08T04:11:07Z"
+                  source_boards: [greenhouse, linkedin]
         "202":
           $ref: "#/components/responses/ColdTail"
         "404":

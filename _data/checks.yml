@@ -227,6 +227,11 @@ items:
     prose
   covers:
   - '7.10'
+- id: mock-examples-match-fixtures
+  desc: each operation's example payload in openapi/plane-v1.yaml exactly matches
+    its fixture
+  covers:
+  - '10.5'
 - id: nav-order-integrity
   desc: Every sibling group of pages (by parent) has unique, integer, contiguous nav_order
     values
