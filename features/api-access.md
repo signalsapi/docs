@@ -199,3 +199,5 @@ on both ends. It is read‑only and never consumes credits.
 
 See [Limits](/limits/) for every pagination default and rate limit stated across the API in one
 place.
+
+{% include recent-changes.html %}

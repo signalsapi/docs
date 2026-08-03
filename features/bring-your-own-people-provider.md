@@ -90,3 +90,5 @@ for people you'll never contact:
 
 Credentials are encrypted at rest, never displayed back (only the masked fingerprint), and used
 solely to call your provider on your behalf — never logged or shared.
+
+{% include recent-changes.html %}

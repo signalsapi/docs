@@ -155,3 +155,5 @@ Email: [support@signalsapi.com](mailto:support@signalsapi.com)
 Postal Address: Deal Baker Ltd, International House, 64 Nile Street, London, United Kingdom, N1 7SR
 
 By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms.
+
+{% include recent-changes.html %}

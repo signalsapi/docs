@@ -50,3 +50,5 @@ You can fine-tune your prompts by running them in [ChatGPT](https://chatgpt.com/
 ## Need help writing a prompt?
 
 Contact [Support](/support/) and describe your case.
+
+{% include recent-changes.html %}

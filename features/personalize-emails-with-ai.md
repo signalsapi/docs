@@ -75,3 +75,5 @@ Add the custom fields to your CRM or outreach tool, e.g. for [Snovio](https://sn
 ## Need help writing a prompt?
 
 Contact [Support](/support/) and describe your case.
+
+{% include recent-changes.html %}

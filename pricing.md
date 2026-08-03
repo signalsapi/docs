@@ -45,3 +45,5 @@ plainly instead of guessing.
 
 The plane's four meter units (`call`, `change`, `watch`, `forced_fresh`) are priced separately from
 the plans above — see [Tiers and metering](/features/agent-data-plane/#tiers-and-metering).
+
+{% include recent-changes.html %}

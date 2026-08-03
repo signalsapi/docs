@@ -57,3 +57,5 @@ The **Remote-friendly toggle** handles this automatically: it pre-selects Remote
 * To find only explicitly-advertised remote roles, turn the toggle off and check **Remote** only.
 * To exclude on-site signals without locking to a specific set, use **Exclude selected → On-site**.
 * For even more control, combine with **Job description required words** (e.g. `remote`, `home`, `hybrid`) — this checks the actual description text rather than the structured label.
+
+{% include recent-changes.html %}

@@ -28,3 +28,5 @@ If more decision-makers are identified, they are prioritized in the order specif
 
 Want to permanently exclude a company or person instead? See
 [Do-Not-Contact list](../do-not-contact-list/).
+
+{% include recent-changes.html %}

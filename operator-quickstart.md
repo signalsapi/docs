@@ -48,3 +48,5 @@ If leads later stop reaching your CRM or outreach tool, see
 with [Is it working?](/is-it-working/) to rule out a platform-wide issue, then check the
 [FAQ](/faq/). If neither explains it, contact [Support](/support/) with your search and persona
 settings.
+
+{% include recent-changes.html %}

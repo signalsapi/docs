@@ -80,3 +80,5 @@ This keeps phone costs proportional to the leads you actually surface.
 1. Go to **Settings → Provider** and save {% for p in mobile_providers %}a **{% include provider-link.html name=p.name cost=false %}** API key{% unless forloop.last %} or {% endunless %}{% endfor %}.
 2. Open a project, go to **Persona**, and tick **Find phone numbers**.
 3. Run personation — phone numbers appear in the leads list as results come in.
+
+{% include recent-changes.html %}

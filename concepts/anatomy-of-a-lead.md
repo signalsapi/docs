@@ -64,3 +64,5 @@ full walkthrough.
 - [Glossary](/concepts/glossary/)
 - [API access](/features/api-access/)
 - [Integrations](/features/integrations/)
+
+{% include recent-changes.html %}

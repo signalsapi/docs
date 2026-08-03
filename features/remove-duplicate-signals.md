@@ -27,3 +27,5 @@ When setting up a [project](https://app.signalsapi.com/leadlists/), choose how t
 be handled on the **Duplicates** screen:
 
 {% include controls-table.html screen="Duplicates" %}
+
+{% include recent-changes.html %}

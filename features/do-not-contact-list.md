@@ -32,3 +32,5 @@ It filters out all companies that have websites with these domains or ending wit
 ## Filtering out individual emails
 
 To filter out someone without filtering out the whole company, put their email in "Emails" field of the Do-Not-Contact list.
+
+{% include recent-changes.html %}

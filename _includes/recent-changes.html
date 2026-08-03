@@ -1,0 +1,8 @@
+{% assign changes = site.data.changelog.items | where: "feature", page.path | sort: "date" | reverse %}
+{% if changes.size > 0 %}
+## Recent changes
+
+{% for c in changes %}
+- **{{ c.date | date: "%Y-%m-%d" }}** — {{ c.summary }}
+{% endfor %}
+{% endif %}

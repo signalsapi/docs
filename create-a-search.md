@@ -56,3 +56,5 @@ expected, see [I'm getting the wrong companies](/troubleshooting/wrong-companies
 AI filter on top and it started rejecting everything, see
 [My AI filter rejected everything](/troubleshooting/ai-filter-too-strict/). If none of that
 explains it, check [Is it working?](/is-it-working/) or the [FAQ](/faq/).
+
+{% include recent-changes.html %}

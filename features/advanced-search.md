@@ -136,3 +136,5 @@ Every filter above lives on the same screen — see its click path in
 4. **Use "Exclude staffing agencies"** instead of manually listing staffing stop words
 5. **Try "Hard to fill"** to focus on companies most likely to respond
 6. **Widen your location** -- add location patterns for specific cities instead of limiting to a single country
+
+{% include recent-changes.html %}

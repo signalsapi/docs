@@ -41,3 +41,5 @@ To achieve a fully automated lead generation process using your own outreach too
   Positive replies, or those showing interest, are automatically added to your CRM with relevant details for follow-up.
 * **Notify Sales Team**\
   Your sales team is immediately notified of high-interest leads, allowing them to take action and begin the sales conversation while the lead is still warm.
+
+{% include recent-changes.html %}

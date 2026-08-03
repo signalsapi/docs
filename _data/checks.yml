@@ -66,6 +66,10 @@ items:
     in the built site
   covers:
   - '11.7'
+- id: changelog-page-complete
+  desc: every _data/changelog.yml entry appears in the built changelog page
+  covers:
+  - '11.8'
 - id: checks-id-matches-filename
   desc: Every script/checks/*.rb file registers an id equal to its own basename
   covers:

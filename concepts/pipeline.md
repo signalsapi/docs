@@ -25,3 +25,5 @@ graph LR
 |---|---|
 {% for stage in site.data.pipeline.items %}| {{ stage.name }} | [{{ stage.owning_page }}]({{ stage.owning_page }}) |
 {% endfor %}
+
+{% include recent-changes.html %}

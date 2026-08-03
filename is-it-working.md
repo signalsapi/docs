@@ -12,3 +12,5 @@ description: Check the live status page to see whether SignalsAPI is currently u
 # Is it working?
 
 Please check the status page to find out: [https://status.signalsapi.com/](https://status.signalsapi.com/)
+
+{% include recent-changes.html %}

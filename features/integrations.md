@@ -142,3 +142,5 @@ Add Bullhorn export to your SignalsAPI account and provide these values when pro
 ## Integrating with Firefish
 
 [https://youtu.be/CTC4VHMeYqw](https://youtu.be/CTC4VHMeYqw)
+
+{% include recent-changes.html %}

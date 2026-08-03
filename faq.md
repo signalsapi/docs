@@ -90,3 +90,5 @@ The system is currently in the active development stage. If you encountered a gl
 ## I have a question not covered here
 
 Please contact [Support](/support/) to get more help.
+
+{% include recent-changes.html %}
