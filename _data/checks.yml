@@ -382,6 +382,10 @@ items:
   desc: Every _data/pricing.yml item declares a value and a source
   covers:
   - '7.7'
+- id: pricing-page-renders-from-data
+  desc: pricing.md contains no currency symbol outside a Liquid-rendered block
+  covers:
+  - '11.6'
 - id: providers-not-duplicated-in-prose
   desc: Every page's provider table renders provider names from _data/providers.yml,
     not hand-written

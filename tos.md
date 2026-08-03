@@ -1,7 +1,7 @@
 ---
 title: Terms of Service
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/tos.html"
 nav_exclude: true
@@ -54,7 +54,7 @@ To use our Services, you must:
 5\. Subscription and Payment
 ----------------------------
 
-*   Subscription Fees: Our Services are offered on a subscription basis, with fees outlined on our pricing page.
+*   Subscription Fees: Our Services are offered on a subscription basis, with fees outlined on our [pricing page](/pricing/).
     
 *   Payment Terms: Payment obligations are non-cancellable, and all fees paid are non-refundable unless otherwise specified in a separate agreement or as required by law.
     

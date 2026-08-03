@@ -4,7 +4,7 @@ layout: default
 nav_order: 6
 has_children: true
 page_type: router
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 description: The site's own quality metrics, its measured starting point, its documented limits, and how it makes money.
 ---
@@ -20,3 +20,4 @@ this site's own claims before trusting anything else on it.
 - [Docs baseline](/docs-baseline/) — the one-time snapshot this workstream started from.
 - [Limits](/limits/) — every documented pagination default, size cap, and rate limit in one place.
 - [How we make money](/how-we-make-money/) — which provider links pay a referral fee, and why it doesn't change what you pay.
+- [Pricing](/pricing/) — every plan figure, rendered from one data file.

@@ -39,5 +39,5 @@ exclude:
 aux_links:
   "Open the app": "https://app.signalsapi.com/"
   "Free tier": "/features/bring-your-own-people-provider/"
-  "Pricing": "/faq/"
+  "Pricing": "/pricing/"
   "Support": "mailto:mykola@signalsapi.com"
