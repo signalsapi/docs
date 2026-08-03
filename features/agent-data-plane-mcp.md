@@ -2,7 +2,7 @@
 title: Agent data plane — MCP server
 parent: Features
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/agent-data-plane-mcp.html"
 nav_order: 19
@@ -25,13 +25,49 @@ arguments and picks one at reasoning time.
 
 ## Status: not hosted yet
 
-The server is code-complete but **not yet deployed to an endpoint you can connect to**, so there is
-no connect snippet on this page. Publishing one before the endpoint exists would be inventing a URL.
+The server is code-complete but **not yet deployed to an endpoint you can connect to** — there is no
+public base URL, and nothing below claims otherwise. What you can do today is run it yourself: the
+source is committed under `mcp/` in this repository, and it proxies every tool call to a REST base
+URL you control — by default the [local mock](../agent-data-plane-mock/) from your own machine, so the
+whole stack runs with no key and no hosted endpoint.
 
-This page documents the tool contract so you can plan an integration now.
-Contact [Support](/support/) if you want the MCP surface hosted — knowing someone is
-waiting on it is what moves it up the queue. In the meantime every tool below has an exact REST
-equivalent that works today.
+Contact [Support](/support/) if you want the real MCP surface hosted — knowing someone is waiting on
+it is what moves it up the queue. In the meantime every tool below has an exact REST equivalent that
+works today.
+
+## Run it yourself
+
+1. **Start the local mock** (see [Run the specification as a local mock](../agent-data-plane-mock/)):
+
+   ```bash
+   npx @stoplight/prism-cli@5.16.0 mock openapi/plane-v1.yaml
+   ```
+
+2. **Install the server's dependencies**, from the repository root:
+
+   ```bash
+   cd mcp && npm install
+   ```
+
+3. **Point your MCP client at it.** For a client that reads a `mcpServers` block (for example,
+   Claude Desktop's config file):
+
+   ```json
+   {
+     "mcpServers": {
+       "signalsapi-plane": {
+         "command": "node",
+         "args": ["/absolute/path/to/mcp/server.js"],
+         "env": {
+           "PLANE_MCP_BASE_URL": "http://127.0.0.1:4010"
+         }
+       }
+     }
+   }
+   ```
+
+Every tool call is forwarded as a REST request to `PLANE_MCP_BASE_URL` — point it at a real base URL
+and pass a real key as the `plane_api_key` argument once one is issued, and nothing else changes.
 
 ## Authentication
 
@@ -46,16 +82,14 @@ never inline it into a prompt.
 
 ## The tools
 
+This table is generated from `openapi/plane-v1.yaml`'s `x-mcp-tool` operations, not hand-typed — the
+`mcp-tool-table-generated` assertion fails the build if it ever drifts from the specification.
+
 | Tool | Arguments | REST equivalent |
 |---|---|---|
-| `is_hiring` | `company_id` | [`GET /v1/companies/{id}/is-hiring`](../agent-data-plane-api/#is-this-company-hiring) |
-| `get_open_reqs` | `company_id`, `function?`, `country?`, `limit?` | [`GET /v1/companies/{id}/open-reqs`](../agent-data-plane-api/#open-requisitions) |
-| `hiring_pulse` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/hiring-pulse`](../agent-data-plane-api/#hiring-pulse) |
-| `who_is_hiring_for` | `role?`, `geo?`, `since?`, `cursor?`, `limit?` | [`GET /v1/reqs/search`](../agent-data-plane-api/#who-is-hiring-for-a-role) |
-| `pre_action_brief` | `company_id`, `max_age?` | [`GET /v1/companies/{id}/pre-action-brief`](../agent-data-plane-api/#pre-action-brief) |
-| `get_changes` | `since`, `company_id?`, `event_type?`, `limit?` | [`GET /v1/events`](../agent-data-plane-api/#poll-for-changes) |
-| `watch_company` | `company_id`, `event_types`, `webhook_endpoint_id` | [`POST /v1/watches`](../agent-data-plane-api/#watch-a-company) |
-| `write_outcome` | `company_id`, `outcome`, `observed_at`, `req_key?` | [`POST /v1/companies/{id}/outcomes`](../agent-data-plane-api/#record-an-outcome) |
+{%- for item in site.data.mcp_tools.items %}
+| `{{ item.tool }}` | {% for a in item.args %}`{{ a }}`{% unless forloop.last %}, {% endunless %}{% endfor %} | [`{{ item.method }} {{ item.path }}`](../agent-data-plane-api/#{{ item.summary | slugify }}) |
+{%- endfor %}
 
 Every tool also takes `plane_api_key`. Arguments marked `?` are optional and share the REST defaults.
 

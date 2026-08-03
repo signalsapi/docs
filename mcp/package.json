@@ -1,0 +1,15 @@
+{
+  "name": "signalsapi-plane-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local MCP server for the SignalsAPI agent data plane. Not hosted — run it yourself. Its tool list is read from openapi/plane-v1.yaml's x-mcp-tool operations at startup, and every call is proxied as a REST request to PLANE_MCP_BASE_URL (default: the local Prism mock from the fixture gallery, http://127.0.0.1:4010).",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "js-yaml": "5.2.3"
+  }
+}

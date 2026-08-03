@@ -34,6 +34,7 @@ exclude:
   - styles
   - bmalph
   - DESIGN.md
+  - mcp
 
 aux_links:
   "Open the app": "https://app.signalsapi.com/"

@@ -222,6 +222,11 @@ items:
     the same page set
   covers:
   - '8.9'
+- id: mcp-tool-table-generated
+  desc: the MCP tool table rendered on agent-data-plane-mcp.md exactly matches the
+    x-mcp-tool set in openapi/plane-v1.yaml
+  covers:
+  - '10.6'
 - id: mobile-claim-generated
   desc: The phone page names mobile-support providers via Liquid, not hand-written
     prose

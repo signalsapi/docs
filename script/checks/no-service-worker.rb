@@ -12,7 +12,8 @@ Check.register(
 ) do |site|
   offenders = Dir.glob(File.join(ROOT, "**", "*.js"))
                  .reject { |f| f.sub("#{ROOT}/", "").start_with?(*Site::CONTENT_EXCLUDED_DIRS.map { |d| "#{d}/" }) }
-                 .select { |f| File.read(f).include?("serviceWorker.register") }
+                 .reject { |f| f.include?("/node_modules/") }
+                 .select { |f| File.file?(f) && File.read(f).include?("serviceWorker.register") }
 
   unless offenders.empty?
     site.fail!("JavaScript file(s) register a service worker — #{offenders.map { |f| f.sub("#{ROOT}/", '') }.join(', ')}")
