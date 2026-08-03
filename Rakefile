@@ -243,21 +243,30 @@ end
 # lint:openapi belongs here rather than beside check:build for that same
 # reason — it produces no artifact anything downstream reads, so a spec
 # regression should not suppress the link, prose and assertion verdicts.
-# It goes last because its missing-binary path is `abort` (SystemExit,
-# which the `rescue StandardError` below cannot catch, exactly as
-# check:prose behaves without vale), so a contributor who has not installed
-# Node still sees the whole documentation verdict before the install
-# instruction. Keeping it outside this list is what made `rake check` — the
-# one command this repo documents as its gate — green on a specification
+# Keeping it outside this list is what made `rake check` — the one command
+# this repo documents as its gate — green on a specification
 # `rake lint:openapi` would reject; script/checks/check-runs-openapi-lint.rb
-# pins the coupling so the two cannot drift apart again.
+# pins the coupling so the two cannot drift apart again. Order within the
+# list is not load-bearing: this stage was put last while a missing binary
+# still ended the run where it was reported, which the loop below no longer
+# lets happen.
 AGGREGATED_STAGES = %w[check:links check:prose check:assert lint:openapi].freeze
 
 desc "Run the full verification gate: build, then every check stage"
 task check: "check:build" do
+  # A stage reports a missing pinned tool with `abort` — check:prose without
+  # vale, lint:openapi without spectral — and `abort` raises SystemExit, which
+  # descends from Exception rather than StandardError. Rescuing StandardError
+  # alone therefore ended the whole run at that stage: every later stage
+  # silently never ran, so its verdict was unknown rather than green, and this
+  # aggregate report was never reached — discarding what the stages before it
+  # had already found. Rescuing SystemExit as well records the missing tool as
+  # that stage's failure like any other, and leaves a standalone
+  # `rake check:prose` with the clean one-line exit AD-12 wrote it for.
+  # script/checks/check-aggregates-stage-aborts.rb pins this.
   failures = AGGREGATED_STAGES.each_with_object([]) do |stage, acc|
     Rake::Task[stage].invoke
-  rescue StandardError => e
+  rescue StandardError, SystemExit => e
     acc << "#{stage}: #{e.message}"
   end
 

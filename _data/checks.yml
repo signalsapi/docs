@@ -75,6 +75,11 @@ items:
   desc: every _data/changelog.yml entry appears in the built changelog page
   covers:
   - '11.8'
+- id: check-aggregates-stage-aborts
+  desc: "`rake check`'s aggregation loop rescues every way its stages can terminate,
+    including the SystemExit an `abort` for a missing pinned tool raises"
+  covers:
+  - '1.10'
 - id: check-runs-openapi-lint
   desc: Running `rake check` invokes lint:openapi — the Rakefile defines that task
     and names it among check's prerequisite or aggregated stages
