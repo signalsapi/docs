@@ -7,8 +7,5 @@ items:
   - key: plane_access
     warning: The agent data plane is not yet open for self-serve signup. You need an issued API key and base URL before any live request on this page will work — see Agent data plane for how access is arranged today.
 
-  - key: mcp_hosting
-    warning: The MCP server is code-complete but not yet hosted at a public endpoint. The connect snippet below runs it yourself, locally, against the mock — swap in a real base URL and key once one is issued.
-
   - key: leadmagic_phone
     warning: Mobile phone numbers are only ever returned by LeadMagic. If your connected people-data provider is anything else, nothing on this page will populate a phone number.
