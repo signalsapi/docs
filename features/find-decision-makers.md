@@ -2,7 +2,7 @@
 title: Find decision-makers
 parent: Features
 layout: default
-verified_on: 2024-10-22
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/find-decision-makers.html"
 nav_order: 6
@@ -13,23 +13,10 @@ description: Set up a persona to find and prioritize the right job titles and lo
 
 # Find decision-makers
 
-Select decision-makers based on their location and job title
+Select decision-makers based on their location and job title — find people working in target
+companies along with their contact information, on the **Select decision-makers** screen:
 
-Find people working in target companies along with their contact information
-
-<div align="left">
-
-{% include screenshot.html path="features/find-decision-makers-1.png" width="375" %}
-
-</div>
-
-Limit the number of decision-makers per company
-
-<div align="left">
-
-{% include screenshot.html path="features/find-decision-makers-2.png" width="375" %}
-
-</div>
+{% include controls-table.html screen="Select decision-makers" %}
 
 If more decision-makers are identified, they are prioritized in the order specified in the 'titles' field, and those with valid email addresses come first.
 

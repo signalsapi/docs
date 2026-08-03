@@ -23,26 +23,6 @@ items:
   capture_date: 2026-06-06
   owning_page: features/bring-your-own-people-provider.md
   alt: Key rejected, invalid status
-- path: features/do-not-contact-list.png
-  subject: The Do-Not-Contact list screen under Leads -> DNC
-  capture_date: 2024-10-22
-  owning_page: features/do-not-contact-list.md
-  alt: The Do-Not-Contact list screen under Leads -> DNC
-- path: features/filter-leads-with-ai.png
-  subject: AI generated fields shown on a lead
-  capture_date: 2024-10-22
-  owning_page: features/filter-leads-with-ai.md
-  alt: AI generated fields shown on a lead
-- path: features/find-decision-makers-1.png
-  subject: People working in target companies along with their contact information
-  capture_date: 2024-10-22
-  owning_page: features/find-decision-makers.md
-  alt: People working in target companies along with their contact information
-- path: features/find-decision-makers-2.png
-  subject: Limiting the number of decision-makers per company
-  capture_date: 2024-10-22
-  owning_page: features/find-decision-makers.md
-  alt: Limiting the number of decision-makers per company
 - path: features/find-phone-numbers-1.png
   subject: Persona settings showing the 'Find phone numbers' checkbox next to 'Email is required'
   capture_date: 2026-06-07
@@ -53,31 +33,6 @@ items:
   capture_date: 2026-06-07
   owning_page: features/find-phone-numbers.md
   alt: My Leads list with a Phone column showing numbers like +15551234567 for some rows and a dash for others
-- path: features/personalize-emails-with-ai-1.png
-  subject: Snov.io prospect list -> Manage custom fields and data tabs
-  capture_date: 2024-10-22
-  owning_page: features/personalize-emails-with-ai.md
-  alt: Snov.io prospect list -> Manage custom fields and data tabs
-- path: features/personalize-emails-with-ai-2.png
-  subject: Adding a custom field such as ai_field_1 or job_title to the prospect list
-  capture_date: 2024-10-22
-  owning_page: features/personalize-emails-with-ai.md
-  alt: Adding a custom field such as ai_field_1 or job_title to the prospect list
-- path: features/personalize-emails-with-ai-3.png
-  subject: Using a custom field in email text
-  capture_date: 2024-10-22
-  owning_page: features/personalize-emails-with-ai.md
-  alt: Using a custom field in email text
-- path: features/remove-duplicate-signals-1.png
-  subject: The same job posted multiple times in different regions
-  capture_date: 2024-10-22
-  owning_page: features/remove-duplicate-signals.md
-  alt: The same job posted multiple times in different regions
-- path: features/remove-duplicate-signals-2.png
-  subject: Choosing how duplicate signals should be handled when setting up a project
-  capture_date: 2024-10-22
-  owning_page: features/remove-duplicate-signals.md
-  alt: Choosing how duplicate signals should be handled when setting up a project
 - path: features/work-arrangement-filter-1.png
   subject: Work arrangement filter with Include only selected and Remote + Unspecified checked
   capture_date: 2026-06-19

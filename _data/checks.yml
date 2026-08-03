@@ -276,6 +276,12 @@ items:
     image's alt attribute or filename
   covers:
   - '6.5'
+  - '11.3'
+- id: no-instructional-images-remain
+  desc: none of the nine GitBook-era instructional screenshots Story 11.3 replaced
+    with text comes back
+  covers:
+  - '11.3'
 - id: no-live-sandbox-claim
   desc: No page asserts that a public base URL, a hosted sandbox, or an issued key
     exists for the agent data plane

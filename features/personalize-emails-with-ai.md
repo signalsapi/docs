@@ -2,7 +2,7 @@
 title: Personalize emails with AI
 parent: Features
 layout: default
-verified_on: 2024-10-22
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/personalize-emails-with-ai.html"
 nav_order: 11
@@ -57,27 +57,20 @@ Open a [project](https://app.signalsapi.com/leadlists/), add new or edit an exis
 
 Add the custom fields to your CRM or outreach tool, e.g. for [Snovio](https://snov.io/):
 
-1.  Open the prospect list [https://app.snov.io/prospects/](https://app.snov.io/prospects/), click ... -> Manage custom fields and data tabs
+1.  Open the prospect list [https://app.snov.io/prospects/](https://app.snov.io/prospects/), click the
+    **···** menu on the prospect list toolbar, then **Manage custom fields and data tabs**.
+2.  In the **Custom fields and data tabs** panel, add custom fields with any names, for example
+    (as plain **Text** fields):
 
-    <div align="left">
-
-    {% include screenshot.html path="features/personalize-emails-with-ai-1.png" width="563" %}
-
-    </div>
-2.  Add custom fields with any names, for example **ai\_field\_1** or **job\_title** to the list
-
-    <div align="left">
-
-    {% include screenshot.html path="features/personalize-emails-with-ai-2.png" width="375" %}
-
-    </div>
-3.  Use them in email text
-
-    <div align="left">
-
-    {% include screenshot.html path="features/personalize-emails-with-ai-3.png" width="200" %}
-
-    </div>
+    | Field name | Type |
+    |---|---|
+    | `ai_field_1` | Text |
+    | `ai_field_2` | Text |
+    | `ai_field_3` | Text |
+    | `ai_field_person` | Text |
+3.  Insert them into your email text from Snov.io's own field picker — they appear as inline chips
+    named after the field, e.g. one chip for `ai_field_person` followed by the words "I would like
+    to" and a chip for `ai_field_1`.
 
 ## Need help writing a prompt?
 

@@ -2,7 +2,7 @@
 title: Do-Not-Contact list
 parent: Features
 layout: default
-verified_on: 2024-10-22
+verified_on: 2026-08-03
 owner: mykola
 redirect_from: "/features/do-not-contact-list.html"
 nav_order: 14
@@ -16,13 +16,9 @@ Make sure you do not contact companies or people you do not want to
 
 ## Getting started
 
-Set it up in [Leads -> DNC](https://app.signalsapi.com/dnc/)
+Set it up at [app.signalsapi.com/dnc](https://app.signalsapi.com/dnc/):
 
-<div align="left">
-
-{% include screenshot.html path="features/do-not-contact-list.png" width="375" %}
-
-</div>
+{% include controls-table.html screen="Edit Do-Not-Contact List" %}
 
 ## Filtering out domains
 
