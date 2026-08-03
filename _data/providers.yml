@@ -1,7 +1,7 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-02
-  source: transcribed from Compare people-data providers and Bring your own people-data provider (Story 7.2) — no cost is estimated; each is an owner-marked placeholder pending a sourced figure.
+  verified_on: 2026-08-03
+  source: capabilities transcribed from Compare people-data providers and Bring your own people-data provider (Story 7.2); each cost figure is read off that provider's own public pricing page and carries the URL and the date it was read in its item's source. A figure we could not read there stays an owner-marked placeholder rather than a guess. Recheck cadence is the existing data-staleness assertion — bump meta.verified_on when the ladder is re-read, and the build reports this file once it passes 90 days.
 
 items:
   - name: Anymail Finder
@@ -18,7 +18,8 @@ items:
     credential_shape: api_key
     signup_url: https://anymailfinder.com/?via=signalsapi
     affiliate: true
-    cost: "TODO(owner: mykola): source Anymail Finder's per-lookup or subscription cost before publishing a figure."
+    cost: "from USD 29/month for 400 credits — about USD 0.07 per lookup, falling to USD 0.008 at 100k/month; 100 free trial credits"
+    source: https://anymailfinder.com/pricing, read 2026-08-03
 
   - name: Icypeas
     mobile_support: false
@@ -34,7 +35,8 @@ items:
     credential_shape: api_key
     signup_url: https://icypeas.com
     affiliate: false
-    cost: "TODO(owner: mykola): source Icypeas's per-lookup or subscription cost before publishing a figure."
+    cost: "from USD 19/month plus VAT for 1,000 credits — USD 0.019 per email, falling to USD 0.005 at 100,000 credits/month"
+    source: https://icypeas.com/pricing, read 2026-08-03
 
   - name: People Data Labs
     mobile_support: false
@@ -50,7 +52,8 @@ items:
     credential_shape: api_key
     signup_url: https://peopledatalabs.com
     affiliate: false
-    cost: "TODO(owner: mykola): source People Data Labs's per-lookup or subscription cost before publishing a figure."
+    cost: "free tier up to 100 records/month; self-serve from USD 98/month starting at 350 records (USD 940/year). Volume above the self-serve tier is quote only."
+    source: https://www.peopledatalabs.com/pricing, read 2026-08-03
 
   - name: Prospeo
     mobile_support: false
@@ -66,7 +69,8 @@ items:
     credential_shape: api_key
     signup_url: https://prospeo.io/?via=signalsapi
     affiliate: true
-    cost: "TODO(owner: mykola): source Prospeo's per-lookup or subscription cost before publishing a figure."
+    cost: "TODO(owner: mykola): source Prospeo's per-lookup or subscription cost in a browser — the pricing page renders its Free/Starter/Growth/Pro ladder client-side from a runtime API, so no figure is readable from the served HTML."
+    source: https://prospeo.io/pricing, read 2026-08-03 — no figure served
 
   - name: Snov.io
     mobile_support: false
@@ -82,7 +86,8 @@ items:
     credential_shape: client_id_and_secret
     signup_url: https://snov.io/?fp_ref=signalsapi
     affiliate: true
-    cost: "TODO(owner: mykola): source Snov.io's per-lookup or subscription cost before publishing a figure."
+    cost: "from USD 39/month for 1,000 credits; renewable free trial of 50 credits/month"
+    source: https://snov.io/pricing, read 2026-08-03
 
   - name: Hunter
     mobile_support: false
@@ -98,7 +103,8 @@ items:
     credential_shape: api_key
     signup_url: https://hunter.io
     affiliate: false
-    cost: "TODO(owner: mykola): source Hunter's per-lookup or subscription cost before publishing a figure."
+    cost: "free tier 50 credits/month; from USD 49/month for 2,000 credits — 1 credit per email found, 0.5 per verification"
+    source: https://hunter.io/pricing, read 2026-08-03
 
   - name: LeadMagic
     mobile_support: true
@@ -114,7 +120,8 @@ items:
     credential_shape: api_key
     signup_url: https://leadmagic.io
     affiliate: false
-    cost: "TODO(owner: mykola): source LeadMagic's per-lookup or subscription cost before publishing a figure."
+    cost: "from USD 49.99/month for 2,000 credits — 1 credit per verified email, 5 per mobile number, and failed lookups are not charged"
+    source: https://leadmagic.io/pricing, read 2026-08-03
 
   - name: Tomba
     mobile_support: false
@@ -130,4 +137,5 @@ items:
     credential_shape: key_and_secret
     signup_url: https://tomba.io
     affiliate: false
-    cost: "TODO(owner: mykola): source Tomba's per-lookup or subscription cost before publishing a figure."
+    cost: "free tier 25 searches/month; from USD 89/month for 10,000 credits — 1 credit per email, 5 per phone number"
+    source: https://tomba.io/pricing, read 2026-08-03
