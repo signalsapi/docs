@@ -48,6 +48,17 @@ items:
   path: "/v1/companies/{company_id}/pre-action-brief"
   summary: Pre-action brief
   operation_id: getPreActionBrief
+- tool: search_jobs
+  args:
+  - role?
+  - geo?
+  - since?
+  - cursor?
+  - limit?
+  method: GET
+  path: "/v1/jobs/search"
+  summary: Search open jobs
+  operation_id: searchJobs
 - tool: watch_company
   args:
   - company_id

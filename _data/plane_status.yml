@@ -89,6 +89,11 @@ items:
   path: "/v1/keys/{key_id}"
   status: live
   mcp_tool:
+- operation_id: searchJobs
+  method: GET
+  path: "/v1/jobs/search"
+  status: live
+  mcp_tool: search_jobs
 - operation_id: searchReqs
   method: GET
   path: "/v1/reqs/search"

@@ -331,6 +331,10 @@ items:
   desc: no committed JavaScript file registers a service worker
   covers:
   - '10.3'
+- id: no-todo-marker-in-output
+  desc: No built page under _site/ publishes an owner-marked figure placeholder
+  covers:
+  - '1.9'
 - id: object-model-single-name
   desc: No .md file outside the glossary page names the lead-list object with anything
     but Project or its declared alias
@@ -412,6 +416,11 @@ items:
   - '7.8'
 - id: pricing-figures-sourced
   desc: Every _data/pricing.yml item declares a value and a source
+  covers:
+  - '7.7'
+- id: pricing-ladder-summary-matches-rows
+  desc: Every plan_tier figure in _data/pricing.yml appears in the self_serve_ladder_summary
+    pull quote
   covers:
   - '7.7'
 - id: pricing-page-renders-from-data

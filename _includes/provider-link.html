@@ -7,6 +7,7 @@
   {%- if provider.affiliate -%}
     {%- assign show_cost = true -%}
     {%- if include.cost == false -%}{%- assign show_cost = false -%}{%- endif -%}
+    {%- if provider.cost contains "TODO(owner:" -%}{%- assign show_cost = false -%}{%- endif -%}
 <a class="provider-link" href="{{ provider.signup_url }}" rel="sponsored nofollow">{{ link_text }}</a>{% if show_cost %}<span class="provider-link-cost"> ({{ provider.cost }})</span>{% endif %}
   {%- else -%}
 <a class="provider-link" href="{{ provider.signup_url }}">{{ link_text }}</a>

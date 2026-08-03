@@ -15,31 +15,37 @@ Every figure on this page renders from `_data/pricing.yml` — the one place a p
 an expiry window is allowed to live. Where we don't yet have a confirmed figure, the page says so
 plainly instead of guessing.
 
-{% assign items = site.data.pricing.items %}
-{% assign free_tier = items | where: "name", "free_tier_description" | first %}
-{% assign plan_price = items | where: "name", "subscription_plan_price" | first %}
-{% assign credit_allowance = items | where: "name", "free_tier_credit_allowance" | first %}
-{% assign trial_allowance = items | where: "name", "trial_allowance" | first %}
-{% assign credit_expiry = items | where: "name", "credit_expiry" | first %}
-{% assign run_frequency = items | where: "name", "run_frequency_by_plan" | first %}
+## The self-serve subscription
+
+{% include pricing-figure.html name="self_serve_ladder_summary" %}
+
+{% include pricing-ladder.html %}
+
+A **qualifying signal** is {% include pricing-figure.html name="qualifying_signal_definition" %}
+
+{% include pricing-figure.html name="self_serve_evaluation_tier" %}
 
 ## Free tier
 
-{{ free_tier.value }}
+{% include pricing-figure.html name="free_tier_description" %}
 
-## Paid plan
+## The managed service
 
-{{ plan_price.value }}
+Done-with-you and done-for-you outbound are a separate offer from the subscription above, priced at
+{% include pricing-figure.html name="managed_service_monthly" %} per month after a two-week test
+drive. Qualified telephone numbers are their own packages:
+{% include pricing-figure.html name="managed_phone_packages" %}. See the
+[FAQ](/faq/#what-are-my-options-for-running-signalsapi-to-grow-my-business) for what each one covers.
 
 ## Credits
 
-- **Free-tier allowance:** {{ credit_allowance.value }}
-- **Trial allowance:** {{ trial_allowance.value }}
-- **Unspent credit expiry:** {{ credit_expiry.value }}
+- **Free-tier allowance:** {% include pricing-figure.html name="free_tier_credit_allowance" %}
+- **Trial allowance:** {% include pricing-figure.html name="trial_allowance" %}
+- **Unspent credit expiry:** {% include pricing-figure.html name="credit_expiry" %}
 
 ## Run frequency
 
-{{ run_frequency.value }}
+{% include pricing-figure.html name="run_frequency_by_plan" %}
 
 ## Agent data plane
 

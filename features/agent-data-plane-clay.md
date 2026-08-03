@@ -130,6 +130,11 @@ One `call` unit per row, billed at class `cached` — the same as any
 [Tier 0 read](../agent-data-plane/#tiers-and-metering). Re-running a column re-bills it.
 [`GET /v1/usage`](../agent-data-plane-api/#usage) shows your rolling totals.
 
+Elsewhere on the plane you can opt into [exactly-once billing](../agent-data-plane-api/#idempotency) by
+sending an `Idempotency-Key`, but a Clay column issues the same fixed request for every row with no
+place to attach a per-row key — so Clay enrichment always bills per call. That is why the key stayed
+optional across the plane rather than being required.
+
 ## Where to go next
 
 - **[Agent data plane overview](../agent-data-plane/)** — the ledger, the tiers, getting access

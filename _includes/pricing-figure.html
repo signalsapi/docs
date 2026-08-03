@@ -1,0 +1,11 @@
+{%- assign figure = nil -%}
+{%- for item in site.data.pricing.items -%}
+  {%- if item.name == include.name -%}{%- assign figure = item -%}{%- endif -%}
+{%- endfor -%}
+{%- if figure == nil -%}
+**[unknown pricing figure: {{ include.name }}]**
+{%- elsif figure.value contains "TODO(owner:" -%}
+{{ include.pending | default: "Not published yet — [ask Support](/support/) and we will confirm the figure that applies to you." }}
+{%- else -%}
+{{ figure.value }}
+{%- endif -%}

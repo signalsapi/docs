@@ -425,6 +425,74 @@ paths:
                 next_cursor: 4412
                 as_of: "2026-07-08T04:11:07Z"
 
+  /v1/jobs/search:
+    get:
+      operationId: searchJobs
+      tags: [Tier 0 — cached reads]
+      summary: Search open jobs
+      x-status: live
+      x-mcp-tool: search_jobs
+      description: >
+        The flat, role-granular counterpart to searchReqs: the individual
+        open roles across companies matching a role and geography, one row
+        per logical req rather than grouped by company. ATS-only and
+        freshness-floored, like every Tier 0 read. Its next_cursor is an
+        opaque string, not the numeric company id searchReqs returns.
+      parameters:
+        - name: role
+          in: query
+          description: Matches the req's function
+          schema: { type: string }
+        - name: geo
+          in: query
+          description: Matches the req's country
+          schema: { type: string }
+        - name: since
+          in: query
+          description: Only reqs first seen at or after this timestamp
+          schema: { type: string, format: date-time }
+        - name: cursor
+          in: query
+          description: Keyset cursor; pass the previous page's next_cursor
+          schema: { type: string }
+        - name: limit
+          in: query
+          description: Page size
+          schema: { type: integer, default: 20 }
+      responses:
+        "200":
+          description: Individual open roles matching the search.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  jobs:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        req_key: { type: string }
+                        company_id: { type: integer }
+                        title: { type: string }
+                        function: { type: string }
+                        country: { type: string }
+                        first_seen: { type: string, format: date-time }
+                        board: { type: string }
+                  next_cursor: { type: string, nullable: true }
+                  as_of: { type: string, format: date-time }
+              example:
+                jobs:
+                  - req_key: "greenhouse:zollsoft:senior-backend-engineer"
+                    company_id: 4412
+                    title: Senior Backend Engineer
+                    function: engineering
+                    country: DE
+                    first_seen: "2026-06-02T10:00:00Z"
+                    board: greenhouse
+                next_cursor: "4412:greenhouse:zollsoft:senior-backend-engineer"
+                as_of: "2026-07-08T04:11:07Z"
+
   /v1/markets/role-demand:
     get:
       operationId: getMarketRoleDemand

@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /fixtures/v1/search-jobs.json
+operation_id: searchJobs
+---
+{
+  "recorded_on": "2026-07-08",
+  "jobs": [
+    {
+      "req_key": "greenhouse:zollsoft:senior-backend-engineer",
+      "company_id": 4412,
+      "title": "Senior Backend Engineer",
+      "function": "engineering",
+      "country": "DE",
+      "first_seen": "2026-06-02T10:00:00Z",
+      "board": "greenhouse"
+    }
+  ],
+  "next_cursor": "4412:greenhouse:zollsoft:senior-backend-engineer",
+  "as_of": "2026-07-08T04:11:07Z"
+}

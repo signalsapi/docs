@@ -110,6 +110,11 @@ Four meter units are recorded: `call`, `change`, `watch` and `forced_fresh`.
 bills per event returned, not per poll**: an empty page costs nothing, so you can poll it as tightly
 as you like.
 
+**Exactly-once billing on retries.** Any metered read can opt into idempotent billing: supply an
+idempotency token — the [`Idempotency-Key`](../agent-data-plane-api/#idempotency) header over REST, or the
+`idempotency_key` argument over MCP — and a retry of the same logical call within a fixed 24h window
+bills once, not once per attempt. Omit it and every call bills independently, as before.
+
 Free, paid, and enterprise packaging maps onto the Tier 0 / Tier 1 split above — Tier 0 cached reads
 free, Tier 1 fresh reads paid, enterprise arrangements by conversation. Pricing is not yet published;
 talk to us and we will quote your usage shape.

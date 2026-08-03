@@ -52,6 +52,28 @@ X-API-Key: YOUR_API_KEY
 Unknown and revoked keys are deliberately indistinguishable. Every request is scoped to your own
 `customer_id`: you can never read, meter against, or revoke another customer's anything.
 
+## Idempotency
+
+Every **metered** route accepts an optional `Idempotency-Key` request header. Send the same key on a
+retry of the same logical call and it bills **exactly once** rather than once per attempt (NFR-D4):
+
+```text
+Idempotency-Key: <your-token>
+```
+
+- **Optional, off by default.** Omit it and every call bills independently — the original behavior.
+  You opt in only where a retry would otherwise double-bill.
+- **Bounded to 24 hours.** A key dedups from its first use until 24h later, then bills again. The
+  window is *fixed*, not sliding: a retry that straddles the 24h boundary derives a fresh bill, so it
+  bills twice. That gap is the accepted cost of a stateless key — retry well inside the window if you
+  need the guarantee to hold.
+- **Scoped to `(key, endpoint)`.** The token is namespaced per API key and per endpoint, so two
+  customers may reuse the same token safely, and one token reused across two endpoints bills each
+  endpoint once.
+
+`/v1/clay/enrich` accepts the header too, but a Clay column can't attach a per-row key from its UI, so
+Clay enrichment bills per call — see [the Clay billing note](../agent-data-plane-clay/#billing).
+
 ## Response conventions
 
 **`as_of`.** Every company and market read carries an `as_of` timestamp — the instant the answer
@@ -321,6 +343,47 @@ each with its full [hiring pulse](#hiring-pulse) and the specific reqs that matc
 ```
 
 Paginate by passing `next_cursor` back as `cursor` until it comes back `null`.
+
+### Search open jobs
+
+```text
+GET /v1/jobs/search
+```
+
+The flat, role-granular counterpart to [who is hiring for a role](#who-is-hiring-for-a-role): the
+individual open roles across companies matching a role and geography, **one row per logical req**
+(each with its own `company_id` and `req_key`) rather than grouped by company. ATS-only and
+freshness-floored, like every Tier 0 read.
+
+| Query parameter | Default | Notes |
+|---|---|---|
+| `role` | — | Matches the req's function |
+| `geo` | — | Matches the req's country |
+| `since` | — | Only reqs first seen at or after this timestamp |
+| `cursor` | — | Keyset cursor; pass the previous page's `next_cursor` |
+| `limit` | `20` | Page size |
+
+```json
+{
+  "jobs": [
+    {
+      "req_key": "…",
+      "company_id": 4412,
+      "title": "Senior Backend Engineer",
+      "function": "engineering",
+      "country": "DE",
+      "first_seen": "2026-06-02T10:00:00Z",
+      "board": "greenhouse"
+    }
+  ],
+  "next_cursor": "4412:…",
+  "as_of": "2026-07-08T04:11:07Z"
+}
+```
+
+Paginate by passing `next_cursor` back as `cursor` until it comes back `null`. Unlike
+[`/v1/reqs/search`](#who-is-hiring-for-a-role), whose cursor is a numeric company id, this cursor is
+an opaque string — treat it as a token and don't parse it.
 
 ### Market role demand
 

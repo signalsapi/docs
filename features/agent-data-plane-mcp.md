@@ -20,7 +20,7 @@ tools. The plane ships an MCP server, `signalsapi-plane`, that exposes the hirin
 agent tools — the same data, the same metering, and the same key as the
 [REST API](../agent-data-plane-api/).
 
-Where a REST client has to know which URL to build, an MCP agent sees eight tools with typed
+Where a REST client has to know which URL to build, an MCP agent sees {{ site.data.mcp_tools.items | size }} tools with typed
 arguments and picks one at reasoning time.
 
 ## Status: not hosted yet
@@ -94,6 +94,12 @@ This table is generated from `openapi/plane-v1.yaml`'s `x-mcp-tool` operations, 
 
 Every tool also takes `plane_api_key`. Arguments marked `?` are optional and share the REST defaults.
 
+Every **metered** tool additionally accepts an optional `idempotency_key` argument — the header-less
+transport's equivalent of the REST [`Idempotency-Key`](../agent-data-plane-api/#idempotency) header, with
+identical semantics: reuse the same value on a retry and the call bills exactly once within a fixed
+24h window, namespaced per key and per tool. `write_outcome` is a write-back rather than a metered
+read, so it does not take one.
+
 Each tool returns the same JSON shape its REST counterpart serializes — provenance envelopes and all.
 No business logic is reimplemented behind the MCP surface: every tool above proxies the identical REST
 operation, generated from the same `x-mcp-tool` set as the table above, not hand-counted:
@@ -113,7 +119,8 @@ The tools are designed to be composed cheaply-first, expensively-last:
    further spend.
 2. **Understand** with `hiring_pulse`, or skip straight to `pre_action_brief` when you are about to
    act and want the whole picture in one round-trip.
-3. **Prospect** with `who_is_hiring_for` when you have a role and a geography but no company yet.
+3. **Prospect** with `who_is_hiring_for` when you have a role and a geography but no company yet — or
+   `search_jobs` for the same matches as a flat, one-row-per-role list instead of grouped by company.
 4. **Stay current** with `get_changes` — replay the cursor rather than re-reading company endpoints
    on a timer. It bills per event returned, so an unchanged world costs nothing.
 5. **Close the loop** with `write_outcome` so the plane learns what actually converted.

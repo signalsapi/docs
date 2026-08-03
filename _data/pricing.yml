@@ -1,7 +1,7 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-02
-  source: transcribed from faq.md, features/bring-your-own-people-provider.md and the What's new changelog (Story 7.7) — every unconfirmed figure is an owner-marked placeholder citing where its last known value came from, not a claim that value still holds today.
+  verified_on: 2026-08-03
+  source: the canonical self-serve ladder and the managed-service figures published on faq.md (commit 2768259, 2026-07-31, closing signalsapi-4208 and signalsapi-4210); everything still unconfirmed is an owner-marked placeholder citing where its last known value came from, not a claim that value still holds today.
 
 items:
   - name: free_tier_description
@@ -9,10 +9,62 @@ items:
     value: No connected people-data provider key — company signals only, no people data, no SignalsAPI credits spent on lookups.
     source: features/bring-your-own-people-provider.md
 
-  - name: subscription_plan_price
-    kind: plan
-    value: "TODO(owner: mykola): confirm the current published subscription price — faq.md describes a 2-week test drive followed by a monthly subscription with no figure restored since Story 2.9 quarantined the contradicted one."
-    source: faq.md
+  - name: self_serve_ladder_summary
+    kind: ladder
+    value: "You pay for qualifying signals, not for companies monitored: €79/month for 50 signals, €199 for 250, €399 for 1,000, custom above 5,000."
+    source: faq.md (canonical answer-engine pull quote, 2026-07-31)
+
+  - name: qualifying_signal_definition
+    kind: definition
+    value: one verified hiring event at one company that passes your filters. Several roles posted by the same company in the same window count once; agency reposts, duplicates and unverified postings never count, and false positives are credited back.
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_evaluation_tier
+    kind: free_tier
+    value: There is a free evaluation tier, and enrichment runs on your own provider key at that provider's cost.
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_starter
+    kind: plan_tier
+    label: Starter
+    value: "€79"
+    included: "50"
+    per_additional: "€1.58"
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_growth
+    kind: plan_tier
+    label: Growth
+    value: "€199"
+    included: "250"
+    per_additional: "€0.80"
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_pro
+    kind: plan_tier
+    label: Pro
+    value: "€399"
+    included: "1,000"
+    per_additional: "€0.40"
+    source: faq.md (2026-07-31)
+
+  - name: self_serve_plan_enterprise
+    kind: plan_tier
+    label: Enterprise
+    value: custom
+    included: above 5,000
+    per_additional: custom
+    source: faq.md (2026-07-31)
+
+  - name: managed_service_monthly
+    kind: managed
+    value: "£400/€490/$550"
+    source: faq.md (2026-07-31)
+
+  - name: managed_phone_packages
+    kind: managed
+    value: "£49/month for 100 telephone numbers, £149 for 300 and £199 for 500"
+    source: faq.md (2026-07-31)
 
   - name: free_tier_credit_allowance
     kind: allowance
