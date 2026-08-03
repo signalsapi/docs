@@ -4,7 +4,7 @@ parent: Trust
 layout: default
 nav_order: 2
 page_type: reference
-verified_on: 2026-08-02
+verified_on: 2026-08-03
 owner: mykola
 description: Live counts of missing descriptions, empty alt text, broken links, stale pages, and orphan pages.
 ---
@@ -81,3 +81,15 @@ None. Every page has at least one inbound in-body link.
 {% for r in rows %}| `{{ r.path }}` | {{ r.title }} |
 {% endfor %}
 {% endif %}
+
+## What these tables do not measure
+
+Reader traffic. This site loads no analytics, telemetry, or beacon — a collector needs a backend, a
+retention policy, and a privacy disclosure this site does not have — and the
+`no-analytics-or-telemetry` assertion keeps it that way, so no number here counts visits.
+
+Reach on this page therefore means structural reach: whether another page links to it (the orphan
+table above, gated by `no-orphan-pages`) and how recently someone verified it (the staleness table,
+gated by `page-staleness`). Those two, with a page's entry in the [changelog](/whats-new/), are the
+whole input to a keep-or-retire decision. The [retirement ledger](/retirement-ledger/) and the
+page-count budget record what was decided; neither measures whether a page is read.

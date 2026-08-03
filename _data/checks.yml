@@ -318,6 +318,10 @@ items:
     values
   covers:
   - '2.10'
+- id: no-analytics-or-telemetry
+  desc: No page, committed head/layout/script source, or built file loads an analytics,
+    telemetry, or beacon collector
+  covers: []
 - id: no-childless-has-children
   desc: 'Every page declaring has_children: true is named as a parent: by at least
     one other page'
