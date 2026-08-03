@@ -347,6 +347,11 @@ items:
   covers:
   - '2.14'
   - '8.2'
+- id: openapi-enum-no-duplicates
+  desc: no enum in openapi/plane-v1.yaml repeats a value (replaces Spectral's disabled
+    duplicated-entry-in-enum)
+  covers:
+  - '10.2'
 - id: openapi-lint-step-present
   desc: ci.yml declares a Spectral lint step whenever openapi/plane-v1.yaml exists
   covers:

@@ -661,6 +661,7 @@ paths:
       tags: [The change feed]
       summary: Register a webhook
       x-status: live
+      description: Register an endpoint that receives change-feed deliveries signed with the secret you supply.
       requestBody:
         required: true
         content:
@@ -669,7 +670,7 @@ paths:
               type: object
               properties:
                 url: { type: string, description: Where deliveries are POSTed }
-                secret: { type: string, description: Your HMAC signing key. Stored for signing, never logged, never returned. }
+                secret: { type: string, description: "Your HMAC signing key. Stored for signing, never logged, never returned." }
               required: [url, secret]
       responses:
         "201":
@@ -702,7 +703,7 @@ paths:
               properties:
                 company_id: { type: integer, description: The company to watch }
                 event_types: { type: array, items: { type: string, enum: [opened, reposted, reobserved] } }
-                webhook_endpoint_id: { type: integer, description: An id from POST /v1/webhooks, belonging to your account }
+                webhook_endpoint_id: { type: integer, description: "An id from POST /v1/webhooks, belonging to your account" }
               required: [company_id, event_types, webhook_endpoint_id]
       responses:
         "201":
@@ -724,6 +725,7 @@ paths:
       tags: [The change feed]
       summary: Cancel a watch
       x-status: live
+      description: Stop a watch from producing further change-feed deliveries.
       parameters:
         - name: watch_id
           in: path
