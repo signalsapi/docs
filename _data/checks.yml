@@ -424,6 +424,11 @@ items:
     filter and credential values
   covers:
   - '7.2'
+- id: retirement-ledger-complete
+  desc: every redirect_from entry in the repository appears on the built retirement-ledger
+    page
+  covers:
+  - '11.13'
 - id: robots-sitemap-absolute
   desc: '_site/robots.txt exists with an absolute Sitemap: line and no double slash
     after the host'

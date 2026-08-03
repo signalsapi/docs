@@ -1,0 +1,36 @@
+meta:
+  owner: mykola
+  verified_on: 2026-08-03
+  source: every redirect_from entry present in the repository today (git grep), grouped by the git history explaining why each URL was retired — Story 2.3's permalink migration and Story 11.11's page deletion
+
+items:
+  - reason: "GitBook-era .html URL replaced by a pretty permalink when Story 2.3 set permalink: pretty sitewide"
+    urls:
+      - /faq.html
+      - /features/agent-data-plane-clay.html
+      - /features/agent-data-plane-mcp.html
+      - /features/agent-data-plane-api.html
+      - /features/agent-data-plane.html
+      - /tos.html
+      - /how-it-works.html
+      - /features/work-arrangement-filter.html
+      - /features/remove-duplicate-signals.html
+      - /features/personalize-emails-with-ai.html
+      - /features/integrations.html
+      - /features/find-phone-numbers.html
+      - /features/find-decision-makers.html
+      - /features/filter-leads-with-ai.html
+      - /features/do-not-contact-list.html
+      - /features/bring-your-own-people-provider.html
+      - /features/api-access.html
+      - /features/advanced-search.html
+      - /features/compare-people-data-providers.html
+      - /features/ai-variables.html
+      - /privacy-policy.html
+      - /features/website-monitoring.html
+      - /features/request-new-feature.html
+      - /features/location-based-filtering.html
+  - reason: "is-it-working.md duplicated the FAQ's own \"Is it working?\" answer and was deleted (Story 11.11); both of its URLs were reclaimed by the FAQ page"
+    urls:
+      - /is-it-working.html
+      - /is-it-working/

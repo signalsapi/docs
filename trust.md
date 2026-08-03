@@ -21,3 +21,4 @@ this site's own claims before trusting anything else on it.
 - [Limits](/limits/) — every documented pagination default, size cap, and rate limit in one place.
 - [How we make money](/how-we-make-money/) — which provider links pay a referral fee, and why it doesn't change what you pay.
 - [Pricing](/pricing/) — every plan figure, rendered from one data file.
+- [Retirement ledger](/retirement-ledger/) — every retired URL, its replacement, and why.
