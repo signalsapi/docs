@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-REQUIRED_PROVIDER_KEYS = %w[name mobile_support linkedin_profile headline filters credential_shape signup_url affiliate cost].freeze
+REQUIRED_PROVIDER_KEYS = %w[name mobile_support linkedin_profile headline filters credential_shape signup_url affiliate cost source].freeze
 ALLOWED_FILTER_KEYS = %w[title country city skills department seniority].freeze
 ALLOWED_FILTER_VALUES = %w[at_source after_fetch unsupported].freeze
 ALLOWED_CREDENTIAL_SHAPES = %w[api_key client_id_and_secret key_and_secret].freeze
@@ -37,6 +37,16 @@ Check.register(
 
     unless [true, false].include?(item["headline"])
       offenders << "#{label} has a non-boolean headline: #{item['headline'].inspect}"
+    end
+
+    # A cost is a third party's list price, so it is only worth anything with the
+    # page it was read off and the day it was read there — otherwise it is a claim
+    # nobody can re-check and it silently rots the first time that provider
+    # re-prices. This holds for a placeholder too: the marker still has to say
+    # which page was tried.
+    source = item["source"]
+    if !source.is_a?(String) || !source.match?(%r{https://\S}) || !source.match?(/\d{4}-\d{2}-\d{2}/)
+      offenders << "#{label}'s source: must name the URL the cost was read from and the ISO date it was read, got: #{source.inspect}"
     end
 
     filters = item["filters"]
