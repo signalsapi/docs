@@ -58,4 +58,4 @@ If a field in your local fixture doesn't match what the [REST API reference](/fe
 documents, the reference is the source of truth — re-copy the example payload. Once you have a
 live key, authentication errors on the plane follow the same pattern as the self-serve REST API —
 see [My API request returns an authorization error](/troubleshooting/api-auth/). For anything else
-the reference doesn't answer, check [Is it working?](/is-it-working/) or the [FAQ](/faq/).
+the reference doesn't answer, check [Is it working?](/faq/#is-it-working) or the rest of the [FAQ](/faq/).

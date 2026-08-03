@@ -73,4 +73,4 @@ usable leads still exports cleanly: a header-only CSV rather than an error.
 A `403` or `404` means authentication or the resource id is the problem, not your export logic —
 see [My API request returns an authorization error](/troubleshooting/api-auth/), which maps every
 status code to its cause. If the response looks right but the row count doesn't match, check
-[Is it working?](/is-it-working/) for a platform-wide issue, or contact [Support](/support/).
+[Is it working?](/faq/#is-it-working) for a platform-wide issue, or contact [Support](/support/).

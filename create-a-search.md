@@ -55,6 +55,6 @@ the most specific one you added last. If you're getting results but they're not 
 expected, see [I'm getting the wrong companies](/troubleshooting/wrong-companies/). If you added an
 AI filter on top and it started rejecting everything, see
 [My AI filter rejected everything](/troubleshooting/ai-filter-too-strict/). If none of that
-explains it, check [Is it working?](/is-it-working/) or the [FAQ](/faq/).
+explains it, check [Is it working?](/faq/#is-it-working) or the rest of the [FAQ](/faq/).
 
 {% include recent-changes.html %}

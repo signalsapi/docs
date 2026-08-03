@@ -49,5 +49,5 @@ company size, headquarters location — are set at all.
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) or contact
+Check [Is it working?](/faq/#is-it-working) or contact
 [Support](/support/) with your search and filter settings.

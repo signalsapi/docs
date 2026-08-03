@@ -48,5 +48,5 @@ other provider, phone lookup will never populate no matter what else you change 
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) for a platform-wide issue, or contact
+Check [Is it working?](/faq/#is-it-working) for a platform-wide issue, or contact
 [Support](/support/) with which provider you have connected.

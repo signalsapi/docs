@@ -49,5 +49,5 @@ key, or fix the rejected one, then re-run.
 
 ## Still stuck
 
-Check [Is it working?](/is-it-working/) for a platform-wide issue, or contact
+Check [Is it working?](/faq/#is-it-working) for a platform-wide issue, or contact
 [Support](/support/) with your search and persona settings.

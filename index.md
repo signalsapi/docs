@@ -21,4 +21,4 @@ decision-maker to contact before your competitors notice the same signal.
 - [Find decision-makers](/features/find-decision-makers/)
 - [Pull your leads via the API](/features/api-access/)
 - [See how the pipeline works](/how-it-works/)
-- [Check whether it's working](/is-it-working/)
+- [Check whether it's working](/faq/#is-it-working)

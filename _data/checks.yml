@@ -235,6 +235,10 @@ items:
   desc: Every destination named on features/integrations.md has an item in _data/integrations.yml
   covers:
   - '7.5'
+- id: is-it-working-page-removed
+  desc: is-it-working.md is gone and the FAQ claims its redirects and changelog entry
+  covers:
+  - '11.11'
 - id: layout-home-is-index-only
   desc: 'index.md is the only page declaring layout: home; every page declares a layout'
   covers:
