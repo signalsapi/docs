@@ -5,10 +5,10 @@ Check.register(
   desc: "_site/404.html exists, references the search input, and links to at least six internal destinations",
   covers: ["2.6"]
 ) do |site|
-  path = File.join(ROOT, "_site", "404.html")
-  site.fail!("_site/404.html is missing") unless File.exist?(path)
+  page = site.html_files.find { |f| f.path == "_site/404.html" }
+  site.fail!("_site/404.html is missing") unless page
 
-  body = File.read(path)
+  body = page.body
   site.fail!("_site/404.html does not reference the search input") unless body.include?("search-input")
 
   internal_links = body.scan(/<a\s[^>]*href="(\/[^"]*)"/).flatten.uniq

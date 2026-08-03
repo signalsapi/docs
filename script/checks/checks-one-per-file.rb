@@ -5,7 +5,8 @@ Check.register(
   desc: "Each script/checks/*.rb file calls Check.register exactly once (AD-3)",
   covers: ["1.6"]
 ) do |site|
-  offenders = Check.registry.group_by(&:source).select { |_source, assertions| assertions.size > 1 }
+  offenders = site.examining("registered assertions", Check.registry)
+                  .group_by(&:source).select { |_source, assertions| assertions.size > 1 }
 
   unless offenders.empty?
     details = offenders.map do |source, assertions|

@@ -14,8 +14,15 @@ class CheckFailure < StandardError; end
 
 # Site model (AD-4): parsed once per run and handed to every assertion, so
 # twenty assertions don't each re-walk _site/ and re-parse front matter.
-# Exposes exactly four accessors; a check that needs something else adds one
+# Exposes exactly seven accessors; a check that needs something else adds one
 # here rather than reading the filesystem directly.
+#
+# Every accessor also tallies what it handed the running assertion, which is
+# what makes `passed` distinguishable from `had nothing to look at` (see
+# Check.run). That tally only works if the assertion asks the model for its
+# subjects — an assertion that reaches past it to File./Dir. reports nothing
+# examined and the runner fails it, which is the enforcement the design rule
+# above never had.
 class Site
   Page = Struct.new(:path, :front_matter, :body, keyword_init: true)
   HtmlFile = Struct.new(:path, :body, keyword_init: true)
@@ -36,6 +43,8 @@ class Site
                    .reject { |f| excluded?(f) }
                    .filter_map { |f| parse_page(f) }
                    .sort_by(&:path)
+    note("pages", @pages.size)
+    @pages
   end
 
   # jekyll-redirect-from's stub pages (Story 8.8) are real built HTML, but
@@ -49,6 +58,8 @@ class Site
                         .sort.map do |f|
       HtmlFile.new(path: relative(f), body: File.read(f))
     end
+    note("built pages", @html_files.size)
+    @html_files
   end
 
   def data
@@ -62,17 +73,90 @@ class Site
         {}
       end
     end
+    note("data files", @data.size)
+    @data
   end
 
   def raw(path)
+    note_path(path)
     File.read(File.join(ROOT, path))
+  end
+
+  # The three accessors below exist because twenty-three assertions were
+  # reaching past this model to File./Dir. for exactly these three things —
+  # does a path exist, is it a directory, what matches this glob. Reading the
+  # repository through the model is what lets the runner see that they read
+  # anything at all.
+  def exist?(path)
+    note_path(path)
+    File.exist?(File.join(ROOT, path))
+  end
+
+  def dir?(path)
+    note_path(path)
+    File.directory?(File.join(ROOT, path))
+  end
+
+  # Files only: every caller wants files, and a bare Dir.glob also returns the
+  # directories along the way, which no assertion has ever meant to audit.
+  def glob(pattern)
+    matches = Dir.glob(File.join(ROOT, pattern)).select { |f| File.file?(f) }.map { |f| relative(f) }.sort
+    note("#{pattern} matches", matches.size)
+    matches
+  end
+
+  # Declares the subject set an assertion actually asserts over, when that is
+  # narrower than — or simply not — what the accessors above hand out. Returns
+  # its argument so it reads inline, and fails on an empty set: an assertion
+  # with nothing to check is not passing, it is silent. This is the generalised
+  # form of the vacuity guards several assertions had to hand-roll one at a
+  # time (see idempotency-key-on-metered-operations for the long-hand version).
+  def examining(what, subjects)
+    count = if subjects.respond_to?(:size)
+              subjects.size
+            else
+              subjects.nil? ? 0 : 1
+            end
+    note(what, count)
+    fail!("examined no #{what}, so there was nothing for this assertion to find") if count.zero?
+
+    subjects
   end
 
   def fail!(message)
     raise CheckFailure, message
   end
 
+  # --- vacuity instrumentation (Check.run drives these) ---
+
+  def begin_assertion
+    @examined = {}
+    @examined_paths = []
+  end
+
+  # Repeated reads of one path, and repeated calls to one accessor, are one
+  # subject each — a count that grew every time an assertion looked twice
+  # would measure effort rather than coverage.
+  def examined
+    tally = (@examined ||= {}).dup
+    paths = (@examined_paths ||= []).uniq
+    tally["files"] = paths.size unless paths.empty?
+    tally
+  end
+
+  def examined_count
+    examined.values.sum
+  end
+
   private
+
+  def note(what, count)
+    (@examined ||= {})[what] = count
+  end
+
+  def note_path(path)
+    (@examined_paths ||= []) << path
+  end
 
   def excluded?(file)
     rel = relative(file)
@@ -125,16 +209,44 @@ module Check
       registry << Assertion.new(id: id, desc: desc, covers: covers, block: block, source: source)
     end
 
+    # What each assertion examined on the last run, keyed by id — the data
+    # behind `ruby script/check.rb examined`.
+    def examined
+      @examined ||= {}
+    end
+
     def run(site, assertions: registry)
       failures = []
+      @examined = {}
+
       assertions.each do |assertion|
+        site.begin_assertion
         begin
           assertion.block.call(site)
+          failures << vacuity_failure(assertion) if site.examined_count.zero?
         rescue CheckFailure => e
           failures << "#{assertion.id}: #{e.message}"
+        ensure
+          @examined[assertion.id] = site.examined
         end
       end
+
       failures
+    end
+
+    private
+
+    # A green assertion that consulted nothing is not evidence of anything: it
+    # would have passed just as happily against an empty repository, so it
+    # cannot fail the day the thing it guards breaks. Reported as a failure
+    # rather than a warning because a warning is what the run already had —
+    # nothing — and the whole point is that this is visible every run rather
+    # than the once someone thinks to look.
+    def vacuity_failure(assertion)
+      "#{assertion.id}: passed without examining anything. It consulted no page, built file, data " \
+        "file or repository file through the Site model, so nothing it could read would make it " \
+        "fail. Read its subjects through site (pages/html_files/data/raw/exist?/dir?/glob), or " \
+        "declare them with site.examining(what, subjects)."
     end
   end
 end
@@ -206,6 +318,16 @@ when "manifest"
   ChecksManifest.write!
 when "coverage"
   ChecksManifest.report_uncovered
+when "examined"
+  # Answers "which of these assertions is cost without coverage?" from inside
+  # the harness — the question signalsapi-4286 could only approach from the
+  # outside, by emptying a Site and seeing what still passed.
+  Check.run(Site.new)
+  Check.registry.sort_by(&:id).each do |assertion|
+    breakdown = Check.examined[assertion.id] || {}
+    detail = breakdown.map { |what, count| "#{what}=#{count}" }.join(" ")
+    puts format("%-48s %5d examined  %s", assertion.id, breakdown.values.sum, detail)
+  end
 else
   target_id = ARGV[0]
   assertions = Check.registry

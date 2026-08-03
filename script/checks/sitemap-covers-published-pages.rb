@@ -9,10 +9,9 @@ Check.register(
   desc: "sitemap.xml lists every page that is not nav_exclude'd and not sitemap: false",
   covers: ["2.4"]
 ) do |site|
-  sitemap_path = File.join(ROOT, "_site", "sitemap.xml")
-  site.fail!("_site/sitemap.xml is missing") unless File.exist?(sitemap_path)
+  site.fail!("_site/sitemap.xml is missing") unless site.exist?("_site/sitemap.xml")
 
-  sitemap_urls = File.read(sitemap_path).scan(%r{<loc>(.*?)</loc>}).flatten
+  sitemap_urls = site.raw("_site/sitemap.xml").scan(%r{<loc>(.*?)</loc>}).flatten
 
   missing = site.pages.filter_map do |page|
     next if page.front_matter["nav_exclude"] || page.front_matter["sitemap"] == false

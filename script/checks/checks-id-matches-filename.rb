@@ -5,7 +5,10 @@ Check.register(
   desc: "Every script/checks/*.rb file registers an id equal to its own basename",
   covers: ["1.11"]
 ) do |site|
-  offenders = Check.registry.reject { |a| a.id == File.basename(a.source, ".rb") }
+  # The subject is the registry, not the site, so it has to be declared —
+  # nothing this reads comes through an accessor.
+  offenders = site.examining("registered assertions", Check.registry)
+                  .reject { |a| a.id == File.basename(a.source, ".rb") }
 
   unless offenders.empty?
     details = offenders.map { |a| "#{a.source} registers id #{a.id.inspect}" }.join("; ")
