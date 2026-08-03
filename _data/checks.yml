@@ -9,6 +9,11 @@ items:
     six internal destinations
   covers:
   - '2.6'
+- id: actions-not-on-deprecated-node
+  desc: no workflow pins an action whose runtime is the deprecated Node 20, or asks
+    for Node 20 itself
+  covers:
+  - '1.10'
 - id: affiliate-disclosure-linked
   desc: Every page that emits an affiliate provider link also links to the commercial-relationship
     page

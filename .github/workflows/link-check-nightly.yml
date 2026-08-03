@@ -16,7 +16,7 @@ jobs:
       issues: write # required for peter-evans/create-issue-from-file
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -36,7 +36,7 @@ jobs:
 
       - name: File or update the tracking issue
         if: steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         with:
           title: Nightly external link check found broken links
           content-filepath: ./lychee/out.md

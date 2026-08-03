@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           # no-page-deleted-without-redirect reads the pre-overhaul baseline
           # tree with `git ls-tree ddc51a8`; the default shallow clone has no
@@ -28,9 +28,12 @@ jobs:
           curl -sfL "https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz" | sudo tar -xz -C /usr/local/bin vale
           vale --version
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          # The runner stopped running actions on Node 20; asking for it here
+          # would install a toolchain older than the one the actions around
+          # this step are forced onto.
+          node-version: "24"
       - name: Install Spectral
         run: |
           SPECTRAL_VERSION="$(cat .spectral-version)"
