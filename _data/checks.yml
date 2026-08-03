@@ -75,6 +75,11 @@ items:
   desc: every _data/changelog.yml entry appears in the built changelog page
   covers:
   - '11.8'
+- id: check-runs-openapi-lint
+  desc: Running `rake check` invokes lint:openapi — the Rakefile defines that task
+    and names it among check's prerequisite or aggregated stages
+  covers:
+  - '10.2'
 - id: checks-id-matches-filename
   desc: Every script/checks/*.rb file registers an id equal to its own basename
   covers:

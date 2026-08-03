@@ -2,6 +2,10 @@ openapi: 3.0.3
 info:
   title: SignalsAPI Agent Data Plane
   version: "1.0.0"
+  contact:
+    name: SignalsAPI support
+    url: https://docs.signalsapi.com/support/
+    email: mykola@signalsapi.com
   description: >
     The plane's full /v1 surface, transcribed from
     features/agent-data-plane-api.md and features/agent-data-plane-clay.md.

@@ -115,7 +115,7 @@ namespace :check do
 end
 
 namespace :lint do
-  desc "Run Spectral against openapi/plane-v1.yaml (own task and CI step, not part of rake check)"
+  desc "Run Spectral against openapi/plane-v1.yaml (a stage of rake check, and its own CI step)"
   task :openapi do
     spec_path = File.join(File.dirname(__FILE__), "openapi", "plane-v1.yaml")
     next puts "rake lint:openapi: openapi/plane-v1.yaml does not exist — nothing to lint" unless File.exist?(spec_path)
@@ -239,7 +239,19 @@ end
 # AD-5: the build aborts rake check immediately on failure, since nothing
 # downstream has an artifact to read. Once it succeeds, every other stage
 # runs to completion and their failures are aggregated into one report.
-AGGREGATED_STAGES = %w[check:links check:prose check:assert].freeze
+#
+# lint:openapi belongs here rather than beside check:build for that same
+# reason — it produces no artifact anything downstream reads, so a spec
+# regression should not suppress the link, prose and assertion verdicts.
+# It goes last because its missing-binary path is `abort` (SystemExit,
+# which the `rescue StandardError` below cannot catch, exactly as
+# check:prose behaves without vale), so a contributor who has not installed
+# Node still sees the whole documentation verdict before the install
+# instruction. Keeping it outside this list is what made `rake check` — the
+# one command this repo documents as its gate — green on a specification
+# `rake lint:openapi` would reject; script/checks/check-runs-openapi-lint.rb
+# pins the coupling so the two cannot drift apart again.
+AGGREGATED_STAGES = %w[check:links check:prose check:assert lint:openapi].freeze
 
 desc "Run the full verification gate: build, then every check stage"
 task check: "check:build" do
