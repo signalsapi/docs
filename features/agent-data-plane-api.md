@@ -19,7 +19,9 @@ The full `/v1` reference. For what the plane *is* and how it is billed, start wi
 [Agent data plane overview](../agent-data-plane/). Every operation below is also machine-readable
 as an OpenAPI document: [`openapi/plane-v1.yaml`](/openapi/plane-v1.yaml). Before you have a key, the
 [fixture gallery](../agent-data-plane-fixtures/) has one runnable command per operation against a
-recorded, schema-checked response on this origin.
+recorded, schema-checked response on this origin. Each operation's status —
+`live`, `code-complete`, or `planned` — is also published as data at
+[`/plane-status.json`](/plane-status.json).
 
 ## Base URL
 

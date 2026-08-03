@@ -330,6 +330,11 @@ items:
     appears nowhere
   covers:
   - '2.8'
+- id: plane-status-matches-spec
+  desc: the built /plane-status.json exactly matches every operation's x-status and
+    x-mcp-tool in openapi/plane-v1.yaml
+  covers:
+  - '10.7'
 - id: plugin-budget
   desc: '_config.yml''s plugins: list is a subset of {jekyll-sitemap, jekyll-redirect-from,
     jekyll-seo-tag}'
