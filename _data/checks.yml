@@ -158,7 +158,8 @@ items:
   - '9.3'
 - id: drafts-not-published
   desc: No file under _drafts/ appears in the built site or any machine-readable surface;
-    each draft carries an owner and a sign-off marker
+    each draft carries an owner and a sign-off marker; the exclusion mechanism stays
+    pinned when _drafts/ is empty
   covers:
   - '9.7'
 - id: external-links-off-pr-path
