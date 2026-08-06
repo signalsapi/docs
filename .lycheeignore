@@ -1,0 +1,15 @@
+# Links the nightly sweep must not report. Every entry is a link that works
+# for a reader and fails only for a checker running from a GitHub runner --
+# an access policy, not link rot. AD-10 keeps third-party behaviour out of
+# the report; these are the same principle at URL granularity.
+#
+# Each line needs a reason and, where it matters, what it costs us to skip.
+
+# Cloudflare serves 403 to datacenter IPs. Confirmed 403 from both a GitHub
+# runner and a local machine; the page is fine in a browser.
+https://chatgpt\.com/
+
+# Resets the connection from GitHub runners (os error 104) while answering
+# 200 elsewhere. Cost of skipping: if the status page itself ever dies, this
+# sweep stays quiet about it. Checked by hand when the FAQ is reverified.
+https://status\.signalsapi\.com/

@@ -45,7 +45,7 @@ Find AI generated fields in each lead, on the lead's own detail page, under **AI
 | FIELD 2 | - Strong numeracy skills and Excel proficiency - Excellent attention to detail and accuracy - Effective communication and relationship-building skills |
 | FIELD 3 | Self |
 
-You can fine-tune your prompts by running them in [ChatGPT](https://chatgpt.com/?model=text-davinci-002-render-sha) to see the results. Replace {variables} in your prompts with actual job titles and descriptions.
+You can fine-tune your prompts by running them in [ChatGPT](https://chatgpt.com/) to see the results. Replace {variables} in your prompts with actual job titles and descriptions.
 
 ## Need help writing a prompt?
 
