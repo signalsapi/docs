@@ -31,13 +31,43 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress './_site/**/*.html'
+          # Two flags carry the AD-10 contract, and both are load-bearing.
+          #
+          # --root-dir: a root-relative href in a local file has no base to
+          # resolve against, so lychee reports every one as an error. On this
+          # site that was 4194 errors a night, which overflowed the 65536-char
+          # issue body and buried the two genuine 404s below the truncation.
+          #
+          # --scheme: internal links are html-proofer's job in `rake check`.
+          # Checking them here too would only re-prove what already gates every
+          # PR. Scheme alone cannot replace --root-dir -- resolution happens
+          # before the scheme filter, so the errors are raised either way.
+          args: >-
+            --no-progress
+            --root-dir ${{ github.workspace }}/_site
+            --scheme http
+            --scheme https
+            './_site/**/*.html'
           fail: false
+
+      # Without an issue-number, create-issue-from-file opens a fresh issue on
+      # every run -- three identical ones piled up before this lookup existed.
+      # An empty output is falsy to the action, which then files the first one.
+      - name: Find the open tracking issue
+        id: tracking
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          number="$(gh issue list --repo "${GITHUB_REPOSITORY}" --state open \
+            --label link-rot --limit 1 --json number --jq '.[0].number // ""')"
+          echo "number=${number}" >> "${GITHUB_OUTPUT}"
 
       - name: File or update the tracking issue
         if: steps.lychee.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@v6
         with:
+          issue-number: ${{ steps.tracking.outputs.number }}
           title: Nightly external link check found broken links
           content-filepath: ./lychee/out.md
           labels: link-rot, automated

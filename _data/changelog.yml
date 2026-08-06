@@ -538,7 +538,7 @@ items:
   summary: Matches can be manually approved
   feature: concepts/anatomy-of-a-lead.md
 - date: 2024-03-23
-  summary: We started offering [business developer as a service](https://signalsapi.com/bizdev)
+  summary: We started offering business developer as a service
   feature: whats-new/index.md
 - date: 2024-03-23
   summary: Run view (Runs -> click any run) is showing disqualified signals
@@ -571,7 +571,7 @@ items:
   summary: Editing a search no longer deletes previous matches, they still can be deleted manually by deleting items in "runs" tab
   feature: create-a-search.md
 - date: 2024-03-20
-  summary: Run frequency depends on plan now -- check the [pricing](https://signalsapi.com/pricing) page for details
+  summary: Run frequency depends on plan now -- check the [pricing](/pricing/) page for details
   feature: pricing.md
 - date: 2024-03-20
   summary: Credits spending can be limited to avoid spending everything in one go -- check profile -> settings
