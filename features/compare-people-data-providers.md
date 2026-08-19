@@ -2,12 +2,12 @@
 title: Compare people-data providers
 parent: Features
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-08-19
 owner: mykola
 redirect_from: "/features/compare-people-data-providers.html"
 nav_order: 9
 page_type: feature
-description: How the eight supported people-data providers differ on data returned and where filters run.
+description: How the nine supported people-data providers differ on data returned and where filters run.
 ---
 
 # Compare people-data providers
@@ -15,7 +15,7 @@ description: How the eight supported people-data providers differ on data return
 You [connect one people-data provider](../bring-your-own-people-provider/) with your own API key.
 Every supported provider returns people and emails, but they differ in **what extra data comes
 back** (mobile numbers, LinkedIn headlines) and **which filters they apply at the source** versus
-after the fetch. This page compares all eight so you can pick the one that fits your targeting and
+after the fetch. This page compares all nine so you can pick the one that fits your targeting and
 your budget.
 
 SignalsAPI charges **no credits** for people lookups — you only ever pay your own provider. Some
@@ -58,9 +58,10 @@ honor.
 {% endfor %}
 
 **Rule of thumb:** the more filters a provider applies *at source*, the fewer credits you waste on
-people who get filtered out. **People Data Labs** filters the most at source (title, country, city,
-skills). **Hunter** and **Tomba** can't filter by job title at source — they pull everyone in the
-chosen **department** and then match titles afterwards, so a broad title list costs more.
+people who get filtered out. **People Data Labs** and **Limadata** filter the most at source (title,
+country, city, skills). **Hunter** and **Tomba** can't filter by job title at source — they pull
+everyone in the chosen **department** and then match titles afterwards, so a broad title list costs
+more.
 
 ## Provider details
 
@@ -77,8 +78,8 @@ Returns LinkedIn profile **and headline**. Email verification is asynchronous (a
 only verified emails are kept. **One API key.**
 
 ### People Data Labs
-The most filterable provider: title, country, city, and skills all run **at source**, so broad
-searches stay cheap. Returns LinkedIn profile and headline. **One API key.**
+Title, country, city, and skills all run **at source**, so broad searches stay cheap. Returns
+LinkedIn profile and headline. **One API key.**
 
 ### Prospeo
 Title filtered at source; country and city after fetch. Returns LinkedIn profile and headline.
@@ -99,7 +100,7 @@ inline with each person. No country/city. **One API key.**
 - **Seniority** (pick any): junior, senior, executive
 
 ### LeadMagic
-The only provider that returns **mobile phone numbers** (see [Find phone numbers](../find-phone-numbers/)).
+Returns **mobile phone numbers** (see [Find phone numbers](../find-phone-numbers/)).
 Email comes inline; title and city are matched after fetch. **One API key.**
 
 ### Tomba
@@ -109,18 +110,31 @@ after fetch. Email comes inline. Uses **two secrets** — a **Key** and a **Secr
 - **Department** (pick any): executive, it, finance, management, communication, marketing, sales,
   legal, hr, support, engineering
 
+### Limadata
+Structured people-database search: title, country, city, and skills all run **at source** as a hard
+match, so broad searches stay cheap. Returns LinkedIn profile **and headline**, plus **mobile phone
+numbers** (see [Find phone numbers](../find-phone-numbers/)). Search rows carry no email, so the
+email lookup runs as a separate stage off the person's own LinkedIn profile, and a separate
+deliverability check keeps only verified addresses. **One API key.**
+
+- The people-database search is a **beta surface Limadata enables per account**. If your key is
+  otherwise valid but people search returns nothing and the provider reports that database access
+  is not enabled, ask Limadata to switch it on for your account — it is a plan setting, not a bad
+  key.
+
 ## How to choose
 
-- **You want mobile numbers** → **LeadMagic**.
-- **You filter by country or city** → **People Data Labs** (the only one that does both at source).
+- **You want mobile numbers** → **LeadMagic** or **Limadata**.
+- **You filter by country or city** → **People Data Labs** or **Limadata** (the only two that do
+  both at source).
   Icypeas, {% include provider-link.html name="Prospeo" cost=false %} and LeadMagic can still filter location, but after fetch (extra spend).
 - **You target by department / seniority** → **Hunter** (department + seniority) or **Tomba**
   (department) — filtered at source, so precise and credit-efficient.
-- **You want LinkedIn headlines for AI-written outreach** → **Icypeas**, **People Data Labs**, or
-  **{% include provider-link.html name="Prospeo" cost=false %}**.
+- **You want LinkedIn headlines for AI-written outreach** → **Icypeas**, **People Data Labs**,
+  **Limadata**, or **{% include provider-link.html name="Prospeo" cost=false %}**.
 - **You have domain-only companies (no LinkedIn page)** → **{% include provider-link.html name="Anymail Finder" cost=false %}** — it resolves the
   decision maker from the company domain alone.
-- **You already have an account somewhere** → just connect it; all eight cover the core
+- **You already have an account somewhere** → just connect it; all nine cover the core
   people + verified-email job.
 
 Not sure which fits? Start a trial with one provider, run a search, and check the

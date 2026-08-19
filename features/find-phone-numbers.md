@@ -2,14 +2,14 @@
 title: Find phone numbers
 parent: Features
 layout: default
-verified_on: 2026-06-07
+verified_on: 2026-08-19
 owner: mykola
 redirect_from: "/features/find-phone-numbers.html"
 nav_order: 8
 stage: contact_enrichment
 page_type: feature
-prereq: leadmagic_phone
-description: How mobile phone numbers are looked up for decision-makers, and which provider supports it.
+prereq: mobile_phone_provider
+description: How mobile phone numbers are looked up for decision-makers, and which providers support it.
 ---
 
 # Find phone numbers

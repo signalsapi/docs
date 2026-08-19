@@ -3,6 +3,9 @@ meta:
   verified_on: 2026-08-03
   source: 'transcribed from whats-new/index.md''s changelog (222 entries as of this repository''s current state) for Story 11.7; feature is the existing page each entry''s bullet is about, judged by keyword match against the entry text where no page was already linked; Story 11.9 backfilled the API access (2026-06-30) and agent data plane (2026-07-09) launches, dated from each page''s own first commit (git log --follow), since neither had a changelog entry documenting its launch; Story 11.10 removed the screenshots: field once those images were retired; Story 11.11 remapped the entry naming is-it-working.md to faq.md once that page was retired'
 items:
+- date: 2026-07-31
+  summary: '**Limadata** joins the bring-your-own people-data providers — title, country, city and skills all filtered at source, LinkedIn profile and headline returned, and mobile phone numbers alongside LeadMagic. One API key.'
+  feature: features/bring-your-own-people-provider.md
 - date: 2026-06-30
   summary: 'API access launches: a read-only REST API for pulling your own projects and leads out of SignalsAPI as JSON or CSV.'
   feature: features/api-access.md

@@ -139,3 +139,20 @@ items:
     affiliate: false
     cost: "free tier 25 searches/month; from USD 89/month for 10,000 credits — 1 credit per email, 5 per phone number"
     source: https://tomba.io/pricing, read 2026-08-03
+
+  - name: Limadata
+    mobile_support: true
+    linkedin_profile: full
+    headline: true
+    filters:
+      title: at_source
+      country: at_source
+      city: at_source
+      skills: at_source
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://limadata.com
+    affiliate: false
+    cost: "free plan 100 credits/month (up to 100 work emails or 10 mobile numbers); from USD 50/month for 2,500 credits at USD 0.02 per credit, falling to USD 0.01 at USD 200/month for 20,000 — 1 credit per work email, 10 per mobile number; top-ups at 1.5x the plan rate"
+    source: https://limadata.com/#pricing, read 2026-08-19

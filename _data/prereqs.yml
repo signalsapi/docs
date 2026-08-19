@@ -1,11 +1,11 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-03
+  verified_on: 2026-08-19
   source: transcribed from each page's own already-stated access constraint (Story 7.8)
 
 items:
   - key: plane_access
     warning: The agent data plane is not yet open for self-serve signup. You need an issued API key and base URL before any live request on this page will work — see Agent data plane for how access is arranged today.
 
-  - key: leadmagic_phone
-    warning: Mobile phone numbers are only ever returned by LeadMagic. If your connected people-data provider is anything else, nothing on this page will populate a phone number.
+  - key: mobile_phone_provider
+    warning: Mobile phone numbers are only ever returned by the providers marked as supporting mobile lookup below. If your connected people-data provider is anything else, nothing on this page will populate a phone number.

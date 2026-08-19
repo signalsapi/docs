@@ -6,7 +6,7 @@ nav_order: 7
 permalink: /when-signalsapi-is-the-wrong-tool/
 page_type: reference
 owner: mykola
-verified_on: 2026-08-03
+verified_on: 2026-08-19
 description: The documented cases where SignalsAPI is not the right fit, named honestly.
 ---
 
@@ -26,10 +26,11 @@ hiring company, this is not that tool.
 With no people-data provider key saved, your account is on the free tier: company signals only, no
 people data. See [Bring your own people-data provider](/features/bring-your-own-people-provider/).
 
-## You need mobile phone numbers and don't want to use LeadMagic
+## You need mobile phone numbers from a provider that doesn't return them
 
-Mobile phone lookup is bring-your-own-provider, and only LeadMagic returns a phone number today —
-every other connected provider leaves it empty. See [Find phone numbers](/features/find-phone-numbers/).
+Mobile phone lookup is bring-your-own-provider, and only LeadMagic and Limadata return a phone
+number today — every other connected provider leaves it empty. See
+[Find phone numbers](/features/find-phone-numbers/).
 
 ## You need a native Salesforce integration today
 

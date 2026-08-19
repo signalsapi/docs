@@ -1,6 +1,6 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-02
+  verified_on: 2026-08-19
   source: transcribed from AI variables and cross-referenced against Compare people-data providers (Story 7.4) — company and signal variables come from SignalsAPI's own enrichment, not a connected people-data provider, so they name no providers.
 
 items:
@@ -57,34 +57,34 @@ items:
   - name: first_name
     meaning: The decision-maker's first name.
     kind: person
-    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba, Limadata]
 
   - name: last_name
     meaning: The decision-maker's last name.
     kind: person
-    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba, Limadata]
 
   - name: title
     meaning: The decision-maker's job title.
     kind: person
-    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba, Limadata]
 
   - name: email
     meaning: The decision-maker's verified email address.
     kind: person
-    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba, Limadata]
 
   - name: linkedin_url
     meaning: The decision-maker's LinkedIn profile URL.
     kind: person
-    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba]
+    providers: [Anymail Finder, Icypeas, People Data Labs, Prospeo, Snov.io, Hunter, LeadMagic, Tomba, Limadata]
 
   - name: phone
     meaning: The decision-maker's mobile phone number.
     kind: person
-    providers: [LeadMagic]
+    providers: [LeadMagic, Limadata]
 
   - name: phone_status
     meaning: Whether a phone lookup for this decision-maker succeeded.
     kind: person
-    providers: [LeadMagic]
+    providers: [LeadMagic, Limadata]
