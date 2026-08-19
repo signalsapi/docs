@@ -2,7 +2,7 @@
 title: Bring your own people-data provider
 parent: Features
 layout: default
-verified_on: 2026-06-06
+verified_on: 2026-08-19
 owner: mykola
 redirect_from: "/features/bring-your-own-people-provider.html"
 nav_order: 7
@@ -17,7 +17,8 @@ contact — the right person, their email, sometimes their mobile — connect a 
 provider** using **your own API key**.
 
 * **No key** → your account is on the **free tier**: company signals only, no people data.
-* **With a key** → decision-maker search returns people and verified emails using your provider account.
+* **With a key** → decision-maker search returns people, and verified emails from every provider
+  that has an email product — see the table below for the one that doesn't.
 * **People lookups cost no SignalsAPI credits** — you only pay your provider for what you use.
 * **Some signup links below pay us a referral fee** — see [How we make money](/how-we-make-money/).
 
@@ -28,13 +29,13 @@ You manage everything on one screen: **Settings → Provider**.
 ## Choose your provider
 
 Open the **Provider** dropdown and pick the provider you already have an account with. Each
-option says what it returns — *people search + email*, and for some *+ mobile*. You connect
+option says what it returns — *people search*, for most *+ email*, and for some *+ mobile*. You connect
 **one provider at a time**. To see how the providers differ on data and filtering, see
 [Compare people-data providers](../compare-people-data-providers/).
 
 | Provider | What you get | Paste | Get your key |
 |---|---|---|---|
-{% for p in site.data.providers.items %}| **{{ p.name }}** | people + email{% if p.mobile_support %} **+ mobile**{% endif %} | {% case p.credential_shape %}{% when "api_key" %}API key{% when "client_id_and_secret" %}Client ID **+** Client Secret{% when "key_and_secret" %}Key **+** Secret{% endcase %} | {% include provider-link.html name=p.name cost=false %}{% if p.mobile_support %} — see [Find phone numbers](../find-phone-numbers/){% endif %} |
+{% for p in site.data.providers.items %}| **{{ p.name }}** | people{% if p.email == "verified" %} + email{% else %} only — **no email**{% endif %}{% if p.mobile_support %} **+ mobile**{% endif %} | {% case p.credential_shape %}{% when "api_key" %}API key{% when "client_id_and_secret" %}Client ID **+** Client Secret{% when "key_and_secret" %}Key **+** Secret{% endcase %} | {% include provider-link.html name=p.name cost=false %}{% if p.mobile_support %} — see [Find phone numbers](../find-phone-numbers/){% endif %} |
 {% endfor %}
 
 ## Enter your key
@@ -82,7 +83,9 @@ for people you'll never contact:
 
 1. **People search** at the hiring company.
 2. **AI qualification** ranks and cuts the list.
-3. **Email lookup** runs only for the survivors — and only verified emails are kept.
+3. **Email lookup** runs only for the survivors — and only verified emails are kept. Providers with
+   no email product are skipped here, and a project with **"Email is required"** on won't spend
+   anything against one.
 4. **Phone lookup** runs last, only for surviving leads, when [Find phone numbers](../find-phone-numbers/)
    is enabled and your provider supports it (currently {% assign mobile_providers = site.data.providers.items | where: "mobile_support", true %}{% for p in mobile_providers %}{{ p.name }}{% unless forloop.last %}, {% endunless %}{% endfor %} only).
 
