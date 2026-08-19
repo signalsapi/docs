@@ -6,6 +6,12 @@ items:
 - date: 2026-07-31
   summary: '**Limadata** joins the bring-your-own people-data providers — title, country, city and skills all filtered at source, LinkedIn profile and headline returned, and mobile phone numbers alongside LeadMagic. One API key.'
   feature: features/bring-your-own-people-provider.md
+- date: 2026-07-29
+  summary: '**Wiza** joins the bring-your-own people-data providers — title, country, city and skills all filtered at source, plus mobile phone numbers. Email and phone are reveals that bill only on a hit, spent against one-off API credits rather than a seat plan. One API key.'
+  feature: features/bring-your-own-people-provider.md
+- date: 2026-07-29
+  summary: '**HarvestAPI** joins the bring-your-own people-data providers — LinkedIn lead search with title and country filtered at source. It has no email product, so it returns people and job titles only, and a project with "Email is required" on will not spend against it.'
+  feature: features/bring-your-own-people-provider.md
 - date: 2026-06-30
   summary: 'API access launches: a read-only REST API for pulling your own projects and leads out of SignalsAPI as JSON or CSV.'
   feature: features/api-access.md

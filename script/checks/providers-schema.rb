@@ -1,10 +1,15 @@
 # frozen_string_literal: true
 
-REQUIRED_PROVIDER_KEYS = %w[name mobile_support linkedin_profile headline filters credential_shape signup_url affiliate cost source].freeze
+REQUIRED_PROVIDER_KEYS = %w[name email mobile_support linkedin_profile headline filters credential_shape signup_url affiliate cost source].freeze
 ALLOWED_FILTER_KEYS = %w[title country city skills department seniority].freeze
 ALLOWED_FILTER_VALUES = %w[at_source after_fetch unsupported].freeze
 ALLOWED_CREDENTIAL_SHAPES = %w[api_key client_id_and_secret key_and_secret].freeze
 ALLOWED_LINKEDIN_PROFILE_VALUES = %w[full partial].freeze
+# What the connected provider can ever return for an address. `none` is a real
+# case, not a gap in the data: a provider can be a people-finder with no email
+# product at all, and the comparison table used to hard-code a verified tick for
+# every row — which was a lie the moment such a provider shipped.
+ALLOWED_EMAIL_VALUES = %w[verified none].freeze
 
 Check.register(
   id: "providers-schema",
@@ -33,6 +38,10 @@ Check.register(
 
     unless ALLOWED_LINKEDIN_PROFILE_VALUES.include?(item["linkedin_profile"])
       offenders << "#{label} has an invalid linkedin_profile: #{item['linkedin_profile'].inspect}"
+    end
+
+    unless ALLOWED_EMAIL_VALUES.include?(item["email"])
+      offenders << "#{label} has an invalid email: #{item['email'].inspect}"
     end
 
     unless [true, false].include?(item["headline"])

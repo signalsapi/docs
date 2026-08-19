@@ -26,8 +26,8 @@ that clearly match your criteria.
 
 Your prompt references a variable that's empty for your connected provider, so the AI is
 evaluating blank text instead of real data. The most common case: a prompt using `{phone}` or
-`{phone_status}` when your connected provider isn't LeadMagic or Limadata — every other provider
-leaves those empty. See [AI variables](/features/ai-variables/) and
+`{phone_status}` when your connected provider isn't LeadMagic, Limadata or Wiza — every other
+provider leaves those empty. See [AI variables](/features/ai-variables/) and
 [Compare people-data providers](/features/compare-people-data-providers/).
 
 ## Check this first
@@ -37,7 +37,8 @@ connected provider actually returns:
 
 | Variable | Empty unless... |
 |---|---|
-| `{phone}`, `{phone_status}` | Your connected provider is LeadMagic or Limadata |
+| `{phone}`, `{phone_status}` | Your connected provider is LeadMagic, Limadata or Wiza |
+| `{email}` | Your connected provider has an email product — HarvestAPI does not |
 | `{linkedin_url}` | Rarely empty — occasionally missing with Snov.io |
 
 See [AI variables](/features/ai-variables/) for the full variable list, and

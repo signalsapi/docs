@@ -24,16 +24,16 @@ Phone lookup is enabled and decision-makers are being found with names and email
 
 ## Most likely cause
 
-Mobile phone numbers are only ever returned by **LeadMagic** and **Limadata** — no other connected
-people-data provider supports phone lookup, regardless of your persona or plan settings. Check
-**Settings → Provider**: if you're connected to any other provider, that's why the
+Mobile phone numbers are only ever returned by **LeadMagic**, **Limadata** and **Wiza** — no other
+connected people-data provider supports phone lookup, regardless of your persona or plan settings.
+Check **Settings → Provider**: if you're connected to any other provider, that's why the
 Phone column is empty. See [Compare people-data providers](/features/compare-people-data-providers/).
 
 ## Check this first
 
-Open **Settings → Provider** and confirm **LeadMagic** or **Limadata** is the connected provider.
-If it's any other provider, phone lookup will never populate no matter what else you change — see
-[Bring your own people-data provider](/features/bring-your-own-people-provider/).
+Open **Settings → Provider** and confirm **LeadMagic**, **Limadata** or **Wiza** is the connected
+provider. If it's any other provider, phone lookup will never populate no matter what else you
+change — see [Bring your own people-data provider](/features/bring-your-own-people-provider/).
 
 ## Other causes
 

@@ -5,6 +5,7 @@ meta:
 
 items:
   - name: Anymail Finder
+    email: verified
     mobile_support: false
     linkedin_profile: full
     headline: false
@@ -22,6 +23,7 @@ items:
     source: https://anymailfinder.com/pricing, read 2026-08-03
 
   - name: Icypeas
+    email: verified
     mobile_support: false
     linkedin_profile: full
     headline: true
@@ -39,6 +41,7 @@ items:
     source: https://icypeas.com/pricing, read 2026-08-03
 
   - name: People Data Labs
+    email: verified
     mobile_support: false
     linkedin_profile: full
     headline: true
@@ -56,6 +59,7 @@ items:
     source: https://www.peopledatalabs.com/pricing, read 2026-08-03
 
   - name: Prospeo
+    email: verified
     mobile_support: false
     linkedin_profile: full
     headline: true
@@ -73,6 +77,7 @@ items:
     source: https://prospeo.io/pricing, served by https://prod.prospeo.io/api/v2/pricing-preview (the endpoint that page renders its ladder from), read 2026-08-03
 
   - name: Snov.io
+    email: verified
     mobile_support: false
     linkedin_profile: partial
     headline: false
@@ -90,6 +95,7 @@ items:
     source: https://snov.io/pricing, read 2026-08-03
 
   - name: Hunter
+    email: verified
     mobile_support: false
     linkedin_profile: full
     headline: false
@@ -107,6 +113,7 @@ items:
     source: https://hunter.io/pricing, read 2026-08-03
 
   - name: LeadMagic
+    email: verified
     mobile_support: true
     linkedin_profile: full
     headline: false
@@ -124,6 +131,7 @@ items:
     source: https://leadmagic.io/pricing, read 2026-08-03
 
   - name: Tomba
+    email: verified
     mobile_support: false
     linkedin_profile: full
     headline: false
@@ -141,6 +149,7 @@ items:
     source: https://tomba.io/pricing, read 2026-08-03
 
   - name: Limadata
+    email: verified
     mobile_support: true
     linkedin_profile: full
     headline: true
@@ -156,3 +165,39 @@ items:
     affiliate: false
     cost: "free plan 100 credits/month (up to 100 work emails or 10 mobile numbers); from USD 50/month for 2,500 credits at USD 0.02 per credit, falling to USD 0.01 at USD 200/month for 20,000 — 1 credit per work email, 10 per mobile number; top-ups at 1.5x the plan rate"
     source: https://limadata.com/#pricing, read 2026-08-19
+
+  - name: HarvestAPI
+    email: none
+    mobile_support: false
+    linkedin_profile: full
+    headline: false
+    filters:
+      title: at_source
+      country: at_source
+      city: after_fetch
+      skills: unsupported
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://harvestapi.io
+    affiliate: false
+    cost: "TODO(owner: mykola): read HarvestAPI's pay-as-you-go rate per lead-search request — the ladder renders client-side from an authenticated api.harvestapi.io call, so it cannot be read off the public page"
+    source: https://harvestapi.io/#pricing (ladder renders client-side and the endpoint it reads is authenticated; https://docs.harvestapi.io publishes no rate), checked 2026-08-19
+
+  - name: Wiza
+    email: verified
+    mobile_support: true
+    linkedin_profile: full
+    headline: false
+    filters:
+      title: at_source
+      country: at_source
+      city: at_source
+      skills: at_source
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://wiza.co
+    affiliate: false
+    cost: "free trial 25 credits; API credits at USD 0.025 each with a 2,000-credit (USD 50) minimum purchase and no expiry — 2 credits per email, 5 per phone number, charged only on a successful reveal"
+    source: https://help.wiza.co/en/articles/13551713-how-to-purchase-api-credits (the API-credit rate SignalsAPI spends against; the seat plans at https://wiza.co/pricing are a different meter), read 2026-08-19

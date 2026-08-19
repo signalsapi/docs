@@ -28,8 +28,8 @@ people data. See [Bring your own people-data provider](/features/bring-your-own-
 
 ## You need mobile phone numbers from a provider that doesn't return them
 
-Mobile phone lookup is bring-your-own-provider, and only LeadMagic and Limadata return a phone
-number today — every other connected provider leaves it empty. See
+Mobile phone lookup is bring-your-own-provider, and only LeadMagic, Limadata and Wiza return a
+phone number today — every other connected provider leaves it empty. See
 [Find phone numbers](/features/find-phone-numbers/).
 
 ## You need a native Salesforce integration today
