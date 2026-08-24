@@ -1,6 +1,6 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-03
+  verified_on: 2026-08-24
   source: capabilities transcribed from Compare people-data providers and Bring your own people-data provider (Story 7.2); each cost figure is read off that provider's own public pricing page and carries the URL and the date it was read in its item's source. Where a page renders its ladder client-side, the figure comes from the first-party endpoint that page reads, named in the same source — never from a third party's transcription of it. Recheck cadence is the existing data-staleness assertion — bump meta.verified_on when the ladder is re-read, and the build reports this file once it passes 90 days.
 
 items:
@@ -201,3 +201,25 @@ items:
     affiliate: false
     cost: "free trial 25 credits; API credits at USD 0.025 each with a 2,000-credit (USD 50) minimum purchase and no expiry — 2 credits per email, 5 per phone number, charged only on a successful reveal"
     source: https://help.wiza.co/en/articles/13551713-how-to-purchase-api-credits (the API-credit rate SignalsAPI spends against; the seat plans at https://wiza.co/pricing are a different meter), read 2026-08-19
+
+  - name: Mindcase
+    # Mindcase's public surface has no email agent — `max_email_status="none"` per the
+    # honest-declaration discipline (signalsapi-4191), so a project with "Email is
+    # required" on refuses to spend any credits against this provider. Same posture
+    # as HarvestAPI below.
+    email: none
+    mobile_support: false
+    linkedin_profile: full
+    headline: true
+    filters:
+      title: at_source
+      country: at_source
+      city: at_source
+      skills: unsupported
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://console.mindcase.co/signup
+    affiliate: false
+    cost: "pay-per-record prepaid wallet — USD 0.004 per LinkedIn Company Employees row (USD 4 per 1k), USD 0.004 per LinkedIn profile, USD 0.002 per LinkedIn post; the catalog covers Instagram, Twitter/X, Reddit, Google Maps and Amazon at per rates per records but no people-search leg exists for those groups"
+    source: https://api.mindcase.co/v1/data/linkedin/company-employees (the schema's `price_per_record` field is the canonical rate; https://mindcase.co publishes the marketing overview), read 2026-08-24
