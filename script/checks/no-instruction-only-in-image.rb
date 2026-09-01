@@ -12,6 +12,14 @@
 # any page's raw source, so a control is now "documented as real text" if it
 # appears in either place.
 #
+# "Within this list" and "Among all lists" were removed from this list because
+# they were removed from the site, and they were removed from the site because
+# the product has no such controls. They came from the Story 11.3 screenshots
+# of an older settings panel; nothing behind them was ever shipped, so pinning
+# them here was holding a promise open on the strength of a picture. The one
+# control that does exist on that subject — "Signals per company per day" —
+# takes their place.
+#
 # "Real text" has to mean the same thing on both sides of that disjunction, and
 # for a while it did not (signalsapi-4327): the source half stripped <img …>
 # tags before searching, while the built half searched each page's whole
@@ -25,8 +33,7 @@
 IMG_TAG_RE = /<img\b[^>]*>/i.freeze
 
 DOCUMENTED_CONTROLS = [
-  "Within this list",
-  "Among all lists",
+  "Signals per company per day",
   "Domains",
   "Job titles of decision-makers",
   "Person location",

@@ -18,7 +18,7 @@ Find the page that matches what you're seeing, not the feature you think is at f
 - [My project shows no leads](/troubleshooting/empty-results/) — no leads, or leads with no usable data.
 - [My Phone column is blank](/troubleshooting/no-phone-numbers/) — decision-makers found, but no phone number.
 - [I'm getting the wrong companies](/troubleshooting/wrong-companies/) — matches outside your intended profile.
-- [The same company shows up twice](/troubleshooting/duplicates/) — how the Duplicates setting decides this.
+- [The same company shows up twice](/troubleshooting/duplicates/) — how Signals per company per day decides this.
 - [My AI filter rejected everything](/troubleshooting/ai-filter-too-strict/) — often an empty variable, not a bad prompt.
 - [My API request returns an authorization error](/troubleshooting/api-auth/) — mapping every status code to its cause.
 - [My integration stopped receiving leads](/troubleshooting/integration-stopped/) — check approval status and credentials.
