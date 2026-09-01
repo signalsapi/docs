@@ -3,6 +3,9 @@ meta:
   verified_on: 2026-08-03
   source: 'transcribed from whats-new/index.md''s changelog (222 entries as of this repository''s current state) for Story 11.7; feature is the existing page each entry''s bullet is about, judged by keyword match against the entry text where no page was already linked; Story 11.9 backfilled the API access (2026-06-30) and agent data plane (2026-07-09) launches, dated from each page''s own first commit (git log --follow), since neither had a changelog entry documenting its launch; Story 11.10 removed the screenshots: field once those images were retired; Story 11.11 remapped the entry naming is-it-working.md to faq.md once that page was retired'
 items:
+- date: 2026-09-01
+  summary: 'A project can now take more than one hiring signal from the same company. **Signals per company per day**, under Basic filters, sets how many; leave it empty and the project takes each company once and never again, which stays the default. Raise it when a narrow persona matches many postings across few employers and the project runs out of companies before it runs out of postings. Test-mode projects start at 3.'
+  feature: features/remove-duplicate-signals.md
 - date: 2026-07-31
   summary: '**Limadata** joins the bring-your-own people-data providers — title, country, city and skills all filtered at source, LinkedIn profile and headline returned, and mobile phone numbers alongside LeadMagic. One API key.'
   feature: features/bring-your-own-people-provider.md

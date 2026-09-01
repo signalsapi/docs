@@ -1,9 +1,12 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-03
-  source: transcribed directly from the settings-panel screenshots this story deletes (features/do-not-contact-list.png,
-    features/find-decision-makers-1.png, features/find-decision-makers-2.png, features/remove-duplicate-signals-2.png)
-    before removing them -- see Story 11.3
+  verified_on: 2026-09-01
+  source: 'transcribed directly from the settings-panel screenshots this story deletes
+    (features/do-not-contact-list.png, features/find-decision-makers-1.png, features/find-decision-makers-2.png,
+    features/remove-duplicate-signals-2.png) before removing them -- see Story 11.3. The two Duplicates rows
+    are gone. That screen appeared in the screenshots but not in the product, and the two controls it showed
+    ("Within this list", "Among all lists") have no field behind them. They are replaced by the one control
+    on this subject that does exist, read off the project form itself rather than off an image.'
 items:
   - screen: Edit Do-Not-Contact List
     click_path: Leads -> Do-Not-Contact
@@ -29,15 +32,10 @@ items:
     description: Limit the number of decision-makers identified for each company.
     example: '3'
     owning_page: features/find-decision-makers.md
-  - screen: Duplicates
-    click_path: Lead Lists -> set up a project -> Duplicates
-    field: Within this list
-    description: If a company has already been added to this list, it can be added again.
-    example: After 1 month
-    owning_page: features/remove-duplicate-signals.md
-  - screen: Duplicates
-    click_path: Lead Lists -> set up a project -> Duplicates
-    field: Among all lists
-    description: If a company has already been added to another list, it can be added to this one.
-    example: 'Yes'
+  - screen: Basic filters
+    click_path: Lead Lists -> set up a project -> Basic filters
+    field: Signals per company per day
+    description: How many hiring signals one company may contribute in a day. Leave empty to take each company once
+      and never again.
+    example: Empty (default); test-mode projects use 3
     owning_page: features/remove-duplicate-signals.md
