@@ -201,3 +201,39 @@ items:
     affiliate: false
     cost: "free trial 25 credits; API credits at USD 0.025 each with a 2,000-credit (USD 50) minimum purchase and no expiry — 2 credits per email, 5 per phone number, charged only on a successful reveal"
     source: https://help.wiza.co/en/articles/13551713-how-to-purchase-api-credits (the API-credit rate SignalsAPI spends against; the seat plans at https://wiza.co/pricing are a different meter), read 2026-08-19
+
+  - name: BetterContact
+    email: verified
+    mobile_support: true
+    linkedin_profile: full
+    headline: true
+    filters:
+      title: at_source
+      country: at_source
+      city: unsupported
+      skills: at_source
+      department: at_source
+      seniority: at_source
+    credential_shape: api_key
+    signup_url: https://bettercontact.rocks
+    affiliate: false
+    cost: "50 free credits on signup; Starter USD 15/month for 200 credits; Pro from USD 49/month for 1,000 credits (about USD 0.049 per credit), falling to USD 0.04 at USD 1,999/month for 50,000 — 1 credit per valid email, 10 per mobile number, charged only when the result is valid (catch-all addresses are not charged)"
+    source: https://bettercontact.rocks/pricing/ (the Pro ladder is the credits dropdown that page renders its price from), read 2026-09-11
+
+  - name: Mindcase
+    email: none
+    mobile_support: false
+    linkedin_profile: full
+    headline: true
+    filters:
+      title: at_source
+      country: at_source
+      city: at_source
+      skills: unsupported
+      department: unsupported
+      seniority: unsupported
+    credential_shape: api_key
+    signup_url: https://www.mindcase.co
+    affiliate: false
+    cost: "no plans or seats — prepaid usage from USD 19.99 for USD 20 of usage, with 10%, 20% and 30% bonus usage at USD 99.99, 249.99 and 1,000+; the LinkedIn Company Employees API SignalsAPI calls costs USD 0.004 per profile returned (USD 4 per 1,000), and usage never expires"
+    source: https://www.mindcase.co/pricing (the per-profile rate is the LinkedIn Company Employees entry in the API catalog that page embeds), read 2026-09-11

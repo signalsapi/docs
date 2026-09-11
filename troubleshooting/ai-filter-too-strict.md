@@ -38,7 +38,7 @@ connected provider actually returns:
 | Variable | Empty unless... |
 |---|---|
 | `{phone}`, `{phone_status}` | Your connected provider is {% include mobile-providers.html joiner="or" %} |
-| `{email}` | Your connected provider has an email product — HarvestAPI does not |
+| `{email}` | Your connected provider has an email product — HarvestAPI and Mindcase do not |
 | `{linkedin_url}` | Rarely empty — occasionally missing with Snov.io |
 
 See [AI variables](/features/ai-variables/) for the full variable list, and

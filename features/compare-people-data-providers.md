@@ -7,14 +7,14 @@ owner: mykola
 redirect_from: "/features/compare-people-data-providers.html"
 nav_order: 9
 page_type: feature
-description: How the eleven supported people-data providers differ on data returned and where filters run.
+description: How the thirteen supported people-data providers differ on data returned and where filters run.
 ---
 
 # Compare people-data providers
 
 You [connect one people-data provider](../bring-your-own-people-provider/) with your own API key.
 Providers differ in **what data comes back** (emails at all, mobile numbers, LinkedIn headlines) and
-**which filters they apply at the source** versus after the fetch. This page compares all eleven so
+**which filters they apply at the source** versus after the fetch. This page compares all thirteen so
 you can pick the one that fits your targeting and your budget.
 
 SignalsAPI charges **no credits** for people lookups — you only ever pay your own provider. Some
@@ -60,9 +60,10 @@ honor.
 
 **Rule of thumb:** the more filters a provider applies *at source*, the fewer credits you waste on
 people who get filtered out. **People Data Labs**, **Limadata** and **Wiza** filter the most at
-source (title, country, city, skills). **Hunter** and **Tomba** can't filter by job title at
-source — they pull everyone in the chosen **department** and then match titles afterwards, so a
-broad title list costs more.
+source (title, country, city, skills). **BetterContact** runs five filters at source (title,
+country, skills, department, seniority) but has no city filter at all. **Hunter** and **Tomba**
+can't filter by job title at source — they pull everyone in the chosen **department** and then
+match titles afterwards, so a broad title list costs more.
 
 ## Provider details
 
@@ -152,22 +153,56 @@ Returns LinkedIn profile but no headline, and **mobile phone numbers** (see
   the per-seat email/phone allowances on the subscription plans, and they do not expire. You do not
   need to be on an API plan to buy them.
 
+### BetterContact
+A waterfall aggregator: one lookup fans out across 20+ upstream data vendors at request time, so
+nothing comes from a stored snapshot. Title, country, skills, **department** and **seniority** all
+run **at source**; there is **no city filter** — its location facet is country-level only, and the
+people it returns carry no city to match afterwards. Returns LinkedIn profile **and headline**, plus
+**mobile phone numbers** (see [Find phone numbers](../find-phone-numbers/)). Search rows carry no
+contact data, so email and phone are separate asynchronous lookups (a short poll, typically half a
+minute or more). Resolves people from the company **domain** — no LinkedIn page needed. **One API
+key.**
+
+- Email costs **1 credit** and a phone number **10 credits**, charged only when the result is
+  valid — an undeliverable or catch-all address costs nothing, so a retry after a miss is free.
+- Only fully deliverable addresses count as verified; a catch-all domain accepts every address, so
+  those are not kept.
+- The people search itself drew no credits when SignalsAPI measured it (2026-08-19), but
+  BetterContact publishes no price for it, so treat that as an observation rather than a promise.
+- **Seniority** and **department** are picked from BetterContact's own fixed lists in the persona
+  form (seniority runs from intern through c-suite, partner, owner and founder).
+
+### Mindcase
+A LinkedIn company-employees search with **no email product** — it returns people, their LinkedIn
+profile, **headline** and current job title, but never an address or a phone number. Title, country
+and city all run **at source** (country and city go to the vendor as one location list). No skills,
+department or seniority. **One API key.**
+
+- Because no address ever comes back, a project with **"Email is required"** on won't spend
+  anything against Mindcase. Pair it with a different provider if you need emails.
+- It scopes a search by **LinkedIn company page only** — a company with no LinkedIn page cannot be
+  searched at all.
+- Billing is per profile returned, from prepaid usage rather than a plan or seat.
+
 ## How to choose
 
-- **You want mobile numbers** → **LeadMagic**, **Tomba**, **Limadata** or **Wiza**.
-- **You filter by country or city** → **People Data Labs**, **Limadata** or **Wiza** (the three that
-  do both at source).
+- **You want mobile numbers** → {% include mobile-providers.html bold=true joiner="or" %}.
+- **You filter by country or city** → **People Data Labs**, **Limadata**, **Wiza** or **Mindcase**
+  (the four that do both at source).
   Icypeas, {% include provider-link.html name="Prospeo" cost=false %}, LeadMagic and HarvestAPI can still filter location, but after fetch (extra spend).
-- **You target by department / seniority** → **Hunter** (department + seniority) or **Tomba**
-  (department) — filtered at source, so precise and credit-efficient.
+  **BetterContact** filters country at source but cannot filter by city.
+- **You target by department / seniority** → **Hunter** or **BetterContact** (department +
+  seniority) or **Tomba** (department) — filtered at source, so precise and credit-efficient.
 - **You want LinkedIn headlines for AI-written outreach** → **Icypeas**, **People Data Labs**,
-  **Limadata**, or **{% include provider-link.html name="Prospeo" cost=false %}**.
+  **Limadata**, **BetterContact**, **Mindcase**, or **{% include provider-link.html name="Prospeo" cost=false %}**.
 - **You have domain-only companies (no LinkedIn page)** → **{% include provider-link.html name="Anymail Finder" cost=false %}** — it resolves the
-  decision maker from the company domain alone. **HarvestAPI** is the one to avoid here: it can only
-  search a company that has a LinkedIn page.
-- **You need email addresses** → any provider except **HarvestAPI**, which has no email product.
-- **You already have an account somewhere** → just connect it; all of them except **HarvestAPI**
-  cover the core people + verified-email job.
+  decision maker from the company domain alone — or **BetterContact**, which also keys on the
+  domain. **HarvestAPI** and **Mindcase** are the ones to avoid here: they can only search a company
+  that has a LinkedIn page.
+- **You need email addresses** → any provider except **HarvestAPI** and **Mindcase**, which have no
+  email product.
+- **You already have an account somewhere** → just connect it; all of them except **HarvestAPI** and
+  **Mindcase** cover the core people + verified-email job.
 
 Not sure which fits? Start a trial with one provider, run a search, and check the
 **fetched-vs-disqualified** breakdown on your leads — it shows exactly how many people were fetched

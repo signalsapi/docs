@@ -2,7 +2,7 @@
 title: Bring your own people-data provider
 parent: Features
 layout: default
-verified_on: 2026-08-19
+verified_on: 2026-09-11
 owner: mykola
 redirect_from: "/features/bring-your-own-people-provider.html"
 nav_order: 7
@@ -18,7 +18,7 @@ provider** using **your own API key**.
 
 * **No key** → your account is on the **free tier**: company signals only, no people data.
 * **With a key** → decision-maker search returns people, and verified emails from every provider
-  that has an email product — see the table below for the one that doesn't.
+  that has an email product — see the table below for the ones that don't.
 * **People lookups cost no SignalsAPI credits** — you only pay your provider for what you use.
 * **Some signup links below pay us a referral fee** — see [How we make money](/how-we-make-money/).
 
