@@ -5,24 +5,46 @@
 # its body should hand-type a provider name outside a Liquid tag.
 MOBILE_CLAIM_PAGE = "features/find-phone-numbers.md"
 
+# signalsapi-5124: these pages also say which providers return a phone number.
+# One of them still named only LeadMagic after two more providers gained
+# mobile support, because the rule above reached one page and nothing else.
+# They render the list with _includes/mobile-providers.html instead. Only the
+# names of mobile providers are banned here, not every provider: these pages
+# make true claims about other providers too ("HarvestAPI does not" return
+# email). A provider that gains mobile_support later still turns any
+# hand-typed mention of it on these pages red, which is when it needs a look.
+MOBILE_PROVIDER_PAGES = %w[
+  troubleshooting/empty-results.md
+  troubleshooting/no-phone-numbers.md
+  troubleshooting/ai-filter-too-strict.md
+  when-signalsapi-is-the-wrong-tool.md
+].freeze
+
 Check.register(
   id: "mobile-claim-generated",
-  desc: "The phone page names mobile-support providers via Liquid, not hand-written prose",
+  desc: "Pages that say which providers return phone numbers render that list from data, not hand-written prose",
   covers: ["7.10"]
 ) do |site|
   site.fail!("_data/providers.yml is missing") unless site.data["providers"]
 
-  page = site.pages.find { |p| p.path == MOBILE_CLAIM_PAGE }
-  site.fail!("#{MOBILE_CLAIM_PAGE} is missing") unless page
+  providers = site.data["providers"]["items"]
+  mobile_names = site.examining("mobile-support providers",
+                                providers.select { |p| p["mobile_support"] }.map { |p| p["name"] })
 
-  provider_names = site.data["providers"]["items"].map { |p| p["name"] }
+  banned = { MOBILE_CLAIM_PAGE => providers.map { |p| p["name"] } }
+  MOBILE_PROVIDER_PAGES.each { |path| banned[path] = mobile_names }
+
   offenders = []
+  banned.each do |path, names|
+    page = site.pages.find { |p| p.path == path }
+    site.fail!("#{path} is missing") unless page
 
-  page.body.each_line do |line|
-    # Strip Liquid tags before checking — a line can legitimately carry a
-    # tag (e.g. an include) alongside a hand-typed name outside it.
-    outside_liquid = line.gsub(/\{%.*?%\}/, "").gsub(/\{\{.*?\}\}/, "")
-    provider_names.each { |name| offenders << name if outside_liquid.include?(name) }
+    page.body.each_line do |line|
+      # Strip Liquid tags before checking — a line can legitimately carry a
+      # tag (e.g. an include) alongside a hand-typed name outside it.
+      outside_liquid = line.gsub(/\{%.*?%\}/, "").gsub(/\{\{.*?\}\}/, "")
+      names.each { |name| offenders << "#{path}: #{name}" if outside_liquid.include?(name) }
+    end
   end
 
   unless offenders.empty?

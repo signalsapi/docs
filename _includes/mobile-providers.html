@@ -1,0 +1,16 @@
+{%- comment -%}
+  The providers whose mobile_support is true, as an inline list, so a sentence
+  saying who returns phone numbers cannot drift from _data/providers.yml
+  (signalsapi-5124). joiner: "and" (default) or "or". bold=true emboldens
+  each name. script/checks/mobile-claim-generated.rb names the pages that
+  must use it.
+{%- endcomment -%}
+{%- assign mobile_providers = site.data.providers.items | where: "mobile_support", true -%}
+{%- assign joiner = include.joiner | default: "and" -%}
+{%- for p in mobile_providers -%}
+  {%- if include.bold -%}{%- assign name = "**" | append: p.name | append: "**" -%}{%- else -%}{%- assign name = p.name -%}{%- endif -%}
+  {%- if forloop.first -%}{%- assign list = name -%}
+  {%- elsif forloop.last -%}{%- assign list = list | append: " " | append: joiner | append: " " | append: name -%}
+  {%- else -%}{%- assign list = list | append: ", " | append: name -%}{%- endif -%}
+{%- endfor -%}
+{{- list -}}

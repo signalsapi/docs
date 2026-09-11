@@ -2,7 +2,7 @@
 title: Empty lead list
 parent: Troubleshooting
 layout: default
-verified_on: 2026-08-02
+verified_on: 2026-09-11
 owner: mykola
 nav_order: 1
 page_type: symptom
@@ -46,7 +46,10 @@ key, or fix the rejected one, then re-run.
   on a per-plan schedule, so a brand-new one fills shortly after you create it, not instantly. See
   [Pricing](/pricing/#run-frequency).
 - **Phone numbers specifically are missing** even though other fields are populated — phone lookup
-  only works with a connected **LeadMagic** key. See [Find phone numbers](/features/find-phone-numbers/).
+  runs only when the persona has **Find phone numbers** ticked and your connected provider supports
+  it ({% include mobile-providers.html joiner="or" %}), and a dash means the lookup ran but that
+  provider had no number for that person. See [Blank phone column](/troubleshooting/no-phone-numbers/)
+  and [Find phone numbers](/features/find-phone-numbers/).
 
 ## Still stuck
 
