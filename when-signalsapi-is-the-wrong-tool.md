@@ -6,7 +6,7 @@ nav_order: 7
 permalink: /when-signalsapi-is-the-wrong-tool/
 page_type: reference
 owner: mykola
-verified_on: 2026-08-19
+verified_on: 2026-09-11
 description: The documented cases where SignalsAPI is not the right fit, named honestly.
 ---
 
@@ -28,8 +28,8 @@ people data. See [Bring your own people-data provider](/features/bring-your-own-
 
 ## You need mobile phone numbers from a provider that doesn't return them
 
-Mobile phone lookup is bring-your-own-provider, and only LeadMagic, Limadata and Wiza return a
-phone number today — every other connected provider leaves it empty. See
+Mobile phone lookup is bring-your-own-provider, and only LeadMagic, Tomba, Limadata and Wiza return
+a phone number today — every other connected provider leaves it empty. See
 [Find phone numbers](/features/find-phone-numbers/).
 
 ## You need a native Salesforce integration today

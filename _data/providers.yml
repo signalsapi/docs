@@ -1,6 +1,6 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-03
+  verified_on: 2026-09-11
   source: capabilities transcribed from Compare people-data providers and Bring your own people-data provider (Story 7.2); each cost figure is read off that provider's own public pricing page and carries the URL and the date it was read in its item's source. Where a page renders its ladder client-side, the figure comes from the first-party endpoint that page reads, named in the same source — never from a third party's transcription of it. Recheck cadence is the existing data-staleness assertion — bump meta.verified_on when the ladder is re-read, and the build reports this file once it passes 90 days.
 
 items:
@@ -132,7 +132,7 @@ items:
 
   - name: Tomba
     email: verified
-    mobile_support: false
+    mobile_support: true
     linkedin_profile: full
     headline: false
     filters:
@@ -145,8 +145,8 @@ items:
     credential_shape: key_and_secret
     signup_url: https://tomba.io
     affiliate: false
-    cost: "free tier 25 searches/month; from USD 89/month for 10,000 credits — 1 credit per email, 5 per phone number"
-    source: https://tomba.io/pricing, read 2026-08-03
+    cost: "free tier 25 searches/month; from USD 89/month for 10,000 credits (USD 8.90 per 1,000) — 1 credit per email, 5 per phone number, and failed finds are not charged. Deliverability checks draw a separate bundled verification allowance (5,000 on the entry plan, alongside 5,000 finder credits) rather than finder credits"
+    source: https://tomba.io/pricing, read 2026-09-11
 
   - name: Limadata
     email: verified
