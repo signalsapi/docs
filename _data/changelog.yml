@@ -6,6 +6,12 @@ items:
 - date: 2026-09-11
   summary: '**Tomba** gains mobile phone numbers, joining LeadMagic, Limadata and Wiza — 5 credits per number against a separate phone allowance. It can also now resolve an email from the decision-maker''s own LinkedIn profile instead of a guessed company domain, and runs a deliverability check against a bundled verification allowance rather than your finder credits.'
   feature: features/bring-your-own-people-provider.md
+- date: 2026-08-24
+  summary: '**Mindcase** joins the bring-your-own people-data providers — a LinkedIn company-employees search with title, country and city filtered at source and the LinkedIn headline returned. It has no email product, so a project with "Email is required" on will not spend against it, and it can only search companies that have a LinkedIn page. One API key.'
+  feature: features/bring-your-own-people-provider.md
+- date: 2026-08-19
+  summary: '**BetterContact** joins the bring-your-own people-data providers — a waterfall across 20+ upstream vendors with title, country, skills, department and seniority filtered at source, the LinkedIn headline, verified emails and mobile phone numbers, charged only when a result is valid. No city filter. One API key.'
+  feature: features/bring-your-own-people-provider.md
 - date: 2026-07-31
   summary: '**Limadata** joins the bring-your-own people-data providers — title, country, city and skills all filtered at source, LinkedIn profile and headline returned, and mobile phone numbers alongside LeadMagic. One API key.'
   feature: features/bring-your-own-people-provider.md

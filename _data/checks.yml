@@ -471,6 +471,11 @@ items:
   desc: pricing.md contains no currency symbol outside a Liquid-rendered block
   covers:
   - '11.6'
+- id: provider-count-matches-registry
+  desc: The provider count the comparison page states in words matches the number
+    of _data/providers.yml items
+  covers:
+  - '7.2'
 - id: providers-not-duplicated-in-prose
   desc: Every page's provider table renders provider names from _data/providers.yml,
     not hand-written
