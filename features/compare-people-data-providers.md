@@ -2,7 +2,7 @@
 title: Compare people-data providers
 parent: Features
 layout: default
-verified_on: 2026-08-19
+verified_on: 2026-09-11
 owner: mykola
 redirect_from: "/features/compare-people-data-providers.html"
 nav_order: 9
@@ -106,10 +106,17 @@ Email comes inline; title and city are matched after fetch. **One API key.**
 
 ### Tomba
 Domain-search based, with **department** filtered at source from a fixed list and job title matched
-after fetch. Email comes inline. Uses **two secrets** — a **Key** and a **Secret**.
+after fetch. Email comes inline. Also returns **mobile phone numbers** (see
+[Find phone numbers](../find-phone-numbers/)), can resolve an email from the decision-maker's own
+LinkedIn profile instead of a guessed company domain, and runs a separate deliverability check so
+only verified addresses are kept. Uses **two secrets** — a **Key** and a **Secret**.
 
 - **Department** (pick any): executive, it, finance, management, communication, marketing, sales,
   legal, hr, support, engineering
+- Phone numbers cost **5 credits** each against a separate phone allowance, against 1 credit per
+  email. Deliverability checks draw a **bundled verification allowance** — 5,000 on the entry plan,
+  alongside 5,000 finder credits — rather than your finder credits. Failed lookups are not charged,
+  and repeating the same domain search inside one calendar month is not charged twice.
 
 ### Limadata
 Structured people-database search: title, country, city, and skills all run **at source** as a hard
@@ -147,7 +154,7 @@ Returns LinkedIn profile but no headline, and **mobile phone numbers** (see
 
 ## How to choose
 
-- **You want mobile numbers** → **LeadMagic**, **Limadata** or **Wiza**.
+- **You want mobile numbers** → **LeadMagic**, **Tomba**, **Limadata** or **Wiza**.
 - **You filter by country or city** → **People Data Labs**, **Limadata** or **Wiza** (the three that
   do both at source).
   Icypeas, {% include provider-link.html name="Prospeo" cost=false %}, LeadMagic and HarvestAPI can still filter location, but after fetch (extra spend).

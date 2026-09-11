@@ -1,6 +1,6 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-19
+  verified_on: 2026-09-11
   source: transcribed from AI variables and cross-referenced against Compare people-data providers (Story 7.4) — company and signal variables come from SignalsAPI's own enrichment, not a connected people-data provider, so they name no providers.
 
 items:
@@ -82,9 +82,9 @@ items:
   - name: phone
     meaning: The decision-maker's mobile phone number.
     kind: person
-    providers: [LeadMagic, Limadata, Wiza]
+    providers: [LeadMagic, Tomba, Limadata, Wiza]
 
   - name: phone_status
     meaning: Whether a phone lookup for this decision-maker succeeded.
     kind: person
-    providers: [LeadMagic, Limadata, Wiza]
+    providers: [LeadMagic, Tomba, Limadata, Wiza]

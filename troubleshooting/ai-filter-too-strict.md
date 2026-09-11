@@ -2,7 +2,7 @@
 title: AI filter rejected everything
 parent: Troubleshooting
 layout: default
-verified_on: 2026-08-19
+verified_on: 2026-09-11
 owner: mykola
 nav_order: 5
 page_type: symptom
@@ -26,7 +26,7 @@ that clearly match your criteria.
 
 Your prompt references a variable that's empty for your connected provider, so the AI is
 evaluating blank text instead of real data. The most common case: a prompt using `{phone}` or
-`{phone_status}` when your connected provider isn't LeadMagic, Limadata or Wiza — every other
+`{phone_status}` when your connected provider isn't LeadMagic, Tomba, Limadata or Wiza — every other
 provider leaves those empty. See [AI variables](/features/ai-variables/) and
 [Compare people-data providers](/features/compare-people-data-providers/).
 
@@ -37,7 +37,7 @@ connected provider actually returns:
 
 | Variable | Empty unless... |
 |---|---|
-| `{phone}`, `{phone_status}` | Your connected provider is LeadMagic, Limadata or Wiza |
+| `{phone}`, `{phone_status}` | Your connected provider is LeadMagic, Tomba, Limadata or Wiza |
 | `{email}` | Your connected provider has an email product — HarvestAPI does not |
 | `{linkedin_url}` | Rarely empty — occasionally missing with Snov.io |
 

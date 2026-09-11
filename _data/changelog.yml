@@ -1,8 +1,11 @@
 meta:
   owner: mykola
-  verified_on: 2026-08-03
+  verified_on: 2026-09-11
   source: 'transcribed from whats-new/index.md''s changelog (222 entries as of this repository''s current state) for Story 11.7; feature is the existing page each entry''s bullet is about, judged by keyword match against the entry text where no page was already linked; Story 11.9 backfilled the API access (2026-06-30) and agent data plane (2026-07-09) launches, dated from each page''s own first commit (git log --follow), since neither had a changelog entry documenting its launch; Story 11.10 removed the screenshots: field once those images were retired; Story 11.11 remapped the entry naming is-it-working.md to faq.md once that page was retired'
 items:
+- date: 2026-09-11
+  summary: '**Tomba** gains mobile phone numbers, joining LeadMagic, Limadata and Wiza — 5 credits per number against a separate phone allowance. It can also now resolve an email from the decision-maker''s own LinkedIn profile instead of a guessed company domain, and runs a deliverability check against a bundled verification allowance rather than your finder credits.'
+  feature: features/bring-your-own-people-provider.md
 - date: 2026-07-31
   summary: '**Limadata** joins the bring-your-own people-data providers — title, country, city and skills all filtered at source, LinkedIn profile and headline returned, and mobile phone numbers alongside LeadMagic. One API key.'
   feature: features/bring-your-own-people-provider.md
