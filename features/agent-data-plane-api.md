@@ -2,7 +2,7 @@
 title: Agent data plane — REST API
 parent: APIs
 layout: default
-verified_on: 2026-08-03
+verified_on: 2026-10-16
 owner: mykola
 redirect_from: "/features/agent-data-plane-api.html"
 nav_order: 3
@@ -51,6 +51,9 @@ X-API-Key: YOUR_API_KEY
 
 Unknown and revoked keys are deliberately indistinguishable. Every request is scoped to your own
 `customer_id`: you can never read, meter against, or revoke another customer's anything.
+
+This header is **not interchangeable** with the self-serve REST API's `Authorization: Bearer` —
+see [API access](../api-access/#authentication).
 
 ## Idempotency
 

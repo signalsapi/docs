@@ -2,7 +2,7 @@
 title: API access
 parent: APIs
 layout: default
-verified_on: 2026-08-03
+verified_on: 2026-10-16
 owner: mykola
 redirect_from: "/features/api-access.html"
 nav_order: 1
@@ -42,6 +42,9 @@ Authorization: Bearer YOUR_API_KEY
 Find your key in the app under **Settings → API Key** (you can regenerate it there
 at any time — regenerating invalidates the old key). Every request is scoped to
 your own account: you can only ever see your own projects and leads.
+
+This header is **not interchangeable** with the agent data plane's `X-API-Key` —
+see [Agent data plane — REST API](../agent-data-plane-api/#authentication).
 
 | Situation | Response |
 |-----------|----------|
