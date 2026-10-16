@@ -175,7 +175,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 The CSV columns are:
 
 ```text
-website,decision_maker_linkedin_url,decision_maker_email,decision_maker_phone,signal_job_title
+company,signal,source,observed_at,matched_on,contact_name,contact_title,linkedin_url,work_email,req_url
 ```
 
 The JSON export returns the same rows with the full set of person, company, and

@@ -59,7 +59,7 @@ quickstart pulls from.
    The CSV columns are the same ones documented on [API access](/features/api-access/):
 
    ```text
-   website,decision_maker_linkedin_url,decision_maker_email,decision_maker_phone,signal_job_title
+   company,signal,source,observed_at,matched_on,contact_name,contact_title,linkedin_url,work_email,req_url
    ```
 
 ## Check it worked
