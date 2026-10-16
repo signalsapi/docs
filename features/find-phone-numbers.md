@@ -43,15 +43,15 @@ The full phone number and its status are also shown on the individual lead page,
 
 ## CSV export
 
-Phone numbers are included in the **Download CSV** export as the `decision_maker_phone` column, placed between email and job title.
+Phone numbers are included in the **Download CSV** export as the `contact_phone` column, appended after `req_url`.
 
 ```text
-website,decision_maker_linkedin_url,decision_maker_email,decision_maker_phone,signal_job_title
-https://acme.com,https://linkedin.com/in/jane,jane@acme.com,+15551234567,Head of Sales
-https://widget.co,https://linkedin.com/in/bob,bob@widget.co,,VP Engineering
+company,signal,source,observed_at,matched_on,contact_name,contact_title,linkedin_url,work_email,req_url,contact_phone
+Acme,Head of Sales,linkedin,2026-08-01,title,Jane Doe,Head of Sales,https://linkedin.com/in/jane,jane@acme.com,https://acme.com/careers/123,+15551234567
+Widget Co,VP Engineering,linkedin,2026-08-02,title,Bob Lee,VP Engineering,https://linkedin.com/in/bob,bob@widget.co,https://widget.co/careers/456,
 ```
 
-An empty `decision_maker_phone` cell means no number was found for that lead.
+An empty `contact_phone` cell means no number was found for that lead.
 
 ## Use phone in AI templates
 
