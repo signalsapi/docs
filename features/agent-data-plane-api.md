@@ -360,11 +360,22 @@ freshness-floored, like every Tier 0 read.
 
 | Query parameter | Default | Notes |
 |---|---|---|
-| `role` | — | Matches the req's function |
-| `geo` | — | Matches the req's country |
-| `since` | — | Only reqs first seen at or after this timestamp |
+| `function` | — | Function name as served in `function_name` (e.g. `Software & IT`) or its taxonomy id as served in `function`. An unknown value is rejected with 422, which lists the names |
+| `geo` | — | Country name, e.g. `United States` |
+| `since` | — | Only reqs first seen at or after this ISO-8601 timestamp |
+| `q` | — | Free-text title search, ranked. Expanded to nearby job titles; each row carries a `relevance` (0-1) |
+| `desc_q` | — | Keyword or phrase the job **description** must contain, e.g. `clay tables`. Words match as one adjacent phrase. A filter, not a ranking: it does not change `relevance` or the default order. A req whose description we have not resolved never matches, and a value with no searchable word is rejected with 422 |
+| `sort` | `relevance` with `q`, else stable order | `relevance` or `recency` (newest first seen first). `relevance` without `q` is rejected with 422 |
+| `source_type` | both | `ats_tenant` (the employer's own applicant tracking system) or `board` (a job board or aggregator) |
+| `exclude_agencies` | `false` | Drop reqs whose company is classified as a staffing agency, aggregator, subcontractor network or job board. Unclassified companies are kept |
+| `industry` | — | Company industry, exact (case-insensitive) label. Repeat for an OR-set |
+| `industry_terms` | — | Substring of the company industry, case-insensitive. Repeat for an OR-set |
+| `headcount_band` | — | One of `1-10`, `11-50`, `51-200`, `201-500`, `501-1000`, `1001-5000`, `5001+`. Repeat for an OR-set |
 | `cursor` | — | Keyset cursor; pass the previous page's `next_cursor` |
 | `limit` | `20` | Page size |
+
+Different parameters combine by AND; a repeated parameter ORs its values. `desc_q` combines with `q`,
+`function` and the other filters the same way.
 
 ```json
 {
