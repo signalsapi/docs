@@ -19,7 +19,7 @@ SignalsAPI offers multiple ways to find relevant hiring signals. Combine them to
 
 ### Keyword search (Search for)
 
-The default search method. Enter job titles or keywords and the system will match them against job posting titles and descriptions using full-text search.
+The default search method. Enter job titles or keywords and the system will match them against job posting titles and company names using full-text search. To match words in the job description, use the [description required words](#job-title-and-description-requirements) filter.
 
 ```text
 project manager
@@ -27,7 +27,7 @@ construction site manager
 senior project lead
 ```
 
-Each line is a separate search term. A signal matches if any of the terms appear in the title or description.
+Each line is a separate search term. A signal matches if any of the terms appear in the title or company name.
 
 ### Semantic search
 
