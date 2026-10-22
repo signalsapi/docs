@@ -31,10 +31,9 @@ A **qualifying signal** is {% include pricing-figure.html name="qualifying_signa
 
 ## The managed service
 
-Done-with-you and done-for-you outbound are a separate offer from the subscription above, priced at
-{% include pricing-figure.html name="managed_service_monthly" %} per month after a two-week test
-drive. Qualified telephone numbers are their own packages:
-{% include pricing-figure.html name="managed_phone_packages" %}. See the
+Done-with-you and done-for-you outbound are a separate offer from the subscription above, starting
+with a two-week test drive. Qualified telephone numbers are their own packages. Pricing for the
+managed service and its packages is on request — contact [Support](/support/). See the
 [FAQ](/faq/#what-are-my-options-for-running-signalsapi-to-grow-my-business) for what each one covers.
 
 ## Credits

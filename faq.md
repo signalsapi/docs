@@ -34,7 +34,7 @@ You get the qualifying signals through the platform, the API or your CRM, and yo
 ### Managed, Option 1 – Done‑with‑you: we deliver the prospects, you run the outreach  
 Harness the power of buying signals to fuel your own outbound campaigns. We’ll deliver qualified prospects in the format that works best for you, whether that’s direct integration with your CRM or outreach tools, platform access, or email delivery.  
 
-You start with a **2‑week test drive**, then continue on a simple monthly subscription of **{% include pricing-figure.html name="managed_service_monthly" %}**. That figure prices the **managed service**, not the self‑serve SignalsAPI subscription — the two are separate offers, see below.
+You start with a **2‑week test drive**, then continue on a simple monthly subscription. The **managed service** is a separate offer from the self‑serve SignalsAPI subscription, and its pricing is on request — contact [Support](/support/).
 
 ### Managed, Option 2 – Done‑for‑you outbound (SignalsAPI + Virtual Networker)  
 Let our full business suite handle the outreach for you. By combining **SignalsAPI** with **[Virtual Networker](https://virtualnetworker.com/)**, we build familiarity and trust with your ideal prospects *before* they’re ready to buy. This way, when they show active interest, your brand is already top of mind meaning warmer introductions, stronger conversations, and higher conversion rates.
@@ -53,7 +53,7 @@ Every figure below renders from `_data/pricing.yml`, the one file allowed to hol
 
 A **qualifying signal** is {% include pricing-figure.html name="qualifying_signal_definition" %}
 
-**The managed service is a different offer and is priced separately.** Done‑with‑you / done‑for‑you outbound is **{% include pricing-figure.html name="managed_service_monthly" %} per month** after the 2‑week test drive (above), and qualified telephone numbers are their own packages (below). Those figures are not the price of the SignalsAPI subscription and do not appear on the ladder above.
+**The managed service is a different offer, and its pricing is on request.** Done‑with‑you / done‑for‑you outbound (above) and its qualified telephone‑number packages (below) are quoted individually — contact [Support](/support/). They are not part of the SignalsAPI subscription and do not appear on the ladder above.
 
 
 ## What information do you need from me to get started?
@@ -82,8 +82,8 @@ people-data provider key and enable **Find phone numbers** on a project. See
 supports it.
 
 **On the managed service**, we supply the numbers ourselves as packages, separate from the self‑serve
-subscription priced above: {% include pricing-figure.html name="managed_phone_packages" %}. We offer
-larger packages if you are receiving a higher number of prospects matching your ICP.
+subscription priced above. Package pricing is on request, including larger packages if you are
+receiving a higher number of prospects matching your ICP — contact [Support](/support/).
 
 ## How many qualified prospects do you guarantee in the first month?
 
