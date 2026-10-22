@@ -199,8 +199,8 @@ any of:
 Microcopy rules. Brand voice is DESIGN.md § Brand & Style.
 
 **Say what happened, when, and where it came from.** The site's core failure is
-not tone, it is unfalsifiability: `faq.md:26` states `£400/€490/$550` and
-`faq.md:51` sells phone numbers at `£49/month for 100`, while
+not tone, it is unfalsifiability: `faq.md:26` states `[unpublished]/[unpublished]/[unpublished]` and
+`faq.md:51` sells phone numbers at `[unpublished]/month for 100`, while
 `features/find-phone-numbers.md:12` says phones come from the customer's own
 LeadMagic key. Both cannot be true. Neither is dated. Neither is sourced.
 
