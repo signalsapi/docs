@@ -68,8 +68,8 @@ Binding, from `project-context.md`. Repeated here because the PRD and architectu
 | `_config.yml:7` | `url: https://docs.signalsapi.com/` — trailing slash malforms 28 canonicals |
 | `_config.yml` (absent key) | no `exclude:` → `README.md`, `push.sh`, `run.sh`, `LICENSE`, `Gemfile`, `Gemfile.lock` published |
 | `features/filter-leads-with-ai.md:32` | `[ai-variables.md](ai-variables.md "mention")` — dead GitBook link, 21 months |
-| `faq.md:26` | `**£400/€490/$550**` |
-| `faq.md:51` | `£49/month for 100 telephone numbers, £149 for 300 & £199 for 500`; contradicts `features/find-phone-numbers.md:12`; also the typo "propsects" |
+| `faq.md:26` | `**[unpublished]/[unpublished]/[unpublished]**` |
+| `faq.md:51` | `[unpublished]/month for 100 telephone numbers, [unpublished] for 300 & [unpublished] for 500`; contradicts `features/find-phone-numbers.md:12`; also the typo "propsects" |
 | `faq.md:65` | "100% reliable" — unsourced claim |
 | `is-it-working.md` / `privacy-policy.md` | both `nav_order: 6`; `nav_order: 5` unused |
 | all root pages | `layout: home` on leaf content pages |

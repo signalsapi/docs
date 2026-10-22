@@ -646,7 +646,7 @@ footer.end{padding:40px 0 70px;color:#4d5967;font-family:var(--mono);font-size:1
 <footer><span class="tag lv">content-ops</span><span class="tag ef">M</span><span class="tag bd">stretch</span></footer>
 </article><article class="idea b-safe" data-lever="trust" data-effort="S" data-bold="safe">
 <header><span class="n">113</span><h4>Strip prices from faq.md and stop selling a phone add-on that no longer exists</h4></header>
-<p>Delete faq.md:51 (£49/£149/£199 phone packages) and the flat £400/€490/$550 at faq.md:26; replace with a pointer to a real pricing page and to find-phone-numbers.md, which states phones come from the customer&#x27;s own LeadMagic key at no SignalsAPI credit cost. Also fix &quot;propsects&quot;, &quot;100% reliable.&quot; at line 65, and the Salesforce claim at line 73.</p>
+<p>Delete faq.md:51 ([unpublished]/[unpublished]/[unpublished] phone packages) and the flat [unpublished]/[unpublished]/[unpublished] at faq.md:26; replace with a pointer to a real pricing page and to find-phone-numbers.md, which states phones come from the customer&#x27;s own LeadMagic key at no SignalsAPI credit cost. Also fix &quot;propsects&quot;, &quot;100% reliable.&quot; at line 65, and the Salesforce claim at line 73.</p>
 <footer><span class="tag lv">trust</span><span class="tag ef">S</span><span class="tag bd">safe</span></footer>
 </article></div>
 </section><section class="tech t-worst" style="--hue:355" id="t-worst">
@@ -776,7 +776,7 @@ footer.end{padding:40px 0 70px;color:#4d5967;font-family:var(--mono);font-size:1
 <footer><span class="tag lv">developer-experience</span><span class="tag ef">M</span><span class="tag bd">stretch</span></footer>
 </article><article class="idea b-stretch" data-lever="conversion" data-effort="M" data-bold="stretch">
 <header><span class="n">142</span><h4>Tax-form pricing: three worked baskets with the arithmetic shown</h4></header>
-<p>Create /pricing.md — the page tos.md §5 already cites and that 404s — built around three named scenarios with the sums written out, tax-help-text style: solo recruiter (1 search, ~200 signals/month, People Data Labs) → SignalsAPI £400 + ~$28 provider; agency (4 searches, LeadMagic + phones) → £400 + ~$X; agent builder (Tier 0 cached reads only) → £0. Include the plan table, the free-tier boundary, the 60-day credit expiry, and delete the dead £49/£149/£199 phone add-on from faq.md:51.</p>
+<p>Create /pricing.md — the page tos.md §5 already cites and that 404s — built around three named scenarios with the sums written out, tax-help-text style: solo recruiter (1 search, ~200 signals/month, People Data Labs) → SignalsAPI [unpublished] + ~$28 provider; agency (4 searches, LeadMagic + phones) → [unpublished] + ~$X; agent builder (Tier 0 cached reads only) → £0. Include the plan table, the free-tier boundary, the 60-day credit expiry, and delete the dead [unpublished]/[unpublished]/[unpublished] phone add-on from faq.md:51.</p>
 <footer><span class="tag lv">conversion</span><span class="tag ef">M</span><span class="tag bd">stretch</span></footer>
 </article><article class="idea b-stretch" data-lever="onboarding" data-effort="M" data-bold="stretch">
 <header><span class="n">143</span><h4>IKEA parts inventory: everything you need before step 1</h4></header>
@@ -1148,7 +1148,7 @@ footer.end{padding:40px 0 70px;color:#4d5967;font-family:var(--mono);font-size:1
 <footer><span class="tag lv">seo</span><span class="tag ef">M</span><span class="tag bd">safe</span></footer>
 </article><article class="idea b-safe" data-lever="conversion" data-effort="M" data-bold="safe">
 <header><span class="n">228</span><h4>Pricing page computed from _data/plans.yml plus credit calculator</h4></header>
-<p>Create `_data/plans.yml` (plan name, price in £/€/$, included credits, run frequency, Tier 0/Tier 1 access, phone availability) and render a /pricing page from it, with a JS calculator that takes searches-per-week and leads-per-month and returns both SignalsAPI credits AND the reader&#x27;s expected provider bill using the per-provider at-source/after-fetch data from `_data/providers.yml`. Point tos.md §5 and faq.md at it and delete the stale £400/£49-£199 prose.</p>
+<p>Create `_data/plans.yml` (plan name, price in £/€/$, included credits, run frequency, Tier 0/Tier 1 access, phone availability) and render a /pricing page from it, with a JS calculator that takes searches-per-week and leads-per-month and returns both SignalsAPI credits AND the reader&#x27;s expected provider bill using the per-provider at-source/after-fetch data from `_data/providers.yml`. Point tos.md §5 and faq.md at it and delete the stale [unpublished]/[unpublished]-[unpublished] prose.</p>
 <footer><span class="tag lv">conversion</span><span class="tag ef">M</span><span class="tag bd">safe</span></footer>
 </article><article class="idea b-stretch" data-lever="trust" data-effort="L" data-bold="stretch">
 <header><span class="n">229</span><h4>Nightly Playwright rig re-shoots all 17 PNGs, stamps date</h4></header>
@@ -1271,7 +1271,7 @@ footer.end{padding:40px 0 70px;color:#4d5967;font-family:var(--mono);font-size:1
 <footer><span class="tag lv">conversion</span><span class="tag ef">M</span><span class="tag bd">stretch</span></footer>
 </article><article class="idea b-stretch" data-lever="conversion" data-effort="M" data-bold="stretch">
 <header><span class="n">257</span><h4>Credits &amp; spend estimator on a real Pricing page</h4></header>
-<p>Create pricing.md (tos.md §5 already cites a pricing page that does not exist) with the plan table, the free-tier limit, the 60-day credit expiry from whats-new/index.md:53, and an estimator: searches × run frequency × decision-makers per company × your provider&#x27;s per-lookup price → monthly provider bill and SignalsAPI credit burn. Fix faq.md:51&#x27;s £49/£149/£199 phone pricing, which contradicts the BYO-LeadMagic model.</p>
+<p>Create pricing.md (tos.md §5 already cites a pricing page that does not exist) with the plan table, the free-tier limit, the 60-day credit expiry from whats-new/index.md:53, and an estimator: searches × run frequency × decision-makers per company × your provider&#x27;s per-lookup price → monthly provider bill and SignalsAPI credit burn. Fix faq.md:51&#x27;s [unpublished]/[unpublished]/[unpublished] phone pricing, which contradicts the BYO-LeadMagic model.</p>
 <footer><span class="tag lv">conversion</span><span class="tag ef">M</span><span class="tag bd">stretch</span></footer>
 </article><article class="idea b-stretch" data-lever="seo" data-effort="M" data-bold="stretch">
 <header><span class="n">258</span><h4>Own the vocabulary: a glossary page per coined term</h4></header>
