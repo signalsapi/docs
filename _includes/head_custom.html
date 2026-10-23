@@ -18,6 +18,15 @@
   {%- unless forloop.first -%}
     {%- assign question_raw = section | split: newline | first -%}
     {%- assign answer_raw = section | remove_first: question_raw -%}
+    {%- comment -%} page.content is the unrendered source, so include tags in it are plain text whose quotes markdownify would curl. Resolve them here, before markdownify. {%- endcomment -%}
+    {%- for item in site.data.pricing.items -%}
+      {%- capture figure_tag -%}{% raw %}{% include pricing-figure.html name="{% endraw %}{{ item.name }}{% raw %}" %}{% endraw %}{%- endcapture -%}
+      {%- assign answer_raw = answer_raw | replace: figure_tag, item.value -%}
+    {%- endfor -%}
+    {%- capture changes_tag -%}{% raw %}{% include recent-changes.html %}{% endraw %}{%- endcapture -%}
+    {%- assign answer_raw = answer_raw | replace: changes_tag, "" -%}
+    {%- capture ladder_tag -%}{% raw %}{% include pricing-ladder.html %}{% endraw %}{%- endcapture -%}
+    {%- assign answer_raw = answer_raw | replace: ladder_tag, "" -%}
     {%- assign question = question_raw | markdownify | strip_html | replace: "&gt;", ">" | replace: "&lt;", "<" | replace: "&amp;", "&" | strip -%}
     {%- assign answer = answer_raw | markdownify | strip_html | replace: newline, " " | replace: "&gt;", ">" | replace: "&lt;", "<" | replace: "&amp;", "&" | strip -%}
     {

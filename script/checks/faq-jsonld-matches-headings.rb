@@ -22,6 +22,11 @@ Check.register(
     site.fail!("faq.md's FAQPage JSON-LD block is not valid JSON — #{e.message}")
   end
 
+  # head_custom.html reads the unrendered source, so an include tag it fails to
+  # resolve ships as raw text (signalsapi-5708).
+  leaked = blocks.first.scan(/\{%.{0,60}/m).first
+  site.fail!("faq.md's FAQPage JSON-LD carries unrendered Liquid: #{leaked}") if leaked
+
   question_count = parsed["mainEntity"].is_a?(Array) ? parsed["mainEntity"].size : 0
   heading_count = site.raw("faq.md").scan(/^## /).size
 
